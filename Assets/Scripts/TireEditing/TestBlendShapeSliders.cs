@@ -74,11 +74,11 @@ public class TestBlendShapeSliders : MonoBehaviour {
 		meshRenderer.SetBlendShapeWeight (9, slider10);
 		meshRenderer.SetBlendShapeWeight (10, slider11);
 
-		Mesh bakedMesh = new Mesh();
-
-		meshRenderer.BakeMesh(bakedMesh);
-
-		meshCollider.sharedMesh = bakedMesh;
+		if (meshCollider != null) {
+			Mesh bakedMesh = new Mesh ();
+			meshRenderer.BakeMesh (bakedMesh);
+			meshCollider.sharedMesh = bakedMesh;
+		}
 
 	}
 }
