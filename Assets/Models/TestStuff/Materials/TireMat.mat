@@ -31,11 +31,19 @@ Material:
       data:
         first:
           name: _SpecularPower
-        second: .117521048
+        second: .653235316
       data:
         first:
           name: _SpecularAmount
         second: .3504273
+      data:
+        first:
+          name: _node_916
+        second: 0
+      data:
+        first:
+          name: _Brightness
+        second: 1
     m_Colors:
       data:
         first:

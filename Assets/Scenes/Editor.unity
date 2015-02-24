@@ -514,6 +514,18 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 438411497b064a846adbb0167901b617, type: 3}
+      propertyPath: m_TagString
+      value: MainTire
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438411497b064a846adbb0167901b617, type: 3}
   m_RootGameObject: {fileID: 1518847826}
@@ -697,7 +709,7 @@ GameObject:
   - 114: {fileID: 1518847829}
   m_Layer: 0
   m_Name: TestTire
-  m_TagString: Untagged
+  m_TagString: MainTire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,8 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946ee5039bed11c498a597f37cfaee62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 1518847832}
-  meshCollider: {fileID: 0}
+  tireType: TestTire
+  UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
 --- !u!95 &1518847831
 Animator:
   serializedVersion: 3
@@ -964,8 +976,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060856224}
-  m_LocalRotation: {x: .156132132, y: 0, z: 0, w: .987736166}
-  m_LocalPosition: {x: 0, y: 2.47300005, z: -.810000002}
+  m_LocalRotation: {x: .324388862, y: 0, z: 0, w: .945923865}
+  m_LocalPosition: {x: 0, y: 2.47300005, z: -1.48800004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1021,11 +1033,11 @@ Light:
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
-    m_Strength: .925999999
+    m_Resolution: 3
+    m_Strength: .894999981
     m_Bias: .0500000007
-    m_Softness: 8
-    m_SoftnessFade: 1.63
+    m_Softness: 4.73000002
+    m_SoftnessFade: 1.25999999
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
