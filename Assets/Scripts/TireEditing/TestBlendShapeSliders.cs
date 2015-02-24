@@ -87,26 +87,27 @@ public class TestBlendShapeSliders : MonoBehaviour {
 		if(GUI.Button(new Rect(20,460,100,50), "Save")){
 			for(int i = 0; i < sliders.Length; i++)
 			{
-				PlayerPrefs.SetFloat(tireType + "Slider" + i, sliders[i]);
+				SaveLoad.Save(tireType + "Slider" + i, sliders[i]);
 			}
 
-			PlayerPrefs.SetFloat(tireType + "Red", tireColor.r);
-			PlayerPrefs.SetFloat(tireType + "Green", tireColor.g);
-			PlayerPrefs.SetFloat(tireType + "Blue", tireColor.b);
-			PlayerPrefs.SetFloat(tireType + "Brightness", tireBrightness);
+
+			SaveLoad.Save(tireType + "Red", tireColor.r);
+			SaveLoad.Save(tireType + "Green", tireColor.g);
+			SaveLoad.Save(tireType + "Blue", tireColor.b);
+			SaveLoad.Save(tireType + "Brightness", tireBrightness);
 
 		}
 
 		if(GUI.Button(new Rect(20,520,100,50), "Load")){
 			for(int i = 0; i < sliders.Length; i++)
 			{
-				sliders[i] = PlayerPrefs.GetFloat(tireType + "Slider" + i);
+				sliders[i] = SaveLoad.Load(tireType + "Slider" + i);
 			}
 
-			tireColor.r = PlayerPrefs.GetFloat(tireType + "Red");
-			tireColor.g = PlayerPrefs.GetFloat(tireType + "Green");
-			tireColor.b = PlayerPrefs.GetFloat(tireType + "Blue");
-			tireBrightness = PlayerPrefs.GetFloat(tireType + "Brightness");
+			tireColor.r = SaveLoad.Load(tireType + "Red");
+			tireColor.g = SaveLoad.Load(tireType + "Green");
+			tireColor.b = SaveLoad.Load(tireType + "Blue");
+			tireBrightness = SaveLoad.Load(tireType + "Brightness");
 
 
 		}
