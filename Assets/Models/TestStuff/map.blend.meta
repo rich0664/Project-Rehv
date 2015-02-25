@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 287df7d3562c89d489897856d13cf7d3
+guid: febd2a7983c1eef40a02ee9860e2144a
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    4300000: Land
+    100000: Floor
+    100002: //RootNode
+    100004: Plane
+    400000: Floor
+    400002: //RootNode
+    400004: Plane
+    2300000: Floor
+    2300002: Plane
+    3300000: Floor
+    3300002: Plane
+    4300000: Plane
+    4300002: Floor
+    7400000: Default Take
     9500000: //RootNode
-    13700000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
