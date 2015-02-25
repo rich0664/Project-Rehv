@@ -25,7 +25,7 @@ public class TestBlendShapeSliders : MonoBehaviour {
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer> ();
 		meshCollider = tire.GetComponent <MeshCollider>();
-		tireMat = tire.renderer.material;
+		tireMat = tire.renderer.materials [1];
 
 
 		
