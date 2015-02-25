@@ -740,6 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tireType: TestTire
   UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
+  slidersLength: 11
 --- !u!95 &1518847831
 Animator:
   serializedVersion: 3
@@ -770,6 +771,7 @@ SkinnedMeshRenderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: eaf4157bbc83cac44963cd31fb7430f6, type: 2}
+  - {fileID: 2100000, guid: 7db9d70dfe237e84faa1844bf4c541af, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

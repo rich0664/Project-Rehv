@@ -5,6 +5,7 @@ public class TestBlendShapeSliders : MonoBehaviour {
 
 	public string tireType;
 	public GUISkin UISkin;
+	public int slidersLength; 
 
 	GameObject tire;
 
@@ -14,11 +15,11 @@ public class TestBlendShapeSliders : MonoBehaviour {
 	//Material myMaterial = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
 	Color tireColor;
 	float tireBrightness;
-	float[] sliders = new float[11];
+	float[] sliders;
 
 	// Use this for initialization
 	void Start () {
-
+		sliders = new float[slidersLength];
 
 
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
@@ -96,6 +97,8 @@ public class TestBlendShapeSliders : MonoBehaviour {
 			SaveLoad.Save(tireType + "Blue", tireColor.b);
 			SaveLoad.Save(tireType + "Brightness", tireBrightness);
 
+			SaveLoad.Save(tireType + "_SlidersLength", slidersLength);
+
 		}
 
 		if(GUI.Button(new Rect(20,520,100,50), "Load")){
@@ -109,6 +112,12 @@ public class TestBlendShapeSliders : MonoBehaviour {
 			tireColor.b = SaveLoad.Load(tireType + "Blue");
 			tireBrightness = SaveLoad.Load(tireType + "Brightness");
 
+
+		}
+
+		if(GUI.Button(new Rect(20,580,100,50), "Test")){
+			
+			Application.LoadLevel("TestLevel");
 
 		}
 	}
