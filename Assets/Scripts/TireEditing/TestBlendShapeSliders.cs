@@ -3,23 +3,23 @@ using System.Collections;
 
 public class TestBlendShapeSliders : MonoBehaviour {
 
-	public string tireTypeName;
-	public int slidersLength;
+	public string tireType;
 	public GUISkin UISkin;
-	public Color tireColor;
-	public float tireBrightness;
-	public float[] sliders;
 
 	GameObject tire;
 
 	SkinnedMeshRenderer meshRenderer;
 	MeshCollider meshCollider;
 	Material tireMat;
+	//Material myMaterial = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
+	Color tireColor;
+	float tireBrightness;
+	float[] sliders = new float[11];
 
 	// Use this for initialization
 	void Start () {
-		sliders = new float[slidersLength];
-		
+
+
 
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer> ();
@@ -85,23 +85,32 @@ public class TestBlendShapeSliders : MonoBehaviour {
 		sliders[10] = GUI.HorizontalSlider (new Rect (25, 425, 100, 30), sliders[10], 0f, 100f);
 
 		if(GUI.Button(new Rect(20,460,100,50), "Save")){
+			for(int i = 0; i < sliders.Length; i++)
+			{
+				SaveLoad.Save(tireType + "Slider" + i, sliders[i]);
+			}
 
-			SaveLoad.Save();
+
+			SaveLoad.Save(tireType + "Red", tireColor.r);
+			SaveLoad.Save(tireType + "Green", tireColor.g);
+			SaveLoad.Save(tireType + "Blue", tireColor.b);
+			SaveLoad.Save(tireType + "Brightness", tireBrightness);
 
 		}
 
 		if(GUI.Button(new Rect(20,520,100,50), "Load")){
+			for(int i = 0; i < sliders.Length; i++)
+			{
+				sliders[i] = SaveLoad.Load(tireType + "Slider" + i);
+			}
 
-			SaveLoad.Load();
+			tireColor.r = SaveLoad.Load(tireType + "Red");
+			tireColor.g = SaveLoad.Load(tireType + "Green");
+			tireColor.b = SaveLoad.Load(tireType + "Blue");
+			tireBrightness = SaveLoad.Load(tireType + "Brightness");
+
 
 		}
-
-		if(GUI.Button(new Rect(20,580,100,50), "Test")){
-
-			Application.LoadLevel("TestLevel");
-			
-		}
-
 	}
 
 	// Update is called once per frame
