@@ -95,7 +95,7 @@ public class TestTire : MonoBehaviour {
 		foreach (ContactPoint contact in collision.contacts) {
 			Debug.DrawRay(contact.point, contact.normal, Color.white);
 		}
-		if (collision.relativeVelocity.magnitude > 2.5f) {
+		if (collision.relativeVelocity.magnitude > 4f) {
 			tireSound.PlayOneShot (tireSounds [Random.Range (0, tireSounds.Length)], collision.relativeVelocity.magnitude * 0.01f);
 		}
 		}
