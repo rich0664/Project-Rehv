@@ -17,6 +17,8 @@ public class TestTire : MonoBehaviour {
 	float[] sliders;
 
 	BoxCollider bop;
+
+	float timeScale = 1f;
 	
 	// Use this for initialization
 	void Start () {
@@ -51,7 +53,17 @@ public class TestTire : MonoBehaviour {
 			meshRenderer.BakeMesh (bakedMesh);
 			meshCollider.sharedMesh = bakedMesh;
 		}
+
+
+
+	}
+
+	void OnGUI(){
 		
+
+		GUI.Label (new Rect (25, 35, 100, 20), "TimeScale");
+		timeScale = GUI.HorizontalSlider (new Rect (25, 55, 100, 30), timeScale, 0f, 1f);
+		Time.timeScale = timeScale;
 	}
 	
 	// Update is called once per frame

@@ -8,7 +8,7 @@ PhysicMaterial:
   m_Name: Tire
   dynamicFriction: 1
   staticFriction: 1
-  bounciness: .300000012
+  bounciness: 0
   frictionCombine: 2
   bounceCombine: 0
   frictionDirection2: {x: 0, y: 0, z: 0}
