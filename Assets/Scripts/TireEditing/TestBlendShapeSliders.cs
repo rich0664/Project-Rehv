@@ -115,7 +115,7 @@ public class TestBlendShapeSliders : MonoBehaviour {
 
 		}
 
-		if(GUI.Button(new Rect(20,580,100,50), "Test")){
+		if(GUI.Button(new Rect(20,580,175,50), "Run Simulation")){
 			
 			Application.LoadLevel(2);
 
