@@ -509,7 +509,7 @@ Prefab:
     - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eaf4157bbc83cac44963cd31fb7430f6, type: 2}
+      objectReference: {fileID: 2100000, guid: bf5ce767621691541bb04199d8dd74c7, type: 2}
     - target: {fileID: 100000, guid: 438411497b064a846adbb0167901b617, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -526,6 +526,10 @@ Prefab:
       propertyPath: m_TagString
       value: MainTire
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7db9d70dfe237e84faa1844bf4c541af, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 438411497b064a846adbb0167901b617, type: 3}
   m_RootGameObject: {fileID: 1518847826}
@@ -770,7 +774,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: eaf4157bbc83cac44963cd31fb7430f6, type: 2}
+  - {fileID: 2100000, guid: bf5ce767621691541bb04199d8dd74c7, type: 2}
   - {fileID: 2100000, guid: 7db9d70dfe237e84faa1844bf4c541af, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
