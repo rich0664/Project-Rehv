@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Editor.unity
   - enabled: 1
     path: Assets/Scenes/TestLevel.unity
+  - enabled: 1
+    path: Assets/Scenes/TestLevel_Modded.unity

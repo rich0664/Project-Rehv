@@ -62,7 +62,7 @@ public class TestTire : MonoBehaviour {
 		
 
 		GUI.Label (new Rect (25, 35, 100, 20), "TimeScale");
-		timeScale = GUI.HorizontalSlider (new Rect (25, 55, 100, 30), timeScale, 0f, 1f);
+		timeScale = GUI.HorizontalSlider (new Rect (25, 55, 100, 30), timeScale, 0f, 3f);
 		Time.timeScale = timeScale;
 	}
 	
