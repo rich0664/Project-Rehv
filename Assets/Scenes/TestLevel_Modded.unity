@@ -254,6 +254,7 @@ GameObject:
   - 64: {fileID: 57037488}
   - 136: {fileID: 57037491}
   - 75: {fileID: 57037490}
+  - 82: {fileID: 57037492}
   m_Layer: 0
   m_Name: testtire(1)
   m_TagString: MainTire
@@ -274,6 +275,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tireType: TestTire
   slidersLength: 11
+  tireSound1: {fileID: 8300000, guid: 64bfe1786f55f98459f256dd64f61b4e, type: 3}
+  tireSound2: {fileID: 8300000, guid: a1b2a88785f4b42a0b3a4e083dbc070f, type: 3}
+  tireSound3: {fileID: 8300000, guid: 8f707bbd997654d56933691c40244053, type: 3}
+  tireSound4: {fileID: 8300000, guid: 7066b17ed5e8346ef9350025d2ce84f8, type: 3}
+  tireSound5: {fileID: 0}
 --- !u!95 &57037485
 Animator:
   serializedVersion: 3
@@ -400,6 +406,64 @@ CapsuleCollider:
   m_Height: .0199999996
   m_Direction: 2
   m_Center: {x: -1.1920929e-07, y: -4.24638549e-22, z: -6.00703203e-08}
+--- !u!82 &57037492
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 57037483}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &75055811
 GameObject:
   m_ObjectHideFlags: 0
