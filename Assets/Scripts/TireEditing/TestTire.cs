@@ -29,7 +29,7 @@ public class TestTire : MonoBehaviour {
 	AudioClip[] tireSounds;
 	AudioSource tireSound;
 
-	float highscore;
+	public float highscore;
 	public float currentScore;
 	
 	// Use this for initialization

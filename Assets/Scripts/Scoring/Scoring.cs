@@ -42,7 +42,6 @@ public class Scoring : MonoBehaviour {
 				jumpPoint.transform.position, 
 				tire.transform.position);
 
-			testTire.currentScore = distance;
 
 			Vector3 tirePos = tire.transform.position;
 			tirePos.y+=3f;
@@ -51,8 +50,11 @@ public class Scoring : MonoBehaviour {
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;
 
+			testTire.currentScore = distance;
+
 			if(distance > highscore){
 			SaveLoad.Save(tireType + "_Highscore", distance);
+				testTire.highscore = distance;
 			}
 
 		}

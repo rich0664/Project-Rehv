@@ -747,6 +747,8 @@ MonoBehaviour:
   tireSound3: {fileID: 8300000, guid: 1dab5b6db6543074a9e710b31e1fc027, type: 3}
   tireSound4: {fileID: 8300000, guid: bcd21ecb4bdc7c945ae73f61d44a807f, type: 3}
   tireSound5: {fileID: 8300000, guid: 7b34f05cb7e4751408f143862de62bb2, type: 3}
+  highscore: 0
+  currentScore: 0
 --- !u!95 &504236868
 Animator:
   serializedVersion: 3
@@ -831,6 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTrigger: {fileID: 1300340189}
+  jumpPoint: {fileID: 1648132837}
 --- !u!1 &506404532
 GameObject:
   m_ObjectHideFlags: 0
@@ -2913,7 +2916,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1648132838}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: JumpPoint
   m_TagString: Untagged
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -2926,7 +2929,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648132837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0299999993, y: 125.703003, z: -97.2089996}
+  m_LocalPosition: {x: 0, y: 82.2200012, z: -13.6700001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
