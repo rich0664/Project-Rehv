@@ -2508,245 +2508,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 1
   m_Convex: 1
   m_Mesh: {fileID: 4300300, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!1 &504236861
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 438411497b064a846adbb0167901b617, type: 3}
-  m_PrefabInternal: {fileID: 1030051918}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 504236870}
-  - 137: {fileID: 504236869}
-  - 95: {fileID: 504236868}
-  - 114: {fileID: 504236867}
-  - 54: {fileID: 504236866}
-  - 64: {fileID: 504236865}
-  - 136: {fileID: 504236864}
-  - 75: {fileID: 504236863}
-  - 82: {fileID: 504236862}
-  - 114: {fileID: 504236871}
-  m_Layer: 0
-  m_Name: TestTire
-  m_TagString: MainTire
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!82 &504236862
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
---- !u!75 &504236863
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 0
-  m_Force: {x: 0, y: 0, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
---- !u!136 &504236864
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: .00800000038
-  m_Height: .0199999996
-  m_Direction: 2
-  m_Center: {x: -1.1920929e-07, y: -4.24638549e-22, z: -6.00703203e-08}
---- !u!64 &504236865
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 438411497b064a846adbb0167901b617, type: 3}
---- !u!54 &504236866
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: .00100000005
-  m_AngularDrag: .00100000005
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!114 &504236867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a3e358e0fa47741888ad9b22ec2fcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tireType: TestTire
-  slidersLength: 11
-  tireSound1: {fileID: 8300000, guid: 64bfe1786f55f98459f256dd64f61b4e, type: 3}
-  tireSound2: {fileID: 8300000, guid: 619519df85b5d5645bae933ed026db19, type: 3}
-  tireSound3: {fileID: 8300000, guid: 1dab5b6db6543074a9e710b31e1fc027, type: 3}
-  tireSound4: {fileID: 8300000, guid: bcd21ecb4bdc7c945ae73f61d44a807f, type: 3}
-  tireSound5: {fileID: 8300000, guid: 7b34f05cb7e4751408f143862de62bb2, type: 3}
-  highscore: 0
-  currentScore: 0
---- !u!95 &504236868
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 438411497b064a846adbb0167901b617,
-    type: 3}
-  m_PrefabInternal: {fileID: 1030051918}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 438411497b064a846adbb0167901b617, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!137 &504236869
-SkinnedMeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617,
-    type: 3}
-  m_PrefabInternal: {fileID: 1030051918}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: bf5ce767621691541bb04199d8dd74c7, type: 2}
-  - {fileID: 2100000, guid: 7db9d70dfe237e84faa1844bf4c541af, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  serializedVersion: 2
-  m_Quality: 0
-  m_UpdateWhenOffscreen: 1
-  m_Mesh: {fileID: 4300000, guid: 438411497b064a846adbb0167901b617, type: 3}
-  m_Bones: []
-  m_BlendShapeWeights:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  m_RootBone: {fileID: 0}
-  m_AABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: .00890182797, y: .00890182797, z: .0025439763}
-  m_DirtyAABB: 0
---- !u!4 &504236870
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-  m_PrefabInternal: {fileID: 1030051918}
-  m_GameObject: {fileID: 504236861}
-  m_LocalRotation: {x: 0, y: -.707072735, z: 0, w: .707140923}
-  m_LocalPosition: {x: .0199999996, y: 126.900002, z: -97.0899963}
-  m_LocalScale: {x: 100.000008, y: 100, z: 100.000008}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
---- !u!114 &504236871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 504236861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9858dd06866274848a3474490935a72c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreTrigger: {fileID: 1300340189}
-  jumpPoint: {fileID: 1648132837}
 --- !u!1 &506404532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4322,6 +4083,47 @@ MeshCollider:
   m_SmoothSphereCollisions: 1
   m_Convex: 1
   m_Mesh: {fileID: 4300398, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+--- !u!1 &840895176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 840895177}
+  - 114: {fileID: 840895178}
+  m_Layer: 0
+  m_Name: TireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &840895177
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840895176}
+  m_LocalRotation: {x: 0, y: -.707107008, z: 0, w: .70710665}
+  m_LocalPosition: {x: .0130000003, y: 126.884003, z: -97.0920029}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!114 &840895178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 840895176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tireTypeToSpawn: TestTire
+  testTirePrefab: {fileID: 120204, guid: 8874abdd756759d48a6d22e053413e2d, type: 2}
 --- !u!1 &845912880
 GameObject:
   m_ObjectHideFlags: 0
@@ -5118,82 +4920,6 @@ MeshCollider:
   m_SmoothSphereCollisions: 1
   m_Convex: 1
   m_Mesh: {fileID: 4300092, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!1001 &1030051918
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: .0199999996
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 126.900002
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -97.0899963
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -.707072735
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: .707140923
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: .00890182797
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: .00890182797
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: .0025439763
-      objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_DirtyAABB
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_TagString
-      value: MainTire
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_Name
-      value: TestTire
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100.000008
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 438411497b064a846adbb0167901b617, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100.000008
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 438411497b064a846adbb0167901b617, type: 3}
-  m_RootGameObject: {fileID: 504236861}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1068966430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6200,7 +5926,7 @@ GameObject:
   - 65: {fileID: 1300340189}
   m_Layer: 0
   m_Name: ScoreTrigger
-  m_TagString: Untagged
+  m_TagString: ScoreTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7830,7 +7556,7 @@ GameObject:
   - 4: {fileID: 1648132838}
   m_Layer: 0
   m_Name: JumpPoint
-  m_TagString: Untagged
+  m_TagString: JumpPoint
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8019,6 +7745,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
       propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100420, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -8842,7 +8572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8803776b80df5cf4fad2c62ce4adc6c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 504236870}
+  target: {fileID: 0}
   smoothing: 7
 --- !u!81 &1768584075
 AudioListener:
@@ -8925,14 +8655,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1768584073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1af86fd76ea264db9cb7033bfc9a8c, type: 3}
+  m_Script: {fileID: 11500000, guid: e3db3e593305f1c4b985f53cc46bb7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 504236870}
-  distance: 15
+  target: {fileID: 0}
+  distance: 10
   xSpeed: 5
   ySpeed: 40
-  yMinLimit: -20
+  yMinLimit: 5
   yMaxLimit: 80
   distanceMin: 2
   distanceMax: 30

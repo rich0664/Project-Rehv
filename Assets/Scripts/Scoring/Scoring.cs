@@ -9,8 +9,8 @@ public class Scoring : MonoBehaviour {
 	string tireType;
 	TestTire testTire;
 
-	public BoxCollider scoreTrigger;
-	public GameObject jumpPoint;
+	BoxCollider scoreTrigger;
+	GameObject jumpPoint;
 
 	bool canPlaceScore = false;
 
@@ -20,6 +20,8 @@ public class Scoring : MonoBehaviour {
 		testTire =	tire.GetComponent<TestTire>();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<TextMesh> ();
 		scoreRender = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<MeshRenderer> ();
+		scoreTrigger = GameObject.FindGameObjectWithTag ("ScoreTrigger").GetComponent<BoxCollider> ();
+		jumpPoint = GameObject.FindGameObjectWithTag ("JumpPoint");
 		tireType = tire.GetComponent<TestTire> ().tireType;
 	}
 
@@ -36,7 +38,7 @@ public class Scoring : MonoBehaviour {
 		if (canPlaceScore) {
 			canPlaceScore=false;
 
-			float highscore = SaveLoad.Load(tireType + "_Highscore");
+			float highscore = SaveLoad.LoadFloat(tireType + "_Highscore");
 
 			float distance = Vector3.Distance (
 				jumpPoint.transform.position, 
@@ -53,7 +55,7 @@ public class Scoring : MonoBehaviour {
 			testTire.currentScore = distance;
 
 			if(distance > highscore){
-			SaveLoad.Save(tireType + "_Highscore", distance);
+			SaveLoad.SaveFloat(tireType + "_Highscore", distance);
 				testTire.highscore = distance;
 			}
 

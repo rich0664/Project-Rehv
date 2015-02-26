@@ -5,6 +5,9 @@ TagManager:
   tags:
   - MainTire
   - ScoreText
+  - TireSpawn
+  - JumpPoint
+  - ScoreTrigger
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
