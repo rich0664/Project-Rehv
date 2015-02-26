@@ -6,17 +6,21 @@ public class Scoring : MonoBehaviour {
 	GameObject tire;
 	MeshRenderer scoreRender;
 	TextMesh scoreText;
+	string tireType;
+	TestTire testTire;
 
 	public BoxCollider scoreTrigger;
-	//public GameObject startPoint;
+	public GameObject jumpPoint;
 
 	bool canPlaceScore = false;
 
 	// Use this for initialization
 	void Start () {
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
+		testTire =	tire.GetComponent<TestTire>();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<TextMesh> ();
 		scoreRender = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<MeshRenderer> ();
+		tireType = tire.GetComponent<TestTire> ().tireType;
 	}
 
 
@@ -32,9 +36,13 @@ public class Scoring : MonoBehaviour {
 		if (canPlaceScore) {
 			canPlaceScore=false;
 
+			float highscore = SaveLoad.Load(tireType + "_Highscore");
+
 			float distance = Vector3.Distance (
-				GameObject.FindGameObjectWithTag ("ScoreText").transform.position, 
+				jumpPoint.transform.position, 
 				tire.transform.position);
+
+			testTire.currentScore = distance;
 
 			Vector3 tirePos = tire.transform.position;
 			tirePos.y+=3f;
@@ -42,6 +50,11 @@ public class Scoring : MonoBehaviour {
 			GameObject.FindGameObjectWithTag ("ScoreText").transform.position = tirePos;
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;
+
+			if(distance > highscore){
+			SaveLoad.Save(tireType + "_Highscore", distance);
+			}
+
 		}
 
 	}
