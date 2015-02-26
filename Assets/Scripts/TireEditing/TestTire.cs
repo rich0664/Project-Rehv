@@ -85,8 +85,8 @@ public class TestTire : MonoBehaviour {
 		
 
 		GUI.Label (new Rect (25, 35, 100, 20), "TimeScale");
-		GUI.Label (new Rect (155, 35, 170, 20), "Highscore: " + highscore.ToString());
-		GUI.Label (new Rect (155, 65, 170, 20), "Current Score: " + currentScore.ToString());
+		GUI.Label (new Rect (155, 35, 170, 20), "Highscore: " + highscore.ToString()+"m");
+		GUI.Label (new Rect (155, 65, 170, 20), "Current Score: " + currentScore.ToString()+"m");
 		timeScale = GUI.HorizontalSlider (new Rect (25, 55, 100, 30), timeScale, 0f, 3f);
 		Time.timeScale = timeScale;
 
