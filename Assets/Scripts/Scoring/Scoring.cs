@@ -5,6 +5,8 @@ public class Scoring : MonoBehaviour {
 
 	GameObject tire;
 	MeshRenderer scoreRender;
+	AudioSource scoreSound;
+	//MeshRenderer markerRender;
 	TextMesh scoreText;
 	string tireType;
 	TestTire testTire;
@@ -20,6 +22,7 @@ public class Scoring : MonoBehaviour {
 		testTire =	tire.GetComponent<TestTire>();
 		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<TextMesh> ();
 		scoreRender = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<MeshRenderer> ();
+		scoreSound = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<AudioSource> ();
 		scoreTrigger = GameObject.FindGameObjectWithTag ("ScoreTrigger").GetComponent<BoxCollider> ();
 		jumpPoint = GameObject.FindGameObjectWithTag ("JumpPoint");
 		tireType = tire.GetComponent<TestTire> ().tireType;
@@ -49,6 +52,7 @@ public class Scoring : MonoBehaviour {
 			tirePos.y+=3f;
 
 			GameObject.FindGameObjectWithTag ("ScoreText").transform.position = tirePos;
+			scoreSound.Play();
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;
 
