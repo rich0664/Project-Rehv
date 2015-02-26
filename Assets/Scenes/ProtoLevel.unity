@@ -247,8 +247,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 26012714}
-  - 33: {fileID: 26012717}
-  - 23: {fileID: 26012716}
   - 64: {fileID: 26012715}
   m_Layer: 0
   m_Name: Ramp_col_037
@@ -275,41 +273,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 26012713}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300784, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &26012716
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300776, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 26012713}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &26012717
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300776, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 26012713}
   m_Mesh: {fileID: 4300784, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &30882197
 GameObject:
@@ -319,8 +288,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 30882198}
-  - 33: {fileID: 30882201}
-  - 23: {fileID: 30882200}
   - 64: {fileID: 30882199}
   m_Layer: 0
   m_Name: Ramp_col_003
@@ -347,41 +314,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30882197}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300852, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &30882200
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300708, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 30882197}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &30882201
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300708, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 30882197}
   m_Mesh: {fileID: 4300852, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &31853047
 GameObject:
@@ -391,8 +329,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 31853048}
-  - 33: {fileID: 31853051}
-  - 23: {fileID: 31853050}
   - 64: {fileID: 31853049}
   m_Layer: 0
   m_Name: Ramp_col_012
@@ -419,41 +355,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31853047}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300834, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &31853050
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300726, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 31853047}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &31853051
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300726, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 31853047}
   m_Mesh: {fileID: 4300834, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &42377806
 GameObject:
@@ -504,8 +411,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 55480173}
-  - 33: {fileID: 55480176}
-  - 23: {fileID: 55480175}
   - 64: {fileID: 55480174}
   m_Layer: 0
   m_Name: Ramp_col_058
@@ -532,41 +437,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55480172}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300742, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &55480175
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300818, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 55480172}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &55480176
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300818, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 55480172}
   m_Mesh: {fileID: 4300742, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &56450980
 GameObject:
@@ -576,8 +452,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 56450981}
-  - 33: {fileID: 56450984}
-  - 23: {fileID: 56450983}
   - 64: {fileID: 56450982}
   m_Layer: 0
   m_Name: Ramp_col_064
@@ -604,41 +478,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56450980}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300730, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &56450983
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300830, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 56450980}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &56450984
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300830, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 56450980}
   m_Mesh: {fileID: 4300730, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &59878408
 GameObject:
@@ -812,8 +657,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 117276058}
-  - 33: {fileID: 117276061}
-  - 23: {fileID: 117276060}
   - 64: {fileID: 117276059}
   m_Layer: 0
   m_Name: Ramp_col_051
@@ -840,41 +683,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 117276057}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300756, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &117276060
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300804, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 117276057}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &117276061
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300804, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 117276057}
   m_Mesh: {fileID: 4300756, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &146832944
 GameObject:
@@ -884,8 +698,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 146832945}
-  - 33: {fileID: 146832948}
-  - 23: {fileID: 146832947}
   - 64: {fileID: 146832946}
   m_Layer: 0
   m_Name: Ramp_col_045
@@ -912,41 +724,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146832944}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300768, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &146832947
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300792, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 146832944}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &146832948
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300792, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 146832944}
   m_Mesh: {fileID: 4300768, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &152469295
 GameObject:
@@ -1038,8 +821,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 170606579}
-  - 33: {fileID: 170606582}
-  - 23: {fileID: 170606581}
   - 64: {fileID: 170606580}
   m_Layer: 0
   m_Name: Ramp_col_044
@@ -1066,41 +847,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170606578}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300770, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &170606581
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300790, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 170606578}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &170606582
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300790, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 170606578}
   m_Mesh: {fileID: 4300770, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &176306864
 GameObject:
@@ -1151,8 +903,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 176898968}
-  - 33: {fileID: 176898971}
-  - 23: {fileID: 176898970}
   - 64: {fileID: 176898969}
   m_Layer: 0
   m_Name: Ramp_col_026
@@ -1179,41 +929,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176898967}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300806, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &176898970
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300754, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 176898967}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &176898971
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300754, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 176898967}
   m_Mesh: {fileID: 4300806, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &183287761
 GameObject:
@@ -1223,8 +944,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 183287762}
-  - 33: {fileID: 183287765}
-  - 23: {fileID: 183287764}
   - 64: {fileID: 183287763}
   m_Layer: 0
   m_Name: Ramp_col_016
@@ -1251,41 +970,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183287761}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300826, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &183287764
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300734, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 183287761}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &183287765
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300734, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 183287761}
   m_Mesh: {fileID: 4300826, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &200550238
 GameObject:
@@ -1377,8 +1067,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 214056724}
-  - 33: {fileID: 214056727}
-  - 23: {fileID: 214056726}
   - 64: {fileID: 214056725}
   m_Layer: 0
   m_Name: Ramp_col_072
@@ -1405,41 +1093,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 214056723}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300714, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &214056726
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300846, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 214056723}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &214056727
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300846, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 214056723}
   m_Mesh: {fileID: 4300714, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &216922912
 GameObject:
@@ -1449,8 +1108,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 216922913}
-  - 33: {fileID: 216922916}
-  - 23: {fileID: 216922915}
   - 64: {fileID: 216922914}
   m_Layer: 0
   m_Name: Ramp_col_047
@@ -1477,41 +1134,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216922912}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300764, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &216922915
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300796, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 216922912}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &216922916
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300796, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 216922912}
   m_Mesh: {fileID: 4300764, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &220298363
 GameObject:
@@ -1521,8 +1149,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 220298364}
-  - 33: {fileID: 220298367}
-  - 23: {fileID: 220298366}
   - 64: {fileID: 220298365}
   m_Layer: 0
   m_Name: Ramp_col_024
@@ -1549,41 +1175,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 220298363}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300810, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &220298366
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300750, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 220298363}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &220298367
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300750, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 220298363}
   m_Mesh: {fileID: 4300810, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &241353826
 GameObject:
@@ -1675,8 +1272,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 279351033}
-  - 33: {fileID: 279351036}
-  - 23: {fileID: 279351035}
   - 64: {fileID: 279351034}
   m_Layer: 0
   m_Name: Ramp_col_076
@@ -1703,41 +1298,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279351032}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300706, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &279351035
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300854, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 279351032}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &279351036
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300854, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 279351032}
   m_Mesh: {fileID: 4300706, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &296115823
 GameObject:
@@ -1788,8 +1354,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 303844468}
-  - 33: {fileID: 303844471}
-  - 23: {fileID: 303844470}
   - 64: {fileID: 303844469}
   m_Layer: 0
   m_Name: Ramp_col_034
@@ -1816,41 +1380,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 303844467}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300790, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &303844470
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300770, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 303844467}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &303844471
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300770, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 303844467}
   m_Mesh: {fileID: 4300790, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &303908187
 GameObject:
@@ -2390,6 +1925,160 @@ Prefab:
     - {fileID: 3300096, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
     - {fileID: 3300020, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
     - {fileID: 3300418, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300776, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300708, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300726, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300818, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300830, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300804, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300792, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300790, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300754, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300734, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300846, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300796, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300750, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300854, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300770, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300748, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300732, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300710, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300838, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300848, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300828, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300736, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300760, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300798, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300744, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300820, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300762, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300720, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300706, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300722, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300714, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300780, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300826, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300810, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300730, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300814, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300808, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300844, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300738, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300742, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300774, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300772, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300836, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300842, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300752, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300718, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300724, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300782, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300784, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300806, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300716, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300746, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300756, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300712, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300788, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300850, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300834, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300800, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300852, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300766, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300740, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300764, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300832, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300758, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300704, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300802, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300816, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300702, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300824, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300728, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300794, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300812, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300822, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300786, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300768, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300778, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 2300840, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300776, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300708, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300726, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300818, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300830, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300804, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300792, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300790, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300754, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300734, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300846, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300796, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300750, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300854, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300770, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300748, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300732, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300710, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300838, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300848, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300828, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300736, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300760, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300798, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300744, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300820, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300762, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300720, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300706, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300722, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300714, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300780, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300826, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300810, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300730, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300814, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300808, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300844, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300738, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300742, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300774, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300772, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300836, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300842, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300752, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300718, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300724, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300782, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300784, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300806, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300716, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300746, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300756, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300712, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300788, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300850, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300834, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300800, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300852, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300766, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300740, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300764, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300832, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300758, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300704, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300802, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300816, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300702, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300824, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300728, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300794, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300812, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300822, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300786, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300768, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300778, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+    - {fileID: 3300840, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
   m_RootGameObject: {fileID: 450530752}
   m_IsPrefabParent: 0
@@ -2484,8 +2173,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 316465837}
-  - 33: {fileID: 316465840}
-  - 23: {fileID: 316465839}
   - 64: {fileID: 316465838}
   m_Layer: 0
   m_Name: Ramp_col_023
@@ -2512,41 +2199,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316465836}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300812, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &316465839
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300748, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 316465836}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &316465840
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300748, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 316465836}
   m_Mesh: {fileID: 4300812, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &321522886
 GameObject:
@@ -2638,8 +2296,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 335095462}
-  - 33: {fileID: 335095465}
-  - 23: {fileID: 335095464}
   - 64: {fileID: 335095463}
   m_Layer: 0
   m_Name: Ramp_col_015
@@ -2666,41 +2322,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335095461}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300828, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &335095464
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300732, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 335095461}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &335095465
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300732, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 335095461}
   m_Mesh: {fileID: 4300828, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &335335366
 GameObject:
@@ -2833,8 +2460,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 360300602}
-  - 33: {fileID: 360300605}
-  - 23: {fileID: 360300604}
   - 64: {fileID: 360300603}
   m_Layer: 0
   m_Name: Ramp_col_004
@@ -2861,41 +2486,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360300601}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300850, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &360300604
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300710, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 360300601}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &360300605
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300710, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 360300601}
   m_Mesh: {fileID: 4300850, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &360520325
 GameObject:
@@ -2946,8 +2542,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 362166286}
-  - 33: {fileID: 362166289}
-  - 23: {fileID: 362166288}
   - 64: {fileID: 362166287}
   m_Layer: 0
   m_Name: Ramp_col_068
@@ -2974,41 +2568,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 362166285}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300722, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &362166288
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300838, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 362166285}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &362166289
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300838, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 362166285}
   m_Mesh: {fileID: 4300722, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &373433058
 GameObject:
@@ -3383,8 +2948,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454572035}
-  - 33: {fileID: 454572038}
-  - 23: {fileID: 454572037}
   - 64: {fileID: 454572036}
   m_Layer: 0
   m_Name: Ramp_col_073
@@ -3411,41 +2974,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454572034}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300712, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &454572037
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300848, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 454572034}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &454572038
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300848, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 454572034}
   m_Mesh: {fileID: 4300712, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &456307481
 GameObject:
@@ -3660,8 +3194,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 495506168}
-  - 33: {fileID: 495506171}
-  - 23: {fileID: 495506170}
   - 64: {fileID: 495506169}
   m_Layer: 0
   m_Name: Ramp_col_063
@@ -3688,41 +3220,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 495506167}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300732, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &495506170
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300828, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 495506167}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &495506171
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300828, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 495506167}
   m_Mesh: {fileID: 4300732, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &501729239
 GameObject:
@@ -3773,8 +3276,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 510825054}
-  - 33: {fileID: 510825057}
-  - 23: {fileID: 510825056}
   - 64: {fileID: 510825055}
   m_Layer: 0
   m_Name: Ramp_col_017
@@ -3801,41 +3302,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 510825053}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300824, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &510825056
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300736, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 510825053}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &510825057
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300736, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 510825053}
   m_Mesh: {fileID: 4300824, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &530059856
 GameObject:
@@ -3968,8 +3440,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 581118192}
-  - 33: {fileID: 581118195}
-  - 23: {fileID: 581118194}
   - 64: {fileID: 581118193}
   m_Layer: 0
   m_Name: Ramp_col_029
@@ -3996,41 +3466,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 581118191}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300800, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &581118194
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300760, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 581118191}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &581118195
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300760, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 581118191}
   m_Mesh: {fileID: 4300800, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &608107050
 GameObject:
@@ -4081,8 +3522,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 610268568}
-  - 33: {fileID: 610268571}
-  - 23: {fileID: 610268570}
   - 64: {fileID: 610268569}
   m_Layer: 0
   m_Name: Ramp_col_048
@@ -4109,41 +3548,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 610268567}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300762, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &610268570
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300798, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 610268567}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &610268571
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300798, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 610268567}
   m_Mesh: {fileID: 4300762, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &617869900
 GameObject:
@@ -4194,8 +3604,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 643266042}
-  - 33: {fileID: 643266045}
-  - 23: {fileID: 643266044}
   - 64: {fileID: 643266043}
   m_Layer: 0
   m_Name: Ramp_col_021
@@ -4222,41 +3630,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 643266041}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300816, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &643266044
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300744, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 643266041}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &643266045
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300744, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 643266041}
   m_Mesh: {fileID: 4300816, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &658917761
 GameObject:
@@ -4266,8 +3645,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 658917762}
-  - 33: {fileID: 658917765}
-  - 23: {fileID: 658917764}
   - 64: {fileID: 658917763}
   m_Layer: 0
   m_Name: Ramp_col_059
@@ -4294,41 +3671,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 658917761}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300740, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &658917764
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300820, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 658917761}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &658917765
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300820, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 658917761}
   m_Mesh: {fileID: 4300740, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &660129601
 GameObject:
@@ -4338,8 +3686,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 660129602}
-  - 33: {fileID: 660129605}
-  - 23: {fileID: 660129604}
   - 64: {fileID: 660129603}
   m_Layer: 0
   m_Name: Ramp_col_030
@@ -4366,41 +3712,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 660129601}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300798, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &660129604
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300762, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 660129601}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &660129605
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300762, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 660129601}
   m_Mesh: {fileID: 4300798, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &663270442
 GameObject:
@@ -4451,8 +3768,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 671943892}
-  - 33: {fileID: 671943895}
-  - 23: {fileID: 671943894}
   - 64: {fileID: 671943893}
   m_Layer: 0
   m_Name: Ramp_col_009
@@ -4479,41 +3794,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671943891}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300840, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &671943894
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300720, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 671943891}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &671943895
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300720, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 671943891}
   m_Mesh: {fileID: 4300840, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &672317663
 GameObject:
@@ -4745,8 +4031,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 716146925}
-  - 33: {fileID: 716146928}
-  - 23: {fileID: 716146927}
   - 64: {fileID: 716146926}
   m_Layer: 0
   m_Name: Ramp_col_002
@@ -4773,41 +4057,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 716146924}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300854, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &716146927
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300706, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 716146924}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &716146928
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300706, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 716146924}
   m_Mesh: {fileID: 4300854, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &730682003
 GameObject:
@@ -5145,8 +4400,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 836750384}
-  - 33: {fileID: 836750387}
-  - 23: {fileID: 836750386}
   - 64: {fileID: 836750385}
   m_Layer: 0
   m_Name: Ramp_col_010
@@ -5173,41 +4426,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 836750383}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300838, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &836750386
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300722, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 836750383}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &836750387
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300722, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 836750383}
   m_Mesh: {fileID: 4300838, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &840895176
 GameObject:
@@ -5258,8 +4482,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 847569450}
-  - 33: {fileID: 847569453}
-  - 23: {fileID: 847569452}
   - 64: {fileID: 847569451}
   m_Layer: 0
   m_Name: Ramp_col_006
@@ -5286,41 +4508,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847569449}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300846, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &847569452
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300714, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 847569449}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &847569453
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300714, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 847569449}
   m_Mesh: {fileID: 4300846, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &847799410
 GameObject:
@@ -5330,8 +4523,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 847799411}
-  - 33: {fileID: 847799414}
-  - 23: {fileID: 847799413}
   - 64: {fileID: 847799412}
   m_Layer: 0
   m_Name: Ramp_col_039
@@ -5358,41 +4549,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 847799410}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300780, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &847799413
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300780, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 847799410}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &847799414
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300780, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 847799410}
   m_Mesh: {fileID: 4300780, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &854159028
 GameObject:
@@ -5402,8 +4564,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 854159029}
-  - 33: {fileID: 854159032}
-  - 23: {fileID: 854159031}
   - 64: {fileID: 854159030}
   m_Layer: 0
   m_Name: Ramp_col_062
@@ -5430,41 +4590,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 854159028}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300734, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &854159031
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300826, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 854159028}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &854159032
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300826, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 854159028}
   m_Mesh: {fileID: 4300734, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &866969173
 GameObject:
@@ -5556,8 +4687,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 876443982}
-  - 33: {fileID: 876443985}
-  - 23: {fileID: 876443984}
   - 64: {fileID: 876443983}
   m_Layer: 0
   m_Name: Ramp_col_054
@@ -5584,41 +4713,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 876443981}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300750, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &876443984
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300810, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 876443981}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &876443985
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300810, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 876443981}
   m_Mesh: {fileID: 4300750, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &912031695
 GameObject:
@@ -5766,8 +4866,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 921585774}
-  - 33: {fileID: 921585777}
-  - 23: {fileID: 921585776}
   - 64: {fileID: 921585775}
   m_Layer: 0
   m_Name: Ramp_col_014
@@ -5794,41 +4892,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 921585773}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300830, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &921585776
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300730, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 921585773}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &921585777
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300730, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 921585773}
   m_Mesh: {fileID: 4300830, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &945495276
 GameObject:
@@ -5961,8 +5030,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 960375736}
-  - 33: {fileID: 960375739}
-  - 23: {fileID: 960375738}
   - 64: {fileID: 960375737}
   m_Layer: 0
   m_Name: Ramp_col_056
@@ -5989,41 +5056,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 960375735}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300746, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &960375738
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300814, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 960375735}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &960375739
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300814, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 960375735}
   m_Mesh: {fileID: 4300746, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &962165221
 GameObject:
@@ -6320,8 +5358,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1001540953}
-  - 33: {fileID: 1001540956}
-  - 23: {fileID: 1001540955}
   - 64: {fileID: 1001540954}
   m_Layer: 0
   m_Name: Ramp_col_053
@@ -6348,41 +5384,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1001540952}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300752, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1001540955
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300808, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1001540952}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1001540956
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300808, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1001540952}
   m_Mesh: {fileID: 4300752, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1007461356
 GameObject:
@@ -6474,8 +5481,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1037706958}
-  - 33: {fileID: 1037706961}
-  - 23: {fileID: 1037706960}
   - 64: {fileID: 1037706959}
   m_Layer: 0
   m_Name: Ramp_col_071
@@ -6502,41 +5507,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1037706957}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300716, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1037706960
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300844, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1037706957}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1037706961
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300844, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1037706957}
   m_Mesh: {fileID: 4300716, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1068966430
 GameObject:
@@ -6691,8 +5667,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1090191975}
-  - 33: {fileID: 1090191978}
-  - 23: {fileID: 1090191977}
   - 64: {fileID: 1090191976}
   m_Layer: 0
   m_Name: Ramp_col_018
@@ -6719,41 +5693,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1090191974}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300822, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1090191977
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300738, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1090191974}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1090191978
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300738, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1090191974}
   m_Mesh: {fileID: 4300822, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1091502102
 GameObject:
@@ -6968,8 +5913,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1150389961}
-  - 33: {fileID: 1150389964}
-  - 23: {fileID: 1150389963}
   - 64: {fileID: 1150389962}
   m_Layer: 0
   m_Name: Ramp_col_020
@@ -6996,41 +5939,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1150389960}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300818, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1150389963
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300742, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1150389960}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1150389964
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300742, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1150389960}
   m_Mesh: {fileID: 4300818, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1151927800
 GameObject:
@@ -7081,8 +5995,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1162097530}
-  - 33: {fileID: 1162097533}
-  - 23: {fileID: 1162097532}
   - 64: {fileID: 1162097531}
   m_Layer: 0
   m_Name: Ramp_col_036
@@ -7109,41 +6021,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1162097529}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300786, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1162097532
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300774, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1162097529}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1162097533
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300774, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1162097529}
   m_Mesh: {fileID: 4300786, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1162734377
 GameObject:
@@ -7194,8 +6077,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1170909345}
-  - 33: {fileID: 1170909348}
-  - 23: {fileID: 1170909347}
   - 64: {fileID: 1170909346}
   m_Layer: 0
   m_Name: Ramp_col_035
@@ -7222,41 +6103,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1170909344}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300788, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1170909347
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300772, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1170909344}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1170909348
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300772, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1170909344}
   m_Mesh: {fileID: 4300788, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1179340363
 GameObject:
@@ -7348,8 +6200,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1184531023}
-  - 33: {fileID: 1184531026}
-  - 23: {fileID: 1184531025}
   - 64: {fileID: 1184531024}
   m_Layer: 0
   m_Name: Ramp_col_067
@@ -7376,41 +6226,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1184531022}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300724, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1184531025
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300836, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1184531022}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1184531026
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300836, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1184531022}
   m_Mesh: {fileID: 4300724, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1186433096
 GameObject:
@@ -7591,8 +6412,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1245633764}
-  - 33: {fileID: 1245633767}
-  - 23: {fileID: 1245633766}
   - 64: {fileID: 1245633765}
   m_Layer: 0
   m_Name: Ramp_col_070
@@ -7619,41 +6438,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1245633763}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300718, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1245633766
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300842, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1245633763}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1245633767
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300842, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1245633763}
   m_Mesh: {fileID: 4300718, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1250160274
 GameObject:
@@ -7704,8 +6494,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1252288391}
-  - 33: {fileID: 1252288394}
-  - 23: {fileID: 1252288393}
   - 64: {fileID: 1252288392}
   m_Layer: 0
   m_Name: Ramp_col_025
@@ -7732,41 +6520,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1252288390}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300808, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1252288393
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300752, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1252288390}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1252288394
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300752, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1252288390}
   m_Mesh: {fileID: 4300808, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1264690691
 GameObject:
@@ -7776,8 +6535,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1264690692}
-  - 33: {fileID: 1264690695}
-  - 23: {fileID: 1264690694}
   - 64: {fileID: 1264690693}
   m_Layer: 0
   m_Name: Ramp_col_008
@@ -7804,41 +6561,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264690691}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300842, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1264690694
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300718, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1264690691}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1264690695
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300718, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1264690691}
   m_Mesh: {fileID: 4300842, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1273687625
 GameObject:
@@ -7848,8 +6576,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1273687626}
-  - 33: {fileID: 1273687629}
-  - 23: {fileID: 1273687628}
   - 64: {fileID: 1273687627}
   m_Layer: 0
   m_Name: Ramp_col_011
@@ -7876,41 +6602,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1273687625}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300836, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1273687628
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300724, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1273687625}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1273687629
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300724, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1273687625}
   m_Mesh: {fileID: 4300836, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1276897264
 GameObject:
@@ -7961,8 +6658,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1289992260}
-  - 33: {fileID: 1289992259}
-  - 23: {fileID: 1289992258}
   - 64: {fileID: 1289992257}
   m_Layer: 0
   m_Name: Ramp_col_040
@@ -7977,41 +6672,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1289992256}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300778, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1289992258
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300782, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1289992256}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1289992259
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300782, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1289992256}
   m_Mesh: {fileID: 4300778, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!4 &1289992260
 Transform:
@@ -8033,8 +6699,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1290797243}
-  - 33: {fileID: 1290797246}
-  - 23: {fileID: 1290797245}
   - 64: {fileID: 1290797244}
   m_Layer: 0
   m_Name: Ramp_col_041
@@ -8061,41 +6725,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290797242}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300776, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1290797245
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300784, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1290797242}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1290797246
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300784, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1290797242}
   m_Mesh: {fileID: 4300776, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1300340188
 GameObject:
@@ -8506,7 +7141,9 @@ Transform:
   m_LocalRotation: {x: -.137982398, y: 0, z: 0, w: .990434706}
   m_LocalPosition: {x: -.0799999982, y: 80.0599976, z: -18.5499992}
   m_LocalScale: {x: 11.8494129, y: 1, z: 10.6188984}
-  m_Children: []
+  m_Children:
+  - {fileID: 1459932259}
+  - {fileID: 1820950016}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &1359190792
@@ -8517,8 +7154,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1359190793}
-  - 33: {fileID: 1359190796}
-  - 23: {fileID: 1359190795}
   - 64: {fileID: 1359190794}
   m_Layer: 0
   m_Name: Ramp_col_052
@@ -8545,41 +7180,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1359190792}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300754, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1359190795
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300806, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1359190792}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1359190796
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300806, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1359190792}
   m_Mesh: {fileID: 4300754, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1360027611
 GameObject:
@@ -8589,8 +7195,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1360027612}
-  - 33: {fileID: 1360027615}
-  - 23: {fileID: 1360027614}
   - 64: {fileID: 1360027613}
   m_Layer: 0
   m_Name: Ramp_col_007
@@ -8617,41 +7221,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1360027611}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300844, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1360027614
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300716, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1360027611}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1360027615
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300716, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1360027611}
   m_Mesh: {fileID: 4300844, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1382113942
 GameObject:
@@ -8661,8 +7236,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1382113943}
-  - 33: {fileID: 1382113946}
-  - 23: {fileID: 1382113945}
   - 64: {fileID: 1382113944}
   m_Layer: 0
   m_Name: Ramp_col_022
@@ -8689,41 +7262,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1382113942}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300814, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1382113945
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300746, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1382113942}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1382113946
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300746, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1382113942}
   m_Mesh: {fileID: 4300814, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1432674817
 GameObject:
@@ -8733,8 +7277,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1432674818}
-  - 33: {fileID: 1432674821}
-  - 23: {fileID: 1432674820}
   - 64: {fileID: 1432674819}
   m_Layer: 0
   m_Name: Ramp_col_027
@@ -8761,41 +7303,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1432674817}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300804, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1432674820
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300756, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1432674817}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1432674821
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300756, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1432674817}
   m_Mesh: {fileID: 4300804, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1457341352
 GameObject:
@@ -8855,6 +7368,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 309463282}
   m_GameObject: {fileID: 1457341352}
   m_Mesh: {fileID: 4300136, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+--- !u!1 &1459932258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1459932259}
+  - 33: {fileID: 1459932261}
+  - 23: {fileID: 1459932260}
+  m_Layer: 0
+  m_Name: Support
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459932259
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459932258}
+  m_LocalRotation: {x: .137982398, y: 0, z: 0, w: .990434706}
+  m_LocalPosition: {x: -.469999999, y: -4.07999992, z: .354999989}
+  m_LocalScale: {x: .0421961844, y: 7.46933174, z: .129660279}
+  m_Children: []
+  m_Father: {fileID: 1358358256}
+  m_RootOrder: 0
+--- !u!23 &1459932260
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459932258}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1459932261
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459932258}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1462670118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9124,8 +7693,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1473155561}
-  - 33: {fileID: 1473155564}
-  - 23: {fileID: 1473155563}
   - 64: {fileID: 1473155562}
   m_Layer: 0
   m_Name: Ramp_col_005
@@ -9152,41 +7719,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1473155560}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300848, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1473155563
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300712, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1473155560}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1473155564
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300712, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1473155560}
   m_Mesh: {fileID: 4300848, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1529382959
 GameObject:
@@ -9237,8 +7775,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1542832704}
-  - 33: {fileID: 1542832707}
-  - 23: {fileID: 1542832706}
   - 64: {fileID: 1542832705}
   m_Layer: 0
   m_Name: Ramp_col_043
@@ -9265,41 +7801,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1542832703}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300772, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1542832706
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300788, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1542832703}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1542832707
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300788, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1542832703}
   m_Mesh: {fileID: 4300772, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1545604840
 GameObject:
@@ -9490,8 +7997,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1563868396}
-  - 33: {fileID: 1563868399}
-  - 23: {fileID: 1563868398}
   - 64: {fileID: 1563868397}
   m_Layer: 0
   m_Name: Ramp_col_074
@@ -9518,41 +8023,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1563868395}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300710, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1563868398
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300850, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1563868395}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1563868399
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300850, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1563868395}
   m_Mesh: {fileID: 4300710, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1564021667
 GameObject:
@@ -9562,8 +8038,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1564021668}
-  - 33: {fileID: 1564021671}
-  - 23: {fileID: 1564021670}
   - 64: {fileID: 1564021669}
   m_Layer: 0
   m_Name: Ramp_col_066
@@ -9590,41 +8064,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1564021667}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300726, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1564021670
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300834, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1564021667}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1564021671
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300834, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1564021667}
   m_Mesh: {fileID: 4300726, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1575297656
 GameObject:
@@ -9716,8 +8161,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1593767088}
-  - 33: {fileID: 1593767091}
-  - 23: {fileID: 1593767090}
   - 64: {fileID: 1593767089}
   m_Layer: 0
   m_Name: Ramp_col_049
@@ -9744,41 +8187,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593767087}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300760, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1593767090
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300800, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1593767087}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1593767091
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300800, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1593767087}
   m_Mesh: {fileID: 4300760, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1602492334
 GameObject:
@@ -9829,8 +8243,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1607500770}
-  - 33: {fileID: 1607500773}
-  - 23: {fileID: 1607500772}
   - 64: {fileID: 1607500771}
   m_Layer: 0
   m_Name: Ramp_col_075
@@ -9857,41 +8269,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1607500769}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300708, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1607500772
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300852, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1607500769}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1607500773
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300852, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1607500769}
   m_Mesh: {fileID: 4300708, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1619722222
 GameObject:
@@ -9942,8 +8325,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1635726054}
-  - 33: {fileID: 1635726057}
-  - 23: {fileID: 1635726056}
   - 64: {fileID: 1635726055}
   m_Layer: 0
   m_Name: Ramp_col_032
@@ -9970,41 +8351,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1635726053}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300794, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1635726056
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300766, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1635726053}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1635726057
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300766, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1635726053}
   m_Mesh: {fileID: 4300794, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1637995212
 GameObject:
@@ -10014,8 +8366,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1637995213}
-  - 33: {fileID: 1637995216}
-  - 23: {fileID: 1637995215}
   - 64: {fileID: 1637995214}
   m_Layer: 0
   m_Name: Ramp_col_019
@@ -10042,41 +8392,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1637995212}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300820, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1637995215
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300740, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1637995212}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1637995216
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300740, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1637995212}
   m_Mesh: {fileID: 4300820, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1639031033
 GameObject:
@@ -10086,8 +8407,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1639031034}
-  - 33: {fileID: 1639031037}
-  - 23: {fileID: 1639031036}
   - 64: {fileID: 1639031035}
   m_Layer: 0
   m_Name: Ramp_col_031
@@ -10114,41 +8433,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1639031033}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300796, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1639031036
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300764, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1639031033}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1639031037
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300764, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1639031033}
   m_Mesh: {fileID: 4300796, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1648132837
 GameObject:
@@ -10185,8 +8475,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1656173124}
-  - 33: {fileID: 1656173127}
-  - 23: {fileID: 1656173126}
   - 64: {fileID: 1656173125}
   m_Layer: 0
   m_Name: Ramp_col_065
@@ -10213,41 +8501,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656173123}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300728, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1656173126
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300832, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1656173123}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1656173127
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300832, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1656173123}
   m_Mesh: {fileID: 4300728, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1664568818
 GameObject:
@@ -10339,8 +8598,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1685493299}
-  - 33: {fileID: 1685493302}
-  - 23: {fileID: 1685493301}
   - 64: {fileID: 1685493300}
   m_Layer: 0
   m_Name: Ramp_col_028
@@ -10367,41 +8624,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685493298}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300802, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1685493301
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300758, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1685493298}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1685493302
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300758, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1685493298}
   m_Mesh: {fileID: 4300802, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1702806622
 GameObject:
@@ -10452,8 +8680,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1710647073}
-  - 33: {fileID: 1710647076}
-  - 23: {fileID: 1710647075}
   - 64: {fileID: 1710647074}
   m_Layer: 0
   m_Name: Ramp_col_001
@@ -10480,41 +8706,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710647072}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300856, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1710647075
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300704, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1710647072}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1710647076
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300704, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1710647072}
   m_Mesh: {fileID: 4300856, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1735590431
 GameObject:
@@ -10524,8 +8721,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1735590432}
-  - 33: {fileID: 1735590435}
-  - 23: {fileID: 1735590434}
   - 64: {fileID: 1735590433}
   m_Layer: 0
   m_Name: Ramp_col_050
@@ -10552,41 +8747,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1735590431}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300758, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1735590434
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300802, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1735590431}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1735590435
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300802, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1735590431}
   m_Mesh: {fileID: 4300758, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1740894384
 GameObject:
@@ -10678,8 +8844,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1766055575}
-  - 33: {fileID: 1766055578}
-  - 23: {fileID: 1766055577}
   - 64: {fileID: 1766055576}
   m_Layer: 0
   m_Name: Ramp_col_057
@@ -10706,41 +8870,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1766055574}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300744, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1766055577
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300816, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1766055574}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1766055578
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300816, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1766055574}
   m_Mesh: {fileID: 4300744, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1768584073
 GameObject:
@@ -11082,8 +9217,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1819541817}
-  - 33: {fileID: 1819541820}
-  - 23: {fileID: 1819541819}
   - 64: {fileID: 1819541818}
   m_Layer: 0
   m_Name: Ramp_col
@@ -11186,27 +9319,43 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1819541816}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
   m_Mesh: {fileID: 4300702, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1819541819
+--- !u!1 &1820950013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1820950016}
+  - 33: {fileID: 1820950015}
+  - 23: {fileID: 1820950014}
+  m_Layer: 0
+  m_Name: Support
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1820950014
 Renderer:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300702, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1819541816}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820950013}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11214,14 +9363,25 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &1819541820
+--- !u!33 &1820950015
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300702, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1819541816}
-  m_Mesh: {fileID: 4300702, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820950013}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1820950016
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820950013}
+  m_LocalRotation: {x: .137982398, y: 0, z: 0, w: .990434706}
+  m_LocalPosition: {x: .465000004, y: -4.07999992, z: .354999989}
+  m_LocalScale: {x: .0421961844, y: 7.46933174, z: .129660279}
+  m_Children: []
+  m_Father: {fileID: 1358358256}
+  m_RootOrder: 1
 --- !u!1 &1824545122
 GameObject:
   m_ObjectHideFlags: 0
@@ -11353,8 +9513,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1866689485}
-  - 33: {fileID: 1866689488}
-  - 23: {fileID: 1866689487}
   - 64: {fileID: 1866689486}
   m_Layer: 0
   m_Name: Ramp_col_061
@@ -11381,41 +9539,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1866689484}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300736, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1866689487
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300824, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1866689484}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1866689488
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300824, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1866689484}
   m_Mesh: {fileID: 4300736, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1895520850
 GameObject:
@@ -11507,8 +9636,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1905058966}
-  - 33: {fileID: 1905058969}
-  - 23: {fileID: 1905058968}
   - 64: {fileID: 1905058967}
   m_Layer: 0
   m_Name: Ramp_col_013
@@ -11535,41 +9662,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1905058965}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300832, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1905058968
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300728, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1905058965}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1905058969
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300728, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1905058965}
   m_Mesh: {fileID: 4300832, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1925031663
 GameObject:
@@ -11620,8 +9718,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1947635854}
-  - 33: {fileID: 1947635857}
-  - 23: {fileID: 1947635856}
   - 64: {fileID: 1947635855}
   m_Layer: 0
   m_Name: Ramp_col_046
@@ -11648,41 +9744,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1947635853}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300766, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1947635856
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300794, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1947635853}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1947635857
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300794, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1947635853}
   m_Mesh: {fileID: 4300766, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1951678315
 GameObject:
@@ -11733,8 +9800,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1956457664}
-  - 33: {fileID: 1956457667}
-  - 23: {fileID: 1956457666}
   - 64: {fileID: 1956457665}
   m_Layer: 0
   m_Name: Ramp_col_055
@@ -11761,41 +9826,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1956457663}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300748, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &1956457666
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300812, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1956457663}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1956457667
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300812, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 1956457663}
   m_Mesh: {fileID: 4300748, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &1987088657
 GameObject:
@@ -12174,8 +10210,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2046660651}
-  - 33: {fileID: 2046660654}
-  - 23: {fileID: 2046660653}
   - 64: {fileID: 2046660652}
   m_Layer: 0
   m_Name: Ramp_col_060
@@ -12202,41 +10236,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046660650}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300738, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &2046660653
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300822, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2046660650}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2046660654
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300822, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2046660650}
   m_Mesh: {fileID: 4300738, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &2053490927
 GameObject:
@@ -12246,8 +10251,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2053490928}
-  - 33: {fileID: 2053490931}
-  - 23: {fileID: 2053490930}
   - 64: {fileID: 2053490929}
   m_Layer: 0
   m_Name: Ramp_col_042
@@ -12274,41 +10277,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2053490927}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300774, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &2053490930
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300786, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2053490927}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2053490931
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300786, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2053490927}
   m_Mesh: {fileID: 4300774, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &2068591256
 GameObject:
@@ -12359,8 +10333,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2085755140}
-  - 33: {fileID: 2085755143}
-  - 23: {fileID: 2085755142}
   - 64: {fileID: 2085755141}
   m_Layer: 0
   m_Name: Ramp_col_033
@@ -12387,41 +10359,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2085755139}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300792, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &2085755142
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300768, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2085755139}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2085755143
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300768, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2085755139}
   m_Mesh: {fileID: 4300792, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &2086691016
 GameObject:
@@ -12472,8 +10415,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2089173225}
-  - 33: {fileID: 2089173228}
-  - 23: {fileID: 2089173227}
   - 64: {fileID: 2089173226}
   m_Layer: 0
   m_Name: Ramp_col_038
@@ -12500,41 +10441,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2089173224}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300782, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &2089173227
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300778, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2089173224}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2089173228
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300778, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2089173224}
   m_Mesh: {fileID: 4300782, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &2089988964
 GameObject:
@@ -12602,8 +10514,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2090971557}
-  - 33: {fileID: 2090971560}
-  - 23: {fileID: 2090971559}
   - 64: {fileID: 2090971558}
   m_Layer: 0
   m_Name: Ramp_col_069
@@ -12630,41 +10540,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2090971556}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 1
   m_Convex: 1
-  m_Mesh: {fileID: 4300720, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
---- !u!23 &2090971559
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300840, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2090971556}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 85ec3942bdbc2524caf471405e808224, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2090971560
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300840, guid: 9d8f762c88ff62a41a449ff4c324611d,
-    type: 3}
-  m_PrefabInternal: {fileID: 309463282}
-  m_GameObject: {fileID: 2090971556}
   m_Mesh: {fileID: 4300720, guid: 9d8f762c88ff62a41a449ff4c324611d, type: 3}
 --- !u!1 &2097418143
 GameObject:
