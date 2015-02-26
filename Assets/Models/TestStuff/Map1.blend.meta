@@ -433,6 +433,7 @@ ModelImporter:
     100854: Ramp_col_075
     100856: Ramp_col_076
     100858: Ramp_col_077
+    100860: Ramp_001
     400000: //RootNode
     400002: Ramp
     400004: Ramp_Col_000
@@ -863,6 +864,7 @@ ModelImporter:
     400854: Ramp_col_075
     400856: Ramp_col_076
     400858: Ramp_col_077
+    400860: Ramp_001
     2300000: Ramp
     2300002: Ramp_Col_000
     2300004: Ramp_Col_001
@@ -1292,6 +1294,7 @@ ModelImporter:
     2300852: Ramp_col_075
     2300854: Ramp_col_076
     2300856: Ramp_col_077
+    2300858: Ramp_001
     3300000: Ramp
     3300002: Ramp_Col_000
     3300004: Ramp_Col_001
@@ -1721,6 +1724,7 @@ ModelImporter:
     3300852: Ramp_col_075
     3300854: Ramp_col_076
     3300856: Ramp_col_077
+    3300858: Ramp_001
     4300000: Ramp_Col_067
     4300002: Ramp_Col_066
     4300004: Ramp_Col_065
@@ -2150,6 +2154,7 @@ ModelImporter:
     4300852: Ramp_col_003
     4300854: Ramp_col_002
     4300856: Ramp_col_001
+    4300858: Ramp_001
     7400000: Default Take
     9500000: //RootNode
   materials:
