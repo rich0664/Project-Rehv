@@ -56,11 +56,11 @@ public class Scoring : MonoBehaviour {
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;
 
-			testTire.currentScore = distance;
+			TempProtoUI.currentScore = distance;
 
 			if(distance > highscore){
 			SaveLoad.SaveFloat(tireType + "_Highscore", distance);
-				testTire.highscore = distance;
+				TempProtoUI.highscore = distance;
 			}
 
 		}

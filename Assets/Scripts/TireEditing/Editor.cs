@@ -24,20 +24,6 @@ public class Editor : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-		/*
-		SaveLoad.SaveString (tireType + "_SliderName_" + 0.ToString(), "Skew");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 1.ToString(), "H_R1");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 2.ToString(), "H_R2");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 3.ToString(), "H_R3");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 4.ToString(), "S_R1");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 5.ToString(), "S_R2");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 6.ToString(), "S_R3");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 7.ToString(), "Width");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 8.ToString(), "Diameter");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 9.ToString(), "Roundness");
-		SaveLoad.SaveString (tireType + "_SliderName_" + 10.ToString(), "Rim");
-		*/
-
 	}
 	
 	void OnGUI(){
@@ -88,6 +74,12 @@ public class Editor : MonoBehaviour {
 
 		}
 
+		if(GUI.Button(new Rect(20,uiY+(wSepRes+21)*4,230,50), "Simulate Aerodynamics")){
+			
+			Application.LoadLevel("TestFacility");
+			
+		}
+
 	}
 
 	// Update is called once per frame
@@ -99,6 +91,17 @@ public class Editor : MonoBehaviour {
 			
 			slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 			sliders = new float[slidersLength];
+
+			//load slider values into place
+			for(int i = 0; i < sliders.Length; i++)
+			{
+				sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
+			}
+			
+			tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
+			tireColor.g = SaveLoad.LoadFloat(tireType + "Green");
+			tireColor.b = SaveLoad.LoadFloat(tireType + "Blue");
+			tireBrightness = SaveLoad.LoadFloat(tireType + "Brightness");
 			
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 			
@@ -115,12 +118,6 @@ public class Editor : MonoBehaviour {
 			for(int i = 0; i < sliders.Length; i++)
 			{
 				meshRenderer.SetBlendShapeWeight (i, sliders[i]);
-			}
-		
-			if (meshCollider != null) {
-				Mesh bakedMesh = new Mesh ();
-				meshRenderer.BakeMesh (bakedMesh);
-				meshCollider.sharedMesh = bakedMesh;
 			}
 
 		}
