@@ -5,8 +5,6 @@ public class TestTire : MonoBehaviour {
 
 	public string tireType;
 
-	public bool shouldSpin;
-
 	public AudioClip tireSound1;
 	public AudioClip tireSound2;
 	public AudioClip tireSound3;
@@ -90,6 +88,6 @@ public class TestTire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 }
