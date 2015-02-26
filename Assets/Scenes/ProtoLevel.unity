@@ -8330,7 +8330,7 @@ MonoBehaviour:
   distance: 10
   xSpeed: 5
   ySpeed: 40
-  yMinLimit: 5
+  yMinLimit: -5
   yMaxLimit: 80
   distanceMin: 2
   distanceMax: 30

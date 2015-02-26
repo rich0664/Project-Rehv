@@ -19,6 +19,6 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		SaveLoad.SaveString (tireType + "_SliderName_" + 9.ToString(), "Roundness");
 		SaveLoad.SaveString (tireType + "_SliderName_" + 10.ToString(), "Rim");
 
-		SaveLoad.SaveInt (tireType + "_SlidersLength" + 10.ToString(), 11);
+		SaveLoad.SaveInt (tireType + "_SlidersLength", 11);
 	}
 }
