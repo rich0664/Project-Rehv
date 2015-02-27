@@ -176,8 +176,6 @@ MonoBehaviour:
   tireSound3: {fileID: 8300000, guid: 1dab5b6db6543074a9e710b31e1fc027, type: 3}
   tireSound4: {fileID: 8300000, guid: bcd21ecb4bdc7c945ae73f61d44a807f, type: 3}
   tireSound5: {fileID: 8300000, guid: 7b34f05cb7e4751408f143862de62bb2, type: 3}
-  highscore: 0
-  currentScore: 0
 --- !u!136 &13620204
 CapsuleCollider:
   m_ObjectHideFlags: 1

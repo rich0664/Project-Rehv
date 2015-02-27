@@ -40,6 +40,10 @@ Material:
         first:
           name: _SpecularAmount
         second: .314713001
+      data:
+        first:
+          name: _node_1007
+        second: 1
     m_Colors:
       data:
         first:

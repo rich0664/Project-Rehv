@@ -55,7 +55,76 @@ Material:
           m_Texture: {fileID: 2800000, guid: f7a0a732ad112a541100162a44295342, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+      data:
+        first:
+          name: _Diffuse
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ConeFalloff
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Smoke
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Specular
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Cubemap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normals
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _ConeStrength
+        second: .550000012
+      data:
+        first:
+          name: _SmokeScale
+        second: .5
+      data:
+        first:
+          name: _Gloss
+        second: .285714269
+      data:
+        first:
+          name: _FresnelExponent
+        second: 6.90131569
+      data:
+        first:
+          name: _Bands
+        second: 8
     m_Colors:
       data:
         first:
@@ -117,6 +186,18 @@ Material:
         first:
           name: _Projector_3
         second: {r: -.104516894, g: -.175117612, b: .978984177, a: 2.08773851}
+      data:
+        first:
+          name: _Diffuse
+        second: {r: .90196079, g: .701960802, b: .376470596, a: 1}
+      data:
+        first:
+          name: _ConeColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _LightWrapping
+        second: {r: .905882418, g: .494117588, b: .490196109, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
