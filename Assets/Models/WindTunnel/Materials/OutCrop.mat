@@ -38,15 +38,15 @@ Material:
       data:
         first:
           name: _Brightness
-        second: 2
+        second: 3.07999992
       data:
         first:
           name: _SpecularPower
-        second: 2.17109251
+        second: 4.73214293
       data:
         first:
           name: _SpecularAmount
-        second: .0535714552
+        second: .178571463
       data:
         first:
           name: _EmissionLM
