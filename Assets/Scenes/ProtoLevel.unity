@@ -12,14 +12,14 @@ SceneSettings:
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: .5, g: .5, b: .5, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: .00200000009
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientLight: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4475,6 +4475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tireTypeToSpawn: TestTire
   testTirePrefab: {fileID: 120204, guid: 8874abdd756759d48a6d22e053413e2d, type: 2}
+  shouldSpin: 0
 --- !u!1 &847569449
 GameObject:
   m_ObjectHideFlags: 0
@@ -9017,7 +9018,6 @@ GameObject:
   - 124: {fileID: 1768584076}
   - 81: {fileID: 1768584075}
   - 114: {fileID: 1768584074}
-  - 45: {fileID: 1768584080}
   - 114: {fileID: 1768584081}
   m_Layer: 0
   m_Name: Main Camera
@@ -9104,14 +9104,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!45 &1768584080
-Skybox:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1768584073}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: 9ba05f538ee36044da5cd2a4f14a8b18, type: 2}
 --- !u!114 &1768584081
 MonoBehaviour:
   m_ObjectHideFlags: 0
