@@ -1,7 +1,7 @@
 // Shader created with Shader Forge v1.03 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.03;sub:START;pass:START;ps:flbk:,lico:1,lgpr:1,nrmq:1,limd:2,uamb:True,mssp:False,lmpd:True,lprd:False,rprd:False,enco:False,frtr:True,vitr:True,dbil:False,rmgx:True,rpth:0,hqsc:True,hqlp:False,tesm:0,blpr:0,bsrc:0,bdst:1,culm:0,dpts:2,wrdp:True,dith:2,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,ofsf:0,ofsu:0,f2p0:False;n:type:ShaderForge.SFN_Final,id:4043,x:32719,y:32712,varname:node_4043,prsc:2|diff-1844-OUT,spec-9363-OUT,gloss-6164-OUT;n:type:ShaderForge.SFN_Color,id:4419,x:32157,y:32481,ptovrint:False,ptlb:Color,ptin:_Color,varname:node_4419,prsc:2,glob:False,c1:0.5,c2:0.5,c3:0.5,c4:1;n:type:ShaderForge.SFN_Multiply,id:9363,x:32519,y:32712,varname:node_9363,prsc:2|A-833-RGB,B-3949-OUT;n:type:ShaderForge.SFN_Slider,id:3949,x:32129,y:32839,ptovrint:False,ptlb:Specular Power,ptin:_SpecularPower,varname:node_3174,prsc:2,min:0,cur:1.367521,max:5;n:type:ShaderForge.SFN_Slider,id:6164,x:32362,y:32948,ptovrint:False,ptlb:SpecularAmount,ptin:_SpecularAmount,varname:node_6417,prsc:2,min:1,cur:0.3504273,max:0;n:type:ShaderForge.SFN_Color,id:833,x:32157,y:32667,ptovrint:False,ptlb:Specular color,ptin:_Specularcolor,varname:node_833,prsc:2,glob:False,c1:0.5,c2:0.5,c3:0.5,c4:1;n:type:ShaderForge.SFN_Tex2d,id:2460,x:32258,y:32286,ptovrint:False,ptlb:Texture,ptin:_Texture,varname:node_2460,prsc:2,ntxv:2,isnm:False;n:type:ShaderForge.SFN_Add,id:6072,x:32428,y:32432,varname:node_6072,prsc:2|A-2460-RGB,B-4419-RGB;n:type:ShaderForge.SFN_ValueProperty,id:916,x:32351,y:32603,ptovrint:False,ptlb:Brightness,ptin:_Brightness,varname:node_916,prsc:2,glob:False,v1:1;n:type:ShaderForge.SFN_Multiply,id:1844,x:32616,y:32547,varname:node_1844,prsc:2|A-6072-OUT,B-916-OUT;n:type:ShaderForge.SFN_ValueProperty,id:1007,x:32496,y:33123,ptovrint:False,ptlb:node_1007,ptin:_node_1007,varname:node_1007,prsc:2,glob:False,v1:1;proporder:4419-916-3949-6164-833-2460-1007;pass:END;sub:END;*/
+/*SF_DATA;ver:1.03;sub:START;pass:START;ps:flbk:,lico:1,lgpr:1,nrmq:1,limd:2,uamb:True,mssp:False,lmpd:True,lprd:False,rprd:False,enco:False,frtr:True,vitr:True,dbil:False,rmgx:True,rpth:0,hqsc:True,hqlp:False,tesm:0,blpr:0,bsrc:0,bdst:1,culm:0,dpts:2,wrdp:True,dith:2,ufog:True,aust:True,igpj:False,qofs:0,qpre:1,rntp:1,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,ofsf:0,ofsu:0,f2p0:False;n:type:ShaderForge.SFN_Final,id:4043,x:32800,y:32621,varname:node_4043,prsc:2|diff-1844-OUT,spec-9363-OUT,gloss-6164-OUT,normal-4900-RGB;n:type:ShaderForge.SFN_Color,id:4419,x:32157,y:32481,ptovrint:False,ptlb:Color,ptin:_Color,varname:node_4419,prsc:2,glob:False,c1:0.5,c2:0.5,c3:0.5,c4:1;n:type:ShaderForge.SFN_Multiply,id:9363,x:32608,y:32577,varname:node_9363,prsc:2|A-833-RGB,B-3949-OUT;n:type:ShaderForge.SFN_Slider,id:3949,x:32102,y:32855,ptovrint:False,ptlb:Specular Power,ptin:_SpecularPower,varname:node_3174,prsc:2,min:0,cur:1.367521,max:5;n:type:ShaderForge.SFN_Slider,id:6164,x:32451,y:32752,ptovrint:False,ptlb:SpecularAmount,ptin:_SpecularAmount,varname:node_6417,prsc:2,min:1,cur:0.3504273,max:0;n:type:ShaderForge.SFN_Color,id:833,x:32157,y:32667,ptovrint:False,ptlb:Specular color,ptin:_Specularcolor,varname:node_833,prsc:2,glob:False,c1:0.5,c2:0.5,c3:0.5,c4:1;n:type:ShaderForge.SFN_Tex2d,id:2460,x:32258,y:32286,ptovrint:False,ptlb:Texture,ptin:_Texture,varname:node_2460,prsc:2,ntxv:2,isnm:False;n:type:ShaderForge.SFN_Add,id:6072,x:32428,y:32432,varname:node_6072,prsc:2|A-2460-RGB,B-4419-RGB;n:type:ShaderForge.SFN_ValueProperty,id:916,x:32329,y:32601,ptovrint:False,ptlb:Brightness,ptin:_Brightness,varname:node_916,prsc:2,glob:False,v1:1;n:type:ShaderForge.SFN_Multiply,id:1844,x:32608,y:32432,varname:node_1844,prsc:2|A-6072-OUT,B-916-OUT;n:type:ShaderForge.SFN_Tex2d,id:4900,x:32608,y:32859,ptovrint:False,ptlb:Normal,ptin:_Normal,varname:node_4900,prsc:2,ntxv:0,isnm:False;proporder:4419-916-3949-6164-833-2460-4900;pass:END;sub:END;*/
 
 Shader "Shader Forge/Specular" {
     Properties {
@@ -11,7 +11,7 @@ Shader "Shader Forge/Specular" {
         _SpecularAmount ("SpecularAmount", Range(1, 0)) = 0.3504273
         _Specularcolor ("Specular color", Color) = (0.5,0.5,0.5,1)
         _Texture ("Texture", 2D) = "black" {}
-        _node_1007 ("node_1007", Float ) = 1
+        _Normal ("Normal", 2D) = "white" {}
     }
     SubShader {
         Tags {
@@ -63,6 +63,7 @@ Shader "Shader Forge/Specular" {
             uniform float4 _Specularcolor;
             uniform sampler2D _Texture; uniform float4 _Texture_ST;
             uniform float _Brightness;
+            uniform sampler2D _Normal; uniform float4 _Normal_ST;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -112,14 +113,16 @@ Shader "Shader Forge/Specular" {
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.binormalDir, i.normalDir);
 /////// Vectors:
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float3 normalDirection = i.normalDir;
+                float4 _Normal_var = tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal));
+                float3 normalLocal = _Normal_var.rgb;
+                float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 #ifndef LIGHTMAP_OFF
                     float4 lmtex = tex2D(unity_Lightmap,i.uvLM);
                     #ifndef DIRLIGHTMAP_OFF
                         float3 lightmap = DecodeLightmap(lmtex);
                         float3 scalePerBasisVector = DecodeLightmap(tex2D(unity_LightmapInd,i.uvLM));
                         UNITY_DIRBASIS
-                        half3 normalInRnmBasis = saturate (mul (unity_DirBasis, float3(0,0,1)));
+                        half3 normalInRnmBasis = saturate (mul (unity_DirBasis, normalLocal));
                         lightmap *= dot (normalInRnmBasis, scalePerBasisVector);
                     #else
                         float3 lightmap = DecodeLightmap(lmtex);
@@ -229,6 +232,7 @@ Shader "Shader Forge/Specular" {
             uniform float4 _Specularcolor;
             uniform sampler2D _Texture; uniform float4 _Texture_ST;
             uniform float _Brightness;
+            uniform sampler2D _Normal; uniform float4 _Normal_ST;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -272,7 +276,9 @@ Shader "Shader Forge/Specular" {
                 float3x3 tangentTransform = float3x3( i.tangentDir, i.binormalDir, i.normalDir);
 /////// Vectors:
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
-                float3 normalDirection = i.normalDir;
+                float4 _Normal_var = tex2D(_Normal,TRANSFORM_TEX(i.uv0, _Normal));
+                float3 normalLocal = _Normal_var.rgb;
+                float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 lightDirection = normalize(lerp(_WorldSpaceLightPos0.xyz, _WorldSpaceLightPos0.xyz - i.posWorld.xyz,_WorldSpaceLightPos0.w));
                 float3 lightColor = _LightColor0.rgb;
 ////// Lighting:

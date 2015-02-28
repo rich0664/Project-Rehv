@@ -2580,8 +2580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tireTypeToSpawn: TestTire
-  testTirePrefab: {fileID: 145584, guid: 08b9472c2f9596b418c1a50e1a112bde, type: 2}
   shouldSpin: 1
+  isEditor: 1
 --- !u!4 &804458702
 Transform:
   m_ObjectHideFlags: 0

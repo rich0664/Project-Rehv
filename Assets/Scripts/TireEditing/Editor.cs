@@ -16,7 +16,7 @@ public class Editor : MonoBehaviour {
 	//Material myMaterial = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
 	Color tireColor;
 	float tireBrightness;
-	float[] sliders;
+	private float[] sliders;
 
 	public float hSepRes = 40;
 	public float wSepRes = 20;
@@ -50,7 +50,7 @@ public class Editor : MonoBehaviour {
 		float uiY = 0;
 		for(int i = 0; i < sliders.Length; i++)
 		{
-			GUI.Label (new Rect (25, 5+uiY, 100, 20),SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString()).ToString());
+			GUI.Label (new Rect (25, 5+uiY, 150, 20),SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString()).ToString());
 			sliders[i] = GUI.HorizontalSlider (new Rect (25, 25+uiY, 100, 30), sliders[i], 0f, 100f);
 			uiY += hSepRes;
 		}
@@ -80,6 +80,29 @@ public class Editor : MonoBehaviour {
 			
 		}
 
+		if(GUI.Button(new Rect(260,5,140,50), "Test Tire")){
+
+			Destroy(tire);
+			SaveLoad.SaveString("CurrentTire", "TestTire");
+			TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+			tireSpawn.spawnTire("TestTire");
+			
+		}
+
+		if(GUI.Button(new Rect(260,45,140,50), "Kart Tire")){
+
+			Destroy(tire);
+			SaveLoad.SaveString("CurrentTire", "KartTire");
+			TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+			tireSpawn.spawnTire("KartTire");
+			
+		}
+
+	}
+
+	IEnumerator bop(){
+		yield return new WaitForSeconds(0.5f);
+		tireSpawn.spawnTire("TestTire");
 	}
 
 	// Update is called once per frame
@@ -87,27 +110,9 @@ public class Editor : MonoBehaviour {
 
 		if (tire == null) {
 			tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
-			tireType = tireSpawn.tireTypeToSpawn;
-			
-			slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
-			sliders = new float[slidersLength];
+			string toSpawn = tireSpawn.tireTypeToSpawn;
+			newTire(toSpawn);
 
-			//load slider values into place
-			for(int i = 0; i < sliders.Length; i++)
-			{
-				sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
-			}
-			
-			tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
-			tireColor.g = SaveLoad.LoadFloat(tireType + "Green");
-			tireColor.b = SaveLoad.LoadFloat(tireType + "Blue");
-			tireBrightness = SaveLoad.LoadFloat(tireType + "Brightness");
-			
-			tire = GameObject.FindGameObjectWithTag ("MainTire");
-			
-			meshRenderer = tire.GetComponent<SkinnedMeshRenderer> ();
-			meshCollider = tire.GetComponent <MeshCollider>();
-			tireMat = tire.renderer.materials [1];
 		}
 
 		if (tire != null){
@@ -121,6 +126,32 @@ public class Editor : MonoBehaviour {
 			}
 
 		}
+
+	}
+
+	void newTire(string tireToSpawn){
+
+		tireType = tireToSpawn;
+		
+		slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
+		sliders = new float[slidersLength];
+		
+		//load slider values into place
+		for(int i = 0; i < sliders.Length; i++)
+		{
+			sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
+		}
+		
+		tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
+		tireColor.g = SaveLoad.LoadFloat(tireType + "Green");
+		tireColor.b = SaveLoad.LoadFloat(tireType + "Blue");
+		tireBrightness = SaveLoad.LoadFloat(tireType + "Brightness");
+		
+		tire = GameObject.FindGameObjectWithTag ("MainTire");
+		
+		meshRenderer = tire.GetComponent<SkinnedMeshRenderer> ();
+		meshCollider = tire.GetComponent <MeshCollider>();
+		tireMat = tire.renderer.materials [1];
 
 	}
 

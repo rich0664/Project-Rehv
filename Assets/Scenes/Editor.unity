@@ -447,9 +447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tireTypeToSpawn: TestTire
-  testTirePrefab: {fileID: 145584, guid: 08b9472c2f9596b418c1a50e1a112bde, type: 2}
+  tireTypeToSpawn: KartTire
   shouldSpin: 0
+  isEditor: 1
 --- !u!4 &804458702
 Transform:
   m_ObjectHideFlags: 0
@@ -879,12 +879,12 @@ MonoBehaviour:
   useCinematic: 0
   smoothCamera: 1
   cameraSmoothing: 6.5
-  distance: 6
+  distance: 4
   xSpeed: 50
   ySpeed: 50
   yMinLimit: -20
   yMaxLimit: 80
-  distanceMin: 1.5
+  distanceMin: 1
   distanceMax: 7
 --- !u!1 &2062027806
 GameObject:
