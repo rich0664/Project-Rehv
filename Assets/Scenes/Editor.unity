@@ -449,6 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tireTypeToSpawn: TestTire
   testTirePrefab: {fileID: 145584, guid: 08b9472c2f9596b418c1a50e1a112bde, type: 2}
+  shouldSpin: 0
 --- !u!4 &804458702
 Transform:
   m_ObjectHideFlags: 0
@@ -790,7 +791,7 @@ GameObject:
   - 92: {fileID: 2060856228}
   - 124: {fileID: 2060856227}
   - 81: {fileID: 2060856226}
-  - 114: {fileID: 2060856233}
+  - 114: {fileID: 2060856232}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -857,13 +858,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060856224}
-  m_LocalRotation: {x: .324388862, y: 0, z: 0, w: .945923865}
+  m_LocalRotation: {x: .16689685, y: 0, z: 0, w: .985974371}
   m_LocalPosition: {x: 0, y: 2.47300005, z: -1.48800004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &2060856233
+--- !u!114 &2060856232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -871,17 +872,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2060856224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1af86fd76ea264db9cb7033bfc9a8c, type: 3}
+  m_Script: {fileID: 11500000, guid: e3db3e593305f1c4b985f53cc46bb7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 804458702}
-  distance: 5
-  xSpeed: 60
-  ySpeed: 60
+  target: {fileID: 0}
+  useCinematic: 0
+  smoothCamera: 1
+  cameraSmoothing: 6.5
+  distance: 6
+  xSpeed: 50
+  ySpeed: 50
   yMinLimit: -20
   yMaxLimit: 80
-  distanceMin: 1.39999998
-  distanceMax: 6
+  distanceMin: 1.5
+  distanceMax: 7
 --- !u!1 &2062027806
 GameObject:
   m_ObjectHideFlags: 0
