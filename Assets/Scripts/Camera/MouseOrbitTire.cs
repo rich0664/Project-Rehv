@@ -5,6 +5,8 @@ using System.Collections;
 public class MouseOrbitTire : MonoBehaviour {
 	
 	public Transform target;
+	public bool useCinematic = false;
+	public float cameraSmoothing = 1f;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -39,7 +41,7 @@ public class MouseOrbitTire : MonoBehaviour {
 
 			if(Input.GetMouseButton(1)){
 
-			x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
+				x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;//* distance * 0.02f;
 			y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 			
 			y = ClampAngle(y, yMinLimit, yMaxLimit);
@@ -47,18 +49,44 @@ public class MouseOrbitTire : MonoBehaviour {
 			}
 			
 			Quaternion rotation = Quaternion.Euler(y, x, 0);
+			if(x > 360)
+				x = 0;
+			if(x < 0)
+				x = 360;
+
+
+
 
 			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
-			
+
+			if(useCinematic){
+			float absX = Mathf.Abs(x);
+
+			if(absX < 180){
+
+				float dist = 	(distanceMin - distanceMax) *  (1-(absX/180)) + distanceMax;
+				distance = dist;distance = dist;
+
+			} else {
+
+				float dist = 	(distanceMin - distanceMax) *  ((absX-180)/180) + distanceMax;
+				dist = Mathf.Abs(dist);
+				distance = dist;
+			}
+
+			}
+
+
 			RaycastHit hit;
 			/*if (Physics.Linecast (target.position, transform.position, out hit)) {
 				distance -=  hit.distance;
 			}*/
 			Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
 			Vector3 position = rotation * negDistance + target.position;
+
 			
 			transform.rotation = rotation;
-			transform.position = position;
+			transform.position = Vector3.Lerp(transform.position, position, cameraSmoothing * Time.deltaTime); //position;
 			
 		}
 		

@@ -9156,12 +9156,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  useCinematic: 1
   distance: 10
-  xSpeed: 5
+  xSpeed: 40
   ySpeed: 40
   yMinLimit: -5
   yMaxLimit: 80
-  distanceMin: 2
+  distanceMin: 3.5
   distanceMax: 30
 --- !u!1 &1779198530
 GameObject:
