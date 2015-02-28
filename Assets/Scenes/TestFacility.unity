@@ -7103,13 +7103,13 @@ MonoBehaviour:
   useCinematic: 0
   smoothCamera: 1
   cameraSmoothing: 6.5
-  distance: 6
+  distance: 2.5
   xSpeed: 50
   ySpeed: 50
   yMinLimit: -20
   yMaxLimit: 80
   distanceMin: 1.5
-  distanceMax: 7
+  distanceMax: 5
 --- !u!81 &2060856226
 AudioListener:
   m_ObjectHideFlags: 0
