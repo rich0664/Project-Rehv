@@ -6,6 +6,7 @@ public class MouseOrbitTire : MonoBehaviour {
 	
 	public Transform target;
 	public bool useCinematic = false;
+	public bool smoothCamera = true;
 	public float cameraSmoothing = 1f;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
@@ -86,8 +87,13 @@ public class MouseOrbitTire : MonoBehaviour {
 
 			
 			transform.rotation = rotation;
-			transform.position = Vector3.Lerp(transform.position, position, cameraSmoothing * Time.deltaTime); //position;
-			
+
+			if(smoothCamera){
+				transform.position = Vector3.Lerp(transform.position, position, cameraSmoothing * Time.deltaTime); //position;
+			} else { 
+				transform.position = position;
+			}
+
 		}
 		
 	}
