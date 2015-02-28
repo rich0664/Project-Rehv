@@ -25,7 +25,7 @@ public class Scoring : MonoBehaviour {
 		scoreSound = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<AudioSource> ();
 		scoreTrigger = GameObject.FindGameObjectWithTag ("ScoreTrigger").GetComponent<BoxCollider> ();
 		jumpPoint = GameObject.FindGameObjectWithTag ("JumpPoint");
-		tireType = tire.GetComponent<TestTire> ().tireType;
+		tireType = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
 	}
 
 
