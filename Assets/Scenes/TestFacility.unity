@@ -7108,7 +7108,7 @@ MonoBehaviour:
   ySpeed: 50
   yMinLimit: -20
   yMaxLimit: 80
-  distanceMin: 1.5
+  distanceMin: 1.20000005
   distanceMax: 5
 --- !u!81 &2060856226
 AudioListener:
