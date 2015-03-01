@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEditor;
 using System.Collections;
 
 public class TireSpawn : MonoBehaviour {
@@ -17,9 +16,9 @@ public class TireSpawn : MonoBehaviour {
 		tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
 
 		if (isEditor) {
-			tirePrefab = AssetDatabase.LoadAssetAtPath ("Assets/Prefabs/" + tireTypeToSpawn + "Edit" + ".prefab", typeof(GameObject)) as GameObject;
+			tirePrefab = Resources.Load("Prefabs/" + tireTypeToSpawn + "Edit", typeof(GameObject)) as GameObject;
 		} else {
-			tirePrefab = AssetDatabase.LoadAssetAtPath ("Assets/Prefabs/" + tireTypeToSpawn + ".prefab", typeof(GameObject)) as GameObject;
+			tirePrefab = Resources.Load ("Prefabs/" + tireTypeToSpawn, typeof(GameObject)) as GameObject;
 		}
 
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
@@ -32,9 +31,9 @@ public class TireSpawn : MonoBehaviour {
 		tireTypeToSpawn = tireToSpawn;
 
 		if (isEditor) {
-			tirePrefab = AssetDatabase.LoadAssetAtPath ("Assets/Prefabs/" + tireToSpawn + "Edit" + ".prefab", typeof(GameObject)) as GameObject;
+			tirePrefab = Resources.Load ("Prefabs/" + tireToSpawn + "Edit", typeof(GameObject)) as GameObject;
 		} else {
-			tirePrefab = AssetDatabase.LoadAssetAtPath ("Assets/Prefabs/" + tireToSpawn + ".prefab", typeof(GameObject)) as GameObject;
+			tirePrefab = Resources.Load ("Prefabs/" + tireToSpawn, typeof(GameObject)) as GameObject;
 		}
 
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
