@@ -7,6 +7,7 @@ public class MouseOrbitTire : MonoBehaviour {
 	public Transform target;
 	public bool useCinematic = false;
 	public bool smoothCamera = true;
+	public bool addCamHeight = false;
 	public float cameraSmoothing = 1f;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
@@ -17,7 +18,10 @@ public class MouseOrbitTire : MonoBehaviour {
 	
 	public float distanceMin = .5f;
 	public float distanceMax = 15f;
+
+	float camHeightAdd;
 	
+
 	float x = 0.0f;
 	float y = 0.0f;
 	
@@ -65,15 +69,20 @@ public class MouseOrbitTire : MonoBehaviour {
 
 			if(absX < 180){
 
-				float dist = 	(distanceMin - distanceMax) *  (1-(absX/180)) + distanceMax;
+				float dist = (distanceMin - distanceMax) *  (1-(absX/180)) + distanceMax;
+				camHeightAdd = Mathf.Abs((distanceMin - distanceMax) *  ((absX-180)/180) + distanceMax);
 				distance = dist;distance = dist;
 
 			} else {
 
 				float dist = 	(distanceMin - distanceMax) *  ((absX-180)/180) + distanceMax;
+				camHeightAdd = (distanceMin - distanceMax) *  (1-(absX/180)) + distanceMax;
 				dist = Mathf.Abs(dist);
 				distance = dist;
 			}
+
+				camHeightAdd -= distanceMax;
+				camHeightAdd *= 0.02f;
 
 			}
 
@@ -82,7 +91,14 @@ public class MouseOrbitTire : MonoBehaviour {
 			/*if (Physics.Linecast (target.position, transform.position, out hit)) {
 				distance -=  hit.distance;
 			}*/
-			Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+
+			Vector3 negDistance;
+			if(addCamHeight){
+				negDistance = new Vector3(camHeightAdd/1.5f, camHeightAdd, -distance);
+			}else{
+				negDistance = new Vector3(0.0f, 0.0f, -distance);
+			}
+
 			Vector3 position = rotation * negDistance + target.position;
 
 			
