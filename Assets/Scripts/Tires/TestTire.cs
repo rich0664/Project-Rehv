@@ -81,6 +81,7 @@ public class TestTire : MonoBehaviour {
 
 
 	}
+	
 
 	void OnCollisionEnter(Collision collision) {
 
@@ -91,6 +92,7 @@ public class TestTire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 
 	}
 }

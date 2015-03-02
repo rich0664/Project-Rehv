@@ -1,13 +1,15 @@
 fileFormatVersion: 2
-guid: b22c34da532afb2418b7f05fc0ef3c96
+guid: 374c6b61537a8c148b902dd1b0cd9a2f
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Mesh1
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    400002: Mesh1
+    2300000: Mesh1
+    3300000: Mesh1
+    4300000: Mesh1
     9500000: //RootNode
   materials:
     importMaterials: 1

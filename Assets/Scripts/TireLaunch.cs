@@ -4,13 +4,24 @@ using System.Collections;
 public class TireLaunch : MonoBehaviour {
 
 	public GameObject tire;
+	public float sensitivity = 0.5f;
+	public float maxDeviation = 4.5f;
+	public float launchPower;
+	public float rollPower;
+
+	float launchAngles = -90f;
 
 	bool isLaunching = true;
+	Transform aimer;
+
+
 
 	// Use this for initialization
 	void Start () {
 
-	
+		aimer = GetComponentInChildren<Transform>();
+
+
 	}
 	
 	// Update is called once per frame
@@ -22,6 +33,7 @@ public class TireLaunch : MonoBehaviour {
 		if (isLaunching) {
 
 			Vector3 launchVector = new Vector3 (0,0,0);
+			tire.transform.localEulerAngles = new Vector3 (0,launchAngles,0);
 			tire.transform.position = this.transform.position;
 			tire.GetComponent<Rigidbody>().velocity = launchVector;
 			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
@@ -29,17 +41,31 @@ public class TireLaunch : MonoBehaviour {
 		}
 
 		if (Input.GetMouseButton (0) && isLaunching) {
-			Vector3 launchVector = new Vector3 (0,0,0);
-			launchVector.z = 3;
-			tire.GetComponent<Rigidbody>().velocity = launchVector;
-			isLaunching = false;
-
+			Launch();
 		}
+
+		if(launchAngles > -90f + maxDeviation ) 
+			launchAngles = -90f + maxDeviation;
+		if(launchAngles < -90f - maxDeviation) 
+			launchAngles = -90f - maxDeviation;
+
+		launchAngles += Input.GetAxis ("Mouse X") * sensitivity;
+
+		Vector3 aim = new Vector3 (0, launchAngles, 0);
+		aimer.transform.localEulerAngles = aim;
+
+
 	
 	}
 
 
 	void Launch(){
+
+		tire.GetComponent<Rigidbody>().velocity = new Vector3 (0,0,launchPower);
+		tire.GetComponent<Rigidbody> ().angularVelocity = new Vector3 (rollPower, 0, 0);
+		tire.transform.localEulerAngles = new Vector3 (0,launchAngles,0);
+		isLaunching = false;
+		GetComponentInChildren<MeshRenderer> ().enabled = false;
 
 	}
 
