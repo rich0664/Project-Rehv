@@ -79,7 +79,17 @@ public class KartTire : MonoBehaviour {
 
 	}
 
+	void OnTriggerEnter(Collider other) {
+		if (other == GameObject.FindGameObjectWithTag ("BounceTrigger").GetComponent<BoxCollider>() ) {
+			BounceSuppressor.suppressBounce = false;
+		}
+	}
+
 	void OnCollisionEnter(Collision collision) {
+
+		RaycastHit hit;
+		if (Physics.Raycast (transform.position, -Vector3.up, out hit))
+			BounceSuppressor.tireRadius = hit.distance + 0.025f;
 
 		if (collision.relativeVelocity.magnitude > 4f) {
 			tireSound.PlayOneShot (tireSounds [Random.Range (0, tireSounds.Length)], collision.relativeVelocity.magnitude * 0.01f);
