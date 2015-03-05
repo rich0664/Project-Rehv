@@ -12,7 +12,7 @@ public class Wind : MonoBehaviour {
 
 	public float tireWindScaleDown = 0.015f;
 
-	public InteractiveCloth windSock;
+	public Cloth windSock;
 
 	public ConstantForce tireForce;
 

@@ -17,9 +17,9 @@ public class BaseImage : MonoBehaviour {
 	}
 	public virtual float play()
 	{
-		if(audio)
+		if(GetComponent<AudioSource>())
 		{
-			audio.PlayOneShot(onPlayAC);
+			GetComponent<AudioSource>().PlayOneShot(onPlayAC);
 		}
 
 		if(m_image)
@@ -31,9 +31,9 @@ public class BaseImage : MonoBehaviour {
 	
 	public virtual float hide()
 	{
-		if(audio)
+		if(GetComponent<AudioSource>())
 		{
-			audio.PlayOneShot(onHideAC);
+			GetComponent<AudioSource>().PlayOneShot(onHideAC);
 		}
 
 		return hideWaitTime;

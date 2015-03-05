@@ -11,9 +11,10 @@ GameObject:
   - 137: {fileID: 13745584}
   - 95: {fileID: 9545584}
   - 114: {fileID: 11460204}
-  - 64: {fileID: 6456474}
   - 54: {fileID: 5415132}
   - 75: {fileID: 7515132}
+  - 114: {fileID: 11401132}
+  - 33: {fileID: 3382688}
   m_Layer: 2
   m_Name: TestTireEdit
   m_TagString: MainTire
@@ -33,6 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!33 &3382688
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145584}
+  m_Mesh: {fileID: 0}
 --- !u!54 &5415132
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -48,19 +56,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!64 &6456474
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 145584}
-  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 438411497b064a846adbb0167901b617, type: 3}
 --- !u!75 &7515132
 ConstantForce:
   m_ObjectHideFlags: 1
@@ -85,8 +80,44 @@ Animator:
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11401132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 145584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb91c2f29d9ee649857309a8c572d9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Algorithm: 1
+  MaxHullVertices: 255
+  MaxHulls: 220
+  InternalScale: 10
+  Precision: 1
+  CreateMeshAssets: 0
+  CreateHullMesh: 0
+  DebugLog: 0
+  LegacyDepth: 6
+  ShowAdvancedOptions: 1
+  MinHullVolume: 0
+  BackFaceDistanceFactor: 1
+  NormalizeInputMesh: 0
+  ForceNoMultithreading: 0
+  PhysMaterial: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
+  IsTrigger: 0
+  SmoothSphereCollisions: 0
+  m_aGoHulls: []
+  LastMaterial: {fileID: 0}
+  LastIsTrigger: 0
+  LastSmoothSphereCollisions: 0
+  LargestHullVertices: 0
+  LargestHullFaces: 0
 --- !u!114 &11460204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 145584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a3e358e0fa47741888ad9b22ec2fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: b5749d59c7f5da5489fbcd204d048529, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tireType: TestTire
@@ -113,16 +144,20 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: bf5ce767621691541bb04199d8dd74c7, type: 2}
   - {fileID: 2100000, guid: 7db9d70dfe237e84faa1844bf4c541af, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   serializedVersion: 2
@@ -158,4 +193,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145584}
   m_IsPrefabParent: 1
-  m_IsExploded: 1

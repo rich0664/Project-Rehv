@@ -1,3 +1,9 @@
+// Upgrade NOTE: commented out 'float4 unity_LightmapST', a built-in variable
+// Upgrade NOTE: commented out 'sampler2D unity_Lightmap', a built-in variable
+// Upgrade NOTE: commented out 'sampler2D unity_LightmapInd', a built-in variable
+// Upgrade NOTE: replaced tex2D unity_Lightmap with UNITY_SAMPLE_TEX2D
+// Upgrade NOTE: replaced tex2D unity_LightmapInd with UNITY_SAMPLE_TEX2D_SAMPLER
+
 // Shader created with Shader Forge v1.03 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
@@ -51,10 +57,10 @@ Shader "Shader Forge/Specular" {
                 return round(value + dot(pxMult, xVec));
             }
             #ifndef LIGHTMAP_OFF
-                float4 unity_LightmapST;
-                sampler2D unity_Lightmap;
+                // float4 unity_LightmapST;
+                // sampler2D unity_Lightmap;
                 #ifndef DIRLIGHTMAP_OFF
-                    sampler2D unity_LightmapInd;
+                    // sampler2D unity_LightmapInd;
                 #endif
             #endif
             uniform float4 _Color;
@@ -117,10 +123,10 @@ Shader "Shader Forge/Specular" {
                 float3 normalLocal = _Normal_var.rgb;
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 #ifndef LIGHTMAP_OFF
-                    float4 lmtex = tex2D(unity_Lightmap,i.uvLM);
+                    float4 lmtex = UNITY_SAMPLE_TEX2D(unity_Lightmap,i.uvLM);
                     #ifndef DIRLIGHTMAP_OFF
                         float3 lightmap = DecodeLightmap(lmtex);
-                        float3 scalePerBasisVector = DecodeLightmap(tex2D(unity_LightmapInd,i.uvLM));
+                        float3 scalePerBasisVector = DecodeLightmap(UNITY_SAMPLE_TEX2D_SAMPLER(unity_LightmapInd,unity_Lightmap,i.uvLM));
                         UNITY_DIRBASIS
                         half3 normalInRnmBasis = saturate (mul (unity_DirBasis, normalLocal));
                         lightmap *= dot (normalInRnmBasis, scalePerBasisVector);

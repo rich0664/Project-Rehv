@@ -7,18 +7,18 @@ namespace FMG
 	public class AudioVolume : MonoBehaviour {
 		private float m_initalVol;
 		void Awake () {
-			if(audio)
+			if(GetComponent<AudioSource>())
 			{
-				m_initalVol = audio.volume;
+				m_initalVol = GetComponent<AudioSource>().volume;
 			}
 			updateVolume();
 		}
 
 
 		public void updateVolume () {
-			if(audio)
+			if(GetComponent<AudioSource>())
 			{
-				audio.volume = PlayerPrefs.GetFloat("AudioVolume",1) * m_initalVol;
+				GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("AudioVolume",1) * m_initalVol;
 			}
 		}
 	}

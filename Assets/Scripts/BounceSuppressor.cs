@@ -23,8 +23,8 @@ public class BounceSuppressor : MonoBehaviour {
 					float dis = tireRadius - hit.distance;
 					pos.y += dis;
 					if (hit.distance > tireRadius)
-						tire.transform.position = pos;
-					Debug.Log (tireRadius);
+						tire.GetComponent<Rigidbody>().MovePosition(pos);
+					//Debug.Log (tireRadius);
 				}
 			
 			}

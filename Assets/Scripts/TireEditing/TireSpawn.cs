@@ -7,6 +7,7 @@ public class TireSpawn : MonoBehaviour {
 	GameObject tirePrefab;
 	public bool shouldSpin = false;
 	public bool isEditor;
+	public bool generateCollision;
 
 	GameObject tireInst;
 
@@ -23,6 +24,7 @@ public class TireSpawn : MonoBehaviour {
 
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
 		GameObject.FindGameObjectWithTag ("MainTire").GetComponent<ConstantForce>().enabled = shouldSpin;
+
 	}
 
 

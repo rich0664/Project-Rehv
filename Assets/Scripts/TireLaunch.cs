@@ -23,25 +23,33 @@ public class TireLaunch : MonoBehaviour {
 
 
 	}
-	
+
+
+	void FixedUpdate(){
+
+
+
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 
 		if(tire == null)
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 
-		if (isLaunching) {
-
-			Vector3 launchVector = new Vector3 (0,0,0);
-			tire.transform.localEulerAngles = new Vector3 (0,launchAngles,0);
-			tire.transform.position = this.transform.position;
-			tire.GetComponent<Rigidbody>().velocity = launchVector;
-			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
-
-		}
-
 		if (Input.GetMouseButton (0) && isLaunching) {
 			Launch();
+		}
+
+		if (isLaunching) {
+			
+			Vector3 launchVector = new Vector3 (0,0,0);
+			tire.GetComponent<Rigidbody>().rotation = Quaternion.Euler( new Vector3 (0,launchAngles,0));
+			tire.GetComponent<Rigidbody>().position = this.transform.position;
+			tire.GetComponent<Rigidbody>().velocity = launchVector;
+			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
+			
 		}
 
 		if(launchAngles > -90f + maxDeviation ) 

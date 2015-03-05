@@ -48,7 +48,7 @@ public class TestTire : MonoBehaviour {
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
 		meshCollider = tire.GetComponent <MeshCollider>();
 		tireSound = tire.GetComponent<AudioSource>();
-		tireMat = tire.renderer.materials [1];
+		tireMat = tire.GetComponent<Renderer>().materials [1];
 
 
 		tireSounds = new AudioClip[5];
