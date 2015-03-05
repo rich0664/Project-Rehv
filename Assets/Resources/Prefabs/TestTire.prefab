@@ -195,15 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb91c2f29d9ee649857309a8c572d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Algorithm: 1
+  Algorithm: 2
   MaxHullVertices: 255
-  MaxHulls: 220
+  MaxHulls: 255
   InternalScale: 10
   Precision: 1
   CreateMeshAssets: 0
   CreateHullMesh: 0
   DebugLog: 0
-  LegacyDepth: 6
+  LegacyDepth: 8
   ShowAdvancedOptions: 1
   MinHullVolume: 0
   BackFaceDistanceFactor: 1
