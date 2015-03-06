@@ -14,6 +14,8 @@ public class Wind : MonoBehaviour {
 
 	public Cloth windSock;
 
+	public ConstantForce sockTugForce;
+
 	public ConstantForce tireForce;
 
 
@@ -67,6 +69,8 @@ public class Wind : MonoBehaviour {
 
 		windSock.externalAcceleration = wind;
 		windSock.randomAcceleration = turbulance;
+		sockTugForce.force = wind/4;
+
 		tireForce.force = tireWind;
 
 
