@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TireSpawn : MonoBehaviour {
 
+	public bool autoLoadCurrentTire = true;
 	public string tireTypeToSpawn;
 	GameObject tirePrefab;
 	public bool shouldSpin = false;
@@ -14,7 +15,8 @@ public class TireSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
+		if(autoLoadCurrentTire)
+			tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
 
 		if (isEditor) {
 			tirePrefab = Resources.Load("Prefabs/" + tireTypeToSpawn + "Edit", typeof(GameObject)) as GameObject;

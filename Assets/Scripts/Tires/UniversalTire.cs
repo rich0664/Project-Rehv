@@ -67,13 +67,20 @@ public class UniversalTire : MonoBehaviour {
 		}
 
 		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision) {
-			Mesh bakedMesh = new Mesh ();
-			meshRenderer.BakeMesh (bakedMesh);
-			meshFilter.sharedMesh = bakedMesh;
-			tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
+			BakeCollision();
 		}
 
 
+
+	}
+
+
+	void BakeCollision(){
+
+		Mesh bakedMesh = new Mesh ();
+		meshRenderer.BakeMesh (bakedMesh);
+		meshFilter.sharedMesh = bakedMesh;
+		tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
 
 	}
 	
