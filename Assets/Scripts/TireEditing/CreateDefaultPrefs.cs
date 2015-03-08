@@ -3,9 +3,6 @@ using System.Collections;
 
 public class CreateDefaultPrefs : MonoBehaviour {
 
-	string tireType = "KartTire";
-
-
 	void Start () {
 
 		//Test Tire ----------------------------------------------------------------------------
@@ -22,6 +19,9 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		SaveLoad.SaveString ("TestTire" + "_SliderName_" + 10.ToString(), "Rim");
 
 		SaveLoad.SaveInt ("TestTire" + "_SlidersLength", 11);
+		if(!PlayerPrefs.HasKey("TestTire" + "_SavesLength"))
+			SaveLoad.SaveInt ("TestTire" + "_SavesLength", 1);
+
 
 
 
@@ -37,6 +37,9 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		
 		SaveLoad.SaveInt ("KartTire" + "_SlidersLength", 8);
 
+		if(!PlayerPrefs.HasKey("KartTire" + "_SavesLength"))
+			SaveLoad.SaveInt ("KartTire" + "_SavesLength", 1);
+
 		if (!PlayerPrefs.HasKey ("KartTire" + "Slider" + 0)) {
 			SaveLoad.SaveFloat ("KartTire" + "Slider" + 0, 50f);
 			SaveLoad.SaveFloat ("KartTire" + "Slider" + 1, 50f);
@@ -45,6 +48,10 @@ public class CreateDefaultPrefs : MonoBehaviour {
 
 		if (!PlayerPrefs.HasKey ("CurrentTire"))
 			SaveLoad.SaveString ("CurrentTire", "TestTire");
+
+		if (!PlayerPrefs.HasKey ("Memory"))
+			SaveLoad.SaveFloat ("Memory", 350f);
+
 
 	}
 }

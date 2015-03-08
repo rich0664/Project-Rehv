@@ -171,9 +171,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 124634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6252bd6aa7d204419dbac57c441ce6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 845fb933a99f6ea48bb87aebf90d8efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: SliderContent
 --- !u!114 &11448176
 MonoBehaviour:
   m_ObjectHideFlags: 1

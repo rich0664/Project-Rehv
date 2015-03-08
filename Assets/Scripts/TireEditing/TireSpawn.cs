@@ -15,8 +15,10 @@ public class TireSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if(autoLoadCurrentTire)
+		if (autoLoadCurrentTire) {
 			tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
+			tireTypeToSpawn = tireTypeToSpawn.Remove(tireTypeToSpawn.IndexOf("Tire")+4);
+		}
 
 		if (isEditor) {
 			tirePrefab = Resources.Load("Prefabs/" + tireTypeToSpawn + "Edit", typeof(GameObject)) as GameObject;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
+using System.Collections;
+using System.IO;
 
 public class TireEditor : MonoBehaviour {
 
@@ -11,6 +12,8 @@ public class TireEditor : MonoBehaviour {
 	GameObject tire;
 	TireSpawn tireSpawn;
 	string tireType;
+	string tireLoad;
+	int savesCount;
 
 	SkinnedMeshRenderer meshRenderer;
 	MeshCollider meshCollider;
@@ -18,6 +21,8 @@ public class TireEditor : MonoBehaviour {
 	//Material myMaterial = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
 	Color tireColor;
 	float tireBrightness;
+
+	public RenderTexture screenshotTex;
 
 	public float hSepRes = 40f;
 	public float wSepRes = 20f;
@@ -58,85 +63,86 @@ public class TireEditor : MonoBehaviour {
 			uiNav = str;
 		if (str == "AddonButton")
 			uiNav = str;
-		
-		
-	}
-
-	/*
-	void OnGUI(){
-		GUI.skin = UISkin;
-
-		
-		GUI.skin.label.fontSize = 20;
-		GUI.Label (new Rect (170 + offsetW, 5 + offsetH, 100, 50), "Color");
-
-		GUI.skin.label.fontSize = 12;
-		GUI.Label (new Rect (155 + offsetW, 35 + offsetH, 100, 20), "Red");
-		tireColor.r = GUI.HorizontalSlider (new Rect (155 + offsetW, 55 + offsetH, 100, 30), tireColor.r, 0f, 1f);
-
-		GUI.Label (new Rect (155 + offsetW, 75 + offsetH, 100, 20), "Green");
-		tireColor.g = GUI.HorizontalSlider (new Rect (155 + offsetW, 95 + offsetH, 100, 30), tireColor.g, 0f, 1f);
-
-		GUI.Label (new Rect (155 + offsetW, 115 + offsetH, 100, 20), "Blue");
-		tireColor.b = GUI.HorizontalSlider (new Rect (155 + offsetW, 135 + offsetH, 100, 30), tireColor.b, 0f, 1f);
-
-		GUI.Label (new Rect (155 + offsetW, 155 + offsetH, 100, 20), "Brightness");
-		tireBrightness = GUI.HorizontalSlider (new Rect (155 + offsetW, 175 + offsetH, 100, 30), tireBrightness, 0f, 2.5f);
 
 
-		float uiY = 0;
-		for(int i = 0; i < slIndex; i++)
-		{
-			GUI.Label (new Rect (25 + offsetW, 5+uiY+offsetH, 150, 20),SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString()).ToString());
-			sliders[i] = GUI.HorizontalSlider (new Rect (25 + offsetW, 25+uiY+offsetH, 100, 30), sliders[i], 0f, 100f);
-			uiY += hSepRes;
-		}
-
-
-		if(GUI.Button(new Rect(20 + offsetW, (uiY+wSepRes/2)+offsetH,100,50), "Save")){
-
-			Save ();
-
-		}
-
-		if(GUI.Button(new Rect(20 + offsetW, (uiY+(wSepRes+10)*2)+offsetH, 100,50), "Load")){
-
-			Load ();
-
-		}
-
-		if(GUI.Button(new Rect(20 + offsetW,uiY+(wSepRes+20)*3,175,50), "Run Simulation")){
-			
-			Application.LoadLevel("ProtoLevel");
-
-		}
-
-		if(GUI.Button(new Rect(20 + offsetW,uiY+(wSepRes+21)*4,230,50), "Simulate Aerodynamics")){
-			
-			Application.LoadLevel("TestFacility");
-			
-		}
-
-		if(GUI.Button(new Rect(260 + offsetW,5,140,50), "Test Tire")){
-
-			Destroy(tire);
-			SaveLoad.SaveString("CurrentTire", "TestTire");
-			TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
-			tireSpawn.spawnTire("TestTire");
-			
-		}
-
-		if(GUI.Button(new Rect(260 + offsetW,45,140,50), "Kart Tire")){
-
-			Destroy(tire);
-			SaveLoad.SaveString("CurrentTire", "KartTire");
-			TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
-			tireSpawn.spawnTire("KartTire");
-			
-		}
 
 	}
-	*/
+
+
+	public void FileSaveButton(string str){
+		str = str;
+		GameObject.Find ("SLPMemory").GetComponent<Text> ().text = "Available Memory: " + 
+			SaveLoad.LoadFloat ("Memory") + "KB";
+		GameObject.Find ("SLPNeededMemory").GetComponent<Text> ().text = "Memory Needed: " + 
+			SaveLoad.LoadFloat (tireLoad + "_SaveCost") + "KB";
+		NewSaveUI ();
+	}
+	public void SaveX(string str){
+		str = str;
+		ResetSaveUI ();
+	}
+
+
+	public void SaveButton(GameObject gameO){
+		string saveStr = gameO.name.Replace("ThumbButton","");
+		tireType = tireLoad + saveStr;
+		Save();
+		SaveThumb (saveStr);
+		ResetSaveUI ();
+		NewSaveUI ();
+	}
+	void SaveThumb(string saveStr){
+		Camera virtuCamera = GameObject.Find("EditCam").GetComponent<Camera>();
+		RenderTexture tempRT = new RenderTexture(240,240, 16 );
+		float tmpA = virtuCamera.aspect;
+		float tmpF = virtuCamera.fieldOfView;
+		virtuCamera.aspect = 1.3f;
+		virtuCamera.fieldOfView = 40f;
+		virtuCamera.Render ();
+		RenderTexture.active = screenshotTex;
+		Texture2D tex = new Texture2D(240, 240,TextureFormat.RGB24,false);
+		tex.ReadPixels (new Rect (tex.width/2, tex.height/3.5f, 240, 240), 0, 0);
+		RenderTexture.active = null; 
+		tex.Apply ();
+		virtuCamera.aspect = tmpA;
+		virtuCamera.fieldOfView = tmpF;
+		File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + saveStr + ".png", tex.EncodeToPNG());
+
+	}
+
+	public void NewSaveTire(GameObject gameO){
+		string saveStr = gameO.name.Replace("ThumbButton","");
+		savesCount += 1;
+		SaveLoad.SaveInt (tireLoad + "_SavesLength",savesCount);
+		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") - SaveLoad.LoadFloat(tireLoad + "_SaveCost"));
+		Debug.Log (tireLoad);
+		tireType = tireLoad + saveStr;
+		Save();
+		SaveThumb (saveStr);
+		ResetSaveUI ();
+		NewSaveUI ();
+	}
+
+
+	public void FileLoadButton(string toLoad){
+		tireLoad = toLoad;
+		NewLoadUI ();
+	}
+
+	public void LoadButton(GameObject gameO){		
+		string loadStr = gameO.name.Replace("LoadThumbButton","");
+		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
+		tireType = tireLoad + loadStr;
+		SaveLoad.SaveString("CurrentTire", tireType);
+		Load();		
+	}
+	public void LoadX(string str){
+		str = str;
+		ResetLoadUI ();
+	}
+
+
+
 	
 
 	// Update is called once per frame
@@ -157,7 +163,7 @@ public class TireEditor : MonoBehaviour {
 			for(int i = 0; i < slIndex; i++)
 			{
 				if (uiNav == "ModsButton")
-				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
+				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
 
 				if(uiNav == "ColorButton"){
 					tireColor.r = redS.value;
@@ -178,9 +184,12 @@ public class TireEditor : MonoBehaviour {
 	void newTire(string tireToSpawn){
 
 		tireType = tireToSpawn;
+		tireLoad = tireToSpawn;
 		
 		slIndex =  SaveLoad.LoadInt (tireType + "_SlidersLength");
-		
+		savesCount = SaveLoad.LoadInt (tireType + "_SavesLength");
+		if (!PlayerPrefs.HasKey (tireType + "_SaveCost"))
+			SaveLoad.SaveFloat (tireLoad + "_SaveCost", 46f);
 		
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		
@@ -188,13 +197,78 @@ public class TireEditor : MonoBehaviour {
 		meshCollider = tire.GetComponent <MeshCollider>();
 		tireMat = tire.GetComponent<Renderer>().materials [1];
 
-		NewUI ();
+		NewSliderUI ();
 		Load ();
 
 
 	}
 
-	void ResetUI(){
+	//UI RESET AND NEW UI-------------------------------
+
+	//LOAD------------------------------
+	void ResetLoadUI(){
+		for (int i = 1; i < savesCount+2; i++) {
+			Destroy(GameObject.Find("LoadThumbButton" + i));
+		}
+	}
+	
+	void NewLoadUI(){
+		float uiY = 0;
+		for(int i = 1; i < savesCount+1; i++)
+		{
+			GameObject lPrefab = Resources.Load ("UI/" + "LoadThumbButton", typeof(GameObject)) as GameObject;
+			GameObject lInst = Instantiate (lPrefab, this.transform.position, this.transform.rotation) as GameObject;
+			lInst.name = "LoadThumbButton" + i;
+			lInst.GetComponentInChildren<Text>().text = tireLoad + i;
+			Texture2D img = new Texture2D(2,2);
+			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + i + ".png"));
+			lInst.GetComponent<Image>().sprite = Sprite.Create(img,
+			                                                   new Rect(0,0,img.width,img.height),
+			                                                   new Vector2(0.5f,0.5f), 1);
+			lInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+			uiY += 135;
+			
+		}
+	}
+
+	//Save------------------------------
+	void ResetSaveUI(){
+		
+		for (int i = 1; i < savesCount+2; i++) {
+			Destroy(GameObject.Find("ThumbButton" + i));
+		}
+		
+	}
+	
+	void NewSaveUI(){
+		
+		float uiY = 0;
+		for(int i = 1; i < savesCount+1; i++)
+		{
+			GameObject sPrefab = Resources.Load ("UI/" + "ThumbButton", typeof(GameObject)) as GameObject;
+			GameObject sInst = Instantiate (sPrefab, this.transform.position, this.transform.rotation) as GameObject;
+			sInst.name = "ThumbButton" + i;
+			sInst.GetComponentInChildren<Text>().text = tireLoad + i;
+			Texture2D img = new Texture2D(2,2);
+			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + i + ".png"));
+			sInst.GetComponent<Image>().sprite = Sprite.Create(img,
+			                                                   new Rect(0,0,img.width,img.height),
+			                                                   new Vector2(0.5f,0.5f), 1);
+			sInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+			uiY += 135;
+			
+		}
+		
+		GameObject nPrefab = Resources.Load ("UI/" + "NewSaveButton", typeof(GameObject)) as GameObject;
+		GameObject nInst = Instantiate (nPrefab, this.transform.position, this.transform.rotation) as GameObject;
+		nInst.name = "ThumbButton" + (savesCount+1);
+		nInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+		GameObject.Find("SLContent").GetComponent<RectTransform>().sizeDelta = new Vector2(uiY + 175,154.4f);
+		
+	}
+
+	//Sliders------------------------------
+	void ResetSliderUI(){
 	
 		for (int i = 0; i < slIndex; i++) {
 			Destroy(GameObject.Find("Slider" + i));
@@ -204,7 +278,7 @@ public class TireEditor : MonoBehaviour {
 
 
 
-	void NewUI(){
+	void NewSliderUI(){
 
 		float uiY = 0;
 		for(int i = 0; i < slIndex; i++)
@@ -222,11 +296,17 @@ public class TireEditor : MonoBehaviour {
 	}
 
 
+
+
+	//SAVE AND LOAD METHODS-----------------------------
 	void Save () {
 		slidersRect.SetActive (true);
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
 		//--------------------------------------
+
+		SaveLoad.SaveString("CurrentTire", tireType);
+
 		for(int i = 0; i < slIndex; i++)
 		{
 			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
@@ -238,9 +318,12 @@ public class TireEditor : MonoBehaviour {
 		SaveLoad.SaveFloat(tireType + "Blue", tireColor.b);
 		SaveLoad.SaveFloat(tireType + "Brightness", tireBrightness);
 		//--------------------------------------
-		slidersRect.SetActive (false);
-		colorsRect.SetActive (false);
-		addonsRect.SetActive (false);
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
 		
 	}
 
@@ -255,7 +338,7 @@ public class TireEditor : MonoBehaviour {
 			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
 			meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
-		
+					
 		redS.value = SaveLoad.LoadFloat(tireType + "Red");
 		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
 		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
@@ -268,7 +351,6 @@ public class TireEditor : MonoBehaviour {
 		//--------------------------------------
 		if(uiNav != "ModsButton")
 			slidersRect.SetActive (false);
-		Debug.Log (uiNav);
 		if(uiNav != "ColorButton")
 			colorsRect.SetActive (false);
 		if(uiNav != "AddonButton")
