@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TireEditor : MonoBehaviour {
 
 	public GUISkin UISkin;
-	int slidersLength; 
+	int slIndex; 
+	string uiNav = "Mods";
 
 	GameObject tire;
 	TireSpawn tireSpawn;
@@ -16,7 +18,6 @@ public class TireEditor : MonoBehaviour {
 	//Material myMaterial = Resources.Load("Materials/MyMaterial", typeof(Material)) as Material;
 	Color tireColor;
 	float tireBrightness;
-	private float[] sliders;
 
 	public float hSepRes = 40f;
 	public float wSepRes = 20f;
@@ -27,11 +28,19 @@ public class TireEditor : MonoBehaviour {
 	public float scaleW = 1f;
 	public float scaleH = 1f;
 
-	// Use this for initialization
-	void Awake () {
-
+	public void onCommand(string str){
+		
+		if (str == "ModsButton")
+			uiNav = str;
+		if (str == "ColorButton")
+			uiNav = str;
+		if (str == "AddonButton")
+			uiNav = str;
+		
+		
 	}
-	
+
+	/*
 	void OnGUI(){
 		GUI.skin = UISkin;
 
@@ -54,7 +63,7 @@ public class TireEditor : MonoBehaviour {
 
 
 		float uiY = 0;
-		for(int i = 0; i < sliders.Length; i++)
+		for(int i = 0; i < slIndex; i++)
 		{
 			GUI.Label (new Rect (25 + offsetW, 5+uiY+offsetH, 150, 20),SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString()).ToString());
 			sliders[i] = GUI.HorizontalSlider (new Rect (25 + offsetW, 25+uiY+offsetH, 100, 30), sliders[i], 0f, 100f);
@@ -105,11 +114,8 @@ public class TireEditor : MonoBehaviour {
 		}
 
 	}
-
-	IEnumerator bop(){
-		yield return new WaitForSeconds(0.5f);
-		tireSpawn.spawnTire("TestTire");
-	}
+	*/
+	
 
 	// Update is called once per frame
 	void Update () {
@@ -126,12 +132,17 @@ public class TireEditor : MonoBehaviour {
 			tireMat.SetColor ("_Color", tireColor);
 			tireMat.SetFloat ("_Brightness", tireBrightness);
 
-			for(int i = 0; i < sliders.Length; i++)
+			for(int i = 0; i < slIndex; i++)
 			{
-				meshRenderer.SetBlendShapeWeight (i, sliders[i]);
+				if (uiNav == "ModsButton")
+				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 			}
 
 		}
+
+
+
+
 
 	}
 
@@ -139,19 +150,8 @@ public class TireEditor : MonoBehaviour {
 
 		tireType = tireToSpawn;
 		
-		slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
-		sliders = new float[slidersLength];
+		slIndex =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 		
-		//load slider values into place
-		for(int i = 0; i < sliders.Length; i++)
-		{
-			sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
-		}
-		
-		tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
-		tireColor.g = SaveLoad.LoadFloat(tireType + "Green");
-		tireColor.b = SaveLoad.LoadFloat(tireType + "Blue");
-		tireBrightness = SaveLoad.LoadFloat(tireType + "Brightness");
 		
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		
@@ -159,13 +159,45 @@ public class TireEditor : MonoBehaviour {
 		meshCollider = tire.GetComponent <MeshCollider>();
 		tireMat = tire.GetComponent<Renderer>().materials [1];
 
+		NewUI ();
+		Load ();
+		//ResetUI ();
+
 	}
+
+	void ResetUI(){
+	
+		for (int i = 0; i < slIndex; i++) {
+			Destroy(GameObject.Find("Slider" + i));
+		}
+	
+	}
+
+
+
+	void NewUI(){
+
+		float uiY = 0;
+		for(int i = 0; i < slIndex; i++)
+		{
+			GameObject sliderPrefab = Resources.Load ("UI/" + "Slider", typeof(GameObject)) as GameObject;
+			GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
+			sliderInst.name = "Slider" + i;
+			sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString());
+			sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-8.3f, -14.1f + uiY);
+			GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112,-uiY + 20);
+			uiY -= 29;
+
+		}
+
+	}
+
 
 	void Save () {
 
-		for(int i = 0; i < sliders.Length; i++)
+		for(int i = 0; i < slIndex; i++)
 		{
-			SaveLoad.SaveFloat(tireType + "Slider" + i, sliders[i]);
+			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
 		
@@ -178,9 +210,9 @@ public class TireEditor : MonoBehaviour {
 
 	void Load () {
 
-		for(int i = 0; i < sliders.Length; i++)
+		for(int i = 0; i < slIndex; i++)
 		{
-			sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
+			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
 		}
 		
 		tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
