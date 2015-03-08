@@ -22,6 +22,9 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if(!PlayerPrefs.HasKey("TestTire" + "_SavesLength"))
 			SaveLoad.SaveInt ("TestTire" + "_SavesLength", 1);
 
+		if (!PlayerPrefs.HasKey ("TestTire" + "_SaveCost"))
+			SaveLoad.SaveFloat ("TestTire" + "_SaveCost", 46f);
+
 
 
 
@@ -39,6 +42,9 @@ public class CreateDefaultPrefs : MonoBehaviour {
 
 		if(!PlayerPrefs.HasKey("KartTire" + "_SavesLength"))
 			SaveLoad.SaveInt ("KartTire" + "_SavesLength", 1);
+
+		if (!PlayerPrefs.HasKey ("KartTire" + "_SaveCost"))
+			SaveLoad.SaveFloat ("KartTire" + "_SaveCost", 46f);
 
 		if (!PlayerPrefs.HasKey ("KartTire" + "Slider" + 0)) {
 			SaveLoad.SaveFloat ("KartTire" + "Slider" + 0, 50f);

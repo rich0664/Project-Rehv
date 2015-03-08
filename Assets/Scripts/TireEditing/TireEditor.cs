@@ -13,6 +13,8 @@ public class TireEditor : MonoBehaviour {
 	TireSpawn tireSpawn;
 	string tireType;
 	string tireLoad;
+	string prevTireLoad;
+	string lastLoadedTire;
 	int savesCount;
 
 	SkinnedMeshRenderer meshRenderer;
@@ -111,38 +113,58 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void NewSaveTire(GameObject gameO){
-		string saveStr = gameO.name.Replace("ThumbButton","");
-		savesCount += 1;
-		SaveLoad.SaveInt (tireLoad + "_SavesLength",savesCount);
-		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") - SaveLoad.LoadFloat(tireLoad + "_SaveCost"));
-		Debug.Log (tireLoad);
-		tireType = tireLoad + saveStr;
-		Save();
-		SaveThumb (saveStr);
-		ResetSaveUI ();
-		NewSaveUI ();
+		if (SaveLoad.LoadFloat ("Memory") > SaveLoad.LoadFloat (tireLoad + "_SaveCost")) {
+			string saveStr = gameO.name.Replace ("ThumbButton", "");
+			savesCount += 1;
+			SaveLoad.SaveInt (tireLoad + "_SavesLength", savesCount);
+			SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") - SaveLoad.LoadFloat (tireLoad + "_SaveCost"));
+			Debug.Log (tireLoad);
+			tireType = tireLoad + saveStr;
+			Save ();
+			SaveThumb (saveStr);
+			ResetSaveUI ();
+			NewSaveUI ();
+		}
 	}
 
 
 	public void FileLoadButton(string toLoad){
+		prevTireLoad = tireLoad;
+		lastLoadedTire = prevTireLoad;
 		tireLoad = toLoad;
 		NewLoadUI ();
 	}
 
 	public void LoadButton(GameObject gameO){		
+		Destroy (tire);
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		tireType = tireLoad + loadStr;
+		lastLoadedTire = tireLoad;
 		SaveLoad.SaveString("CurrentTire", tireType);
-		Load();		
+		TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+		tireSpawn.spawnTire(tireLoad);
 	}
 	public void LoadX(string str){
 		str = str;
+		if(lastLoadedTire == prevTireLoad)
+			tireLoad = prevTireLoad;
 		ResetLoadUI ();
 	}
 
 
+	public void DeleteTire(GameObject gameO){
+		string delStr = gameO.name.Replace("LoadThumbButton","");
+		delStr = gameO.name.Replace("ThumbButton","");
+		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") +
+			SaveLoad.LoadFloat (tireLoad + "_SaveCost"));
 
+		GameObject.Find ("SLPMemory").GetComponent<Text> ().text = "Available Memory: " + 
+			SaveLoad.LoadFloat ("Memory") + "KB";
+		GameObject.Find ("SLPNeededMemory").GetComponent<Text> ().text = "Memory Needed: " + 
+			SaveLoad.LoadFloat (tireLoad + "_SaveCost") + "KB";
+
+	}
 	
 
 	// Update is called once per frame
@@ -182,14 +204,15 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	void newTire(string tireToSpawn){
-
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+		//-------------------------------------
 		tireType = tireToSpawn;
 		tireLoad = tireToSpawn;
 		
 		slIndex =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 		savesCount = SaveLoad.LoadInt (tireType + "_SavesLength");
-		if (!PlayerPrefs.HasKey (tireType + "_SaveCost"))
-			SaveLoad.SaveFloat (tireLoad + "_SaveCost", 46f);
 		
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		
@@ -197,8 +220,16 @@ public class TireEditor : MonoBehaviour {
 		meshCollider = tire.GetComponent <MeshCollider>();
 		tireMat = tire.GetComponent<Renderer>().materials [1];
 
+		ResetSliderUI ();
 		NewSliderUI ();
 		Load ();
+		//-------------------------------------
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
 
 
 	}
@@ -264,7 +295,12 @@ public class TireEditor : MonoBehaviour {
 		nInst.name = "ThumbButton" + (savesCount+1);
 		nInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
 		GameObject.Find("SLContent").GetComponent<RectTransform>().sizeDelta = new Vector2(uiY + 175,154.4f);
-		
+
+		GameObject.Find ("SLPMemory").GetComponent<Text> ().text = "Available Memory: " + 
+			SaveLoad.LoadFloat ("Memory") + "KB";
+		GameObject.Find ("SLPNeededMemory").GetComponent<Text> ().text = "Memory Needed: " + 
+			SaveLoad.LoadFloat (tireLoad + "_SaveCost") + "KB";
+
 	}
 
 	//Sliders------------------------------

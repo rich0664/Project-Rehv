@@ -12,5 +12,8 @@ public class ButtonCall : MonoBehaviour {
 	public void callLoad (GameObject gameO){
 		GameObject.Find ("Editor").GetComponent<TireEditor> ().LoadButton (gameO);
 	}
+	public void callDelete (GameObject gameO){
+		GameObject.Find ("Editor").GetComponent<TireEditor> ().DeleteTire (gameO);
+	}
 
 }
