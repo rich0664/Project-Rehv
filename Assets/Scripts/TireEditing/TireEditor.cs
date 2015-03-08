@@ -6,7 +6,7 @@ public class TireEditor : MonoBehaviour {
 
 	public GUISkin UISkin;
 	int slIndex; 
-	string uiNav = "Mods";
+	string uiNav = "ModsButton";
 
 	GameObject tire;
 	TireSpawn tireSpawn;
@@ -27,6 +27,28 @@ public class TireEditor : MonoBehaviour {
 
 	public float scaleW = 1f;
 	public float scaleH = 1f;
+
+
+	GameObject slidersRect;
+	GameObject colorsRect;
+	GameObject addonsRect;
+	Slider redS;
+	Slider greenS;
+	Slider blueS;
+	Slider brightS;
+
+	void Awake(){
+
+		slidersRect = GameObject.Find ("SlidersRect");
+		colorsRect = GameObject.Find ("ColorsRect");
+		addonsRect = GameObject.Find ("AddonsRect");
+		redS = GameObject.Find("RedSlider").GetComponent<Slider>() ;
+		greenS = GameObject.Find("GreenSlider").GetComponent<Slider>() ;
+		blueS = GameObject.Find("BlueSlider").GetComponent<Slider>() ;
+		brightS = GameObject.Find("BrightSlider").GetComponent<Slider>();
+
+	}
+
 
 	public void onCommand(string str){
 		
@@ -136,6 +158,13 @@ public class TireEditor : MonoBehaviour {
 			{
 				if (uiNav == "ModsButton")
 				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
+
+				if(uiNav == "ColorButton"){
+					tireColor.r = redS.value;
+					tireColor.g = greenS.value;
+					tireColor.b = blueS.value;
+					tireBrightness = brightS.value;
+				}
 			}
 
 		}
@@ -161,7 +190,7 @@ public class TireEditor : MonoBehaviour {
 
 		NewUI ();
 		Load ();
-		//ResetUI ();
+
 
 	}
 
@@ -184,7 +213,7 @@ public class TireEditor : MonoBehaviour {
 			GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			sliderInst.name = "Slider" + i;
 			sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString());
-			sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-8.3f, -14.1f + uiY);
+			sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-13f, -14.1f + uiY);
 			GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112,-uiY + 20);
 			uiY -= 29;
 
@@ -194,7 +223,10 @@ public class TireEditor : MonoBehaviour {
 
 
 	void Save () {
-
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+		//--------------------------------------
 		for(int i = 0; i < slIndex; i++)
 		{
 			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
@@ -205,21 +237,42 @@ public class TireEditor : MonoBehaviour {
 		SaveLoad.SaveFloat(tireType + "Green", tireColor.g);
 		SaveLoad.SaveFloat(tireType + "Blue", tireColor.b);
 		SaveLoad.SaveFloat(tireType + "Brightness", tireBrightness);
+		//--------------------------------------
+		slidersRect.SetActive (false);
+		colorsRect.SetActive (false);
+		addonsRect.SetActive (false);
 		
 	}
 
 	void Load () {
 
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+		//--------------------------------------
 		for(int i = 0; i < slIndex; i++)
 		{
 			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
+			meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
-		tireColor.r = SaveLoad.LoadFloat(tireType + "Red");
-		tireColor.g = SaveLoad.LoadFloat(tireType + "Green");
-		tireColor.b = SaveLoad.LoadFloat(tireType + "Blue");
-		tireBrightness = SaveLoad.LoadFloat(tireType + "Brightness");
-		
+		redS.value = SaveLoad.LoadFloat(tireType + "Red");
+		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
+		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
+		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
+		tireColor.r = redS.value;
+		tireColor.g = greenS.value;
+		tireColor.b = blueS.value;
+		tireBrightness = brightS.value;
+
+		//--------------------------------------
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		Debug.Log (uiNav);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
 	}
 	
 	
