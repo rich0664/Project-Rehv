@@ -12,8 +12,12 @@ public class TireSpawn : MonoBehaviour {
 
 	GameObject tireInst;
 
+	TireEditor tE;
+
 	// Use this for initialization
 	void Start () {
+
+			tE = GameObject.Find ("Editor").GetComponent<TireEditor>();
 
 		if (autoLoadCurrentTire) {
 			tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
@@ -27,8 +31,8 @@ public class TireSpawn : MonoBehaviour {
 		}
 
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
-		GameObject.FindGameObjectWithTag ("MainTire").GetComponent<ConstantForce>().enabled = shouldSpin;
-
+		tireInst.GetComponent<ConstantForce>().enabled = shouldSpin;
+		tE.tire = tireInst;
 	}
 
 
@@ -42,8 +46,11 @@ public class TireSpawn : MonoBehaviour {
 			tirePrefab = Resources.Load ("Prefabs/" + tireToSpawn, typeof(GameObject)) as GameObject;
 		}
 
+		Destroy (tE.tire);
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
-		GameObject.FindGameObjectWithTag ("MainTire").GetComponent<ConstantForce>().enabled = shouldSpin;
+		tireInst.GetComponent<ConstantForce>().enabled = shouldSpin;
+		tE.tire = tireInst;
+		Debug.Log (tE.tire);
 
 	}
 
