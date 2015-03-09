@@ -3374,6 +3374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
+  tire: {fileID: 0}
   screenshotTex: {fileID: 8400000, guid: 3db18f56cf396f14485b75ce188ef728, type: 2}
   hSepRes: 40
   wSepRes: 20
@@ -6968,7 +6969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3db3e593305f1c4b985f53cc46bb7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 804458702}
   useCinematic: 0
   smoothCamera: 1
   addCamHeight: 0
