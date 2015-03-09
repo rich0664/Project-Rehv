@@ -205,12 +205,105 @@ RectTransform:
   - {fileID: 145384386}
   - {fileID: 294710565}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &113498997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 113499002}
+  - 20: {fileID: 113499001}
+  - 92: {fileID: 113499000}
+  - 124: {fileID: 113498999}
+  - 114: {fileID: 113498998}
+  m_Layer: 0
+  m_Name: ThumbCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &113498998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113498997}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143bc06a72ee04748918391f99a8b164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curShader: {fileID: 4800000, guid: 9f7c63cd83d58314cb218510d6263ca0, type: 3}
+  Distortion: -.109999999
+  InputGamma: 2.4000001
+  OutputGamma: 2.20000005
+  TextureSize: 513
+--- !u!124 &113498999
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113498997}
+  m_Enabled: 1
+--- !u!92 &113499000
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113498997}
+  m_Enabled: 1
+--- !u!20 &113499001
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113498997}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 70
+  orthographic: 1
+  orthographic size: 1
+  m_Depth: 6.09000015
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: ecfcdcf6d1fddd549b705b6fed736659, type: 2}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
+--- !u!4 &113499002
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 113498997}
+  m_LocalRotation: {x: .154471636, y: -.373311043, z: .063190721, w: .912570179}
+  m_LocalPosition: {x: .843999982, y: 2.80900002, z: -.85799998}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &138284969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,7 +2157,7 @@ Transform:
   m_LocalScale: {x: 1.64041758, y: .996109366, z: 1.64041758}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &568398477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,7 +2735,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &819782345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3375,7 +3468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
   tire: {fileID: 0}
-  screenshotTex: {fileID: 8400000, guid: 3db18f56cf396f14485b75ce188ef728, type: 2}
+  screenshotTex: {fileID: 8400000, guid: ecfcdcf6d1fddd549b705b6fed736659, type: 2}
   hSepRes: 40
   wSepRes: 20
   offsetW: 0
@@ -3393,7 +3486,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1104531179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3983,7 +4076,7 @@ Transform:
   m_LocalScale: {x: .670000017, y: 1, z: .470961064}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1 &1262637148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5490,7 +5583,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &1748078104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6021,7 +6114,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1892782022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,7 +6145,7 @@ RectTransform:
   m_Children:
   - {fileID: 1052532889}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6933,8 +7026,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 70
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 1.41999996
   m_Depth: 6.09000015
   m_CullingMask:
     serializedVersion: 2
@@ -6971,7 +7064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 804458702}
   useCinematic: 0
-  smoothCamera: 1
+  smoothCamera: 0
   addCamHeight: 0
   cameraSmoothing: 6.5
   distance: 4
