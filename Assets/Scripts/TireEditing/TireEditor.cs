@@ -16,6 +16,7 @@ public class TireEditor : MonoBehaviour {
 	string prevTireLoad;
 	string lastLoadedTire;
 	int savesCount;
+	bool firstRun = true;
 
 	SkinnedMeshRenderer meshRenderer;
 	MeshCollider meshCollider;
@@ -46,6 +47,8 @@ public class TireEditor : MonoBehaviour {
 
 	void Awake(){
 
+		tireType = SaveLoad.LoadString ("CurrentTire");
+
 		slidersRect = GameObject.Find ("SlidersRect");
 		colorsRect = GameObject.Find ("ColorsRect");
 		addonsRect = GameObject.Find ("AddonsRect");
@@ -53,6 +56,7 @@ public class TireEditor : MonoBehaviour {
 		greenS = GameObject.Find("GreenSlider").GetComponent<Slider>() ;
 		blueS = GameObject.Find("BlueSlider").GetComponent<Slider>() ;
 		brightS = GameObject.Find("BrightSlider").GetComponent<Slider>();
+
 
 	}
 
@@ -132,10 +136,13 @@ public class TireEditor : MonoBehaviour {
 		prevTireLoad = tireLoad;
 		lastLoadedTire = prevTireLoad;
 		tireLoad = toLoad;
+		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		NewLoadUI ();
 	}
 
-	public void LoadButton(GameObject gameO){		
+	public void LoadButton(GameObject gameO){	
+		ResetSliderUI ();
+		NewSliderUI ();
 		Destroy (tire);
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
@@ -175,6 +182,7 @@ public class TireEditor : MonoBehaviour {
 			string toSpawn = tireSpawn.tireTypeToSpawn;
 			newTire(toSpawn);
 
+
 		}
 
 		if (tire != null){
@@ -186,13 +194,12 @@ public class TireEditor : MonoBehaviour {
 			{
 				if (uiNav == "ModsButton")
 				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
-
-				if(uiNav == "ColorButton"){
-					tireColor.r = redS.value;
-					tireColor.g = greenS.value;
-					tireColor.b = blueS.value;
-					tireBrightness = brightS.value;
-				}
+			}
+			if(uiNav == "ColorButton"){
+				tireColor.r = redS.value;
+				tireColor.g = greenS.value;
+				tireColor.b = blueS.value;
+				tireBrightness = brightS.value;
 			}
 
 		}
@@ -208,11 +215,13 @@ public class TireEditor : MonoBehaviour {
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
 		//-------------------------------------
-		tireType = tireToSpawn;
+
+
+
 		tireLoad = tireToSpawn;
 		
-		slIndex =  SaveLoad.LoadInt (tireType + "_SlidersLength");
-		savesCount = SaveLoad.LoadInt (tireType + "_SavesLength");
+		slIndex =  SaveLoad.LoadInt (tireLoad + "_SlidersLength");
+		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		
@@ -220,9 +229,14 @@ public class TireEditor : MonoBehaviour {
 		meshCollider = tire.GetComponent <MeshCollider>();
 		tireMat = tire.GetComponent<Renderer>().materials [1];
 
-		ResetSliderUI ();
-		NewSliderUI ();
+		if (firstRun) {
+			ResetSliderUI ();
+			NewSliderUI ();
+			firstRun = false;
+		}
 		Load ();
+
+
 		//-------------------------------------
 		if(uiNav != "ModsButton")
 			slidersRect.SetActive (false);
@@ -322,7 +336,7 @@ public class TireEditor : MonoBehaviour {
 			GameObject sliderPrefab = Resources.Load ("UI/" + "Slider", typeof(GameObject)) as GameObject;
 			GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			sliderInst.name = "Slider" + i;
-			sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireType + "_SliderName_" + i.ToString());
+			sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString());
 			sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-13f, -14.1f + uiY);
 			GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112,-uiY + 20);
 			uiY -= 29;
@@ -369,6 +383,9 @@ public class TireEditor : MonoBehaviour {
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
 		//--------------------------------------
+
+		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
+
 		for(int i = 0; i < slIndex; i++)
 		{
 			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
@@ -384,6 +401,10 @@ public class TireEditor : MonoBehaviour {
 		tireColor.b = blueS.value;
 		tireBrightness = brightS.value;
 
+		Debug.Log (tireLoad);
+		Debug.Log (tireType);
+		Debug.Log (slIndex);
+		
 		//--------------------------------------
 		if(uiNav != "ModsButton")
 			slidersRect.SetActive (false);
