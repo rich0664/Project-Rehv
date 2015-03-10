@@ -14,7 +14,7 @@ public class TireEditor : MonoBehaviour {
 	string tireType;
 	string tireLoad;
 	string UITire;
-	string lastLoadedTire;
+	public string lastLoadedTire;
 	int savesCount;
 	bool firstRun = true;
 
@@ -81,6 +81,8 @@ public class TireEditor : MonoBehaviour {
 			SaveLoad.LoadFloat ("Memory") + "KB";
 		GameObject.Find ("SLPNeededMemory").GetComponent<Text> ().text = "Memory Needed: " + 
 			SaveLoad.LoadFloat (tireLoad + "_SaveCost") + "KB";
+		UITire = lastLoadedTire;
+		savesCount = SaveLoad.LoadInt (UITire + "_SavesLength");
 		NewSaveUI ();
 	}
 	public void SaveX(string str){
@@ -130,8 +132,8 @@ public class TireEditor : MonoBehaviour {
 
 	public void FileLoadButton(string toLoad){
 		UITire = toLoad;
-		savesCount = SaveLoad.LoadInt (UITire + "_SavesLength");
 		ResetLoadUI ();
+		savesCount = SaveLoad.LoadInt (UITire + "_SavesLength");
 		NewLoadUI ();
 	}
 

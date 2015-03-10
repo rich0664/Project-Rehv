@@ -17,12 +17,14 @@ public class TireSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		if(GameObject.Find ("Editor") != null)
-			tE = GameObject.Find ("Editor").GetComponent<TireEditor>();
+		if (GameObject.Find ("Editor") != null) 
+			tE = GameObject.Find ("Editor").GetComponent<TireEditor> ();
 
 		if (autoLoadCurrentTire) {
 			tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
 			tireTypeToSpawn = tireTypeToSpawn.Remove(tireTypeToSpawn.IndexOf("Tire")+4);
+			if (GameObject.Find ("Editor") != null) 
+				GameObject.Find ("Editor").GetComponent<TireEditor>().lastLoadedTire = tireTypeToSpawn;
 		}
 
 		if (isEditor) {

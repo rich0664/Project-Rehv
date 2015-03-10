@@ -116,7 +116,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: 1}
   m_AnchorMax: {x: .5, y: 1}
-  m_AnchoredPosition: {x: .000885784626, y: 0}
+  m_AnchoredPosition: {x: .000885784626, y: 443.799927}
   m_SizeDelta: {x: 100, y: 1205.28003}
   m_Pivot: {x: .5, y: 1}
 --- !u!1 &62751491
@@ -3498,6 +3498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
   tire: {fileID: 0}
+  lastLoadedTire: 
   screenshotTex: {fileID: 8400000, guid: ecfcdcf6d1fddd549b705b6fed736659, type: 2}
   hSepRes: 40
   wSepRes: 20
@@ -5406,7 +5407,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140438085}
   m_HandleRect: {fileID: 2140438084}
   m_Direction: 2
-  m_Value: .999999702
+  m_Value: .416880816
   m_Size: .368545055
   m_NumberOfSteps: 0
   m_OnValueChanged:
