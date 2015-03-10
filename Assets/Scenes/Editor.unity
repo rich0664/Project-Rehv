@@ -246,6 +246,9 @@ MonoBehaviour:
   InputGamma: 2.4000001
   OutputGamma: 2.20000005
   TextureSize: 513
+  animate: 0
+  MaxSizeAdd: 100
+  step: 10
 --- !u!124 &113498999
 Behaviour:
   m_ObjectHideFlags: 0
@@ -299,7 +302,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 113498997}
   m_LocalRotation: {x: .154471636, y: -.373311043, z: .063190721, w: .912570179}
-  m_LocalPosition: {x: .843999982, y: 2.80900002, z: -.85799998}
+  m_LocalPosition: {x: 1.07299995, y: 2.80900002, z: -1.44500005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5599,7 +5602,10 @@ MonoBehaviour:
   Distortion: .100000001
   InputGamma: 2
   OutputGamma: 1.70000005
-  TextureSize: 1180.75
+  TextureSize: 1960.75
+  animate: 1
+  MaxSizeAdd: 100
+  step: 10
 --- !u!1 &1780590138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6968,7 +6974,6 @@ GameObject:
   - 20: {fileID: 2060856229}
   - 92: {fileID: 2060856228}
   - 124: {fileID: 2060856227}
-  - 114: {fileID: 2060856232}
   - 114: {fileID: 2060856225}
   m_Layer: 0
   m_Name: EditCam
@@ -6983,16 +6988,29 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060856224}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143bc06a72ee04748918391f99a8b164, type: 3}
+  m_Script: {fileID: 11500000, guid: ec7a1ca930cc826409e33972b685a525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curShader: {fileID: 4800000, guid: 9f7c63cd83d58314cb218510d6263ca0, type: 3}
-  Distortion: -.109999999
-  InputGamma: 2.4000001
-  OutputGamma: 2.20000005
-  TextureSize: 513
+  target: {fileID: 804458702}
+  useCinematic: 0
+  smoothCamera: 0
+  addCamHeight: 0
+  cameraSmoothing: 10.2200003
+  distance: 6.5
+  xSpeed: 50
+  ySpeed: 50
+  yMinLimit: -20
+  yMaxLimit: 80
+  distanceMin: 1.20000005
+  distanceMax: 15
+  flickerCamera: 1
+  flickerFrequency: 4
+  zoom: 1.5
+  minZoom: .25
+  maxZoom: 3.5
+  zoomSpeed: 4
 --- !u!124 &2060856227
 Behaviour:
   m_ObjectHideFlags: 0
@@ -7051,29 +7069,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &2060856232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2060856224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3db3e593305f1c4b985f53cc46bb7fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 804458702}
-  useCinematic: 0
-  smoothCamera: 0
-  addCamHeight: 0
-  cameraSmoothing: 6.5
-  distance: 4
-  xSpeed: 50
-  ySpeed: 50
-  yMinLimit: -20
-  yMaxLimit: 80
-  distanceMin: 1.20000005
-  distanceMax: 7
 --- !u!1 &2062027806
 GameObject:
   m_ObjectHideFlags: 0

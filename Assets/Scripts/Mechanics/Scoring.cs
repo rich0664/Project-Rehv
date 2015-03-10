@@ -9,7 +9,7 @@ public class Scoring : MonoBehaviour {
 	//MeshRenderer markerRender;
 	TextMesh scoreText;
 	string tireType;
-	TestTire testTire;
+	UniversalTire uniTire;
 
 	BoxCollider scoreTrigger;
 	GameObject jumpPoint;
@@ -19,13 +19,13 @@ public class Scoring : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
-		testTire =	tire.GetComponent<TestTire>();
-		scoreText = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<TextMesh> ();
-		scoreRender = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<MeshRenderer> ();
-		scoreSound = GameObject.FindGameObjectWithTag ("ScoreText").GetComponent<AudioSource> ();
-		scoreTrigger = GameObject.FindGameObjectWithTag ("ScoreTrigger").GetComponent<BoxCollider> ();
-		jumpPoint = GameObject.FindGameObjectWithTag ("JumpPoint");
-		tireType = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+		uniTire =	tire.GetComponent<UniversalTire>();
+		scoreText = GameObject.Find("ScoreText").GetComponent<TextMesh> ();
+		scoreRender = GameObject.Find ("ScoreText").GetComponent<MeshRenderer> ();
+		scoreSound = GameObject.Find("ScoreText").GetComponent<AudioSource> ();
+		scoreTrigger = GameObject.Find ("ScoreTrigger").GetComponent<BoxCollider> ();
+		jumpPoint = GameObject.Find ("JumpPoint");
+		tireType = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
 	}
 
 

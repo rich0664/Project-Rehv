@@ -10,6 +10,10 @@ public class CRTEffect : MonoBehaviour
 	public float InputGamma = 2.4f;
 	public float OutputGamma = 2.2f;
 	public float TextureSize = 768f;
+	float baseTextureSize;
+	public bool animate;
+	public float MaxSizeAdd = 100f;
+	public float step = 10f;
 	private Material curMaterial;
 	#endregion
 	
@@ -30,6 +34,8 @@ public class CRTEffect : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		baseTextureSize = TextureSize;
+
 		if (!SystemInfo.supportsImageEffects)
 		{
 			enabled = false;
@@ -58,7 +64,11 @@ public class CRTEffect : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		if (animate) {
+			TextureSize += step;
+			if (TextureSize > baseTextureSize + MaxSizeAdd)
+				TextureSize = baseTextureSize;
+		}
 	}
 	
 	void OnDisable()

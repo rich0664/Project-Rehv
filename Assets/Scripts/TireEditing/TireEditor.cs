@@ -98,20 +98,16 @@ public class TireEditor : MonoBehaviour {
 		NewSaveUI ();
 	}
 	void SaveThumb(string saveStr){
-		Camera virtuCamera = GameObject.Find("EditCam").GetComponent<Camera>();
+		Camera virtuCamera = GameObject.Find("ThumbCam").GetComponent<Camera>();
 		RenderTexture tempRT = new RenderTexture(240,240, 16 );
-		float tmpA = virtuCamera.aspect;
-		float tmpF = virtuCamera.fieldOfView;
-		virtuCamera.aspect = 1.3f;
-		virtuCamera.fieldOfView = 40f;
+		//virtuCamera.aspect = 1f;
+		//virtuCamera.fieldOfView = 40f;
 		virtuCamera.Render ();
 		RenderTexture.active = screenshotTex;
 		Texture2D tex = new Texture2D(240, 240,TextureFormat.RGB24,false);
-		tex.ReadPixels (new Rect (tex.width/2, tex.height/3.5f, 240, 240), 0, 0);
+		tex.ReadPixels (new Rect (tex.width, tex.height, 240, 240), 0, 0);
 		RenderTexture.active = null; 
 		tex.Apply ();
-		virtuCamera.aspect = tmpA;
-		virtuCamera.fieldOfView = tmpF;
 		File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + saveStr + ".png", tex.EncodeToPNG());
 
 	}
