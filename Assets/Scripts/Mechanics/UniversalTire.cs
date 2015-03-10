@@ -32,7 +32,8 @@ public class UniversalTire : MonoBehaviour {
 
 		sliders = new float[slidersLength];
 		
-		tire = gameObject;
+		tire = this.gameObject;
+		tireType = SaveLoad.LoadString ("CurrentTire");
 		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 900;
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
 		meshFilter = tire.GetComponent <MeshFilter>();
@@ -46,7 +47,6 @@ public class UniversalTire : MonoBehaviour {
 		tireSounds [2] = tireSound3; 
 		tireSounds [3] = tireSound4; 
 		tireSounds [4] = tireSound5; 
-
 		
 		for(int i = 0; i < sliders.Length; i++)
 		{

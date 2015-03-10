@@ -5386,7 +5386,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140438085}
   m_HandleRect: {fileID: 2140438084}
   m_Direction: 2
-  m_Value: .999999344
+  m_Value: .999999702
   m_Size: .368545055
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5582,7 +5582,7 @@ MonoBehaviour:
   Distortion: .100000001
   InputGamma: 2
   OutputGamma: 1.70000005
-  TextureSize: 1025
+  TextureSize: 1200
   animate: 1
   MaxSizeAdd: 50
   step: 25
@@ -6979,14 +6979,14 @@ MonoBehaviour:
   addCamHeight: 0
   cameraSmoothing: 10.2200003
   distance: 6.5
-  xSpeed: 50
-  ySpeed: 50
+  xSpeed: 100
+  ySpeed: 100
   yMinLimit: -20
   yMaxLimit: 80
   distanceMin: 1.20000005
   distanceMax: 15
   flickerCamera: 1
-  flickerFrequency: 4
+  flickerFrequency: 4.5
   zoom: 1.5
   minZoom: .25
   maxZoom: 3.5
