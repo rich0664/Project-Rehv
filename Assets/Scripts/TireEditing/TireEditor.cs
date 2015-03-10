@@ -130,7 +130,7 @@ public class TireEditor : MonoBehaviour {
 
 	public void FileLoadButton(string toLoad){
 		UITire = toLoad;
-		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
+		savesCount = SaveLoad.LoadInt (UITire + "_SavesLength");
 		ResetLoadUI ();
 		NewLoadUI ();
 	}
