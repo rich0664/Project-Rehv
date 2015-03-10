@@ -6,7 +6,7 @@ public class ObjectMoveToCursor : MonoBehaviour {
 	public Canvas myCanvas;
 
 	void Start(){
-		//Cursor.visible = false;
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
