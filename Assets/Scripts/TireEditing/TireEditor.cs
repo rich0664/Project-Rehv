@@ -138,6 +138,10 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void LoadButton(GameObject gameO){	
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+
 		Destroy (tire);
 		ResetSliderUI ();
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
@@ -151,6 +155,14 @@ public class TireEditor : MonoBehaviour {
 		newTire (tireLoad);
 		NewSliderUI ();
 		StartCoroutine(Load(0.1F));
+
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
+
 	}
 	public void LoadX(string str){
 		str = str;
@@ -158,19 +170,75 @@ public class TireEditor : MonoBehaviour {
 	}
 
 
-	public void DeleteTire(GameObject gameO){
-		string delStr = gameO.name.Replace("LoadThumbButton","");
-		delStr = gameO.name.Replace("ThumbButton","");
+	public void DeleteTireSave(GameObject gameO){
+		string delStr = gameO.name.Replace("ThumbButton","");
 		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") +
-			SaveLoad.LoadFloat (tireLoad + "_SaveCost"));
+		                    SaveLoad.LoadFloat (UITire + "_SaveCost"));
 
 		GameObject.Find ("SLPMemory").GetComponent<Text> ().text = "Available Memory: " + 
 			SaveLoad.LoadFloat ("Memory") + "KB";
 		GameObject.Find ("SLPNeededMemory").GetComponent<Text> ().text = "Memory Needed: " + 
-			SaveLoad.LoadFloat (tireLoad + "_SaveCost") + "KB";
+			SaveLoad.LoadFloat (UITire + "_SaveCost") + "KB";
+
+		string tempTire = tireType;
+		int toDel = int.Parse(delStr);
+		for (int i = toDel; i <= savesCount; i++) {
+			tireType = UITire + (i+1);
+			byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
+			Load();
+			tireType = UITire + i;
+			File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
+			Save();
+		}
+
+		tireType = tempTire;
+		Load ();
+
+		savesCount--;
+		SaveLoad.SaveInt (UITire + "_SavesLength", savesCount);
+
+		ResetSaveUI ();
+		NewSaveUI ();
 
 	}
-	
+
+	public void DeleteTireLoad(GameObject gameO){
+		string delStr = gameO.name.Replace("LoadThumbButton","");
+
+		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") +
+		                    SaveLoad.LoadFloat (UITire + "_SaveCost"));
+		
+		GameObject.Find ("LPMemory").GetComponent<Text> ().text = "Available Memory: " + 
+			SaveLoad.LoadFloat ("Memory") + "KB";
+
+		string tempTire = tireType;
+		int toDel = int.Parse(delStr);
+		for (int i = toDel; i <= savesCount; i++) {
+			tireType = UITire + (i+1);
+			byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
+			Load();
+			tireType = UITire + i;
+			File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
+			Save();
+		}
+
+
+
+		int tempPos = int.Parse(tempTire.Replace(UITire,""));
+		if(tempPos > toDel){
+			tireType = UITire + (tempPos-1);
+		}else{
+			tireType = tempTire;
+		}
+		Load ();
+		
+		savesCount--;
+		SaveLoad.SaveInt (UITire + "_SavesLength", savesCount);
+
+		ResetLoadUI ();
+		NewLoadUI ();
+
+	}
 
 	// Update is called once per frame
 	void Update () {
@@ -321,7 +389,9 @@ public class TireEditor : MonoBehaviour {
 
 
 	void NewSliderUI(){
-
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
 		float uiY = 0;
 		for(int i = 0; i < slIndex; i++)
 		{
@@ -335,7 +405,12 @@ public class TireEditor : MonoBehaviour {
 
 		}
 
-
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
 
 	}
 
@@ -407,7 +482,7 @@ public class TireEditor : MonoBehaviour {
 
 	IEnumerator Load (float delay) {
 		yield return new WaitForSeconds(delay);
-		
+
 		slidersRect.SetActive (true);
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);

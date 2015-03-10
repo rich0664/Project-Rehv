@@ -142,7 +142,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11453450}
-        m_MethodName: callDelete
+        m_MethodName: callDeleteSave
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 187868}

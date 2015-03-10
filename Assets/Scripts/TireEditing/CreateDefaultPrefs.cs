@@ -23,7 +23,7 @@ public class CreateDefaultPrefs : MonoBehaviour {
 			SaveLoad.SaveInt ("TestTire" + "_SavesLength", 1);
 
 		if (!PlayerPrefs.HasKey ("TestTire" + "_SaveCost"))
-			SaveLoad.SaveFloat ("TestTire" + "_SaveCost", 46f);
+			SaveLoad.SaveFloat ("TestTire" + "_SaveCost", 49f);
 
 
 

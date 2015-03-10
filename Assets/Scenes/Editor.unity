@@ -1924,11 +1924,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22414596, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22416338, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22444782, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4623,11 +4623,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22414596, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22416338, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22444782, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4820,11 +4820,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22414596, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22416338, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22444782, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_LocalPosition.x
@@ -4952,11 +4952,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22414596, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22416338, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22444782, guid: 0d2e22f34bf05224489ce2ce48a557b1, type: 2}
       propertyPath: m_LocalPosition.x
