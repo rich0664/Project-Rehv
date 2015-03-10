@@ -93,14 +93,14 @@ public class TireEditor : MonoBehaviour {
 		string saveStr = gameO.name.Replace("ThumbButton","");
 		tireType = tireLoad + saveStr;
 		Save();
-		SaveThumb (saveStr);
+		//SaveThumb (saveStr);
 		ResetSaveUI ();
 		NewSaveUI ();
 	}
 	void SaveThumb(string saveStr){
 		Camera virtuCamera = GameObject.Find("ThumbCam").GetComponent<Camera>();
 		RenderTexture tempRT = new RenderTexture(240,240, 16 );
-		//virtuCamera.aspect = 1f;
+		virtuCamera.aspect = 1f;
 		//virtuCamera.fieldOfView = 40f;
 		virtuCamera.Render ();
 		RenderTexture.active = screenshotTex;
