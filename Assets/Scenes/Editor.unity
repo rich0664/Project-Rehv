@@ -5671,7 +5671,7 @@ MonoBehaviour:
   InputGamma: 2
   OutputGamma: 1.70000005
   TexSize: 950
-  animate: 1
+  animate: 0
   MaxSizeAdd: 50
   step: 25
 --- !u!1 &1780590138
