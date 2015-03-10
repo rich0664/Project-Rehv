@@ -93,7 +93,7 @@ public class TireEditor : MonoBehaviour {
 		string saveStr = gameO.name.Replace("ThumbButton","");
 		tireType = tireLoad + saveStr;
 		Save();
-		//SaveThumb (saveStr);
+		SaveThumb (saveStr);
 		ResetSaveUI ();
 		NewSaveUI ();
 	}
