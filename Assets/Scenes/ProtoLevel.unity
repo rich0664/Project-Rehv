@@ -988,10 +988,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoadCurrentTire: 1
   tireTypeToSpawn: TestTire
   shouldSpin: 0
   isEditor: 0
-  generateCollision: 0
+  generateCollision: 1
 --- !u!114 &840895179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2947,7 +2948,7 @@ GameObject:
   - 102: {fileID: 1218939081}
   - 82: {fileID: 1218939084}
   m_Layer: 0
-  m_Name: Distance Text
+  m_Name: ScoreText
   m_TagString: ScoreText
   m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

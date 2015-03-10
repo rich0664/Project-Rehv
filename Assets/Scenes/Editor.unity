@@ -5582,7 +5582,7 @@ MonoBehaviour:
   Distortion: .100000001
   InputGamma: 2
   OutputGamma: 1.70000005
-  TextureSize: 1000
+  TextureSize: 1025
   animate: 1
   MaxSizeAdd: 50
   step: 25
