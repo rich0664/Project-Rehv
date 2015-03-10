@@ -222,7 +222,6 @@ GameObject:
   - 20: {fileID: 113499001}
   - 92: {fileID: 113499000}
   - 124: {fileID: 113498999}
-  - 114: {fileID: 113498998}
   m_Layer: 0
   m_Name: ThumbCam
   m_TagString: Untagged
@@ -230,25 +229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &113498998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 113498997}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 143bc06a72ee04748918391f99a8b164, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curShader: {fileID: 4800000, guid: 9f7c63cd83d58314cb218510d6263ca0, type: 3}
-  Distortion: -.109999999
-  InputGamma: 2.4000001
-  OutputGamma: 2.20000005
-  TextureSize: 513
-  animate: 0
-  MaxSizeAdd: 100
-  step: 10
 --- !u!124 &113498999
 Behaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +263,7 @@ Camera:
   far clip plane: 1000
   field of view: 70
   orthographic: 1
-  orthographic size: 1
+  orthographic size: .800000012
   m_Depth: 6.09000015
   m_CullingMask:
     serializedVersion: 2
@@ -301,8 +281,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 113498997}
-  m_LocalRotation: {x: .154471636, y: -.373311043, z: .063190721, w: .912570179}
-  m_LocalPosition: {x: 1.07299995, y: 2.80900002, z: -1.44500005}
+  m_LocalRotation: {x: .241118863, y: -.364975542, z: .0988850594, w: .893798888}
+  m_LocalPosition: {x: 1.64999998, y: 3.78800011, z: -1.75100005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5602,10 +5582,10 @@ MonoBehaviour:
   Distortion: .100000001
   InputGamma: 2
   OutputGamma: 1.70000005
-  TextureSize: 1960.75
+  TextureSize: 1000
   animate: 1
-  MaxSizeAdd: 100
-  step: 10
+  MaxSizeAdd: 50
+  step: 25
 --- !u!1 &1780590138
 GameObject:
   m_ObjectHideFlags: 0

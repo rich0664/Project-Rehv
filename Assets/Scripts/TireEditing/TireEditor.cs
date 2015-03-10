@@ -119,7 +119,6 @@ public class TireEditor : MonoBehaviour {
 			savesCount += 1;
 			SaveLoad.SaveInt (tireLoad + "_SavesLength", savesCount);
 			SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") - SaveLoad.LoadFloat (tireLoad + "_SaveCost"));
-			Debug.Log (tireLoad);
 			tireType = tireLoad + saveStr;
 			Save ();
 			SaveThumb (saveStr);
@@ -229,9 +228,7 @@ public class TireEditor : MonoBehaviour {
 
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer> ();
 		meshCollider = tire.GetComponent <MeshCollider>();
-
-		Debug.Log (slIndex);
-
+		
 
 		//-------------------------------------
 		if(uiNav != "ModsButton")
@@ -382,8 +379,6 @@ public class TireEditor : MonoBehaviour {
 		addonsRect.SetActive (true);
 		//--------------------------------------
 
-		Debug.Log (tireType);
-
 		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
 
 		for(int i = 0; i < slIndex; i++)
@@ -418,9 +413,7 @@ public class TireEditor : MonoBehaviour {
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
 		//--------------------------------------
-		
-		Debug.Log (tireType);
-		
+				
 		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
 		
 		for(int i = 0; i < slIndex; i++)
