@@ -13,7 +13,7 @@ public class TireEditor : MonoBehaviour {
 	TireSpawn tireSpawn;
 	string tireType;
 	string tireLoad;
-	string prevTireLoad;
+	string UITire;
 	string lastLoadedTire;
 	int savesCount;
 	bool firstRun = true;
@@ -129,9 +129,7 @@ public class TireEditor : MonoBehaviour {
 
 
 	public void FileLoadButton(string toLoad){
-		prevTireLoad = tireLoad;
-		lastLoadedTire = prevTireLoad;
-		tireLoad = toLoad;
+		UITire = toLoad;
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		ResetLoadUI ();
 		NewLoadUI ();
@@ -139,22 +137,21 @@ public class TireEditor : MonoBehaviour {
 
 	public void LoadButton(GameObject gameO){	
 		Destroy (tire);
+		ResetSliderUI ();
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		tireType = tireLoad + loadStr;
+		tireLoad = UITire;
 		lastLoadedTire = tireLoad;
 		SaveLoad.SaveString("CurrentTire", tireType);
 		TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
 		tireSpawn.spawnTire(tireLoad);
 		newTire (tireLoad);
-		ResetSliderUI ();
 		NewSliderUI ();
 		StartCoroutine(Load(0.1F));
 	}
 	public void LoadX(string str){
 		str = str;
-		if(lastLoadedTire == prevTireLoad)
-			tireLoad = prevTireLoad;
 		ResetLoadUI ();
 	}
 
@@ -257,9 +254,9 @@ public class TireEditor : MonoBehaviour {
 			GameObject lPrefab = Resources.Load ("UI/" + "LoadThumbButton", typeof(GameObject)) as GameObject;
 			GameObject lInst = Instantiate (lPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			lInst.name = "LoadThumbButton" + i;
-			lInst.GetComponentInChildren<Text>().text = tireLoad + i;
+			lInst.GetComponentInChildren<Text>().text = UITire + i;
 			Texture2D img = new Texture2D(2,2);
-			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + i + ".png"));
+			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
 			lInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
@@ -279,16 +276,18 @@ public class TireEditor : MonoBehaviour {
 	}
 	
 	void NewSaveUI(){
-		
+
+		UITire = lastLoadedTire;
+
 		float uiY = 0;
 		for(int i = 1; i < savesCount+1; i++)
 		{
 			GameObject sPrefab = Resources.Load ("UI/" + "ThumbButton", typeof(GameObject)) as GameObject;
 			GameObject sInst = Instantiate (sPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			sInst.name = "ThumbButton" + i;
-			sInst.GetComponentInChildren<Text>().text = tireLoad + i;
+			sInst.GetComponentInChildren<Text>().text = UITire + i;
 			Texture2D img = new Texture2D(2,2);
-			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + i + ".png"));
+			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
 			sInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
@@ -312,11 +311,9 @@ public class TireEditor : MonoBehaviour {
 
 	//Sliders------------------------------
 	void ResetSliderUI(){
-	
 		for (int i = 0; i < slIndex; i++) {
 			Destroy(GameObject.Find("Slider" + i));
-		}
-	
+		}	
 	}
 
 

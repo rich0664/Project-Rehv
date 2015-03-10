@@ -5231,7 +5231,6 @@ GameObject:
   - 224: {fileID: 1632660381}
   - 222: {fileID: 1632660384}
   - 114: {fileID: 1632660383}
-  - 114: {fileID: 1632660382}
   m_Layer: 5
   m_Name: LoadPanel
   m_TagString: Untagged
@@ -5259,32 +5258,6 @@ RectTransform:
   m_AnchoredPosition: {x: 48.0172501, y: -20.5108604}
   m_SizeDelta: {x: 586, y: 28}
   m_Pivot: {x: .5, y: 0}
---- !u!114 &1632660382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1632660380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1367256648, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 0}
-  m_Horizontal: 1
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: .100000001
-  m_Inertia: 1
-  m_DecelerationRate: .135000005
-  m_ScrollSensitivity: 1
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1632660383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5386,7 +5359,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140438085}
   m_HandleRect: {fileID: 2140438084}
   m_Direction: 2
-  m_Value: .999999702
+  m_Value: .999999344
   m_Size: .368545055
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5582,7 +5555,7 @@ MonoBehaviour:
   Distortion: .100000001
   InputGamma: 2
   OutputGamma: 1.70000005
-  TextureSize: 1200
+  TexSize: 950
   animate: 1
   MaxSizeAdd: 50
   step: 25
@@ -6679,18 +6652,6 @@ MonoBehaviour:
           m_StringArgument: str
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1104531177}
-        m_MethodName: FileSaveButton
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: str
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 464334112}
         m_MethodName: set_text
         m_Mode: 5
@@ -6742,6 +6703,42 @@ MonoBehaviour:
       - m_Target: {fileID: 821479686}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: str
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104531177}
+        m_MethodName: SaveX
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: str
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104531177}
+        m_MethodName: FileSaveButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: str
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1104531177}
+        m_MethodName: LoadX
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,

@@ -9,7 +9,8 @@ public class CRTEffect : MonoBehaviour
 	public float Distortion = 0.1f;
 	public float InputGamma = 2.4f;
 	public float OutputGamma = 2.2f;
-	public float TextureSize = 768f;
+	public float TexSize = 950f;
+	float TextureSize;
 	float baseTextureSize;
 	public bool animate;
 	public float MaxSizeAdd = 100f;
@@ -34,6 +35,7 @@ public class CRTEffect : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		TextureSize = TexSize;
 		baseTextureSize = TextureSize;
 
 		if (!SystemInfo.supportsImageEffects)
