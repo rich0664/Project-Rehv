@@ -101,13 +101,14 @@ public class TireEditor : MonoBehaviour {
 		Camera virtuCamera = GameObject.Find("ThumbCam").GetComponent<Camera>();
 		RenderTexture tempRT = new RenderTexture(240,240, 16 );
 		virtuCamera.aspect = 1f;
-		//virtuCamera.fieldOfView = 40f;
+		virtuCamera.targetTexture = tempRT;
 		virtuCamera.Render ();
-		RenderTexture.active = screenshotTex;
+		RenderTexture.active = tempRT;
 		Texture2D tex = new Texture2D(240, 240,TextureFormat.RGB24,false);
-		tex.ReadPixels (new Rect (tex.width, tex.height, 240, 240), 0, 0);
-		RenderTexture.active = null; 
+		tex.ReadPixels (new Rect (0, 0, 240, 240), 0, 0);
 		tex.Apply ();
+		RenderTexture.active = null; 
+		virtuCamera.targetTexture = null;
 		File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + saveStr + ".png", tex.EncodeToPNG());
 
 	}
