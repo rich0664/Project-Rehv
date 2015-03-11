@@ -23,7 +23,6 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if(!PlayerPrefs.HasKey("TestTire" + "_SavesLength"))
 			SaveLoad.SaveInt ("TestTire" + "_SavesLength", 0);
 
-		if (!PlayerPrefs.HasKey ("TestTire" + "_SaveCost"))
 			SaveLoad.SaveFloat ("TestTire" + "_SaveCost", 49f);
 
 
@@ -44,14 +43,11 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if(!PlayerPrefs.HasKey("KartTire" + "_SavesLength"))
 			SaveLoad.SaveInt ("KartTire" + "_SavesLength", 0);
 
-		if (!PlayerPrefs.HasKey ("KartTire" + "_SaveCost"))
 			SaveLoad.SaveFloat ("KartTire" + "_SaveCost", 46f);
 
-		if (!PlayerPrefs.HasKey ("KartTire" + "Slider" + 0)) {
-			SaveLoad.SaveFloat ("KartTire" + "Slider" + 0, 50f);
-			SaveLoad.SaveFloat ("KartTire" + "Slider" + 1, 50f);
-			SaveLoad.SaveFloat ("KartTire" + "Slider" + 2, 50f);
-		}
+			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 0, 50f);
+			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 1, 50f);
+			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 2, 50f);
 
 
 		//Car Tire ----------------------------------------------------------------------------
@@ -72,38 +68,38 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 14.ToString(), "symmetry");
 		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 15.ToString(), "Height A2.1");
 		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 16.ToString(), "Height B2.1");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 18.ToString(), "symmetry");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 19.ToString(), "Height A2.2");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 20.ToString(), "Height B2.2");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 21.ToString(), "symmetry");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 22.ToString(), "Height A3.1");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 23.ToString(), "Height B3.1");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 24.ToString(), "symmetry");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 25.ToString(), "Height A3.2");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 26.ToString(), "Height B3.2");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 27.ToString(), "symmetry");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 28.ToString(), "Row A1");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 29.ToString(), "Row B1");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 17.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 18.ToString(), "Height A2.2");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 19.ToString(), "Height B2.2");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 20.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 21.ToString(), "Height A3.1");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 22.ToString(), "Height B3.1");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 23.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 24.ToString(), "Height A3.2");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 25.ToString(), "Height B3.2");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 26.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 27.ToString(), "Row A1");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 28.ToString(), "Row B1");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 29.ToString(), "symmetry");
 		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 30.ToString(), "Row A2");
 		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 31.ToString(), "Row B2");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 32.ToString(), "Row A3");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 33.ToString(), "Row B3");
-		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 34.ToString(), "Ridge Width");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 32.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 33.ToString(), "Row A3");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 34.ToString(), "Row B3");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 35.ToString(), "symmetry");
+		SaveLoad.SaveString ("CarTire" + "_SliderName_" + 36.ToString(), "Ridge Width");
 
 		
-		SaveLoad.SaveInt ("CarTire" + "_SlidersLength", 35);
+		SaveLoad.SaveInt ("CarTire" + "_SlidersLength", 37);
 		
 		if(!PlayerPrefs.HasKey("CarTire" + "_SavesLength"))
 			SaveLoad.SaveInt ("CarTire" + "_SavesLength", 0);
 		
-		if (!PlayerPrefs.HasKey ("CarTire" + "_SaveCost"))
 			SaveLoad.SaveFloat ("CarTire" + "_SaveCost", 64f);
-		
-		if (!PlayerPrefs.HasKey ("CarTire" + "Slider" + 0)) {
-			SaveLoad.SaveFloat ("CarTire" + "Slider" + 0, 50f);
-			SaveLoad.SaveFloat ("CarTire" + "Slider" + 1, 25f);
-			SaveLoad.SaveFloat ("CarTire" + "Slider" + 2, 25f);
-		}
+
+			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 0, 50f);
+			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 1, 25f);
+			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 2, 25f);
 
 		//Globals ----------------------------------------------------------------------------
 

@@ -18,6 +18,11 @@ public class ButtonCall : MonoBehaviour {
 	public void callDeleteLoad (GameObject gameO){
 		GameObject.Find ("Editor").GetComponent<TireEditor> ().DeleteTireLoad (gameO);
 	}
+	public void Modified(GameObject gameO){
+		GameObject.Find ("Editor").GetComponent<TireEditor> ().modified = true;
+		string str = gameO.name.Replace("Slider","");
+		GameObject.Find ("Editor").GetComponent<TireEditor> ().modifiedSlider = str;
+	}
 
 
 }

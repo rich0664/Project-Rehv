@@ -50,6 +50,7 @@ public class UniversalTire : MonoBehaviour {
 		
 		for(int i = 0; i < sliders.Length; i++)
 		{
+
 			sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
 		}
 		
@@ -61,9 +62,15 @@ public class UniversalTire : MonoBehaviour {
 		tireMat.SetColor ("_Color", tireColor);
 		tireMat.SetFloat ("_Brightness", tireBrightness);
 
+		int syms = 0;
+		string lst = GameObject.Find ("Editor").GetComponent<TireEditor> ().lastLoadedTire;
 		for(int i = 0; i < sliders.Length; i++)
 		{
-			meshRenderer.SetBlendShapeWeight (i, sliders[i]);
+			if(SaveLoad.LoadString(lst + "_SliderName_" + i.ToString()) == "symmetry"){
+				syms++;
+				continue;
+			}
+			meshRenderer.SetBlendShapeWeight (i-syms, sliders[i]);
 		}
 
 		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision) {

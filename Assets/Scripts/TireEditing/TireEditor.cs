@@ -17,6 +17,8 @@ public class TireEditor : MonoBehaviour {
 	public string lastLoadedTire;
 	int savesCount;
 	bool firstRun = true;
+	public bool modified;
+	public string modifiedSlider;
 
 	SkinnedMeshRenderer meshRenderer;
 	MeshCollider meshCollider;
@@ -103,6 +105,12 @@ public class TireEditor : MonoBehaviour {
 		Camera virtuCamera = GameObject.Find("ThumbCam").GetComponent<Camera>();
 		RenderTexture tempRT = new RenderTexture(240,240, 16 );
 		virtuCamera.aspect = 1f;
+		if (tireLoad == "TestTire")
+			virtuCamera.orthographicSize = 0.6f;
+		if (tireLoad == "KartTire")
+			virtuCamera.orthographicSize = 0.2f;
+		if (tireLoad == "CarTire")
+			virtuCamera.orthographicSize = 0.3f;
 		virtuCamera.targetTexture = tempRT;
 		virtuCamera.Render ();
 		RenderTexture.active = tempRT;
@@ -145,9 +153,9 @@ public class TireEditor : MonoBehaviour {
 		Destroy (tire);
 		ResetSliderUI ();
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
-		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
-		tireType = tireLoad + loadStr;
 		tireLoad = UITire;
+		tireType = tireLoad + loadStr;
+		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		lastLoadedTire = tireLoad;
 		SaveLoad.SaveString("CurrentTire", tireType);
 		TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
@@ -169,6 +177,33 @@ public class TireEditor : MonoBehaviour {
 		ResetLoadUI ();
 	}
 
+	public void ResetTire(string tireToReset){
+		tireType = tireToReset + "0";
+
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+		
+		Destroy (tire);
+		ResetSliderUI ();
+		tireLoad = tireToReset;
+		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
+		lastLoadedTire = tireLoad;
+		SaveLoad.SaveString("CurrentTire", tireType);
+		TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+		tireSpawn.spawnTire(tireLoad);
+		newTire (tireLoad);
+		NewSliderUI ();
+		StartCoroutine(Load(0.1F));
+		
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
+		
+	}
 
 	public void DeleteTireSave(GameObject gameO){
 		string delStr = gameO.name.Replace("ThumbButton","");
@@ -201,6 +236,8 @@ public class TireEditor : MonoBehaviour {
 		NewSaveUI ();
 
 	}
+
+
 
 	public void DeleteTireLoad(GameObject gameO){
 		string delStr = gameO.name.Replace("LoadThumbButton","");
@@ -240,7 +277,7 @@ public class TireEditor : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame-------------------------------------------------------------------------------------
 	void Update () {
 
 		if (tire != null){
@@ -249,11 +286,46 @@ public class TireEditor : MonoBehaviour {
 			tireMat.SetColor ("_Color", tireColor);
 			tireMat.SetFloat ("_Brightness", tireBrightness);
 
-			for(int i = 0; i < slIndex; i++)
-			{
-				if (uiNav == "ModsButton")
-				meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
+			if (firstRun) {
+				NewSliderUI ();
+				firstRun = false;
+				tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+				string toSpawn = tireSpawn.tireTypeToSpawn;
+				tireLoad = toSpawn;
+				newTire(toSpawn);
+				ResetSliderUI ();
+				NewSliderUI ();
+				StartCoroutine(Load(0.1F));			
 			}
+			int syms = 0;
+			for(int i = 0; i < slIndex; i++){
+				if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) == "symmetry"){
+					syms++;
+					continue;
+				}
+				if (uiNav == "ModsButton")
+					meshRenderer.SetBlendShapeWeight (i-syms, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
+
+			}
+				if (uiNav == "ModsButton")
+				if(modified){
+				for(int i = 0; i < slIndex; i++)
+				{
+					if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) == "symmetry"){
+						bool sym = GameObject.Find("Slider"+ i).GetComponent<Toggle>().isOn;
+						if(sym){
+							if(int.Parse(modifiedSlider) == i-1)
+								GameObject.Find("Slider"+ (i-2)).GetComponent<Slider>().value
+									= GameObject.Find("Slider"+ (i-1)).GetComponent<Slider>().value;
+							if(int.Parse(modifiedSlider) == i-2)
+								GameObject.Find("Slider"+ (i-1)).GetComponent<Slider>().value
+									= GameObject.Find("Slider"+ (i-2)).GetComponent<Slider>().value;
+						}
+					}
+				}
+			}
+			modified = false;
+
 			if(uiNav == "ColorButton"){
 				tireColor.r = redS.value;
 				tireColor.g = greenS.value;
@@ -261,17 +333,6 @@ public class TireEditor : MonoBehaviour {
 				tireBrightness = brightS.value;
 			}
 
-			if (firstRun) {
-				NewSliderUI ();
-				firstRun = false;
-				tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
-				string toSpawn = tireSpawn.tireTypeToSpawn;
-				newTire(toSpawn);
-				ResetSliderUI ();
-				NewSliderUI ();
-				Load ();
-
-			}
 
 
 		}
@@ -392,16 +453,23 @@ public class TireEditor : MonoBehaviour {
 		slidersRect.SetActive (true);
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
-		float uiY = 0;
+		
 		for(int i = 0; i < slIndex; i++)
 		{
-			GameObject sliderPrefab = Resources.Load ("UI/" + "Slider", typeof(GameObject)) as GameObject;
-			GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
-			sliderInst.name = "Slider" + i;
-			sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString());
-			sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-13f, -14.1f + uiY);
-			GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112,-uiY + 20);
-			uiY -= 29;
+			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) == "symmetry"){
+				GameObject sliderPrefab = Resources.Load ("UI/" + "SymmetryToggle", typeof(GameObject)) as GameObject;
+				GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
+				sliderInst.name = "Slider" + i;
+				sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-10f, -i * 29);
+				GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112, i * 29  + 29);
+			} else {
+				GameObject sliderPrefab = Resources.Load ("UI/" + "Slider", typeof(GameObject)) as GameObject;
+				GameObject sliderInst = Instantiate (sliderPrefab, this.transform.position, this.transform.rotation) as GameObject;
+				sliderInst.name = "Slider" + i;
+				sliderInst.GetComponentInChildren<Text>().text = SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString());
+				sliderInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(-13f, -14.1f + -i * 29);
+				GameObject.Find("SliderContent").GetComponent<RectTransform>().sizeDelta = new Vector2(112, i * 29 + 29);
+			}
 
 		}
 
@@ -428,6 +496,7 @@ public class TireEditor : MonoBehaviour {
 
 		for(int i = 0; i < slIndex; i++)
 		{
+			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
 			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
@@ -455,10 +524,12 @@ public class TireEditor : MonoBehaviour {
 
 		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
 
+		lastLoadedTire = tireLoad;
+
 		for(int i = 0; i < slIndex; i++)
 		{
+			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
 			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
-			meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 					
 		redS.value = SaveLoad.LoadFloat(tireType + "Red");
@@ -489,11 +560,13 @@ public class TireEditor : MonoBehaviour {
 		//--------------------------------------
 				
 		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
+
+		lastLoadedTire = tireLoad;
 		
 		for(int i = 0; i < slIndex; i++)
 		{
+			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
 			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
-			meshRenderer.SetBlendShapeWeight (i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
 		redS.value = SaveLoad.LoadFloat(tireType + "Red");
