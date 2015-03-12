@@ -20,6 +20,7 @@ public class ButtonCall : MonoBehaviour {
 	}
 	public void Modified(GameObject gameO){
 		GameObject.Find ("Editor").GetComponent<TireEditor> ().modified = true;
+		GameObject.Find ("Editor").GetComponent<WarningMessages> ().modified = true;
 		string str = gameO.name.Replace("Slider","");
 		GameObject.Find ("Editor").GetComponent<TireEditor> ().modifiedSlider = str;
 	}

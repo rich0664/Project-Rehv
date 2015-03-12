@@ -178,6 +178,7 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void ResetTire(string tireToReset){
+		ResetSaveUI ();
 		tireType = tireToReset + "0";
 
 		slidersRect.SetActive (true);
@@ -206,6 +207,7 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void DeleteTireSave(GameObject gameO){
+		ResetSaveUI ();
 		string delStr = gameO.name.Replace("ThumbButton","");
 		SaveLoad.SaveFloat ("Memory", SaveLoad.LoadFloat ("Memory") +
 		                    SaveLoad.LoadFloat (UITire + "_SaveCost"));
@@ -219,14 +221,21 @@ public class TireEditor : MonoBehaviour {
 		int toDel = int.Parse(delStr);
 		for (int i = toDel; i <= savesCount; i++) {
 			tireType = UITire + (i+1);
-			byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
 			Load();
 			tireType = UITire + i;
-			File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
 			Save();
+			if(i < savesCount){
+				byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
+				File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
+			}
 		}
 
-		tireType = tempTire;
+		int tempPos = int.Parse(tempTire.Replace(UITire,""));
+		if(tempPos > toDel){
+			tireType = UITire + (tempPos-1);
+		}else{
+			tireType = tempTire;
+		}
 		Load ();
 
 		savesCount--;
@@ -400,7 +409,7 @@ public class TireEditor : MonoBehaviour {
 	//Save------------------------------
 	void ResetSaveUI(){
 		
-		for (int i = 1; i < savesCount+2; i++) {
+		for (int i = 1; i <= savesCount+1; i++) {
 			Destroy(GameObject.Find("ThumbButton" + i));
 		}
 		
@@ -411,7 +420,7 @@ public class TireEditor : MonoBehaviour {
 		UITire = lastLoadedTire;
 
 		float uiY = 0;
-		for(int i = 1; i < savesCount+1; i++)
+		for(int i = 1; i <= savesCount; i++)
 		{
 			GameObject sPrefab = Resources.Load ("UI/" + "ThumbButton", typeof(GameObject)) as GameObject;
 			GameObject sInst = Instantiate (sPrefab, this.transform.position, this.transform.rotation) as GameObject;
