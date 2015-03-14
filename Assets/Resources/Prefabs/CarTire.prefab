@@ -32,7 +32,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0529999994, y: 126.379997, z: -99}
+  m_LocalPosition: {x: .153999999, y: 1.47099996, z: .191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170578}
-  m_Mesh: {fileID: 4300000, guid: 0c3fa24b842db9a40b30ff7d710cd7c2, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 41c69705bd560ad4e9caeaa410841e33, type: 3}
 --- !u!54 &5470578
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -195,15 +195,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb91c2f29d9ee649857309a8c572d9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Algorithm: 1
+  Algorithm: 2
   MaxHullVertices: 255
-  MaxHulls: 220
-  InternalScale: 10
+  MaxHulls: 255
+  InternalScale: 12
   Precision: 1
   CreateMeshAssets: 0
   CreateHullMesh: 0
   DebugLog: 0
-  LegacyDepth: 6
+  LegacyDepth: 8
   ShowAdvancedOptions: 1
   MinHullVolume: 0
   BackFaceDistanceFactor: 1

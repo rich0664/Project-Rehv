@@ -26,7 +26,7 @@ public class UniversalTire : MonoBehaviour {
 	AudioSource tireSound;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
 		slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 
@@ -63,7 +63,8 @@ public class UniversalTire : MonoBehaviour {
 		tireMat.SetFloat ("_Brightness", tireBrightness);
 
 		int syms = 0;
-		string lst = GameObject.Find ("Editor").GetComponent<TireEditor> ().lastLoadedTire;
+		string lst = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+		//string lst = SaveLoad.LoadString ("CurrentTire");
 		for(int i = 0; i < sliders.Length; i++)
 		{
 			if(SaveLoad.LoadString(lst + "_SliderName_" + i.ToString()) == "symmetry"){

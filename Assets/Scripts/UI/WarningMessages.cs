@@ -6,32 +6,94 @@ public class WarningMessages : MonoBehaviour {
 	public GameObject NewTirePanel;
 	public GameObject LoadPanel;
 	public GameObject LoadTireSelect;
-	public GameObject NewTireWarningM;
-	public GameObject LoadTireWarningM;
+	public GameObject UnsavedChangesWarningM;
 	public bool modified = false;
 
+	public string memory;
 
-	public void LoadTireWarningMessage(string str){
+
+	//SetMemory
+	public void SetMemory(string str){
+		memory = str;
+	}
+
+
+
+
+	//WARNING MESSAGES-------------------------------------------------------------------
+	public void NewTireWarningMessage(string str){
+		memory = str;
 		if (modified) {
-			LoadTireWarningM.SetActive(true);
+			UnsavedChangesWarningM.SetActive(true);
+		} else {
+			NewTirePanel.SetActive(true);
+		}
+	}
+	public void LoadTireWarningMessage(string str){
+		memory = str;
+		if (modified) {
+			UnsavedChangesWarningM.SetActive(true);
 		} else {
 			LoadPanel.SetActive(true);
 			LoadTireSelect.SetActive(true);
 		}
 	}
-
-	public void NewTireWarningMessage(string str){
+	public void AeroWarningMessage(string str){
+		memory = str;
 		if (modified) {
-			NewTireWarningM.SetActive(true);
-			NewTirePanel.SetActive(false);
+			UnsavedChangesWarningM.SetActive(true);
 		} else {
-			NewTirePanel.SetActive(true);
-			NewTireWarningM.SetActive(false);
+			AerodynamicsTask();
+		}
+	}
+	public void JumpSimWarningMessage(string str){
+		memory = str;
+		if (modified) {
+			UnsavedChangesWarningM.SetActive(true);
+		} else {
+			JumpSimTask();
 		}
 	}
 
+	//RunTask-------------------------------------------------------------------------------------------
+	public void RunTask(string str){
+		str = str;
+		if (memory == "LoadTireWarning")
+			LoadTireWarningTask ();
+		
+		if (memory == "NewTireWarning")
+			NewTireWarningTask ();
+
+		if (memory == "AerodynamicsWarning")
+			AerodynamicsTask ();
+
+		if (memory == "JumpSimWarning")
+			JumpSimTask ();
+		
+	}
+
+	//TASKS------------------------------------------------------------------------
+	void NewTireWarningTask(){
+		NewTirePanel.SetActive(true);
+	}
+	void LoadTireWarningTask(){
+		LoadPanel.SetActive(true);
+		LoadTireSelect.SetActive(true);
+	}
+	void JumpSimTask(){
+		Application.LoadLevel("ProtoLevel");
+	}
+	void AerodynamicsTask(){
+		Application.LoadLevel("TestFacility");
+	}
+
+	//-----------------------------------------------------------------------
 	public void setModified(bool m){
 		modified = m;
+	}
+
+	void Awake(){
+		modified = false;
 	}
 
 }

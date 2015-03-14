@@ -304,18 +304,24 @@ public class TireEditor : MonoBehaviour {
 				newTire(toSpawn);
 				ResetSliderUI ();
 				NewSliderUI ();
-				StartCoroutine(Load(0.1F));			
+				StartCoroutine(Load(0.1F));	
+				GameObject.Find("Editor").GetComponent<WarningMessages>().modified = false;
 			}
+
+			//If modified, set the blendshape weights to the values of the sliders
+
 			int syms = 0;
+			if (uiNav == "ModsButton")
+			if(modified)
 			for(int i = 0; i < slIndex; i++){
 				if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) == "symmetry"){
 					syms++;
 					continue;
 				}
-				if (uiNav == "ModsButton")
-					meshRenderer.SetBlendShapeWeight (i-syms, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
+				meshRenderer.SetBlendShapeWeight (i-syms, GameObject.Find("Slider"+ i).GetComponent<Slider>().value);
 
 			}
+
 				if (uiNav == "ModsButton")
 				if(modified){
 				for(int i = 0; i < slIndex; i++)
@@ -502,6 +508,7 @@ public class TireEditor : MonoBehaviour {
 		//--------------------------------------
 
 		SaveLoad.SaveString("CurrentTire", tireType);
+		GameObject.Find ("Editor").GetComponent<WarningMessages> ().modified = false;
 
 		for(int i = 0; i < slIndex; i++)
 		{
