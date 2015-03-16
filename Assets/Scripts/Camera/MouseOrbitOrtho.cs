@@ -29,6 +29,10 @@ public class MouseOrbitOrtho : MonoBehaviour {
 	Camera thisCamera;
 	
 	float camHeightAdd;
+	float hAdd = 0f;
+
+	TireEditor tireEdit;
+	string tireType;
 	
 	
 	float x = 0.0f;
@@ -36,6 +40,8 @@ public class MouseOrbitOrtho : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+
+		tireEdit = GameObject.Find ("Editor").GetComponent<TireEditor> ();
 
 		thisCamera = this.GetComponent<Camera>();
 		
@@ -49,6 +55,9 @@ public class MouseOrbitOrtho : MonoBehaviour {
 	}
 	
 	void LateUpdate () {
+
+
+		//getMinZoom ();
 
 		baseFreq += flickerFrequency;
 		if (baseFreq > 20) {
@@ -65,7 +74,7 @@ public class MouseOrbitOrtho : MonoBehaviour {
 			target = GameObject.FindGameObjectWithTag ("MainTire").transform;
 		
 		if (target) {
-			
+
 			if(Input.GetMouseButton(1)){
 				
 				x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;//* distance * 0.02f;
@@ -122,8 +131,11 @@ public class MouseOrbitOrtho : MonoBehaviour {
 				negDistance = new Vector3(0.0f, 0.0f, -distance);
 			}
 			
+			if(Input.GetMouseButton(2))
+				hAdd = Mathf.Clamp(hAdd - Input.GetAxis("Mouse Y") * ySpeed * 0.0001f, -1,1);
+					
 			Vector3 position = rotation * negDistance + target.position;
-			
+			position.y += hAdd;
 			
 			transform.rotation = rotation;
 			
@@ -144,6 +156,15 @@ public class MouseOrbitOrtho : MonoBehaviour {
 		if (angle > 360F)
 			angle -= 360F;
 		return Mathf.Clamp(angle, min, max);
+	}
+
+	void getMinZoom(){
+		if (tireEdit.lastLoadedTire == "TestTire")
+			minZoom = 0.5f;
+		if (tireEdit.lastLoadedTire == "KartTire")
+			minZoom = 0.5f;
+		if (tireEdit.lastLoadedTire == "CarTire")
+			minZoom = 0.5f;
 	}
 	
 	

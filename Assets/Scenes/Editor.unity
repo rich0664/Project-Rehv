@@ -271,6 +271,7 @@ GameObject:
   - 222: {fileID: 111993505}
   - 114: {fileID: 111993504}
   - 114: {fileID: 111993506}
+  - 114: {fileID: 111993507}
   m_Layer: 5
   m_Name: Warningsign
   m_TagString: Untagged
@@ -334,9 +335,23 @@ MonoBehaviour:
   m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: .866666675}
-  m_EffectDistance: {x: 2, y: -2}
-  m_UseGraphicAlpha: 1
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .988235295}
+  m_EffectDistance: {x: 3.74000001, y: -2.28999996}
+  m_UseGraphicAlpha: 0
+--- !u!114 &111993507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 111993502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .882352948}
+  m_EffectDistance: {x: -.550000012, y: -1.11000001}
+  m_UseGraphicAlpha: 0
 --- !u!1 &113498997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,11 +1123,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 359310912}
   m_RootOrder: 1
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -3.44000006, y: 7.61999989}
-  m_SizeDelta: {x: 18, y: 18}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 282.059631, y: 3.49994278}
+  m_SizeDelta: {x: 15, y: 15}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &194603054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1133,9 +1148,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .91911763, g: .175713673, b: .175713673, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: .360294104, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .816176474, g: .816176474, b: .816176474, a: 1}
+    m_PressedColor: {r: .514705896, g: .514705896, b: .514705896, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
     m_FadeDuration: .0500000007
@@ -1181,8 +1196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9f2be5cf3f047d242981b40535104ba6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1293,11 +1308,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1632660381}
   m_RootOrder: 2
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -3.44000006, y: 7.61999989}
-  m_SizeDelta: {x: 18, y: 18}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 282.059631, y: 3.49994278}
+  m_SizeDelta: {x: 15, y: 15}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &215979527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,9 +1333,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .91911763, g: .175713673, b: .175713673, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: .360294104, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .816176474, g: .816176474, b: .816176474, a: 1}
+    m_PressedColor: {r: .514705896, g: .514705896, b: .514705896, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
     m_FadeDuration: .0500000007
@@ -1378,8 +1393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9f2be5cf3f047d242981b40535104ba6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5578,11 +5593,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 616170644}
   m_RootOrder: 3
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -3.44000006, y: 7.61999989}
-  m_SizeDelta: {x: 18, y: 18}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 282.058807, y: 3.49959183}
+  m_SizeDelta: {x: 15, y: 15}
+  m_Pivot: {x: .5, y: .5}
 --- !u!114 &1171361822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5603,9 +5618,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .91911763, g: .175713673, b: .175713673, a: 1}
-    m_HighlightedColor: {r: 1, g: 0, b: 0, a: 1}
-    m_PressedColor: {r: .360294104, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: .816176474, g: .816176474, b: .816176474, a: 1}
+    m_PressedColor: {r: .514705896, g: .514705896, b: .514705896, a: 1}
     m_DisabledColor: {r: .784313738, g: .784313738, b: .784313738, a: .501960814}
     m_ColorMultiplier: 1
     m_FadeDuration: .0500000007
@@ -5663,8 +5678,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9f2be5cf3f047d242981b40535104ba6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6981,7 +6996,7 @@ MonoBehaviour:
               Culture=neutral, PublicKeyToken=null
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: <color=white>File</color>
+            m_StringArgument: <color=white>Tools</color>
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -6999,7 +7014,7 @@ MonoBehaviour:
               Culture=neutral, PublicKeyToken=null
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: <color=black>File</color>
+            m_StringArgument: <color=black>Tools</color>
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -10255,7 +10270,7 @@ MonoBehaviour:
   flickerCamera: 1
   flickerFrequency: 4.5
   zoom: 1.5
-  minZoom: .25
+  minZoom: .100000001
   maxZoom: 3.5
   zoomSpeed: 4
 --- !u!124 &2060856227
