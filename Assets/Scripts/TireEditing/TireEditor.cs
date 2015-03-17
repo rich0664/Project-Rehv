@@ -406,7 +406,7 @@ public class TireEditor : MonoBehaviour {
 			lInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
-			lInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+			lInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, 11f);
 			uiY += 135;
 			
 		}
@@ -437,7 +437,7 @@ public class TireEditor : MonoBehaviour {
 			sInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
-			sInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+			sInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, 11f);
 			uiY += 135;
 			
 		}
@@ -445,7 +445,7 @@ public class TireEditor : MonoBehaviour {
 		GameObject nPrefab = Resources.Load ("UI/" + "NewSaveButton", typeof(GameObject)) as GameObject;
 		GameObject nInst = Instantiate (nPrefab, this.transform.position, this.transform.rotation) as GameObject;
 		nInst.name = "ThumbButton" + (savesCount+1);
-		nInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, -3.8f);
+		nInst.GetComponent<RectTransform>().anchoredPosition = new Vector2(18.6f + uiY, 11f);
 		GameObject.Find("SLContent").GetComponent<RectTransform>().sizeDelta = new Vector2(uiY + 175,154.4f);
 
 		GameObject.Find ("SLPMemory").GetComponent<Text> ().text = "Available Memory: " + 
