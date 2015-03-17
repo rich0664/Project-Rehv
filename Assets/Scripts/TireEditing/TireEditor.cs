@@ -106,11 +106,11 @@ public class TireEditor : MonoBehaviour {
 		RenderTexture tempRT = new RenderTexture(240,240, 16 );
 		virtuCamera.aspect = 1f;
 		if (tireLoad == "TestTire")
-			virtuCamera.orthographicSize = 0.6f;
+			virtuCamera.orthographicSize = 0.45f;
 		if (tireLoad == "KartTire")
 			virtuCamera.orthographicSize = 0.2f;
 		if (tireLoad == "CarTire")
-			virtuCamera.orthographicSize = 0.3f;
+			virtuCamera.orthographicSize = 0.4f;
 		virtuCamera.targetTexture = tempRT;
 		virtuCamera.Render ();
 		RenderTexture.active = tempRT;
@@ -400,7 +400,7 @@ public class TireEditor : MonoBehaviour {
 			GameObject lPrefab = Resources.Load ("UI/" + "LoadThumbButton", typeof(GameObject)) as GameObject;
 			GameObject lInst = Instantiate (lPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			lInst.name = "LoadThumbButton" + i;
-			lInst.GetComponentInChildren<Text>().text = UITire + i;
+			lInst.GetComponentInChildren<Text>().text = UITire + i + ".tir";
 			Texture2D img = new Texture2D(2,2);
 			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
 			lInst.GetComponent<Image>().sprite = Sprite.Create(img,
@@ -431,7 +431,7 @@ public class TireEditor : MonoBehaviour {
 			GameObject sPrefab = Resources.Load ("UI/" + "ThumbButton", typeof(GameObject)) as GameObject;
 			GameObject sInst = Instantiate (sPrefab, this.transform.position, this.transform.rotation) as GameObject;
 			sInst.name = "ThumbButton" + i;
-			sInst.GetComponentInChildren<Text>().text = UITire + i;
+			sInst.GetComponentInChildren<Text>().text = UITire + i + ".tir";
 			Texture2D img = new Texture2D(2,2);
 			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
 			sInst.GetComponent<Image>().sprite = Sprite.Create(img,

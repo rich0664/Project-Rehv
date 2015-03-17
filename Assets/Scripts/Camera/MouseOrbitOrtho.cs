@@ -58,15 +58,18 @@ public class MouseOrbitOrtho : MonoBehaviour {
 
 
 		//getMinZoom ();
+		if (flickerCamera) {
+			baseFreq += flickerFrequency;
+			if (baseFreq > 20) {
+				baseFreq = 0;
 
-		baseFreq += flickerFrequency;
-		if (baseFreq > 20) {
-			baseFreq = 0;
+				thisCamera.enabled = true;
+				thisCamera.Render ();
+				thisCamera.enabled = false;
 
+			}
+		} else {
 			thisCamera.enabled = true;
-			thisCamera.Render();
-			thisCamera.enabled = false;
-
 		}
 
 

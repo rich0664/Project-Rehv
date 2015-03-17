@@ -10270,7 +10270,7 @@ MonoBehaviour:
   flickerCamera: 1
   flickerFrequency: 4.5
   zoom: 1.5
-  minZoom: .100000001
+  minZoom: .159999996
   maxZoom: 3.5
   zoomSpeed: 4
 --- !u!124 &2060856227
@@ -10307,12 +10307,12 @@ Camera:
   far clip plane: 1000
   field of view: 70
   orthographic: 1
-  orthographic size: 1.41999996
+  orthographic size: 1.15999997
   m_Depth: 6.09000015
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 8400000, guid: 3db18f56cf396f14485b75ce188ef728, type: 2}
   m_TargetDisplay: 0
   m_HDR: 0
@@ -10325,8 +10325,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060856224}
-  m_LocalRotation: {x: .16689685, y: 0, z: 0, w: .985974371}
-  m_LocalPosition: {x: 0, y: 2.47300005, z: -1.48800004}
+  m_LocalRotation: {x: .393333405, y: 0, z: 0, w: .919395924}
+  m_LocalPosition: {x: .368999988, y: 3.5079999, z: -2.65400004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10391,66 +10391,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1780590139}
   m_RootOrder: 0
---- !u!1 &2063266800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2063266802}
-  - 108: {fileID: 2063266801}
-  m_Layer: 0
-  m_Name: Point light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &2063266801
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2063266800}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 8
-  m_Range: 29.2999992
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_BounceIntensity: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
---- !u!4 &2063266802
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2063266800}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66000009, y: 4.80999994, z: .0500000007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
 --- !u!1 &2069267600
 GameObject:
   m_ObjectHideFlags: 0
