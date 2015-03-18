@@ -14,5 +14,9 @@ public class ObjectMoveToCursor : MonoBehaviour {
 		Vector2 pos;
 		RectTransformUtility.ScreenPointToLocalPointInRectangle(myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
 		transform.position = myCanvas.transform.TransformPoint(pos);
+
+		if(Cursor.visible)
+			Cursor.visible = false;
 	}
+
 }

@@ -25,6 +25,11 @@ public class CreateDefaultPrefs : MonoBehaviour {
 
 			SaveLoad.SaveFloat ("TestTire" + "_SaveCost", 49f);
 
+		SaveLoad.SaveInt ("TestTire0" + "_Pattern", 0);
+		SaveLoad.SaveFloat ("TestTire0" + "_PatternOpacity", 0.4f);
+		SaveLoad.SaveFloat ("TestTire0" + "_PatternScale", 1f);
+
+
 
 
 
@@ -48,6 +53,10 @@ public class CreateDefaultPrefs : MonoBehaviour {
 			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 0, 50f);
 			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 1, 50f);
 			SaveLoad.SaveFloat ("KartTire0" + "Slider" + 2, 50f);
+
+		SaveLoad.SaveInt ("KartTire0" + "_Pattern", 0);
+		SaveLoad.SaveFloat ("KartTire0" + "_PatternOpacity", 0.4f);
+		SaveLoad.SaveFloat ("KartTire0" + "_PatternScale", 1f);
 
 
 		//Car Tire ----------------------------------------------------------------------------
@@ -100,6 +109,11 @@ public class CreateDefaultPrefs : MonoBehaviour {
 			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 0, 50f);
 			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 1, 25f);
 			SaveLoad.SaveFloat ("CarTire0" + "Slider" + 2, 25f);
+			
+
+		SaveLoad.SaveInt ("CarTire0" + "_Pattern", 0);
+		SaveLoad.SaveFloat ("CarTire0" + "_PatternOpacity", 0.4f);
+		SaveLoad.SaveFloat ("CarTire0" + "_PatternScale", 1f);
 
 		//Globals ----------------------------------------------------------------------------
 

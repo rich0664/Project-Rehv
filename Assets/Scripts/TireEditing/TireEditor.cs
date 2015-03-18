@@ -19,10 +19,11 @@ public class TireEditor : MonoBehaviour {
 	bool firstRun = true;
 	public bool modified;
 	public string modifiedSlider;
+	public int pattInt;
 
 	SkinnedMeshRenderer meshRenderer;
 	MeshCollider meshCollider;
-	Material tireMat;
+	public Material tireMat;
 	Color tireColor;
 	float tireBrightness;
 
@@ -339,14 +340,21 @@ public class TireEditor : MonoBehaviour {
 					}
 				}
 			}
-			modified = false;
 
 			if(uiNav == "ColorButton"){
 				tireColor.r = redS.value;
 				tireColor.g = greenS.value;
 				tireColor.b = blueS.value;
 				tireBrightness = brightS.value;
+
+				if(modified){
+					float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
+					float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
+					tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
+					tireMat.SetFloat("_PatternBlend", pattBlend);
+				}
 			}
+			modified = false;
 
 
 
@@ -516,11 +524,15 @@ public class TireEditor : MonoBehaviour {
 			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
-		
+		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
+		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
 		SaveLoad.SaveFloat(tireType + "Red", tireColor.r);
 		SaveLoad.SaveFloat(tireType + "Green", tireColor.g);
 		SaveLoad.SaveFloat(tireType + "Blue", tireColor.b);
 		SaveLoad.SaveFloat(tireType + "Brightness", tireBrightness);
+		SaveLoad.SaveInt (tireType + "_Pattern", pattInt);
+		SaveLoad.SaveFloat (tireType + "_PatternOpacity", pattBlend);
+		SaveLoad.SaveFloat (tireType + "_PatternScale", pattScale);
 		//--------------------------------------
 		if(uiNav != "ModsButton")
 			slidersRect.SetActive (false);
@@ -552,10 +564,21 @@ public class TireEditor : MonoBehaviour {
 		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
 		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
 		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
+		pattInt = SaveLoad.LoadInt (tireType + "_Pattern");
+		if (pattInt > 0) {
+			Texture patTex = GameObject.Find ("Pattern" + pattInt.ToString ()).GetComponent<RawImage> ().texture;
+			tireMat.SetTexture ("_Pattern", patTex);
+		}
+		GameObject.Find("PattScaleSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternScale");
+		GameObject.Find("PattOpacSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternOpacity");
 		tireColor.r = redS.value;
 		tireColor.g = greenS.value;
 		tireColor.b = blueS.value;
 		tireBrightness = brightS.value;
+		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
+		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
+		tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
+		tireMat.SetFloat("_PatternBlend", pattBlend);
 
 		//--------------------------------------
 		if(uiNav != "ModsButton")
@@ -589,10 +612,21 @@ public class TireEditor : MonoBehaviour {
 		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
 		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
 		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
+		pattInt = SaveLoad.LoadInt (tireType + "_Pattern");
+		if (pattInt > 0) {
+			Texture patTex = GameObject.Find ("Pattern" + pattInt.ToString ()).GetComponent<RawImage> ().texture;
+			tireMat.SetTexture ("_Pattern", patTex);
+		}
+		GameObject.Find("PattScaleSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternScale");
+		GameObject.Find("PattOpacSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternOpacity");
 		tireColor.r = redS.value;
 		tireColor.g = greenS.value;
 		tireColor.b = blueS.value;
 		tireBrightness = brightS.value;
+		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
+		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
+		tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
+		tireMat.SetFloat("_PatternBlend", pattBlend);
 		
 		//--------------------------------------
 		if(uiNav != "ModsButton")

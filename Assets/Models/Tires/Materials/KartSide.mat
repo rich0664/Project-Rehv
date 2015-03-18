@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: KartSide
-  m_Shader: {fileID: 4800000, guid: 7447ab8c740a6c641af64b6b0215bea8, type: 3}
+  m_Shader: {fileID: 4800000, guid: e3c6357439842054782e0f0b7b4074b0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -35,6 +35,13 @@ Material:
           m_Texture: {fileID: 2800000, guid: 8159d105bc6d158448a8fd7c927af120, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Pattern
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -48,6 +55,10 @@ Material:
         first:
           name: _Brightness
         second: .5
+      data:
+        first:
+          name: _PatternBlend
+        second: .400000006
       data:
         first:
           name: _node_1007
