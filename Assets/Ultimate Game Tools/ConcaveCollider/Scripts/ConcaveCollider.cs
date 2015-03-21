@@ -448,15 +448,15 @@ public class ConcaveCollider : MonoBehaviour
 
 	//START COROUTINE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
+	int pHulls;
 
 	public IEnumerator ComputeHullsAsync (LogDelegate log, ProgressDelegate progress){
 
 		LoadingScreen loadingScreen = GameObject.Find ("Loader").GetComponent<LoadingScreen>();
 
-		Debug.Log (loadingScreen);
-
 		int pFrames = 250;
+
+
 
 		string strMeshAssetPath = "";
 		
@@ -627,6 +627,7 @@ public class ConcaveCollider : MonoBehaviour
 
 					for(int nHull = 0; nHull < info.nHullsOut; nHull++)
 					{
+						pHulls = info.nHullsOut;
 
 						SConvexDecompositionHullInfo hullInfo = new SConvexDecompositionHullInfo();
 						GetHullInfo((uint)nHull, ref hullInfo);
@@ -762,7 +763,7 @@ public class ConcaveCollider : MonoBehaviour
 								
 								if(hullInfo.nTriangleCount > LargestHullFaces)    LargestHullFaces    = hullInfo.nTriangleCount;
 								if(hullInfo.nVertexCount   > LargestHullVertices) LargestHullVertices = hullInfo.nVertexCount;
-							}
+							}													
 						}
 					}
 					
@@ -789,6 +790,20 @@ public class ConcaveCollider : MonoBehaviour
 		loadingScreen.loadingSlider.value = 1f;
 		loadingScreen.loadingText.text = "Done!";
 		yield return new WaitForEndOfFrame();
+		yield return new WaitForSeconds (0.1f);
+
+		for(int qi = 0; qi < pHulls; qi++){
+			GameObject hull = GameObject.Find("Hull " + qi);
+			Destroy(hull.GetComponent<MeshRenderer>());
+			Destroy(hull.GetComponent<MeshFilter>());
+			Destroy(hull.GetComponent<WireFrame>());
+		}
+
+		loadingScreen.isLoading = false;
+		loadingScreen.tireLauch.isLaunching = true;
+		loadingScreen.mainCam.SetActive (true);
+		loadingScreen.loadCam.enabled = false;
+		loadingScreen.mainUI.SetActive (true);
 		//---------------------------------------------------------------------------------------
 	}
 

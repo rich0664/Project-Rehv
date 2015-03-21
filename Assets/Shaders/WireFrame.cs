@@ -12,7 +12,7 @@ public class WireFrame : MonoBehaviour {
 	public bool ZWrite = false;
 	public bool AWrite = false;
 	public bool blend = false;
-	public float lineWidth = 3;
+	public float lineWidth = 3.75f;
 	public int size = 0;
 	
 	private Vector3[] lines ;

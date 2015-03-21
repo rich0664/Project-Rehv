@@ -9,6 +9,10 @@ public class LoadingScreen : MonoBehaviour {
 	public Text loadingText;
 	public Slider loadingSlider;
 	public Material wireMat;
+	public TireLaunch tireLauch;
+	public GameObject mainCam;
+	public Camera loadCam;
+	public GameObject mainUI;
 
 	// Use this for initialization
 	void Start () {

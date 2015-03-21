@@ -60,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .153999999, y: 1.47099996, z: .191}
+  m_LocalPosition: {x: .153999999, y: 1.829, z: .191}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
   - {fileID: 469528}
@@ -231,7 +231,7 @@ MonoBehaviour:
   InternalScale: 200
   Precision: 1
   CreateMeshAssets: 0
-  CreateHullMesh: 0
+  CreateHullMesh: 1
   DebugLog: 0
   LegacyDepth: 6
   ShowAdvancedOptions: 1
@@ -267,11 +267,12 @@ SkinnedMeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139418}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 5a7bbbe1e506adf4a942201aca4710ee, type: 2}
+  - {fileID: 2100000, guid: a2185e82686115a4ea57a46755b49737, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
