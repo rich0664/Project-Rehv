@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 6278703}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ Transform:
   - {fileID: 1066467858}
   - {fileID: 1037175760}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!95 &24915770
 Animator:
   serializedVersion: 3
@@ -200,7 +200,7 @@ GameObject:
   - 224: {fileID: 43511695}
   - 222: {fileID: 43511697}
   - 114: {fileID: 43511696}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &54173974
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +368,7 @@ GameObject:
   - 224: {fileID: 352070842}
   - 222: {fileID: 352070844}
   - 114: {fileID: 352070843}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,12 +448,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 373433058}
   m_LocalRotation: {x: .0226446968, y: .9770087, z: -.136682421, w: .162047163}
-  m_LocalPosition: {x: -3.29999995, y: 25.6299992, z: 52.4500008}
+  m_LocalPosition: {x: -399.799988, y: -344.369995, z: 52.4500008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1068966432}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1733126070}
+  m_RootOrder: 5
 --- !u!1 &373994682
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ Transform:
   - {fileID: 419689597}
   - {fileID: 1979215033}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &467863845
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +572,7 @@ GameObject:
   - 224: {fileID: 467863846}
   - 222: {fileID: 467863848}
   - 114: {fileID: 467863847}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BestDist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - 224: {fileID: 469661102}
   - 222: {fileID: 469661104}
   - 114: {fileID: 469661103}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   - 224: {fileID: 478733234}
   - 222: {fileID: 478733236}
   - 114: {fileID: 478733235}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: CurrtDist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -841,7 +841,7 @@ GameObject:
   - 222: {fileID: 674454302}
   - 114: {fileID: 674454301}
   - 114: {fileID: 674454303}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: EditorButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,11 +954,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 840895177}
-  - 114: {fileID: 840895178}
   - 114: {fileID: 840895179}
   - 114: {fileID: 840895180}
   m_Layer: 0
-  m_Name: TireSpawn
+  m_Name: TireLaunch
   m_TagString: TireSpawn
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -976,23 +975,7 @@ Transform:
   m_Children:
   - {fileID: 373994683}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
---- !u!114 &840895178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 840895176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoLoadCurrentTire: 1
-  tireTypeToSpawn: TestTire
-  shouldSpin: 0
-  isEditor: 0
-  generateCollision: 1
+  m_RootOrder: 5
 --- !u!114 &840895179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +992,7 @@ MonoBehaviour:
   maxDeviation: 5
   launchPower: 2
   rollPower: 2.5
+  isLaunching: 1
 --- !u!114 &840895180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3011,7 +2995,7 @@ Transform:
   m_Children:
   - {fileID: 919289776}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!82 &1218939084
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3196,7 +3180,7 @@ Transform:
   m_LocalScale: {x: 36.6073647, y: 34.365345, z: 2.53466511}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1358358252
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,7 +3309,7 @@ Transform:
   m_LocalScale: {x: 36.6073647, y: 34.365345, z: 1.61584747}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &1457341352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,7 +3395,7 @@ GameObject:
   - 224: {fileID: 1560201063}
   - 222: {fileID: 1560201065}
   - 114: {fileID: 1560201064}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3491,7 +3475,7 @@ Transform:
   - {fileID: 1295354503}
   - {fileID: 941651226}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!1 &1648132837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3518,7 +3502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &1669785252
 GameObject:
   m_ObjectHideFlags: 0
@@ -3528,7 +3512,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1669785253}
   - 114: {fileID: 1669785254}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3674,7 +3658,7 @@ GameObject:
   - 114: {fileID: 1733126068}
   - 114: {fileID: 1733126067}
   - 114: {fileID: 1733126071}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3750,6 +3734,7 @@ RectTransform:
   - {fileID: 1669785253}
   - {fileID: 674454300}
   - {fileID: 1781313901}
+  - {fileID: 373433059}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -3872,7 +3857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!135 &1768584080
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3933,7 +3918,7 @@ GameObject:
   - 224: {fileID: 1781313901}
   - 114: {fileID: 1781313904}
   - 222: {fileID: 1781313903}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: TimeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4025,7 +4010,7 @@ GameObject:
   - 224: {fileID: 1854780363}
   - 222: {fileID: 1854780365}
   - 114: {fileID: 1854780364}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4129,7 +4114,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 2060754036}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}

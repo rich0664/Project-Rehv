@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CreateDefaultPrefs : MonoBehaviour {
@@ -123,6 +124,38 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("Memory"))
 			SaveLoad.SaveFloat ("Memory", 350f);
 
+		if (!PlayerPrefs.HasKey ("Money"))
+			SaveLoad.SaveFloat ("Money", 100f);
+
+		if (!PlayerPrefs.HasKey ("RedInk"))
+			SaveLoad.SaveFloat ("RedInk", 1f);
+
+		if (!PlayerPrefs.HasKey ("GreenInk"))
+			SaveLoad.SaveFloat ("GreenInk", 1f);
+
+		if (!PlayerPrefs.HasKey ("BlueInk"))
+			SaveLoad.SaveFloat ("BlueInk", 1f);
+
+		if (!PlayerPrefs.HasKey ("WhiteInk"))
+			SaveLoad.SaveFloat ("WhiteInk", 1f);
+
+		if (!PlayerPrefs.HasKey ("RubberInk"))
+			SaveLoad.SaveFloat ("RubberInk", 1f);
+
 
 	}
+
+
+	public void setPref(bool str){
+		if (str) {
+			string prefKey = GameObject.Find ("DevInputFloatKey").GetComponent<InputField> ().text;
+			string prefValue = GameObject.Find ("DevInputFloat").GetComponent<InputField> ().text;
+			float prefFloat = float.Parse(prefValue);
+			SaveLoad.SaveFloat (prefKey, prefFloat);
+		}
+	}
+
+
+
+//END CLASS--------------------------------------------------------------------------------------------------
 }

@@ -46,11 +46,11 @@ Material:
       data:
         first:
           name: _SpecularPower
-        second: 1.36752105
+        second: .159999996
       data:
         first:
           name: _SpecularAmount
-        second: .3504273
+        second: 0
       data:
         first:
           name: _Brightness

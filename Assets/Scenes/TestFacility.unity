@@ -2383,6 +2383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoLoadCurrentTire: 1
   tireTypeToSpawn: TestTire
   shouldSpin: 1
   isEditor: 1

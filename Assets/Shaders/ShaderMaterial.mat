@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: KartMain
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: ShaderMaterial
+  m_Shader: {fileID: 4800000, guid: d621d6111edf3ae44afcb0fbb920c536, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 517be1f9188a21a49b7478190aaaf524, type: 3}
+          m_Texture: {fileID: 8400000, guid: 3db18f56cf396f14485b75ce188ef728, type: 2}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -33,13 +33,6 @@ Material:
           name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Texture
-        second:
-          m_Texture: {fileID: 2800000, guid: 517be1f9188a21a49b7478190aaaf524, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -84,20 +77,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Normal
-        second:
-          m_Texture: {fileID: 2800000, guid: 8159d105bc6d158448a8fd7c927af120, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _node_4900
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -113,22 +92,6 @@ Material:
         second: 0
       data:
         first:
-          name: _Brightness
-        second: .5
-      data:
-        first:
-          name: _SpecularPower
-        second: .206806764
-      data:
-        first:
-          name: _SpecularAmount
-        second: .243284449
-      data:
-        first:
-          name: _node_1007
-        second: 1
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -138,7 +101,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .0659999996
+        second: .5
       data:
         first:
           name: _BumpScale
@@ -171,15 +134,11 @@ Material:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: .772058845, g: .772058845, b: .772058845, a: 1}
-      data:
-        first:
-          name: _Specularcolor
-        second: {r: .352941155, g: .352941155, b: .352941155, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI

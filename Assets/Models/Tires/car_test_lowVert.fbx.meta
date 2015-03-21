@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 438411497b064a846adbb0167901b617
+guid: eeac97263d76d164b8c52703b1ba8978
+timeCreated: 1426799832
+licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    4300000: Circle
+    4300000: Car_main
     9500000: //RootNode
     13700000: //RootNode
   materials:
@@ -41,12 +43,12 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

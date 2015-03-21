@@ -37,6 +37,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
@@ -79,13 +86,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Texture
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _SpecGlossMap
         second:
           m_Texture: {fileID: 0}
@@ -114,6 +114,18 @@ Material:
         second: 0
       data:
         first:
+          name: _Brightness
+        second: 1
+      data:
+        first:
+          name: _SpecularPower
+        second: 1.36752105
+      data:
+        first:
+          name: _SpecularAmount
+        second: .294746608
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -123,7 +135,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: 0
+        second: .0450000018
       data:
         first:
           name: _BumpScale
@@ -152,18 +164,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _SpecularPower
-        second: 1.36752105
-      data:
-        first:
-          name: _SpecularAmount
-        second: .294746608
-      data:
-        first:
-          name: _Brightness
-        second: 1
     m_Colors:
       data:
         first:
@@ -172,16 +172,16 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .183823526, g: .183823526, b: .183823526, a: 1}
+        second: {r: .757352948, g: .757352948, b: .757352948, a: 1}
       data:
         first:
           name: _SpecColor
         second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
       data:
         first:
-          name: _EmissionColorUI
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _Specularcolor
         second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _EmissionColorUI
+        second: {r: 1, g: 1, b: 1, a: 1}

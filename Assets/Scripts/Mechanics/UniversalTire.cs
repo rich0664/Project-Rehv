@@ -16,6 +16,8 @@ public class UniversalTire : MonoBehaviour {
 	GameObject tire;
 	
 	SkinnedMeshRenderer meshRenderer;
+	public SkinnedMeshRenderer collMeshRenderer;
+	MeshCollider editMeshCollider;
 	MeshFilter meshFilter;
 	Material tireMat;
 	Color tireColor;
@@ -28,6 +30,8 @@ public class UniversalTire : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
+		DontDestroyOnLoad (transform.gameObject);
+
 		slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 
 		sliders = new float[slidersLength];
@@ -36,6 +40,7 @@ public class UniversalTire : MonoBehaviour {
 		tireType = SaveLoad.LoadString ("CurrentTire");
 		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 900;
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
+		editMeshCollider = tire.GetComponent<MeshCollider> ();
 		meshFilter = tire.GetComponent <MeshFilter>();
 		tireSound = tire.GetComponent<AudioSource>();
 		tireMat = tire.GetComponent<Renderer>().materials [1];
@@ -72,6 +77,8 @@ public class UniversalTire : MonoBehaviour {
 				continue;
 			}
 			meshRenderer.SetBlendShapeWeight (i-syms, sliders[i]);
+			if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision)
+				collMeshRenderer.SetBlendShapeWeight(i-syms, sliders[i]);
 		}
 
 		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision) {
@@ -86,9 +93,16 @@ public class UniversalTire : MonoBehaviour {
 	void BakeCollision(){
 
 		Mesh bakedMesh = new Mesh ();
-		meshRenderer.BakeMesh (bakedMesh);
-		meshFilter.sharedMesh = bakedMesh;
-		tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
+
+		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn> ().isEditor) {
+			meshRenderer.BakeMesh(bakedMesh);
+			editMeshCollider.sharedMesh = bakedMesh;
+		} else {
+			collMeshRenderer.BakeMesh (bakedMesh);
+			meshFilter.sharedMesh = bakedMesh;
+			tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
+			collMeshRenderer.enabled = false;
+		}
 
 	}
 	

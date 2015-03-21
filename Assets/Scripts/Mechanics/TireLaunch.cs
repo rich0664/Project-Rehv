@@ -11,7 +11,7 @@ public class TireLaunch : MonoBehaviour {
 
 	float launchAngles = -90f;
 
-	bool isLaunching = true;
+	public bool isLaunching = true;
 	Transform aimer;
 
 
@@ -49,7 +49,10 @@ public class TireLaunch : MonoBehaviour {
 			tire.GetComponent<Rigidbody>().position = this.transform.position;
 			tire.GetComponent<Rigidbody>().velocity = launchVector;
 			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
-			
+
+			if(!GetComponentInChildren<MeshRenderer> ().enabled)
+				GetComponentInChildren<MeshRenderer> ().enabled = true;
+
 		}
 
 		if(launchAngles > -90f + maxDeviation ) 
