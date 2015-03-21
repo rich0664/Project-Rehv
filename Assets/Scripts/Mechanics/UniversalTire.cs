@@ -30,7 +30,7 @@ public class UniversalTire : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 
-		DontDestroyOnLoad (transform.gameObject);
+		//DontDestroyOnLoad (transform.gameObject);
 
 		slidersLength =  SaveLoad.LoadInt (tireType + "_SlidersLength");
 
@@ -78,6 +78,7 @@ public class UniversalTire : MonoBehaviour {
 			}
 			meshRenderer.SetBlendShapeWeight (i-syms, sliders[i]);
 			if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision)
+				collMeshRenderer.enabled = true;
 				collMeshRenderer.SetBlendShapeWeight(i-syms, sliders[i]);
 		}
 

@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &119062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 434166}
+  - 137: {fileID: 13799726}
+  m_Layer: 0
+  m_Name: smrColl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &149136
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,6 +39,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &434166
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449136}
+  m_RootOrder: 0
 --- !u!4 &449136
 Transform:
   m_ObjectHideFlags: 1
@@ -32,7 +60,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .0260000005, y: 1.70200002, z: .0379999988}
   m_LocalScale: {x: 200, y: 200, z: 200}
-  m_Children: []
+  m_Children:
+  - {fileID: 434166}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!33 &3319062
@@ -148,7 +177,7 @@ MonoBehaviour:
   tireSound3: {fileID: 0}
   tireSound4: {fileID: 0}
   tireSound5: {fileID: 0}
-  collMeshRenderer: {fileID: 0}
+  collMeshRenderer: {fileID: 13799726}
 --- !u!137 &13749136
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -156,6 +185,50 @@ SkinnedMeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149136}
   m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 1cd5b728920751d4a9d8b939b505e12c, type: 2}
+  - {fileID: 2100000, guid: f5750c73deb2b3a4c9109c342cf87d97, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 1
+  m_Mesh: {fileID: 4300000, guid: 0c3fa24b842db9a40b30ff7d710cd7c2, type: 3}
+  m_Bones: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  m_RootBone: {fileID: 0}
+  m_AABB:
+    m_Center: {x: 0, y: 0, z: 2.91038305e-10}
+    m_Extent: {x: .0014144762, y: .0014144762, z: .000900000101}
+  m_DirtyAABB: 0
+--- !u!137 &13799726
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119062}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:

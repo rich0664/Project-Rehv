@@ -92,7 +92,8 @@ public class WarningMessages : MonoBehaviour {
 		modified = m;
 	}
 
-	void Awake(){
+	IEnumerator modFalse(float delay){
+		yield return new WaitForSeconds (delay);
 		modified = false;
 	}
 

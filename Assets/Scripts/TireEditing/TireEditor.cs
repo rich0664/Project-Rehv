@@ -26,6 +26,7 @@ public class TireEditor : MonoBehaviour {
 	public Material tireMat;
 	Color tireColor;
 	float tireBrightness;
+	public WarningMessages warnMess;
 
 	public RenderTexture screenshotTex;
 
@@ -58,8 +59,6 @@ public class TireEditor : MonoBehaviour {
 		greenS = GameObject.Find("GreenSlider").GetComponent<Slider>() ;
 		blueS = GameObject.Find("BlueSlider").GetComponent<Slider>() ;
 		brightS = GameObject.Find("BrightSlider").GetComponent<Slider>();
-
-		
 		
 	}
 
@@ -147,10 +146,6 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void LoadButton(GameObject gameO){	
-		slidersRect.SetActive (true);
-		colorsRect.SetActive (true);
-		addonsRect.SetActive (true);
-
 		Destroy (tire);
 		ResetSliderUI ();
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
@@ -164,27 +159,18 @@ public class TireEditor : MonoBehaviour {
 		newTire (tireLoad);
 		NewSliderUI ();
 		StartCoroutine(Load(0.1F));
-
-		if(uiNav != "ModsButton")
-			slidersRect.SetActive (false);
-		if(uiNav != "ColorButton")
-			colorsRect.SetActive (false);
-		if(uiNav != "AddonButton")
-			addonsRect.SetActive (false);
-
 	}
+
 	public void LoadX(string str){
 		str = str;
 		ResetLoadUI ();
 	}
 
 	public void ResetTire(string tireToReset){
+
 		ResetSaveUI ();
 		tireType = tireToReset + "0";
 
-		slidersRect.SetActive (true);
-		colorsRect.SetActive (true);
-		addonsRect.SetActive (true);
 		
 		Destroy (tire);
 		ResetSliderUI ();
@@ -197,13 +183,6 @@ public class TireEditor : MonoBehaviour {
 		newTire (tireLoad);
 		NewSliderUI ();
 		StartCoroutine(Load(0.1F));
-		
-		if(uiNav != "ModsButton")
-			slidersRect.SetActive (false);
-		if(uiNav != "ColorButton")
-			colorsRect.SetActive (false);
-		if(uiNav != "AddonButton")
-			addonsRect.SetActive (false);
 		
 	}
 
@@ -591,11 +570,11 @@ public class TireEditor : MonoBehaviour {
 
 
 	IEnumerator Load (float delay) {
-		yield return new WaitForSeconds(delay);
-
 		slidersRect.SetActive (true);
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);
+
+		yield return new WaitForSeconds(delay);
 		//--------------------------------------
 				
 		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
@@ -635,6 +614,8 @@ public class TireEditor : MonoBehaviour {
 			colorsRect.SetActive (false);
 		if(uiNav != "AddonButton")
 			addonsRect.SetActive (false);
+
+		warnMess.modified = false;
 	}
 	
 	
