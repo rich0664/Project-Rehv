@@ -87,66 +87,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &138098953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 138098955}
-  - 108: {fileID: 138098954}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &138098954
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 138098953}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_BounceIntensity: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
---- !u!4 &138098955
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 138098953}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &221915420
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +486,7 @@ GameObject:
   - 124: {fileID: 953163004}
   - 81: {fileID: 953163003}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: LoadCam
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,7 +566,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1042278329}
   - 114: {fileID: 1042278331}
-  - 114: {fileID: 1042278330}
   m_Layer: 0
   m_Name: Loader
   m_TagString: Untagged
@@ -641,27 +580,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042278328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.67999983, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1139052447}
-  m_RootOrder: 6
---- !u!114 &1042278330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1042278328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoLoadCurrentTire: 1
-  tireTypeToSpawn: TestTire
-  shouldSpin: 0
-  isEditor: 0
-  generateCollision: 1
+  m_Father: {fileID: 1515590619}
+  m_RootOrder: 0
 --- !u!114 &1042278331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,7 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tire: {fileID: 0}
   isLoading: 1
-  launcher: {fileID: 0}
   loadingText: {fileID: 1852456785}
   loadingSlider: {fileID: 247043992}
 --- !u!1 &1139052446
@@ -709,7 +631,7 @@ Transform:
   - {fileID: 1909964962}
   - {fileID: 808764217}
   - {fileID: 952291801}
-  - {fileID: 1042278329}
+  - {fileID: 1515590619}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!1 &1330989320
@@ -784,7 +706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1333598730
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +719,7 @@ GameObject:
   - 114: {fileID: 1333598733}
   - 114: {fileID: 1333598732}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: LoadCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -815,7 +737,7 @@ RectTransform:
   m_Children:
   - {fileID: 928893463}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -875,6 +797,51 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!1 &1515590618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1515590619}
+  - 114: {fileID: 1515590620}
+  m_Layer: 0
+  m_Name: TireSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1515590619
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515590618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.67999983, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1042278329}
+  m_Father: {fileID: 1139052447}
+  m_RootOrder: 6
+--- !u!114 &1515590620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1515590618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2250bf4c5f7db44e9fc99358e97f9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoLoadCurrentTire: 1
+  tireTypeToSpawn: TestTire
+  shouldSpin: 0
+  isEditor: 0
+  generateCollision: 1
 --- !u!1 &1776305336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1086,6 +1053,7 @@ GameObject:
   - 33: {fileID: 1875170068}
   - 65: {fileID: 1875170067}
   - 23: {fileID: 1875170066}
+  - 114: {fileID: 1875170069}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1148,6 +1116,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875170064}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1875170069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1875170064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03446bef8c2509643a25e36662e2be74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render_mesh_normaly: 1
+  render_lines_1st: 0
+  render_lines_2nd: 0
+  render_lines_3rd: 0
+  lineColor: {r: 0, g: 1, b: 1, a: 1}
+  backgroundColor: {r: 0, g: .5, b: .5, a: 1}
+  ZWrite: 1
+  AWrite: 1
+  blend: 1
+  lineWidth: 3
+  size: 0
+  lineMaterial: {fileID: 0}
 --- !u!1 &1909964961
 GameObject:
   m_ObjectHideFlags: 0

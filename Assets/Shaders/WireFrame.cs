@@ -3,15 +3,15 @@ using System.Collections;
 
 public class WireFrame : MonoBehaviour {
 	
-	public bool render_mesh_normaly = true;
-	public bool render_lines_1st = false;
-	public bool render_lines_2nd = false;
+	public bool render_mesh_normaly = false;
+	public bool render_lines_1st = true;
+	public bool render_lines_2nd = true;
 	public bool render_lines_3rd = false;
 	public Color lineColor = new Color (0.0f, 1.0f, 1.0f);
 	public Color backgroundColor = new Color (0.0f, 0.5f, 0.5f);
-	public bool ZWrite = true;
-	public bool AWrite = true;
-	public bool blend = true;
+	public bool ZWrite = false;
+	public bool AWrite = false;
+	public bool blend = false;
 	public float lineWidth = 3;
 	public int size = 0;
 	
@@ -98,10 +98,11 @@ public class WireFrame : MonoBehaviour {
 		else
 		{
 			lineMaterial.SetPass(0);
-			GL.Color(lineColor);
+
 			
 			if (lineWidth == 1) {
 				GL.Begin(GL.LINES);
+				GL.Color(lineColor);
 				for(int i = 0; i+2 < lines.Length; i+=3)
 				{
 					Vector3 vec1 = to_world(lines[i]);
@@ -122,6 +123,7 @@ public class WireFrame : MonoBehaviour {
 				}
 			} else {
 				GL.Begin(GL.QUADS);
+				GL.Color(lineColor);
 				for(int i = 0; i+2 < lines.Length; i+=3) {
 					Vector3 vec1 = to_world(lines[i]);
 					Vector3 vec2 = to_world(lines[i+1]);

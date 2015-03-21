@@ -8,6 +8,7 @@ public class LoadingScreen : MonoBehaviour {
 	public bool isLoading = true;
 	public Text loadingText;
 	public Slider loadingSlider;
+	public Material wireMat;
 
 	// Use this for initialization
 	void Start () {
@@ -20,16 +21,15 @@ public class LoadingScreen : MonoBehaviour {
 		if(tire == null)
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 	
-
-
-	}
-
-	void FixedUpdate(){
-		if (isLoading) {
-			tire.GetComponent<Rigidbody> ().position = this.transform.position;
+		if (isLoading && tire != null) {
+			Vector3 launchVector = new Vector3 (0,0,0);
+			tire.GetComponent<Rigidbody>().rotation = Quaternion.Euler(launchVector);
+			tire.GetComponent<Rigidbody>().position = this.transform.position;
+			tire.GetComponent<Rigidbody>().velocity = launchVector;
+			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
 		}
-	}
 
+	}
 
 
 	public void startDoneSequence(float delay){

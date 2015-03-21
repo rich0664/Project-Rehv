@@ -100,7 +100,7 @@ public class UniversalTire : MonoBehaviour {
 		} else {
 			collMeshRenderer.BakeMesh (bakedMesh);
 			meshFilter.sharedMesh = bakedMesh;
-			tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
+			tire.GetComponent<ConcaveCollider> ().startComputeCoroutine();
 			collMeshRenderer.enabled = false;
 		}
 

@@ -7,6 +7,8 @@ using System.Runtime.InteropServices;
 [AddComponentMenu("Ultimate Game Tools/Colliders/Concave Collider")]
 public class ConcaveCollider : MonoBehaviour
 {
+
+
     public enum EAlgorithm
     {
         Normal,
@@ -443,11 +445,17 @@ public class ConcaveCollider : MonoBehaviour
 		StartCoroutine (ComputeHullsAsync (null, null));
 	}
 
+
+	//START COROUTINE------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 	public IEnumerator ComputeHullsAsync (LogDelegate log, ProgressDelegate progress){
 
 		LoadingScreen loadingScreen = GameObject.Find ("Loader").GetComponent<LoadingScreen>();
 
-		Debug.Log("Yield");
+		Debug.Log (loadingScreen);
+
 		int pFrames = 250;
 
 		string strMeshAssetPath = "";
@@ -464,8 +472,8 @@ public class ConcaveCollider : MonoBehaviour
 		}
 
 		//---------------------------------------------------------------------------------------
+		loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.1f;
 		yield return new WaitForEndOfFrame();
-		Debug.Log("Yield");
 		//---------------------------------------------------------------------------------------
 
 		DllInit(!bForceNoMultithreading);
@@ -489,8 +497,8 @@ public class ConcaveCollider : MonoBehaviour
 		}
 
 		//---------------------------------------------------------------------------------------
+		loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.05f;
 		yield return new WaitForEndOfFrame();
-		Debug.Log("Yield");
 		//---------------------------------------------------------------------------------------
 
 		SConvexDecompositionInfoInOut info = new SConvexDecompositionInfoInOut();
@@ -499,8 +507,8 @@ public class ConcaveCollider : MonoBehaviour
 
 
 		//---------------------------------------------------------------------------------------
+		loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.05f;
 		yield return new WaitForEndOfFrame();
-		Debug.Log("Yield");
 		//---------------------------------------------------------------------------------------
 
 		if(theMesh)
@@ -508,8 +516,8 @@ public class ConcaveCollider : MonoBehaviour
 			if(theMesh.sharedMesh)
 			{
 				//---------------------------------------------------------------------------------------
+				loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.05f;
 				yield return new WaitForEndOfFrame();
-				Debug.Log("Yield");
 				//---------------------------------------------------------------------------------------
 				info.uMaxHullVertices        = (uint)(Mathf.Max(3, MaxHullVertices));
 				info.uMaxHulls               = (uint)(Mathf.Max(1, MaxHulls));
@@ -523,8 +531,9 @@ public class ConcaveCollider : MonoBehaviour
 				info.uVertexCount            = (uint)theMesh.sharedMesh.vertexCount;
 
 				//---------------------------------------------------------------------------------------
+				loadingScreen.loadingText.text = "Processing " + theMesh.sharedMesh.vertexCount + " Verticies";
+				loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.05f;
 				yield return new WaitForEndOfFrame();
-				Debug.Log("Yield");
 				//---------------------------------------------------------------------------------------
 
 				if(DebugLog)
@@ -542,16 +551,17 @@ public class ConcaveCollider : MonoBehaviour
 
 					//---------------------------------------------------------------------------------------
 					yield return new WaitForEndOfFrame();
+					loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.1f;
+					loadingScreen.loadingText.text = "Processing " + theMesh.sharedMesh.vertexCount + " Verticies";
+					yield return new WaitForEndOfFrame();
 					//---------------------------------------------------------------------------------------
 
-					Debug.Log("vtc1: " + theMesh.sharedMesh.vertexCount);
 					for(int nVertex = 0; nVertex < theMesh.sharedMesh.vertexCount; nVertex++)
 					{
 
 						//---------------------------------------------------------------------------------------
-						if(nVertex%pFrames == 0)
-							yield return new WaitForEndOfFrame();
-						//Debug.Log("Yield");
+						//if(nVertex%pFrames == 0)
+							//yield return new WaitForEndOfFrame();
 						//---------------------------------------------------------------------------------------
 
 						float fDistSquared = theMesh.sharedMesh.vertices[nVertex].sqrMagnitude;
@@ -569,15 +579,14 @@ public class ConcaveCollider : MonoBehaviour
 						Debug.Log("Max vertex distance = " + Mathf.Sqrt(fMaxDistSquared) + ". Rescaling mesh by a factor of " + fMeshRescale);
 					}
 
-					Debug.Log("vtc2: " + theMesh.sharedMesh.vertexCount);
+					//---------------------------------------------------------------------------------------
+					loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + 0.1f;
+					loadingScreen.loadingText.text = "Processing " + theMesh.sharedMesh.vertexCount + " Verticies... Again...";
+					yield return new WaitForEndOfFrame();
+					//---------------------------------------------------------------------------------------
+
 					for(int nVertex = 0; nVertex < theMesh.sharedMesh.vertexCount; nVertex++)
 					{
-
-						//---------------------------------------------------------------------------------------
-						if(nVertex%pFrames == 0)
-							yield return new WaitForEndOfFrame();
-						//Debug.Log("Yield");
-						//---------------------------------------------------------------------------------------
 
 						av3Vertices[nVertex] = theMesh.sharedMesh.vertices[nVertex] * fMeshRescale;
 					}
@@ -596,12 +605,7 @@ public class ConcaveCollider : MonoBehaviour
 						
 						foreach(Collider collider in GetComponents<Collider>())
 						{
-
-							//---------------------------------------------------------------------------------------
-							//yield return new WaitForEndOfFrame();
-							//Debug.Log("Yield");
-							//---------------------------------------------------------------------------------------
-
+			
 							collider.enabled = false;
 						}
 						
@@ -616,7 +620,11 @@ public class ConcaveCollider : MonoBehaviour
 						// -1 User cancelled
 					}
 
-					Debug.Log("nhulsO: " + info.nHullsOut);
+					//---------------------------------------------------------------------------------------
+					loadingScreen.loadingText.text = "Computing " + info.nHullsOut + " Hulls";
+					yield return new WaitForEndOfFrame();
+					//---------------------------------------------------------------------------------------
+
 					for(int nHull = 0; nHull < info.nHullsOut; nHull++)
 					{
 
@@ -643,7 +651,7 @@ public class ConcaveCollider : MonoBehaviour
 							{
 								fInvMeshRescale = 1.0f / fMeshRescale;
 
-								Debug.Log("nVtcs: " + hullVertices.Length);
+													
 								for(int nVertex = 0; nVertex < hullVertices.Length; nVertex++)
 								{
 
@@ -657,7 +665,7 @@ public class ConcaveCollider : MonoBehaviour
 							}
 							else
 							{
-								Debug.Log("nVtcs: " + hullVertices.Length);
+
 								for(int nVertex = 0; nVertex < hullVertices.Length; nVertex++)
 								{
 									//---------------------------------------------------------------------------------------
@@ -729,8 +737,18 @@ public class ConcaveCollider : MonoBehaviour
 								
 								if(CreateHullMesh)
 								{
+									//---------------------------------------------------------------------------------------
+									loadingScreen.loadingSlider.value = loadingScreen.loadingSlider.value + (0.35f / info.nHullsOut);
+									loadingScreen.loadingText.text = "Computing " + info.nHullsOut + " Hulls.   Colliderizing Hull" + nHull + " With " + hullVertices.Length + " Verticies";
+									yield return new WaitForEndOfFrame();
+									//---------------------------------------------------------------------------------------
+
 									MeshFilter meshf = m_aGoHulls[nHull].AddComponent<MeshFilter>();
 									meshf.sharedMesh = hullMesh;
+									MeshRenderer meshR = m_aGoHulls[nHull].AddComponent<MeshRenderer>();
+									WireFrame meshWire = m_aGoHulls[nHull].AddComponent<WireFrame>();
+									meshWire.lineMaterial = loadingScreen.wireMat;
+
 								}
 								
 								
@@ -767,8 +785,16 @@ public class ConcaveCollider : MonoBehaviour
 		
 		DllClose();
 
-		Debug.Log("Done");
+		//---------------------------------------------------------------------------------------
+		loadingScreen.loadingSlider.value = 1f;
+		loadingScreen.loadingText.text = "Done!";
+		yield return new WaitForEndOfFrame();
+		//---------------------------------------------------------------------------------------
 	}
+
+
+	//END COROUTINE--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 	public void ComputeHullsRuntime(LogDelegate log, ProgressDelegate progress)
