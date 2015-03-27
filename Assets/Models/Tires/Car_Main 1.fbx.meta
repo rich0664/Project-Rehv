@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: eeac97263d76d164b8c52703b1ba8978
-timeCreated: 1426799832
+guid: f05dc20770ab060408f363ba40c42a95
+timeCreated: 1427189552
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    4300000: Car_main
+    4300000: Kart_Base
+    4300002: Car_main
+    6400000: //RootNode
     9500000: //RootNode
+    11100000: //RootNode
     13700000: //RootNode
   materials:
     importMaterials: 1
@@ -19,7 +22,7 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
@@ -29,7 +32,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -47,7 +50,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0

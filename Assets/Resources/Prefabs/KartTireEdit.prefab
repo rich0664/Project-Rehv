@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11404498}
   - 33: {fileID: 3319062}
   - 64: {fileID: 6446588}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: KartTireEdit
   m_TagString: MainTire
   m_Icon: {fileID: 0}

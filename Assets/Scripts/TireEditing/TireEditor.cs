@@ -7,7 +7,7 @@ public class TireEditor : MonoBehaviour {
 
 	public GUISkin UISkin;
 	int slIndex; 
-	string uiNav = "ModsButton";
+	public string uiNav = "ModsButton";
 
 	public GameObject tire;
 	TireSpawn tireSpawn;
@@ -266,6 +266,16 @@ public class TireEditor : MonoBehaviour {
 
 	}
 
+	public void checkPrintTire(bool pBool){
+			warnMess.PrintSaveWarning("PrintSaveWarning");
+	}
+
+
+	public void printTire(){
+		SaveLoad.SaveInt ("ShouldPrint", 1);
+		Application.LoadLevel ("Garage");
+	}
+
 	// Update is called once per frame-------------------------------------------------------------------------------------
 	void Update () {
 
@@ -512,101 +522,21 @@ public class TireEditor : MonoBehaviour {
 		SaveLoad.SaveInt (tireType + "_Pattern", pattInt);
 		SaveLoad.SaveFloat (tireType + "_PatternOpacity", pattBlend);
 		SaveLoad.SaveFloat (tireType + "_PatternScale", pattScale);
-		//--------------------------------------
-		if(uiNav != "ModsButton")
-			slidersRect.SetActive (false);
-		if(uiNav != "ColorButton")
-			colorsRect.SetActive (false);
-		if(uiNav != "AddonButton")
-			addonsRect.SetActive (false);
-		
-	}
 
-	void Load () {
 
-		slidersRect.SetActive (true);
-		colorsRect.SetActive (true);
-		addonsRect.SetActive (true);
-		//--------------------------------------
-
-		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
-
-		lastLoadedTire = tireLoad;
-
-		for(int i = 0; i < slIndex; i++)
-		{
-			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
-			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
+		//SAVE ADDONS------------------------------
+		AddonPlacer aP = transform.gameObject.GetComponent<AddonPlacer> ();
+		int aCount = aP.addonCount;
+		string addonData = "";
+		for (int i = 1; i <= aCount; i++) {
+			Transform addonTrans = GameObject.Find("Addon" + i).transform;
+			addonData += "Index" + i + "=" + GameObject.Find("Addon" + i).GetComponent<Addon>().addonIndex;
+			addonData += "Pos" + i + addonTrans.position;
+			addonData += "Rot" + i + addonTrans.eulerAngles;
 		}
-					
-		redS.value = SaveLoad.LoadFloat(tireType + "Red");
-		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
-		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
-		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
-		pattInt = SaveLoad.LoadInt (tireType + "_Pattern");
-		if (pattInt > 0) {
-			Texture patTex = GameObject.Find ("Pattern" + pattInt.ToString ()).GetComponent<RawImage> ().texture;
-			tireMat.SetTexture ("_Pattern", patTex);
-		}
-		GameObject.Find("PattScaleSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternScale");
-		GameObject.Find("PattOpacSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternOpacity");
-		tireColor.r = redS.value;
-		tireColor.g = greenS.value;
-		tireColor.b = blueS.value;
-		tireBrightness = brightS.value;
-		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
-		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
-		tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
-		tireMat.SetFloat("_PatternBlend", pattBlend);
+		SaveLoad.SaveInt (tireType + "AddonCount", aCount);
+		SaveLoad.SaveString (tireType + "AddonData", addonData);
 
-		//--------------------------------------
-		if(uiNav != "ModsButton")
-			slidersRect.SetActive (false);
-		if(uiNav != "ColorButton")
-			colorsRect.SetActive (false);
-		if(uiNav != "AddonButton")
-			addonsRect.SetActive (false);
-	}
-
-
-	IEnumerator Load (float delay) {
-		slidersRect.SetActive (true);
-		colorsRect.SetActive (true);
-		addonsRect.SetActive (true);
-
-		yield return new WaitForSeconds(delay);
-		//--------------------------------------
-				
-		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
-
-		lastLoadedTire = tireLoad;
-		
-		for(int i = 0; i < slIndex; i++)
-		{
-			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
-			GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
-		}
-		
-		redS.value = SaveLoad.LoadFloat(tireType + "Red");
-		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
-		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
-		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
-		pattInt = SaveLoad.LoadInt (tireType + "_Pattern");
-		if (pattInt > 0) {
-			Texture patTex = GameObject.Find ("Pattern" + pattInt.ToString ()).GetComponent<RawImage> ().texture;
-			tireMat.SetTexture ("_Pattern", patTex);
-		}
-		GameObject.Find("PattScaleSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternScale");
-		GameObject.Find("PattOpacSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternOpacity");
-		tireColor.r = redS.value;
-		tireColor.g = greenS.value;
-		tireColor.b = blueS.value;
-		tireBrightness = brightS.value;
-		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
-		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
-		tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
-		tireMat.SetFloat("_PatternBlend", pattBlend);
-		
 		//--------------------------------------
 		if(uiNav != "ModsButton")
 			slidersRect.SetActive (false);
@@ -616,6 +546,69 @@ public class TireEditor : MonoBehaviour {
 			addonsRect.SetActive (false);
 
 		warnMess.modified = false;
+		
+	}
+
+	void Load () {
+
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+		//--------------------------------------
+		
+		slIndex = SaveLoad.LoadInt (tireLoad + "_SlidersLength");
+		
+		lastLoadedTire = tireLoad;
+
+		AddonPlacer aP = transform.gameObject.GetComponent<AddonPlacer> ();
+		aP.addonCount = SaveLoad.LoadInt (tireType + "AddonCount");
+		
+		for(int i = 0; i < slIndex; i++)
+		{
+			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
+				GameObject.Find("Slider"+i).GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "Slider" + i);
+		}
+		
+		redS.value = SaveLoad.LoadFloat(tireType + "Red");
+		greenS.value = SaveLoad.LoadFloat(tireType + "Green");
+		blueS.value = SaveLoad.LoadFloat(tireType + "Blue");
+		brightS.value = SaveLoad.LoadFloat(tireType + "Brightness");
+		pattInt = SaveLoad.LoadInt (tireType + "_Pattern");
+		if (pattInt > 0) {
+			Texture patTex = GameObject.Find ("Pattern" + pattInt.ToString ()).GetComponent<RawImage> ().texture;
+			tireMat.SetTexture ("_Pattern", patTex);
+		}
+		GameObject.Find("PattScaleSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternScale");
+		GameObject.Find("PattOpacSlider").GetComponent<Slider>().value = SaveLoad.LoadFloat(tireType + "_PatternOpacity");
+		tireColor.r = redS.value;
+		tireColor.g = greenS.value;
+		tireColor.b = blueS.value;
+		tireBrightness = brightS.value;
+		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
+		float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
+		tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
+		tireMat.SetFloat("_PatternBlend", pattBlend);
+
+		//--------------------------------------
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
+		if(uiNav != "ColorButton")
+			colorsRect.SetActive (false);
+		if(uiNav != "AddonButton")
+			addonsRect.SetActive (false);
+		
+		warnMess.modified = false;
+	}
+
+
+	IEnumerator Load (float delay) {
+		slidersRect.SetActive (true);
+		colorsRect.SetActive (true);
+		addonsRect.SetActive (true);
+
+		yield return new WaitForSeconds(delay);
+		Load ();
+
 	}
 	
 	

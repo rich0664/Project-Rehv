@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 419618}
   - 137: {fileID: 13715494}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: smrcoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11457800}
   - 33: {fileID: 3321652}
   - 64: {fileID: 6411138}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: CarTireEdit
   m_TagString: MainTire
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ Transform:
   m_GameObject: {fileID: 196100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .153999999, y: 1.47099996, z: .191}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 419618}
   m_Father: {fileID: 0}

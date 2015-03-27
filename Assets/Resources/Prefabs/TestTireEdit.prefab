@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 413478}
   - 137: {fileID: 13766236}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: smrColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11401132}
   - 33: {fileID: 3382688}
   - 64: {fileID: 6461410}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: TestTireEdit
   m_TagString: MainTire
   m_Icon: {fileID: 0}

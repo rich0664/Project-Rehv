@@ -55,7 +55,6 @@ public class UniversalTire : MonoBehaviour {
 		
 		for(int i = 0; i < sliders.Length; i++)
 		{
-
 			sliders[i] = SaveLoad.LoadFloat(tireType + "Slider" + i);
 		}
 		
@@ -77,18 +76,54 @@ public class UniversalTire : MonoBehaviour {
 				continue;
 			}
 			meshRenderer.SetBlendShapeWeight (i-syms, sliders[i]);
-			if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision)
+			if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision && !GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().isEditor)
 				collMeshRenderer.enabled = true;
 				collMeshRenderer.SetBlendShapeWeight(i-syms, sliders[i]);
 		}
+
+		//PlaceAddons------------------------------------------------------------------------------------------
+		int aCount = SaveLoad.LoadInt (tireType + "AddonCount");
+		string addonData = SaveLoad.LoadString (tireType + "AddonData");
+		string testString = "Addon1Index12";
+		string tempString = "";
+		for (int i = 1; i <= aCount; i++) {
+			tempString = i.ToString();
+			int digits = tempString.Length;
+			int iI = addonData.IndexOf("Index" + i);
+			int posI = addonData.IndexOf ("Pos" + i);
+			int rotI = addonData.IndexOf ("Rot" + i);
+
+			string sI = addonData.Substring(iI+6+digits, addonData.IndexOf("Pos" + i) - (iI+6+digits));
+			string sPos = addonData.Substring(posI+3+digits, addonData.IndexOf("Rot" + i) - (posI+3+digits));
+			string sRot;
+			if(i != aCount){
+				sRot = addonData.Substring(rotI+3+digits, addonData.IndexOf("Index" + (i+1)) - (rotI+3+digits));
+			} else {
+				sRot = addonData.Substring(rotI+3+digits);
+			}
+
+			int aType = int.Parse(sI);
+			Vector3 vPos = StringToVector3(sPos);
+			Vector3 vRot = StringToVector3(sRot);
+			Quaternion qRot = Quaternion.Euler(vRot);
+
+			GameObject prefab = Resources.Load("Addons/" + "Addon" + aType.ToString(), typeof(GameObject)) as GameObject;
+			GameObject AddonInst = Instantiate (prefab, vPos, qRot) as GameObject;
+			AddonInst.name = "Addon" + i;
+			Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
+			tempAddon.parent = transform.gameObject;
+			tempAddon.setParent ();
+		}
+		//END OF ADDON PLACEMENT----------------------------------------------------------------------
+
 
 		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision) {
 			BakeCollision();
 		}
 
-
-
+		meshRenderer.localBounds = new Bounds(Vector3.zero, Vector3.one * 5f);
 	}
+
 
 
 	void BakeCollision(){
@@ -126,5 +161,16 @@ public class UniversalTire : MonoBehaviour {
 			tireSound.PlayOneShot (tireSounds [Random.Range (0, tireSounds.Length)], collision.relativeVelocity.magnitude * 0.01f);
 		}
 		}
+
+
+	public Vector3 StringToVector3(string rString){
+		string[] temp = rString.Substring(1,rString.Length-2).Split(',');
+		float x = float.Parse(temp[0]);
+		float y = float.Parse(temp[1]);
+		float z = float.Parse(temp[2]);
+		Vector3 rValue = new Vector3(x,y,z);
+		return rValue;
+	}
+
 
 }

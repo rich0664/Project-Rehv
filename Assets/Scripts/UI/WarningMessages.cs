@@ -3,10 +3,13 @@ using System.Collections;
 
 public class WarningMessages : MonoBehaviour {
 
+	public TireEditor tireEdit;
 	public GameObject NewTirePanel;
 	public GameObject LoadPanel;
 	public GameObject LoadTireSelect;
 	public GameObject UnsavedChangesWarningM;
+	public GameObject PrintSaveWarningM;
+	public GameObject PrintPanel;
 	public bool modified = false;
 
 	public string memory;
@@ -21,55 +24,42 @@ public class WarningMessages : MonoBehaviour {
 
 
 	//WARNING MESSAGES-------------------------------------------------------------------
-	public void NewTireWarningMessage(string str){
+	public void UnsavedChangesWarning(string str){
 		memory = str;
 		if (modified) {
 			UnsavedChangesWarningM.SetActive(true);
 		} else {
-			NewTirePanel.SetActive(true);
+			RunTask(true);
 		}
 	}
-	public void LoadTireWarningMessage(string str){
+
+	public void PrintSaveWarning(string str){
 		memory = str;
 		if (modified) {
-			UnsavedChangesWarningM.SetActive(true);
+			PrintSaveWarningM.SetActive(true);
 		} else {
-			LoadPanel.SetActive(true);
-			LoadTireSelect.SetActive(true);
-		}
-	}
-	public void AeroWarningMessage(string str){
-		memory = str;
-		if (modified) {
-			UnsavedChangesWarningM.SetActive(true);
-		} else {
-			AerodynamicsTask();
-		}
-	}
-	public void JumpSimWarningMessage(string str){
-		memory = str;
-		if (modified) {
-			UnsavedChangesWarningM.SetActive(true);
-		} else {
-			JumpSimTask();
+			RunTask(true);
 		}
 	}
 
 	//RunTask-------------------------------------------------------------------------------------------
-	public void RunTask(string str){
-		str = str;
-		if (memory == "LoadTireWarning")
-			LoadTireWarningTask ();
+	public void RunTask(bool pbool){
+		if (pbool) {
+			if (memory == "LoadTireWarning")
+				LoadTireWarningTask ();
 		
-		if (memory == "NewTireWarning")
-			NewTireWarningTask ();
+			if (memory == "NewTireWarning")
+				NewTireWarningTask ();
 
-		if (memory == "AerodynamicsWarning")
-			AerodynamicsTask ();
+			if (memory == "AerodynamicsWarning")
+				AerodynamicsTask ();
 
-		if (memory == "JumpSimWarning")
-			JumpSimTask ();
-		
+			if (memory == "JumpSimWarning")
+				JumpSimTask ();
+
+			if (memory == "PrintSaveWarning")
+				PrintSaveTask ();
+		}
 	}
 
 	//TASKS------------------------------------------------------------------------
@@ -85,6 +75,9 @@ public class WarningMessages : MonoBehaviour {
 	}
 	void AerodynamicsTask(){
 		Application.LoadLevel("TestFacility");
+	}
+	void PrintSaveTask(){
+		tireEdit.printTire ();
 	}
 
 	//-----------------------------------------------------------------------
