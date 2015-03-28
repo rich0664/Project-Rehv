@@ -800,6 +800,7 @@ public class ConcaveCollider : MonoBehaviour
 		}
 
 		loadingScreen.isLoading = false;
+		loadingScreen.loadCanvas.SetActive (false);
 		loadingScreen.tireLauch.isLaunching = true;
 		loadingScreen.mainCam.SetActive (true);
 		loadingScreen.loadCam.enabled = false;
