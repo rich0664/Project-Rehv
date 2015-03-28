@@ -59,6 +59,9 @@ public class WarningMessages : MonoBehaviour {
 
 			if (memory == "PrintSaveWarning")
 				PrintSaveTask ();
+
+			if (memory == "ExitEditorSaveWarning")
+				ExitSaveTask ();
 		}
 	}
 
@@ -79,6 +82,9 @@ public class WarningMessages : MonoBehaviour {
 	void PrintSaveTask(){
 		tireEdit.printTire ();
 	}
+	void ExitSaveTask(){
+		Application.LoadLevel ("Garage");
+	}
 
 	//-----------------------------------------------------------------------
 	public void setModified(bool m){
@@ -90,4 +96,9 @@ public class WarningMessages : MonoBehaviour {
 		modified = false;
 	}
 
+
+
+
+
+	//END CLASS------------------------------------------------------------------------------------------------------
 }

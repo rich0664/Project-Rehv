@@ -17,15 +17,19 @@ public class Scoring : MonoBehaviour {
 	public bool canPlaceScore = false;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
-		uniTire =	tire.GetComponent<UniversalTire>();
-		scoreText = GameObject.Find("ScoreText").GetComponent<TextMesh> ();
-		scoreRender = GameObject.Find ("ScoreText").GetComponent<MeshRenderer> ();
-		scoreSound = GameObject.Find("ScoreText").GetComponent<AudioSource> ();
-		scoreTrigger = GameObject.Find ("ScoreTrigger").GetComponent<BoxCollider> ();
-		jumpPoint = GameObject.Find ("JumpPoint");
-		tireType = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+		uniTire = tire.GetComponent<UniversalTire> ();
+
+		if (!uniTire.spawnPoint.isPrint && !uniTire.spawnPoint.isEditor) {
+			scoreText = GameObject.Find ("ScoreText").GetComponent<TextMesh> ();
+			scoreRender = GameObject.Find ("ScoreText").GetComponent<MeshRenderer> ();
+			scoreSound = GameObject.Find ("ScoreText").GetComponent<AudioSource> ();
+			scoreTrigger = GameObject.Find ("ScoreTrigger").GetComponent<BoxCollider> ();
+			jumpPoint = GameObject.Find ("JumpPoint");
+			tireType = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+		}
 	}
 
 
@@ -67,8 +71,6 @@ public class Scoring : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
-	void Update () {
 
-	}
+
 }

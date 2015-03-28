@@ -17,4 +17,6 @@ public class Addon : MonoBehaviour {
 		//fJoint.connectedBody = parent.GetComponent<Rigidbody> ();
 	}
 
+
+	//END CLASS------------------------------------------------------------------------------------------------------
 }

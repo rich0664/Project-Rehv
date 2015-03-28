@@ -24,6 +24,8 @@ public class UniversalTire : MonoBehaviour {
 	float tireBrightness;
 	private float[] sliders;
 
+	public TireSpawn spawnPoint;
+
 	AudioClip[] tireSounds;
 	AudioSource tireSound;
 
@@ -37,7 +39,13 @@ public class UniversalTire : MonoBehaviour {
 		sliders = new float[slidersLength];
 		
 		tire = this.gameObject;
-		tireType = SaveLoad.LoadString ("CurrentTire");
+
+		spawnPoint = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn> ();
+		if(spawnPoint.autoLoadCurrentTire)
+			tireType = SaveLoad.LoadString ("CurrentTire");
+		if (spawnPoint.isPrint)
+			tireType = SaveLoad.LoadString ("PrintTire");
+
 		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 900;
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
 		editMeshCollider = tire.GetComponent<MeshCollider> ();
@@ -67,7 +75,7 @@ public class UniversalTire : MonoBehaviour {
 		tireMat.SetFloat ("_Brightness", tireBrightness);
 
 		int syms = 0;
-		string lst = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+		string lst = spawnPoint.tireTypeToSpawn;
 		//string lst = SaveLoad.LoadString ("CurrentTire");
 		for(int i = 0; i < sliders.Length; i++)
 		{
@@ -76,9 +84,11 @@ public class UniversalTire : MonoBehaviour {
 				continue;
 			}
 			meshRenderer.SetBlendShapeWeight (i-syms, sliders[i]);
-			if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision && !GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().isEditor)
+			if (spawnPoint.generateCollision && !spawnPoint.isEditor){
 				collMeshRenderer.enabled = true;
 				collMeshRenderer.SetBlendShapeWeight(i-syms, sliders[i]);
+			}
+
 		}
 
 		//PlaceAddons------------------------------------------------------------------------------------------
@@ -117,7 +127,7 @@ public class UniversalTire : MonoBehaviour {
 		//END OF ADDON PLACEMENT----------------------------------------------------------------------
 
 
-		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>().generateCollision) {
+		if (spawnPoint.generateCollision) {
 			BakeCollision();
 		}
 
@@ -130,14 +140,21 @@ public class UniversalTire : MonoBehaviour {
 
 		Mesh bakedMesh = new Mesh ();
 
-		if (GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn> ().isEditor) {
+		if (spawnPoint.isEditor) {
 			meshRenderer.BakeMesh(bakedMesh);
 			editMeshCollider.sharedMesh = bakedMesh;
 		} else {
-			collMeshRenderer.BakeMesh (bakedMesh);
-			meshFilter.sharedMesh = bakedMesh;
-			tire.GetComponent<ConcaveCollider> ().startComputeCoroutine();
-			collMeshRenderer.enabled = false;
+			if(!spawnPoint.isPrint){
+				collMeshRenderer.BakeMesh (bakedMesh);
+				meshFilter.sharedMesh = bakedMesh;
+				tire.GetComponent<ConcaveCollider> ().startComputeCoroutine();
+				collMeshRenderer.enabled = false;
+			} else {
+				collMeshRenderer.BakeMesh (bakedMesh);
+				meshFilter.sharedMesh = bakedMesh;
+				tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime(null,null);
+				collMeshRenderer.enabled = false;
+			}
 		}
 
 	}
@@ -173,4 +190,6 @@ public class UniversalTire : MonoBehaviour {
 	}
 
 
+
+	//END CLASS------------------------------------------------------------------------------------------------------
 }

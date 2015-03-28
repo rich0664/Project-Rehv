@@ -71,9 +71,6 @@ public class TireEditor : MonoBehaviour {
 			uiNav = str;
 		if (str == "AddonButton")
 			uiNav = str;
-
-
-
 	}
 
 
@@ -273,6 +270,9 @@ public class TireEditor : MonoBehaviour {
 
 	public void printTire(){
 		SaveLoad.SaveInt ("ShouldPrint", 1);
+		tireType = tireLoad + "Print";
+		Save ();
+		SaveLoad.SaveString ("PrintTire", tireType);
 		Application.LoadLevel ("Garage");
 	}
 
@@ -610,6 +610,9 @@ public class TireEditor : MonoBehaviour {
 		Load ();
 
 	}
-	
-	
+
+
+
+
+	//END CLASS------------------------------------------------------------------------------------------------------
 }
