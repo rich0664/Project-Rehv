@@ -804,6 +804,7 @@ public class ConcaveCollider : MonoBehaviour
 		loadingScreen.mainCam.SetActive (true);
 		loadingScreen.loadCam.enabled = false;
 		loadingScreen.mainUI.SetActive (true);
+		loadingScreen.frameUI.SetActive (true);
 		//---------------------------------------------------------------------------------------
 	}
 

@@ -18,19 +18,8 @@ public class TireLaunch : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		aimer = GetComponentInChildren<Transform>();
-
-
 	}
-
-
-	void FixedUpdate(){
-
-
-
-	}
-
 
 	// Update is called once per frame
 	void Update () {
@@ -52,6 +41,8 @@ public class TireLaunch : MonoBehaviour {
 
 			if(!GetComponentInChildren<MeshRenderer> ().enabled)
 				GetComponentInChildren<MeshRenderer> ().enabled = true;
+
+			BounceSuppressor.suppressBounce = true;
 
 		}
 
@@ -78,6 +69,11 @@ public class TireLaunch : MonoBehaviour {
 		isLaunching = false;
 		GetComponentInChildren<MeshRenderer> ().enabled = false;
 
+	}
+
+	public void ReLaucnh(bool bls){
+		if(bls)
+			isLaunching = true;
 	}
 
 

@@ -14,7 +14,7 @@ public class Scoring : MonoBehaviour {
 	BoxCollider scoreTrigger;
 	GameObject jumpPoint;
 
-	bool canPlaceScore = false;
+	public bool canPlaceScore = false;
 
 	// Use this for initialization
 	void Start () {

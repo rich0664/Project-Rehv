@@ -107,7 +107,7 @@ public class UniversalTire : MonoBehaviour {
 			Vector3 vRot = StringToVector3(sRot);
 			Quaternion qRot = Quaternion.Euler(vRot);
 
-			GameObject prefab = Resources.Load("Addons/" + "Addon" + aType.ToString(), typeof(GameObject)) as GameObject;
+			GameObject prefab = Resources.Load("Addons/" + "AddonPref" + aType.ToString(), typeof(GameObject)) as GameObject;
 			GameObject AddonInst = Instantiate (prefab, vPos, qRot) as GameObject;
 			AddonInst.name = "Addon" + i;
 			Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();

@@ -13,6 +13,7 @@ public class LoadingScreen : MonoBehaviour {
 	public GameObject mainCam;
 	public Camera loadCam;
 	public GameObject mainUI;
+	public GameObject frameUI;
 
 	// Use this for initialization
 	void Start () {

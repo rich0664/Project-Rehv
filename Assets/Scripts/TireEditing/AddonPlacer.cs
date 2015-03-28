@@ -48,6 +48,9 @@ public class AddonPlacer : MonoBehaviour {
 					mouseCursor.SetActive(false);
 					addon.SetActive (true);
 					addon.transform.position = hit.point;
+					string tempSPos = addon.transform.position.ToString();
+					Vector3 tempVPos = StringToVector3(tempSPos);
+					addon.transform.position = tempVPos;
 					Vector3 norm = transform.forward - (Vector3.Dot (transform.forward, hit.normal)) * hit.normal;
 					if(norm != Vector3.zero){
 					Quaternion addonRot = Quaternion.LookRotation (norm, hit.normal);
@@ -55,13 +58,16 @@ public class AddonPlacer : MonoBehaviour {
 					
 
 					if (Input.GetMouseButtonDown (0)) {
-						GameObject prefab = Resources.Load("Addons/" + "Addon" + addonIndex.ToString(), typeof(GameObject)) as GameObject;
+						GameObject prefab = Resources.Load("Addons/" + "AddonPref" + addonIndex.ToString(), typeof(GameObject)) as GameObject;
 						GameObject AddonInst = Instantiate (prefab, hit.point, addonRot) as GameObject;
 						addonCount++;
 						AddonInst.name = "Addon" + addonCount;
 						Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
 						tempAddon.parent = hitObject;
 						tempAddon.setParent ();
+						tempSPos = tempAddon.transform.position.ToString();
+						tempVPos = StringToVector3(tempSPos);
+						tempAddon.transform.position = tempVPos;
 					}
 				}
 				}
@@ -80,6 +86,14 @@ public class AddonPlacer : MonoBehaviour {
 		addonIndex = aI;
 	}
 
+	public Vector3 StringToVector3(string rString){
+		string[] temp = rString.Substring(1,rString.Length-2).Split(',');
+		float x = float.Parse(temp[0]);
+		float y = float.Parse(temp[1]);
+		float z = float.Parse(temp[2]);
+		Vector3 rValue = new Vector3(x,y,z);
+		return rValue;
+	}
 
 
 
