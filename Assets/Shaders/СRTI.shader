@@ -62,6 +62,32 @@ Shader "Custom/CRTI"
             float4 weights = float4(distance / 0.5f, distance / 0.5f, distance / 0.5f, distance / 0.5f);
             return 1.4f * exp(-pow(weights * rsqrt(0.5f * width), width)) / (0.3f + 0.2f * width);
         }
+
+		float4 flickThisShit(float4 iColor, float colorCorrection)
+		{
+			//colorCorrection = 1 very white 0 = very black :3
+			float pi = 3.14159;
+			float flicks = 1;
+			flicks += sin((_Time.y*5)*pi*3.5)*0.2;
+			
+			
+			
+			float minFlick = 0.8;
+			float maxFlick = 1;			
+			if(flicks < minFlick)
+			    flicks = minFlick;
+			if(flicks > maxFlick)
+			    flicks = maxFlick;			
+			
+			//flicks += sin((_Time.y)*pi*2)*0.2;
+
+
+
+			
+			return iColor*flicks*colorCorrection;
+			
+		}
+
      
         float4 frag(v2f_img i) : COLOR
         {
@@ -95,8 +121,10 @@ Shader "Custom/CRTI"
          
             float3 dotMaskWeights = lerp(rgb1, rgb2, floor(fmod(_Factor, _dotWeight)));
             res *= dotMaskWeights;
-         
-            return float4(pow(res, float3(1.0f / _Gamma, 1.0f / _Gamma, 1.0f / _Gamma)), 1.0f);
+
+
+
+            return flickThisShit( float4(pow(res, float3(1.0f / _Gamma, 1.0f / _Gamma, 1.0f / _Gamma)), 1.0f) , 0.8f );
             //return float4(pow(res, float3(1.0f / ScreenGamma.x, 1.0f / ScreenGamma.y, 1.0f / ScreenGamma.z)), 1.0f);
          
          
