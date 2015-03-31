@@ -4,17 +4,26 @@ using System.Collections;
 public class InteractableObject : MonoBehaviour {
 	
 	public string objectName;
+	CharacterController playerCollider;
+
+	void Start(){
+		playerCollider = GameObject.FindGameObjectWithTag ("Player").GetComponent<CharacterController> ();
+	}
 
 	void OnTriggerEnter(Collider other) {
-		PlayerHub player = other.gameObject.GetComponent<PlayerHub>();
-		player.ShowMessage (objectName);
-		player.canInteract = true;
+		if (other == playerCollider) {
+			PlayerHub player = other.gameObject.GetComponent<PlayerHub> ();
+			player.ShowMessage (objectName);
+			player.canInteract = true;
+		}
 	}
 
 	void OnTriggerExit (Collider other){
-		PlayerHub player = other.gameObject.GetComponent<PlayerHub>();
-		player.interactText.gameObject.SetActive (false);
-		player.canInteract = false;
+		if (other == playerCollider) {
+			PlayerHub player = other.gameObject.GetComponent<PlayerHub> ();
+			player.interactText.gameObject.SetActive (false);
+			player.canInteract = false;
+		}
 	}
 
 

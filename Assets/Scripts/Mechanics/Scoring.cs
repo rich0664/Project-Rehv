@@ -14,6 +14,8 @@ public class Scoring : MonoBehaviour {
 	BoxCollider scoreTrigger;
 	GameObject jumpPoint;
 
+	LineRenderer ScoreLine;
+
 	public bool canPlaceScore = false;
 
 	// Use this for initialization
@@ -29,6 +31,7 @@ public class Scoring : MonoBehaviour {
 			scoreTrigger = GameObject.Find ("ScoreTrigger").GetComponent<BoxCollider> ();
 			jumpPoint = GameObject.Find ("JumpPoint");
 			tireType = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
+			ScoreLine = GameObject.Find ("ScoreText").GetComponentInChildren<LineRenderer>();
 		}
 	}
 
@@ -53,7 +56,21 @@ public class Scoring : MonoBehaviour {
 
 
 			Vector3 tirePos = tire.transform.position;
-			tirePos.y+=3f;
+			RaycastHit hit;
+			if (Physics.Raycast (tirePos, -Vector3.up, out hit)) {
+				tirePos = hit.point;
+				tirePos.y+=.25f;
+			}
+
+			
+			if (Physics.Raycast (tirePos, -Vector3.right, out hit)) {
+				ScoreLine.SetPosition(0,hit.point);
+			}
+			if (Physics.Raycast (tirePos, Vector3.right, out hit)) {
+				ScoreLine.SetPosition(1,hit.point);
+			}
+
+			tirePos.y+=2.72f;
 
 			GameObject.FindGameObjectWithTag ("ScoreText").transform.position = tirePos;
 			scoreSound.Play();

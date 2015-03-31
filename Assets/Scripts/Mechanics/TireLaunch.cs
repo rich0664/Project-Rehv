@@ -42,7 +42,7 @@ public class TireLaunch : MonoBehaviour {
 			if(!GetComponentInChildren<MeshRenderer> ().enabled)
 				GetComponentInChildren<MeshRenderer> ().enabled = true;
 
-			BounceSuppressor.suppressBounce = true;
+			//BounceSuppressor.suppressBounce = true;
 
 		}
 

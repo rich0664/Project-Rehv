@@ -123,6 +123,7 @@ public class UniversalTire : MonoBehaviour {
 			Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
 			tempAddon.parent = transform.gameObject;
 			tempAddon.setParent ();
+			tempAddon.transform.rotation = qRot;
 		}
 		//END OF ADDON PLACEMENT----------------------------------------------------------------------
 
@@ -144,16 +145,24 @@ public class UniversalTire : MonoBehaviour {
 			meshRenderer.BakeMesh(bakedMesh);
 			editMeshCollider.sharedMesh = bakedMesh;
 		} else {
-			if(!spawnPoint.isPrint){
+			if(!spawnPoint.isPrint && !spawnPoint.isCompetition){
 				collMeshRenderer.BakeMesh (bakedMesh);
 				meshFilter.sharedMesh = bakedMesh;
-				tire.GetComponent<ConcaveCollider> ().startComputeCoroutine();
+				tire.GetComponent<ConcaveCollider> ().StartProtoCoroutine();
 				collMeshRenderer.enabled = false;
 			} else {
+				if(spawnPoint.isCompetition){
+					collMeshRenderer.BakeMesh (bakedMesh);
+					meshFilter.sharedMesh = bakedMesh;
+					tire.GetComponent<ConcaveCollider> ().CreateHullMesh = false;
+					tire.GetComponent<ConcaveCollider> ().StartCompCoroutine();
+					collMeshRenderer.enabled = false;
+				}else{
 				collMeshRenderer.BakeMesh (bakedMesh);
 				meshFilter.sharedMesh = bakedMesh;
 				tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime(null,null);
 				collMeshRenderer.enabled = false;
+				}
 			}
 		}
 
@@ -161,6 +170,7 @@ public class UniversalTire : MonoBehaviour {
 	
 
 	void OnTriggerEnter(Collider other) {
+		if(!spawnPoint.isPrint)
 		if (other == GameObject.FindGameObjectWithTag ("BounceTrigger").GetComponent<BoxCollider>() ) {
 			BounceSuppressor.suppressBounce = false;
 		}
@@ -177,6 +187,12 @@ public class UniversalTire : MonoBehaviour {
 		if (collision.relativeVelocity.magnitude > 4f) {
 			tireSound.PlayOneShot (tireSounds [Random.Range (0, tireSounds.Length)], collision.relativeVelocity.magnitude * 0.01f);
 		}
+
+		if (spawnPoint.isPrint) {
+			if(collision.gameObject == GameObject.FindGameObjectWithTag("BounceTrigger"))
+				gameObject.GetComponent<ConstantForce>().enabled = false;
+		}
+
 		}
 
 

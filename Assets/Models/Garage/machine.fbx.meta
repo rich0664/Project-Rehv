@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c
+timeCreated: 1427820711
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: back.001
+    100004: Bevel
+    100006: Bone
+    100008: Bone.001
+    100010: Bone.001_end
+    100012: Bone.002
+    100014: Bone.003
+    100016: Bone.003_end
+    100018: Cube
+    100020: Cube.001
+    100022: Door.001
+    100024: Door.002
+    100026: Door.003
+    100028: Door.004
+    100030: Feet2
+    100032: Feet2.001
+    100034: //RootNode
+    100036: SidePanel
+    100038: SidePanel.001
+    100040: SidePanel.002
+    400000: Armature
+    400002: back.001
+    400004: Bevel
+    400006: Bone
+    400008: Bone.001
+    400010: Bone.001_end
+    400012: Bone.002
+    400014: Bone.003
+    400016: Bone.003_end
+    400018: Cube
+    400020: Cube.001
+    400022: Door.001
+    400024: Door.002
+    400026: Door.003
+    400028: Door.004
+    400030: Feet2
+    400032: Feet2.001
+    400034: //RootNode
+    400036: SidePanel
+    400038: SidePanel.001
+    400040: SidePanel.002
+    2300000: back.001
+    2300002: Bevel
+    2300004: Cube
+    2300006: Cube.001
+    2300008: Door.003
+    2300010: Feet2
+    2300012: Feet2.001
+    2300014: //RootNode
+    2300016: SidePanel
+    2300018: SidePanel.001
+    2300020: SidePanel.002
+    3300000: back.001
+    3300002: Bevel
+    3300004: Cube
+    3300006: Cube.001
+    3300008: Door.003
+    3300010: Feet2
+    3300012: Feet2.001
+    3300014: //RootNode
+    3300016: SidePanel
+    3300018: SidePanel.001
+    3300020: SidePanel.002
+    4300000: back
+    4300002: Cube.001
+    4300004: Door.004
+    4300006: Door.001
+    4300008: Door.002
+    4300010: Cube
+    4300012: Feet2.001
+    4300014: SidePanel.002
+    4300016: SidePanel.001
+    4300018: back.001
+    4300020: Door.003
+    4300022: Feet2
+    4300024: SidePanel
+    4300026: Bevel
+    7400000: Open
+    7400002: Armature|ArmatureAction
+    7400004: Closed
+    9500000: //RootNode
+    13700000: Door.001
+    13700002: Door.002
+    13700004: Door.004
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Open
+      takeName: Open
+      firstFrame: 18
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone.002
+        weight: 1
+      - path: Armature/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: back.001
+        weight: 1
+      - path: Bevel
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Door.001
+        weight: 1
+      - path: Door.002
+        weight: 1
+      - path: Door.003
+        weight: 1
+      - path: Door.004
+        weight: 1
+      - path: Feet2
+        weight: 1
+      - path: Feet2.001
+        weight: 1
+      - path: SidePanel
+        weight: 1
+      - path: SidePanel.001
+        weight: 1
+      - path: SidePanel.002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone.002
+        weight: 1
+      - path: Armature/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: back.001
+        weight: 1
+      - path: Bevel
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Door.001
+        weight: 1
+      - path: Door.002
+        weight: 1
+      - path: Door.003
+        weight: 1
+      - path: Door.004
+        weight: 1
+      - path: Feet2
+        weight: 1
+      - path: Feet2.001
+        weight: 1
+      - path: SidePanel
+        weight: 1
+      - path: SidePanel.001
+        weight: 1
+      - path: SidePanel.002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Closed
+      takeName: Open
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Bone.001
+        weight: 1
+      - path: Armature/Bone/Bone.001/Bone.001_end
+        weight: 1
+      - path: Armature/Bone.002
+        weight: 1
+      - path: Armature/Bone.002/Bone.003
+        weight: 1
+      - path: Armature/Bone.002/Bone.003/Bone.003_end
+        weight: 1
+      - path: back.001
+        weight: 1
+      - path: Bevel
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Door.001
+        weight: 1
+      - path: Door.002
+        weight: 1
+      - path: Door.003
+        weight: 1
+      - path: Door.004
+        weight: 1
+      - path: Feet2
+        weight: 1
+      - path: Feet2.001
+        weight: 1
+      - path: SidePanel
+        weight: 1
+      - path: SidePanel.001
+        weight: 1
+      - path: SidePanel.002
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

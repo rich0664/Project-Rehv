@@ -8,6 +8,7 @@ public class ProtoLevelCamera : MonoBehaviour {
 	public float smoothing = 5f;
 	public float distance = 5f;
 	public float heightOffset = 5f;
+	public float panOffset = 5f;
 	
 	Vector3 offset;
 
@@ -15,7 +16,7 @@ public class ProtoLevelCamera : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 
-		if (target == null) {
+		if (target == null && GameObject.FindGameObjectWithTag ("MainTire") != null) {
 			target = GameObject.FindGameObjectWithTag ("MainTire").transform;
 			offset = transform.position - target.position;
 		}
@@ -26,7 +27,7 @@ public class ProtoLevelCamera : MonoBehaviour {
 				transform.position = Vector3.Lerp (transform.position,
 			                                   targetCamPos, smoothing * Time.deltaTime);
 			} else {
-				Vector3 negDis = new Vector3(0, -heightOffset, -distance);
+				Vector3 negDis = new Vector3(-panOffset, -heightOffset, -distance);
 				Vector3 tmpPos = transform.rotation * negDis + target.position;
 				transform.position = tmpPos;
 			}

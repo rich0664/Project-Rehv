@@ -9,6 +9,7 @@ public class TireSpawn : MonoBehaviour {
 	GameObject tirePrefab;
 	public bool shouldSpin = false;
 	public bool isEditor;
+	public bool isCompetition;
 	public bool generateCollision;
 
 	GameObject tireInst;
@@ -66,8 +67,8 @@ public class TireSpawn : MonoBehaviour {
 			string uTire = SaveLoad.LoadString("PrintTire");
 			tireInst.GetComponent<UniversalTire>().tireType = uTire;
 			tireInst.transform.position = GameObject.Find("PrintPoint").transform.position;
-			tireInst.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0,0,250));
-			//tireInst.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(500,0,0));
+			//tireInst.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0,0,50));
+			//tireInst.GetComponent<Rigidbody>().AddForce(new Vector3(-250,0,0));
 		}
 	}
 

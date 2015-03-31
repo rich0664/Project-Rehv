@@ -3,9 +3,11 @@ using System.Collections;
 
 public class BounceSuppressor : MonoBehaviour {
 
-	GameObject tire;
+	public GameObject tire;
+	public bool isSuppressing;
 	public static bool suppressBounce = true;
 	public static float tireRadius = 0.8f;
+	int firstS = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -22,11 +24,17 @@ public class BounceSuppressor : MonoBehaviour {
 				if (Physics.Raycast (tire.transform.position, -Vector3.up, out hit)) {
 					float dis = tireRadius - hit.distance;
 					pos.y += dis;
-					if (hit.distance > tireRadius)
+					if (hit.distance > tireRadius && tire.GetComponent<Rigidbody>() != null){
 						tire.GetComponent<Rigidbody>().MovePosition(pos);
+					} else {
+						tire.transform.position = pos;
+					}
 					//Debug.Log (tireRadius);
-				}
-			
+					if(firstS < 3){
+						BounceSuppressor.suppressBounce = false;
+						firstS++;
+					}
+				}			
 			}
 		}
 	}
@@ -36,6 +44,9 @@ public class BounceSuppressor : MonoBehaviour {
 
 		if(tire == null)
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
+
+		//BounceSuppressor.suppressBounce = isSuppressing;
+		isSuppressing = BounceSuppressor.suppressBounce;
 
 	}
 }
