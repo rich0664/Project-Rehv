@@ -7,13 +7,16 @@ public class TireMachine : MonoBehaviour {
 	public TireSpawn printSpawn;
 	public GameObject printReminder;
 	Animator machinAnim;
+	AudioSource boopReminder;
 	bool shouldRemind;
 	bool stopRemind;
+
 
 	// Use this for initialization
 	void Start () {
 
 		machinAnim = gameObject.GetComponent<Animator> ();
+		boopReminder = gameObject.GetComponent<AudioSource> ();
 
 		if( SaveLoad.LoadInt("ShouldPrint") == 1){
 			shouldPrint = true;
@@ -21,6 +24,7 @@ public class TireMachine : MonoBehaviour {
 		} else {
 			shouldPrint = false;
 		}
+
 
 	}
 
@@ -65,6 +69,7 @@ public class TireMachine : MonoBehaviour {
 		if(shouldPrint){
 			float flashDelay = 0.8f;
 			printReminder.SetActive(true);
+			boopReminder.Play();
 			yield return new WaitForSeconds(flashDelay);
 			printReminder.SetActive(false);
 			yield return new WaitForSeconds(flashDelay);

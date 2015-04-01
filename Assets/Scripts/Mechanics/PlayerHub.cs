@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityStandardAssets.ImageEffects;
 
 public class PlayerHub : MonoBehaviour {
 
@@ -9,14 +10,21 @@ public class PlayerHub : MonoBehaviour {
 	public bool canInteract;
 	public TireMachine machin;
 	public bool cinematicMode = false;
-	string useObject;
 	public GameObject console;
+	public bool isOutside = false;
+	BloomOptimized playerBloom;
+	GameObject playerCamera;
+	SunShafts playerShafts;
+	string useObject;
 	Text consoleText;
 
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
+		playerCamera = GameObject.Find ("/Player/Player Camera");
+		playerShafts = playerCamera.GetComponent<SunShafts> ();
+		playerBloom = playerCamera.GetComponent<BloomOptimized>();
 	}
 
 	void Update(){
@@ -45,6 +53,23 @@ public class PlayerHub : MonoBehaviour {
 				cinematicMode = false;
 			}
 		}
+
+
+		//HANDLE OUTSIDE EFFECTS CHANGES
+		if (isOutside) {
+			float minShaftIntense = 0.1f;
+			if(playerShafts.sunShaftIntensity >= minShaftIntense)
+				playerShafts.sunShaftIntensity -= 0.04f;
+			if(playerBloom.intensity >= minShaftIntense)
+				playerBloom.intensity -= 0.01f;
+		} else {
+			float maxShafIntense = 2f;
+			if(playerShafts.sunShaftIntensity <= maxShafIntense)
+				playerShafts.sunShaftIntensity += 0.04f;
+			if(playerBloom.intensity <= maxShafIntense/2.2f)
+				playerBloom.intensity += 0.01f;
+		}
+		//END HANDLE OUTSIDE EFFECTS CHANGES
 
 
 	}
@@ -82,6 +107,8 @@ public class PlayerHub : MonoBehaviour {
 		if(console.activeSelf)
 			machin.PrintSequence(true);
 	}
+
+
 	
 
 

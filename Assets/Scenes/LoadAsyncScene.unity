@@ -696,7 +696,7 @@ MonoBehaviour:
   shouldSpin: 0
   isEditor: 1
   isCompetition: 0
-  generateCollision: 1
+  generateCollision: 0
 --- !u!4 &2035259664
 Transform:
   m_ObjectHideFlags: 0

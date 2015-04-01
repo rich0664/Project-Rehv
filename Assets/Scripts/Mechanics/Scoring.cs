@@ -62,7 +62,6 @@ public class Scoring : MonoBehaviour {
 				tirePos.y+=.25f;
 			}
 
-			
 			if (Physics.Raycast (tirePos, -Vector3.right, out hit)) {
 				ScoreLine.SetPosition(0,hit.point);
 			}
