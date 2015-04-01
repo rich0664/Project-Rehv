@@ -43,6 +43,7 @@ public class AddonPlacer : MonoBehaviour {
 			//Ray ray = new Ray(mouseCursor.transform.position, transform.forward);
 			RaycastHit hit;
 			Debug.DrawRay(ray.origin, ray.direction,Color.cyan,10);
+
 			if (Physics.Raycast (ray, out hit)) {
 				GameObject hitObject = hit.transform.gameObject;
 				if(hitObject == tE.tire){
@@ -58,7 +59,7 @@ public class AddonPlacer : MonoBehaviour {
 					addon.transform.rotation = addonRot;
 					
 
-					if (Input.GetMouseButtonDown (0)) {
+						if (Input.GetMouseButtonDown (0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1)) {
 						GameObject prefab = Resources.Load("Addons/" + "AddonPref" + addonIndex.ToString(), typeof(GameObject)) as GameObject;
 						GameObject AddonInst = Instantiate (prefab, hit.point, addonRot) as GameObject;
 						addonCount++;

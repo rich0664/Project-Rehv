@@ -12,6 +12,8 @@ public class PlayerHub : MonoBehaviour {
 	public bool cinematicMode = false;
 	public GameObject console;
 	public bool isOutside = false;
+	public GameObject LOSObject;
+	public float LOSDistance = 5f;
 	BloomOptimized playerBloom;
 	GameObject playerCamera;
 	SunShafts playerShafts;
@@ -70,6 +72,14 @@ public class PlayerHub : MonoBehaviour {
 				playerBloom.intensity += 0.01f;
 		}
 		//END HANDLE OUTSIDE EFFECTS CHANGES
+
+		//Get the object we are looking at
+		RaycastHit hit;
+		LOSObject = null;
+		Debug.DrawRay (playerCamera.transform.position, playerCamera.transform.forward, Color.cyan, 10f);
+		if (Physics.Raycast (playerCamera.transform.position, playerCamera.transform.forward, out hit, LOSDistance)) {
+			LOSObject = hit.transform.gameObject;
+		}
 
 
 	}

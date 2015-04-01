@@ -121,6 +121,9 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("CurrentTire"))
 			SaveLoad.SaveString ("CurrentTire", "TestTire1");
 
+		if (!PlayerPrefs.HasKey ("Signature"))
+			SaveLoad.SaveInt ("Signature", 0);
+
 		if (!PlayerPrefs.HasKey ("Memory"))
 			SaveLoad.SaveFloat ("Memory", 350f);
 

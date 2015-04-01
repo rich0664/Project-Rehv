@@ -4,9 +4,12 @@ using System.Collections;
 public class ObjectMoveToCursor : MonoBehaviour {
 
 	public Canvas myCanvas;
+	public bool hideCursor = true;
+
 
 	void Start(){
-		Cursor.visible = false;
+		if(hideCursor)
+			Cursor.visible = false;
 	}
 	
 	// Update is called once per frame

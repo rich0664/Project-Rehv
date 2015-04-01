@@ -1,16 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class DrawLine : MonoBehaviour 
 {
 	LineRenderer line;
 	bool isMousePressed;
 	bool startNew = true;
+	bool canWrite = false;
 	List<Vector3> pointsList;
 	Vector3 mousePos;
 
+	int lineCount = 0;
+
+	public Canvas myCanvas;
 	public GameObject linePrefab;
+	public GameObject signPen;
 
 	public Color lineColor = Color.black;
 	public float lineWidth = 0.05f;
@@ -38,50 +44,121 @@ public class DrawLine : MonoBehaviour
 	//	-----------------------------------	
 	void Update () 
 	{
+
 		// If mouse button down, remove old line and set its color to green
 		if(Input.GetMouseButtonDown(0))
 		{
 			isMousePressed = true;
 			//line.SetVertexCount(0);
 			//pointsList.RemoveRange(0,pointsList.Count);
-			line.SetColors(lineColor, lineColor);
 		}
 		else if(Input.GetMouseButtonUp(0))
 		{
 			isMousePressed = false;
 			startNew = true;
 		}
+
+		if (Input.GetKeyDown (KeyCode.Z))
+			UndoText (true);
+
+		if (canWrite) {
+			if(!signPen.activeSelf)
+				signPen.SetActive (true);
+			Vector2 pos;
+			RectTransformUtility.ScreenPointToLocalPointInRectangle (myCanvas.transform as RectTransform, Input.mousePosition, myCanvas.worldCamera, out pos);
+			if (isMousePressed)
+				signPen.transform.position = myCanvas.transform.TransformPoint (pos);
+			if (!isMousePressed)
+				signPen.transform.position = myCanvas.transform.TransformPoint (new Vector2(pos.x + 15, pos.y + 15));
+		} else {
+			signPen.SetActive(false);
+		}
+
+
 		// Drawing line when mouse is moving(presses)
-		if(isMousePressed)
-		{
-
-			mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			mousePos.z=0;
+		if (isMousePressed && canWrite) {
+			mousePos = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+			mousePos.z = 0;
 			if (!pointsList.Contains (mousePos)) 
-				if(startNew){
+			if (startNew) {
 					
-				GameObject lineInst = Instantiate(linePrefab, transform.position, transform.rotation) as GameObject;
+				GameObject lineInst = Instantiate (linePrefab, transform.position, transform.rotation) as GameObject;
+				lineCount++;
+				lineInst.name = "Line" + lineCount;
+				line = lineInst.GetComponent<LineRenderer> ();
+				line.SetVertexCount (0);
+				line.SetWidth (lineWidth, lineWidth);
+				line.SetColors (lineColor, lineColor);
+				line.useWorldSpace = true;	
+				pointsList = new List<Vector3> ();
 
-					line = lineInst.GetComponent<LineRenderer>();
-					line.SetVertexCount(0);
-					line.SetWidth(lineWidth,lineWidth);
-					line.SetColors(lineColor, lineColor);
-					line.useWorldSpace = true;	
-					pointsList = new List<Vector3>();
+				pointsList.Add (mousePos);
+				line.SetVertexCount (pointsList.Count);
+				line.SetPosition (pointsList.Count - 1, (Vector3)pointsList [pointsList.Count - 1]);
 
-					pointsList.Add (mousePos);
-					line.SetVertexCount (pointsList.Count);
-					line.SetPosition (pointsList.Count - 1, (Vector3)pointsList [pointsList.Count - 1]);
+				startNew = false;	
 
-					startNew = false;	
-
-				} else {
-					pointsList.Add (mousePos);
-					line.SetVertexCount (pointsList.Count);
-					line.SetPosition (pointsList.Count - 1, (Vector3)pointsList [pointsList.Count - 1]);
-				}
+			} else {
+				pointsList.Add (mousePos);
+				line.SetVertexCount (pointsList.Count);
+				line.SetPosition (pointsList.Count - 1, (Vector3)pointsList [pointsList.Count - 1]);
+			}
+		} else {
+			isMousePressed = false;
 		}
 	}
+
+	public void SetWrite(bool str){
+		canWrite = str;
+	}
+
+	public void ClearText(bool str){
+		if (str) {
+			GameObject[] lines = GameObject.FindGameObjectsWithTag("Addon");
+			foreach(GameObject line in lines){
+				Destroy(line);
+			}
+		}
+	}
+
+	public void UndoText(bool str){
+		if (str && lineCount > 0) {
+			Destroy(GameObject.Find("Line" + lineCount));
+			lineCount--;
+		}
+	}
+
+	public void DoneWriting(bool str){
+		if (str) {
+
+			GameObject.Find("Canvas").SetActive(false);
+			GameObject.Find("PenCanvas").SetActive(false);
+
+			Camera virtuCamera = GameObject.Find ("MainCam").GetComponent<Camera> ();
+			int rH = 1024;
+			float trW = rH * 1.77777f;
+			int rW = (int)trW;
+			RenderTexture tempRT = new RenderTexture (rW, rH, 24);
+			virtuCamera.aspect = 1.77777f;
+			virtuCamera.targetTexture = tempRT;
+			virtuCamera.Render ();
+			RenderTexture.active = tempRT;
+			Texture2D tex = new Texture2D (rW, rH, TextureFormat.ARGB32, false);
+			tex.ReadPixels (new Rect (0, 0, rW, rH), 0, 0);
+			tex.Apply ();
+			RenderTexture.active = null; 
+			virtuCamera.targetTexture = null;
+			byte[] pngShot = tex.EncodeToPNG();
+			File.WriteAllBytes (Application.dataPath + "/Resources/Thumbs/Signature.png", pngShot);
+			Destroy(tex);
+
+
+			SaveLoad.SaveInt("Signature",1);
+			Application.LoadLevel("Garage");
+
+		}
+	}
+
 	//	-----------------------------------	
 	//  Following method checks is currentLine(line drawn by last two points) collided with line 
 	//	-----------------------------------	
