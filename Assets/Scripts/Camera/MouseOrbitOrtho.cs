@@ -97,7 +97,11 @@ public class MouseOrbitOrtho : MonoBehaviour {
 			
 			
 			zoom = Mathf.Clamp(zoom - Input.GetAxis("Mouse ScrollWheel")*zoomSpeed, minZoom, maxZoom);
+			if(thisCamera.orthographic){
 			thisCamera.orthographicSize = zoom;
+			}else{
+				distance = zoom;
+			}
 			
 			if(useCinematic){
 				float absX = Mathf.Abs(x);
@@ -122,7 +126,7 @@ public class MouseOrbitOrtho : MonoBehaviour {
 			}
 			
 			
-			RaycastHit hit;
+			//RaycastHit hit;
 			/*if (Physics.Linecast (target.position, transform.position, out hit)) {
 				distance -=  hit.distance;
 			}*/
