@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DayNight : MonoBehaviour {
 
+	public CompetitionBoard cBoard;
 	public float timeScale = 100f;
 	float rotat = 180f;
 	public float ambientIntense = 0f;
@@ -15,11 +16,21 @@ public class DayNight : MonoBehaviour {
 	public Material skyMat;
 	Color skyColor;
 
+	public float timeHour;
+	public float timeMinute;
+
 	// Use this for initialization
 	void Start () {
 		RenderSettings.ambientIntensity = 0;
 		//skyMat = skyDome.GetComponent<Renderer> ().material;
 		skyColor = skyMat.GetColor("_TintColor");
+		Day = SaveLoad.LoadInt ("Day");
+		Week = SaveLoad.LoadInt ("Week");
+		if (Day == 0 || Week == 0) {
+			Day = 1;
+			Week = 1;
+			SaveLoad.SaveInt("Week", Week);
+		}
 	}
 	
 	// Update is called once per frame
@@ -48,6 +59,9 @@ public class DayNight : MonoBehaviour {
 			}
 		}
 
+		timeHour =  Mathf.Floor(localTime / 15);
+		timeMinute = Mathf.Floor(((localTime % 15) / 15) * 60);
+
 		skyMat.SetColor("_TintColor", skyColor);
 
 		if (Mathf.Abs(localTime) >= 360) {
@@ -56,11 +70,21 @@ public class DayNight : MonoBehaviour {
 			RenderSettings.ambientIntensity = -0.5f;
 			skyColor = Color.white;
 			Day++;
+			SaveLoad.SaveInt("Day",Day);
 			if(Day > 7){
 				Week++;
 				Day = 1;
+				SaveLoad.SaveInt("Day",Day);
+				SaveLoad.SaveInt("Week", Week);
+				cBoard.SetFlyers();
 			}
 		}
+	}
+
+
+	public void SetTime(float timeSet){
+		localTime = timeSet;
+		rotat = localTime + 180;
 	}
 
 

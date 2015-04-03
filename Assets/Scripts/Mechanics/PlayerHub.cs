@@ -8,17 +8,27 @@ public class PlayerHub : MonoBehaviour {
 
 	public Text interactText;
 	public bool canInteract;
-	public TireMachine machin;
+	public bool isViewing;
 	public bool cinematicMode = false;
-	public GameObject console;
 	public bool isOutside = false;
+	public TireMachine machin;
+	public GameObject console;
+	public GameObject backButton;
+	public GameObject signUpButton;
+	public GameObject signForm;
 	public GameObject LOSObject;
 	public float LOSDistance = 5f;
+	GameObject compBoard;
+	GameObject compBoardHighlight;
 	BloomOptimized playerBloom;
 	GameObject playerCamera;
+	GameObject boardCamPoint;
 	SunShafts playerShafts;
 	string useObject;
 	Text consoleText;
+	Quaternion lastRot;
+	public Vector3 boardViewingPos;
+	Vector3 lastPos;
 
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();
@@ -27,6 +37,11 @@ public class PlayerHub : MonoBehaviour {
 		playerCamera = GameObject.Find ("/Player/Player Camera");
 		playerShafts = playerCamera.GetComponent<SunShafts> ();
 		playerBloom = playerCamera.GetComponent<BloomOptimized>();
+		compBoard = GameObject.Find ("Competition Board");
+		compBoardHighlight = GameObject.Find ("BoardHighlight");
+		compBoardHighlight.SetActive (false);
+		boardCamPoint = GameObject.Find ("BoardCamPoint");
+		boardViewingPos = boardCamPoint.transform.position;
 	}
 
 	void Update(){
@@ -34,10 +49,11 @@ public class PlayerHub : MonoBehaviour {
 			interactWith(useObject);
 		}
 
-		if (Cursor.visible) {
+		if (Cursor.visible && !cinematicMode)
 			Cursor.visible = false;
+
+		if(Cursor.lockState == CursorLockMode.None && !cinematicMode)
 			Cursor.lockState = CursorLockMode.Locked;
-		}
 
 		if (cinematicMode) {
 			gameObject.GetComponent<FirstPersonController>().enabled = false;
@@ -56,6 +72,27 @@ public class PlayerHub : MonoBehaviour {
 			}
 		}
 
+		//HIGHLIGHT BOARD
+		if (LOSObject == compBoard) {
+			compBoardHighlight.SetActive (true);
+		} else {
+			compBoardHighlight.SetActive (false);
+		}
+
+		//LERP TO BOARD
+
+		if (isViewing) {
+			playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, boardViewingPos, 10f * Time.deltaTime);
+			playerCamera.transform.rotation = boardCamPoint.transform.rotation;
+			if(playerCamera.transform.position == boardViewingPos && boardViewingPos != boardCamPoint.transform.position){
+				signUpButton.SetActive(true);
+			}else{
+				signUpButton.SetActive(false);
+			}
+			if(Input.GetKeyDown(KeyCode.Escape)){
+				MenuBack(true);
+			}
+		}
 
 		//HANDLE OUTSIDE EFFECTS CHANGES
 		if (isOutside) {
@@ -76,7 +113,6 @@ public class PlayerHub : MonoBehaviour {
 		//Get the object we are looking at
 		RaycastHit hit;
 		LOSObject = null;
-		Debug.DrawRay (playerCamera.transform.position, playerCamera.transform.forward, Color.cyan, 10f);
 		if (Physics.Raycast (playerCamera.transform.position, playerCamera.transform.forward, out hit, LOSDistance)) {
 			LOSObject = hit.transform.gameObject;
 		}
@@ -84,13 +120,41 @@ public class PlayerHub : MonoBehaviour {
 
 	}
 
+	public void MenuBack(bool str){
+		if (str) {
+			if(boardViewingPos == boardCamPoint.transform.position){
+				isViewing = false;
+				playerCamera.transform.position = lastPos;
+				playerCamera.transform.rotation = lastRot;
+				cinematicMode = false;
+				backButton.SetActive(false);
+			} else { 
+				boardViewingPos = boardCamPoint.transform.position;
+				signUpButton.SetActive(false);
+			}
+		}
+	}
+
 
 	public void interactWith(string str){
-		if (str == "PC")
+		if (str == "PC") {
+			Cursor.lockState = CursorLockMode.None;
 			Application.LoadLevel ("Editor");
+		}
 
 		if (str == "TireMachine"  && machin.shouldPrint)
 			machin.PrintTire ();
+
+		if (str == "CompBoard") {
+			isViewing = true;
+			lastPos = playerCamera.transform.position;
+			lastRot = playerCamera.transform.rotation;
+			cinematicMode = true;
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+			boardViewingPos = boardCamPoint.transform.position;
+			backButton.SetActive(true);
+		}
 	}
 
 	public void ShowMessage(string str){
@@ -103,6 +167,13 @@ public class PlayerHub : MonoBehaviour {
 		if (str == "TireMachine" && machin.shouldPrint) {
 			interactText.gameObject.SetActive (true);
 			interactText.text = "Press E to start print";
+		}
+
+		if (str == "CompBoard" && !isViewing) {
+			interactText.gameObject.SetActive (true);
+			interactText.text = "E";
+		} else {
+			interactText.gameObject.SetActive(false);
 		}
 	}
 

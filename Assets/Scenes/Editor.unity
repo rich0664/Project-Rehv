@@ -19387,7 +19387,13 @@ Prefab:
       propertyPath: m_ConnectedAnchor.z
       value: -.00360002695
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 106384, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 15317334, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
+    - {fileID: 5414792, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2019649511
