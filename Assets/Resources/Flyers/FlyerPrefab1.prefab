@@ -45,7 +45,7 @@ GameObject:
   - 114: {fileID: 11452324}
   m_Layer: 0
   m_Name: FlyerPrefab1
-  m_TagString: Untagged
+  m_TagString: Flyer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,7 +670,7 @@ TextMesh:
   m_CharacterSize: .00200000009
   m_LineSpacing: 1
   m_Anchor: 3
-  m_Alignment: 1
+  m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 40
   m_FontStyle: 0
@@ -732,8 +732,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fb892dabf4f704db54d9ba2f649625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyerIndex: 0
+  flyerType: 0
+  flyerTex: 0
   eventTime: 0
   eventDay: 0
+  firstPrize: 0
+  secondPrize: 0
+  thirdPrize: 0
+  difficulty: 0
+  difficultyLevel: 0
+  eventClass: 
+  eventMap: 
+  flyerTitle: 
+  flyerDateText: 
+  flyerDetailsText: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

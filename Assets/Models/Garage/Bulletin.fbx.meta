@@ -13,8 +13,10 @@ ModelImporter:
     400004: Calendar
     2300000: BulletinBoard
     2300002: Calendar
+    2300004: //RootNode
     3300000: BulletinBoard
     3300002: Calendar
+    3300004: //RootNode
     4300000: Calendar
     4300002: BulletinBoard
   materials:

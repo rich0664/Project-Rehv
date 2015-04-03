@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class CompetitionBoard : MonoBehaviour {
 	
@@ -91,7 +92,18 @@ public class CompetitionBoard : MonoBehaviour {
 				flyerType[i] = 2;
 			}
 
+			int tmpClass = Random.Range(1,3);
+			int tmpMap = Random.Range(1,2);
 
+			int difficulty = 0;
+			if(tmpClass == 1)
+				difficulty = Random.Range(15,41);
+			if(tmpClass == 2)
+				difficulty = Random.Range(20,51);
+
+			float firstP = Mathf.Round(Mathf.Pow(difficulty, 2f) / 8);
+			float secondP = Mathf.Round(Mathf.Pow(difficulty, 2f) / 15);
+			float thirdP = 0;
 
 			flyerTex[i] = Random.Range(1,5);
 
@@ -100,9 +112,8 @@ public class CompetitionBoard : MonoBehaviour {
 				flyerDate[i] = Random.Range(1,8);
 				newRnd = flyerDate[i];
 			}
-			lastRnd = flyerDate[i];
-
-			flyerHour[i] = Random.Range(11,23);
+			lastRnd = flyerDate[i]; //Day Of event
+			flyerHour[i] = Random.Range(11,23); //Hour of event
 
 			if(flyerType[i] == 0)
 				continue;
@@ -128,19 +139,66 @@ public class CompetitionBoard : MonoBehaviour {
 			flyerInst.transform.localScale = flyerPoint.transform.localScale;
 			flyerInst.name = "Flyer" + (i+1);
 			//flyerInst.transform.SetParent(gameObject.transform);
-			TextMesh flyerTitle = GameObject.Find(flyerInst.name + "/TitleText").GetComponent<TextMesh>();
-			TextMesh flyerDateText = GameObject.Find(flyerInst.name + "/DateText").GetComponent<TextMesh>();
-			TextMesh flyerDetailsText = GameObject.Find(flyerInst.name + "/DetailsText").GetComponent<TextMesh>();
-			flyerTitle.text = flyerTitles[Random.Range(0, flyerTitles.Length - 1)];
-			flyerDateText.text = "Week " + week + ", " + dayOfWeek + " " + flyerHour[i] + ":00";
-			flyerDetailsText.text = flyerDetails[Random.Range(0, flyerDetails.Length)];
-			flyerInst.GetComponent<Flyer>().eventTime = flyerHour[i];
-			flyerInst.GetComponent<Flyer>().eventDay = flyerDate[i];
 			Texture2D flyerTexture = Resources.Load ("Flyers/FlyerTex" + flyerTex[i] , typeof(Texture2D)) as Texture2D;
 			flyerInst.GetComponent<Renderer>().material.mainTexture = flyerTexture;
+			Flyer flyerScript = flyerInst.GetComponent<Flyer>();
+			flyerScript.flyerIndex = i + 1;
+			flyerScript.flyerType = flyerType[i];
+			flyerScript.flyerTex = flyerTex[i];
+			flyerScript.eventTime = flyerHour[i];
+			flyerScript.eventDay = flyerDate[i];
+			flyerScript.firstPrize = firstP;
+			flyerScript.secondPrize = secondP;
+			flyerScript.thirdPrize = thirdP;
+			flyerScript.difficulty = difficulty;
+			flyerScript.flyerTitle = flyerTitles[Random.Range(0, flyerTitles.Length - 1)];
+			flyerScript.flyerDateText = "Week " + week + ", " + dayOfWeek + " " + flyerHour[i] + ":00";
+			flyerScript.flyerDetailsText = flyerDetails[Random.Range(0, flyerDetails.Length)];
+
+			if(tmpClass == 1)
+				flyerScript.eventClass = "Kart Tire";
+			if(tmpClass == 2)
+				flyerScript.eventClass = "Car Tire";
+
+			if(tmpMap == 1)
+				flyerScript.eventMap = "Competition 1";
+
+			if(tmpClass == 1 && difficulty >= 15 && difficulty <= 25)
+				flyerScript.difficultyLevel = 1;
+			if(tmpClass == 1 && difficulty >= 26 && difficulty <= 35)
+				flyerScript.difficultyLevel = 2;
+			if(tmpClass == 1 && difficulty >= 36 && difficulty <= 40)
+				flyerScript.difficultyLevel = 3;
+
+			if(tmpClass == 2 && difficulty >= 20 && difficulty <= 30)
+				flyerScript.difficultyLevel = 1;
+			if(tmpClass == 2 && difficulty >= 31 && difficulty <= 40)
+				flyerScript.difficultyLevel = 2;
+			if(tmpClass == 2 && difficulty >= 41 && difficulty <= 50)
+				flyerScript.difficultyLevel = 3;
+
+			flyerScript.SetTexts();
 		}
 
 
+	}
+
+	public void SaveFlyers(bool str){
+		if(str){
+			GameObject[] flyers = GameObject.FindGameObjectsWithTag("Flyer");
+			string flyerData = "";
+			for(int i = 0; i < flyers.Length; i++){
+				Flyer tmpFlyer = flyers[i].GetComponent<Flyer>();
+				flyerData += tmpFlyer.SaveFlyerData();
+			}
+			SaveLoad.SaveString("FlyerData",flyerData);
+		}
+	}
+
+	public void LoadFlyer(bool str){
+		if(str){
+
+		}
 	}
 
 

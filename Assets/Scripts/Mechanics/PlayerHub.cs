@@ -29,6 +29,8 @@ public class PlayerHub : MonoBehaviour {
 	Quaternion lastRot;
 	public Vector3 boardViewingPos;
 	Vector3 lastPos;
+	//[HideInInspector] 
+	public int viewingFlyerIndex;
 
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();

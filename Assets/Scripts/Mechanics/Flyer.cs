@@ -3,8 +3,25 @@ using System.Collections;
 
 public class Flyer : MonoBehaviour {
 
+	//[HideInInspector]
+	public int flyerIndex;
+	public int flyerType;
+	public int flyerTex;
 	public float eventTime;
 	public int eventDay;
+	public float firstPrize;
+	public float secondPrize;
+	public float thirdPrize;
+	public int difficulty;
+	public int difficultyLevel;
+
+	public string eventClass;
+	public string eventMap;
+
+	public string flyerTitle;
+	public string flyerDateText;
+	public string flyerDetailsText;
+
 	DayNight dayCycle;
 	bool isActive = true;
 	bool isSigned = false;
@@ -27,6 +44,10 @@ public class Flyer : MonoBehaviour {
 			Rigidbody fRB = gameObject.AddComponent<Rigidbody>();
 			fRB.drag = 1.5f;
 			isActive = false;
+			if(hubPlayer.viewingFlyerIndex == flyerIndex){
+				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
+				hubPlayer.viewingFlyerIndex = 0;
+			}
 		}
 
 		if (!isActive && gameObject.transform.position.y < -1)
@@ -42,6 +63,7 @@ public class Flyer : MonoBehaviour {
 						Vector3 flyerPos = transform.position;
 						flyerPos.z -= 0.35f;
 					   	hubPlayer.boardViewingPos = flyerPos;
+						hubPlayer.viewingFlyerIndex = flyerIndex;
 						//hubPlayer.signUpButton.SetActive(true);
 					}
 				}else{
@@ -51,6 +73,50 @@ public class Flyer : MonoBehaviour {
 
 		}
 
+	}
+
+	public void SetTexts(){
+		TextMesh flyerTitleMesh = GameObject.Find(gameObject.name + "/TitleText").GetComponent<TextMesh>();
+		TextMesh flyerDateTextMesh = GameObject.Find(gameObject.name + "/DateText").GetComponent<TextMesh>();
+		TextMesh flyerDetailsTextMesh = GameObject.Find(gameObject.name + "/DetailsText").GetComponent<TextMesh>();
+		string difficultyTitle = "";
+		string mapTitle = "";
+		if (difficultyLevel == 1)
+			difficultyTitle = "Amateur";
+		if (difficultyLevel == 2)
+			difficultyTitle = "Intermediate";
+		if (difficultyLevel == 3)
+			difficultyTitle = "Experienced";
+		if(eventMap == "Competition 1")
+			mapTitle = "Ski Slope";
+		flyerTitle = eventClass + " Event";
+		flyerDetailsText = difficultyTitle + " " + eventClass + " jump event." + "\n"
+			+ "Prize money: 1st Place-$" + firstPrize + " 2nd Place-$" + secondPrize + " 3rd Place-$" + thirdPrize + "\n"
+				+ "Event will be at the " + mapTitle + ", be there.";
+		flyerTitleMesh.text = flyerTitle;
+		flyerDateTextMesh.text = flyerDateText;
+		flyerDetailsTextMesh.text = flyerDetailsText;
+			
+	}
+
+	public string SaveFlyerData(){
+		string flyerData = "";
+		flyerData += "FlyerType" + flyerIndex + "=" + flyerType + "FlyerType" + flyerIndex + "End:";
+		flyerData += "FlyerTex" + flyerIndex + "=" + flyerTex + "FlyerTex" + flyerIndex + "End:";
+		flyerData += "EventTime" + flyerIndex + "=" + eventTime + "EventTime" + flyerIndex + "End:";
+		flyerData += "EventDay" + flyerIndex + "=" + eventDay + "EventDay" + flyerIndex + "End:";
+		flyerData += "FirstPrize" + flyerIndex + "=" + firstPrize + "FirstPrize" + flyerIndex + "End:";
+		flyerData += "SecondPrize" + flyerIndex + "=" + secondPrize + "SecondPrize" + flyerIndex + "End:";
+		flyerData += "ThirdPrize" + flyerIndex + "=" + thirdPrize + "ThirdPrize" + flyerIndex + "End:";
+		flyerData += "Difficulty" + flyerIndex + "=" + difficulty + "Difficulty" + flyerIndex + "End:";
+		flyerData += "DifficultyLevel" + flyerIndex + "=" + difficultyLevel + "DifficultyLevel" + flyerIndex + "End:";
+		flyerData += "EventClass" + flyerIndex + "=" + eventClass + "EventClass" + flyerIndex + "End:";
+		flyerData += "EventMap" + flyerIndex + "=" + eventMap + "EventMap" + flyerIndex + "End:";
+
+		flyerData += "TitleText" + flyerIndex + "=" + flyerTitle + "TitleText" + flyerIndex + "End:";
+		flyerData += "DateText" + flyerIndex + "=" + flyerDateText + "DateText" + flyerIndex + "End:";
+		flyerData += "DetailsText" + flyerIndex + "=" + flyerDetailsText + "DetailsText" + flyerIndex + "End:";
+		return flyerData;
 	}
 
 
