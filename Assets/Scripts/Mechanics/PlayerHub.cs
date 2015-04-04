@@ -32,8 +32,8 @@ public class PlayerHub : MonoBehaviour {
 	Vector3 lastPos;
 	//[HideInInspector] 
 	public int viewingFlyerIndex;
-
-	CursorLockMode wantedCursorLock;
+	[HideInInspector] public bool isCurrentSigned;
+	[HideInInspector] public CursorLockMode wantedCursorLock;
 
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();
@@ -89,7 +89,7 @@ public class PlayerHub : MonoBehaviour {
 		if (isViewing) {
 			playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, boardViewingPos, 10f * Time.deltaTime);
 			playerCamera.transform.rotation = boardCamPoint.transform.rotation;
-			if(playerCamera.transform.position == boardViewingPos && boardViewingPos != boardCamPoint.transform.position){
+			if(playerCamera.transform.position == boardViewingPos && boardViewingPos != boardCamPoint.transform.position && !isCurrentSigned){
 				signUpButton.SetActive(true);
 			}else{
 				signUpButton.SetActive(false);
@@ -146,7 +146,7 @@ public class PlayerHub : MonoBehaviour {
 	public void interactWith(string str){
 		if (str == "PC") {
 			Cursor.lockState = CursorLockMode.None;
-			Cursor.lockState = CursorLockMode.None;
+			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
 			Application.LoadLevel ("Editor");
 		}
 
@@ -189,7 +189,11 @@ public class PlayerHub : MonoBehaviour {
 
 	public void SignUpForCompetition(bool str){
 		if (str) {
-			GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().isSigned = true;
+			Flyer tmpFlyer = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>();
+			tmpFlyer.isSigned = true;
+			tmpFlyer.flyerTitle += " -Signed!-";
+			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
+			tmpFlyer.SetTexts();
 		}
 	}
 
@@ -198,6 +202,14 @@ public class PlayerHub : MonoBehaviour {
 			string tmpMap = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().eventMap;
 			SaveLoad.SaveString("CompToLoad", tmpMap);
 			Application.LoadLevel("LoadAsyncScene");
+		}
+	}
+
+	public void CancelCompetition(bool str){
+		if (str) {
+			GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().isSigned = false;
+			cinematicMode = false;
+			wantedCursorLock = CursorLockMode.Locked;
 		}
 	}
 

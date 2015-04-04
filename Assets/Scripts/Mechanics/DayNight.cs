@@ -70,6 +70,7 @@ public class DayNight : MonoBehaviour {
 			RenderSettings.ambientIntensity = -0.5f;
 			skyColor = Color.white;
 			Day++;
+			timeHour = 0f;
 			cBoard.SaveFlyers(true);
 			SaveLoad.SaveInt("Day",Day);
 			if(Day > 7){

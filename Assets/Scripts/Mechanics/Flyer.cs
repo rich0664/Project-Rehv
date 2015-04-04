@@ -45,6 +45,8 @@ public class Flyer : MonoBehaviour {
 			if(isSigned){
 				hubPlayer.readyCompForm.SetActive(true);
 				hubPlayer.viewingFlyerIndex = flyerIndex;
+				hubPlayer.wantedCursorLock = CursorLockMode.None;
+				hubPlayer.cinematicMode = true;
 				dayCycle.SetTimescale(0f);
 				return;
 			}
@@ -79,6 +81,7 @@ public class Flyer : MonoBehaviour {
 						flyerPos.z -= 0.35f;
 					   	hubPlayer.boardViewingPos = flyerPos;
 						hubPlayer.viewingFlyerIndex = flyerIndex;
+						hubPlayer.isCurrentSigned = isSigned;
 						//hubPlayer.signUpButton.SetActive(true);
 					}
 				}else{
@@ -103,8 +106,7 @@ public class Flyer : MonoBehaviour {
 		if (difficultyLevel == 3)
 			difficultyTitle = "Experienced";
 		if(eventMap == "Competition 1")
-			mapTitle = "Ski Slope";
-		flyerTitle = eventClass + " Event";
+			mapTitle = "Ski Slope";;
 		flyerDetailsText = difficultyTitle + " " + eventClass + " jump event." + "\n"
 			+ "Prize money: 1st Place-$" + firstPrize + " 2nd Place-$" + secondPrize + " 3rd Place-$" + thirdPrize + "\n"
 				+ "Event will be at the " + mapTitle + ", be there.";
@@ -127,6 +129,7 @@ public class Flyer : MonoBehaviour {
 		flyerData += "DifficultyLevel" + flyerIndex + "=" + difficultyLevel + "DifficultyLevel" + flyerIndex + "End:";
 		flyerData += "EventClass" + flyerIndex + "=" + eventClass + "EventClass" + flyerIndex + "End:";
 		flyerData += "EventMap" + flyerIndex + "=" + eventMap + "EventMap" + flyerIndex + "End:";
+		flyerData += "IsSigned" + flyerIndex + "=" + isSigned + "IsSigned" + flyerIndex + "End:";
 
 		flyerData += "TitleText" + flyerIndex + "=" + flyerTitle + "TitleText" + flyerIndex + "End:";
 		flyerData += "DateText" + flyerIndex + "=" + flyerDateText + "DateText" + flyerIndex + "End:";
@@ -143,6 +146,7 @@ public class Flyer : MonoBehaviour {
 		thirdPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "ThirdPrize" + flyerIndex));
 		difficulty = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "Difficulty" + flyerIndex));
 		difficultyLevel = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "DifficultyLevel" + flyerIndex));
+		isSigned = bool.Parse(SaveLoad.GetValueFromPref ("FlyerData", "IsSigned" + flyerIndex));
 
 		eventClass = SaveLoad.GetValueFromPref ("FlyerData", "EventClass" + flyerIndex);
 		eventMap = SaveLoad.GetValueFromPref ("FlyerData", "EventMap" + flyerIndex);

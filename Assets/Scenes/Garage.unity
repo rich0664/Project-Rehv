@@ -582,7 +582,7 @@ RectTransform:
   - {fileID: 1640249702}
   - {fileID: 548861999}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4900,7 +4900,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1 &704204954
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,6 +5274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1774097620}
+        m_MethodName: CancelCompetition
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &803602516
@@ -5586,7 +5598,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 819724946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1774097620}
+        m_MethodName: GotoCompetition
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &819724946
@@ -9603,7 +9627,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413924, guid: 941427aaf584b6d4ca24a90c02d7124c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 119726, guid: 941427aaf584b6d4ca24a90c02d7124c, type: 2}
       propertyPath: m_IsActive
@@ -9868,7 +9892,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &1190288459
 GameObject:
   m_ObjectHideFlags: 0
@@ -9902,7 +9926,7 @@ Transform:
   - {fileID: 176844872}
   - {fileID: 1102166064}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1196785335
 GameObject:
   m_ObjectHideFlags: 0
@@ -12712,7 +12736,7 @@ Transform:
   m_Children:
   - {fileID: 1138760467}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &1504051005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13388,7 +13412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &1646693313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13567,7 +13591,7 @@ Transform:
   - {fileID: 860338866}
   - {fileID: 284892962}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1698149309
 GameObject:
   m_ObjectHideFlags: 0
@@ -13719,7 +13743,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!1 &1741016699
 GameObject:
   m_ObjectHideFlags: 0
@@ -14055,7 +14079,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11413758, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: sunTransform
@@ -14177,11 +14201,13 @@ MonoBehaviour:
   backButton: {fileID: 1745168345}
   signUpButton: {fileID: 1741016699}
   signForm: {fileID: 1354686886}
-  readyCompForm: {fileID: 0}
+  readyCompForm: {fileID: 548861998}
   LOSObject: {fileID: 0}
   LOSDistance: 2
   boardViewingPos: {x: 0, y: 0, z: 0}
   viewingFlyerIndex: 0
+  isCurrentSigned: 0
+  wantedCursorLock: 0
 --- !u!1001 &1825986004
 Prefab:
   m_ObjectHideFlags: 0
@@ -14895,7 +14921,7 @@ Transform:
   - {fileID: 147554072}
   - {fileID: 1673910033}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1001 &2052930519
 Prefab:
   m_ObjectHideFlags: 0
@@ -14933,7 +14959,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_Name
@@ -14969,7 +14995,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400036, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_RootOrder
@@ -15017,7 +15043,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}

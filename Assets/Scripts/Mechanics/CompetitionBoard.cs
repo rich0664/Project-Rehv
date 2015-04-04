@@ -160,6 +160,8 @@ public class CompetitionBoard : MonoBehaviour {
 			if(tmpClass == 2)
 				flyerScript.eventClass = "Car Tire";
 
+			flyerScript.flyerTitle = flyerScript.eventClass + " Event";
+
 			if(tmpMap == 1)
 				flyerScript.eventMap = "Competition 1";
 
@@ -211,7 +213,7 @@ public class CompetitionBoard : MonoBehaviour {
 				GameObject flyerPoint = GameObject.Find("FlyerPoints/FlyerPoint" + i);
 				GameObject flyerInst = Instantiate(flyerPrefab, flyerPoint.transform.position, flyerPoint.transform.rotation) as GameObject;
 				flyerInst.transform.localScale = flyerPoint.transform.localScale;
-				flyerInst.name = "Flyer" + (i+1);
+				flyerInst.name = "Flyer" + i;
 				Flyer flyerScript = flyerInst.GetComponent<Flyer>();
 				flyerScript.flyerType = tmpFlyerType;
 				flyerScript.flyerIndex = i;
