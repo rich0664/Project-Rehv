@@ -16,6 +16,7 @@ public class PlayerHub : MonoBehaviour {
 	public GameObject backButton;
 	public GameObject signUpButton;
 	public GameObject signForm;
+	public GameObject readyCompForm;
 	public GameObject LOSObject;
 	public float LOSDistance = 5f;
 	GameObject compBoard;
@@ -32,10 +33,12 @@ public class PlayerHub : MonoBehaviour {
 	//[HideInInspector] 
 	public int viewingFlyerIndex;
 
+	CursorLockMode wantedCursorLock;
+
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();
 		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
+		wantedCursorLock = CursorLockMode.Locked;
 		playerCamera = GameObject.Find ("/Player/Player Camera");
 		playerShafts = playerCamera.GetComponent<SunShafts> ();
 		playerBloom = playerCamera.GetComponent<BloomOptimized>();
@@ -54,8 +57,8 @@ public class PlayerHub : MonoBehaviour {
 		if (Cursor.visible && !cinematicMode)
 			Cursor.visible = false;
 
-		if(Cursor.lockState == CursorLockMode.None && !cinematicMode)
-			Cursor.lockState = CursorLockMode.Locked;
+		if(wantedCursorLock == CursorLockMode.None && !cinematicMode)
+			wantedCursorLock = CursorLockMode.Locked;
 
 		if (cinematicMode) {
 			gameObject.GetComponent<FirstPersonController>().enabled = false;
@@ -119,6 +122,8 @@ public class PlayerHub : MonoBehaviour {
 			LOSObject = hit.transform.gameObject;
 		}
 
+		Cursor.lockState = wantedCursorLock;
+		Cursor.visible = (CursorLockMode.Locked != wantedCursorLock);
 
 	}
 
@@ -141,6 +146,7 @@ public class PlayerHub : MonoBehaviour {
 	public void interactWith(string str){
 		if (str == "PC") {
 			Cursor.lockState = CursorLockMode.None;
+			Cursor.lockState = CursorLockMode.None;
 			Application.LoadLevel ("Editor");
 		}
 
@@ -152,7 +158,7 @@ public class PlayerHub : MonoBehaviour {
 			lastPos = playerCamera.transform.position;
 			lastRot = playerCamera.transform.rotation;
 			cinematicMode = true;
-			Cursor.lockState = CursorLockMode.None;
+			wantedCursorLock = CursorLockMode.None;
 			Cursor.visible = true;
 			boardViewingPos = boardCamPoint.transform.position;
 			backButton.SetActive(true);
@@ -171,11 +177,27 @@ public class PlayerHub : MonoBehaviour {
 			interactText.text = "Press E to start print";
 		}
 
-		if (str == "CompBoard" && !isViewing) {
-			interactText.gameObject.SetActive (true);
-			interactText.text = "E";
-		} else {
-			interactText.gameObject.SetActive(false);
+		if (str == "CompBoard") {
+			if(!isViewing){
+				interactText.gameObject.SetActive (true);
+				interactText.text = "E";
+			} else {
+				interactText.gameObject.SetActive (false);
+			}
+		}
+	}
+
+	public void SignUpForCompetition(bool str){
+		if (str) {
+			GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().isSigned = true;
+		}
+	}
+
+	public void GotoCompetition(bool str){
+		if (str) {
+			string tmpMap = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().eventMap;
+			SaveLoad.SaveString("CompToLoad", tmpMap);
+			Application.LoadLevel("LoadAsyncScene");
 		}
 	}
 

@@ -20,6 +20,8 @@ public class ObjectMoveToCursor : MonoBehaviour {
 
 		if(Cursor.visible)
 			Cursor.visible = false;
+		if (Cursor.lockState != CursorLockMode.None)
+			Cursor.lockState = CursorLockMode.None;
 	}
 
 }

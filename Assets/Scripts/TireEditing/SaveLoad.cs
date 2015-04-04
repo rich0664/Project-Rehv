@@ -30,5 +30,21 @@ public class SaveLoad : MonoBehaviour {
 		return PlayerPrefs.GetInt(key);		
 	}
 
+	//----------------------------------------------------------------------
+
+	public static string GetValueFromPref(string key, string valueToGet){
+		string tmpData = SaveLoad.LoadString (key);
+
+		int tmpIndexB = tmpData.IndexOf(valueToGet + "=");
+		int tmpIndexE = tmpData.IndexOf (valueToGet + "End:");
+		int tmpLength = tmpIndexE - (tmpIndexB + valueToGet.Length + 1);
+
+		tmpData = tmpData.Substring (tmpIndexB + valueToGet.Length + 1, tmpLength);
+
+		return tmpData;
+	}
+
+
+
 
 }

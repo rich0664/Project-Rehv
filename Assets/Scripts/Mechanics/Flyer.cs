@@ -22,9 +22,10 @@ public class Flyer : MonoBehaviour {
 	public string flyerDateText;
 	public string flyerDetailsText;
 
+	public bool isSigned = false;
+
 	DayNight dayCycle;
 	bool isActive = true;
-	bool isSigned = false;
 	PlayerHub hubPlayer;
 	GameObject highlight;
 	GameObject highlightGroup;
@@ -41,10 +42,24 @@ public class Flyer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (dayCycle.timeHour >= eventTime && isActive && dayCycle.Day >= eventDay) {
-			Rigidbody fRB = gameObject.AddComponent<Rigidbody>();
+			if(isSigned){
+				hubPlayer.readyCompForm.SetActive(true);
+				hubPlayer.viewingFlyerIndex = flyerIndex;
+				dayCycle.SetTimescale(0f);
+				return;
+			}
+			Rigidbody fRB = gameObject.AddComponent<Rigidbody> ();
 			fRB.drag = 1.5f;
 			isActive = false;
-			if(hubPlayer.viewingFlyerIndex == flyerIndex){
+			if (hubPlayer.viewingFlyerIndex == flyerIndex) {
+				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
+				hubPlayer.viewingFlyerIndex = 0;
+			}	
+		} else if (dayCycle.Day > eventDay && isActive) {
+			Rigidbody fRB = gameObject.AddComponent<Rigidbody> ();
+			fRB.drag = 1.5f;
+			isActive = false;
+			if (hubPlayer.viewingFlyerIndex == flyerIndex) {
 				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
 				hubPlayer.viewingFlyerIndex = 0;
 			}
@@ -117,6 +132,29 @@ public class Flyer : MonoBehaviour {
 		flyerData += "DateText" + flyerIndex + "=" + flyerDateText + "DateText" + flyerIndex + "End:";
 		flyerData += "DetailsText" + flyerIndex + "=" + flyerDetailsText + "DetailsText" + flyerIndex + "End:";
 		return flyerData;
+	}
+
+	public void LoadFlyerData(){
+		flyerTex = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "FlyerTex" + flyerIndex));
+		eventTime = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "EventTime" + flyerIndex));
+		eventDay = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "EventDay" + flyerIndex));
+		firstPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "FirstPrize" + flyerIndex));
+		secondPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "SecondPrize" + flyerIndex));
+		thirdPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "ThirdPrize" + flyerIndex));
+		difficulty = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "Difficulty" + flyerIndex));
+		difficultyLevel = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "DifficultyLevel" + flyerIndex));
+
+		eventClass = SaveLoad.GetValueFromPref ("FlyerData", "EventClass" + flyerIndex);
+		eventMap = SaveLoad.GetValueFromPref ("FlyerData", "EventMap" + flyerIndex);
+
+		flyerTitle = SaveLoad.GetValueFromPref ("FlyerData", "TitleText" + flyerIndex);
+		flyerDateText = SaveLoad.GetValueFromPref ("FlyerData", "DateText" + flyerIndex);
+		flyerDetailsText = SaveLoad.GetValueFromPref ("FlyerData", "DetailsText" + flyerIndex);
+
+		Texture2D flyerTexture = Resources.Load ("Flyers/FlyerTex" + flyerTex , typeof(Texture2D)) as Texture2D;
+		gameObject.GetComponent<Renderer>().material.mainTexture = flyerTexture;
+
+		SetTexts ();
 	}
 
 

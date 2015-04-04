@@ -70,6 +70,7 @@ public class DayNight : MonoBehaviour {
 			RenderSettings.ambientIntensity = -0.5f;
 			skyColor = Color.white;
 			Day++;
+			cBoard.SaveFlyers(true);
 			SaveLoad.SaveInt("Day",Day);
 			if(Day > 7){
 				Week++;
@@ -85,6 +86,10 @@ public class DayNight : MonoBehaviour {
 	public void SetTime(float timeSet){
 		localTime = timeSet;
 		rotat = localTime + 180;
+	}
+
+	public void SetTimescale(float tmpTimeScale){
+		timeScale = tmpTimeScale;
 	}
 
 

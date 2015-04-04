@@ -39,7 +39,7 @@ public class CompetitionBoard : MonoBehaviour {
 		flyerTitles [1] = "Tire Event 2";
 		flyerTitles [2] = "Tire Event 3";
 		flyerDetails [0] = "Other nonsense details shenanigans whatever.";
-		SetFlyers ();
+		LoadFlyers (true);
 	}
 	
 	// Update is called once per frame
@@ -195,11 +195,32 @@ public class CompetitionBoard : MonoBehaviour {
 		}
 	}
 
-	public void LoadFlyer(bool str){
+	public void LoadFlyers(bool str){
 		if(str){
+			string tmpFlyerData = SaveLoad.LoadString("FlyerData");
+			for(int i = 1; i <= flyerType.Length; i++){
+				if(tmpFlyerData.IndexOf("FlyerType" + i + "=") == -1)
+					continue;
 
+				int tmpFlyerType = 0;
+				string tmpString = "";
+				tmpString = SaveLoad.GetValueFromPref("FlyerData","FlyerType" + i);
+				tmpFlyerType = int.Parse(tmpString);
+
+				GameObject flyerPrefab = Resources.Load ("Flyers/FlyerPrefab" + tmpFlyerType , typeof(GameObject)) as GameObject;
+				GameObject flyerPoint = GameObject.Find("FlyerPoints/FlyerPoint" + i);
+				GameObject flyerInst = Instantiate(flyerPrefab, flyerPoint.transform.position, flyerPoint.transform.rotation) as GameObject;
+				flyerInst.transform.localScale = flyerPoint.transform.localScale;
+				flyerInst.name = "Flyer" + (i+1);
+				Flyer flyerScript = flyerInst.GetComponent<Flyer>();
+				flyerScript.flyerType = tmpFlyerType;
+				flyerScript.flyerIndex = i;
+				flyerScript.LoadFlyerData();
+			}
 		}
 	}
+
+
 
 
 
