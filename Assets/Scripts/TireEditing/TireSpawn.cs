@@ -8,9 +8,12 @@ public class TireSpawn : MonoBehaviour {
 	public string tireTypeToSpawn;
 	GameObject tirePrefab;
 	public bool shouldSpin = false;
+	public bool isOpponent = false;
 	public bool isEditor;
 	public bool isCompetition;
 	public bool generateCollision;
+	public bool setOnGround;
+	public GameObject lastSpawnedTire;
 
 	GameObject tireInst;
 
@@ -38,7 +41,9 @@ public class TireSpawn : MonoBehaviour {
 			tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
 			tireInst.GetComponent<ConstantForce>().enabled = shouldSpin;
 			if(GameObject.Find ("Editor") != null)
-			tE.tire = tireInst;
+				tE.tire = tireInst;
+			tireInst.tag = "MainTire";
+			tireInst.GetComponent<UniversalTire> ().spawnPoint = this;
 		}
 	}
 
@@ -56,19 +61,27 @@ public class TireSpawn : MonoBehaviour {
 		}
 
 		if(GameObject.Find ("Editor") != null)
-		Destroy (tE.tire);
+			Destroy (tE.tire);
 		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
 		tireInst.GetComponent<ConstantForce>().enabled = shouldSpin;
+		lastSpawnedTire = tireInst;
 		if(GameObject.Find ("Editor") != null)
-		tE.tire = tireInst;
+			tE.tire = tireInst;
 		tireInst.GetComponent<UniversalTire> ().spawnPoint = this;
+		if (isOpponent) {
+			tireInst.tag = "OpponentTire";
+		} else {
+			tireInst.tag = "MainTire";
+		}
 
 		if (isPrint) {
 			string uTire = SaveLoad.LoadString("PrintTire");
 			tireInst.GetComponent<UniversalTire>().tireType = uTire;
 			tireInst.transform.position = GameObject.Find("PrintPoint").transform.position;
-			//tireInst.GetComponent<Rigidbody>().AddRelativeTorque(new Vector3(0,0,50));
-			//tireInst.GetComponent<Rigidbody>().AddForce(new Vector3(-250,0,0));
+		}
+
+		if (isOpponent) {
+			tireInst.GetComponent<UniversalTire>().StartOpponent();
 		}
 	}
 

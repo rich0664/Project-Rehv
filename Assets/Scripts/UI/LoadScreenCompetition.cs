@@ -13,7 +13,7 @@ public class LoadScreenCompetition : MonoBehaviour {
 	public GameObject mainUI;
 	public GameObject loadCanvas;
 	public GameObject loadTarget;
-
+	Rigidbody tireRB;
 	// Use this for initialization
 	void Start () {
 	
@@ -24,8 +24,11 @@ public class LoadScreenCompetition : MonoBehaviour {
 
 		if (tire == null) {
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
-			if (tire != null)
-				tire.GetComponent<Rigidbody> ().position = loadTarget.transform.position;
+			if (tire != null){
+				tireRB = tire.GetComponent<Rigidbody> ();
+				tireRB.position = loadTarget.transform.position;
+				tireRB.isKinematic = true;
+			}
 		}
 	
 		if (isLoading && tire != null) {
@@ -46,6 +49,8 @@ public class LoadScreenCompetition : MonoBehaviour {
 
 	IEnumerator DoneCoRou(float delay){
 		yield return new WaitForSeconds(delay);
+		tireRB.isKinematic = false;
+		Destroy (gameObject);
 	}
 
 

@@ -12,6 +12,7 @@ TagManager:
   - BounceTrigger
   - Addon
   - Flyer
+  - OpponentTire
   layers:
   - Default
   - TransparentFX

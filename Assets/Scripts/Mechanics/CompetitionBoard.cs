@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.IO;
 
@@ -29,6 +30,7 @@ public class CompetitionBoard : MonoBehaviour {
 	string[] flyerDetails = new string[1];
 
 	public DayNight dayCycle;
+	public RawImage signatureTex;
 
 	// Use this for initialization
 	void Start () {
@@ -40,6 +42,7 @@ public class CompetitionBoard : MonoBehaviour {
 		flyerTitles [2] = "Tire Event 3";
 		flyerDetails [0] = "Other nonsense details shenanigans whatever.";
 		LoadFlyers (true);
+		LoadSignature ();
 	}
 	
 	// Update is called once per frame
@@ -220,6 +223,12 @@ public class CompetitionBoard : MonoBehaviour {
 				flyerScript.LoadFlyerData();
 			}
 		}
+	}
+
+	void LoadSignature(){
+		Texture2D img = new Texture2D(2,2);
+		img.LoadImage(File.ReadAllBytes(Application.dataPath + "/Resources/Thumbs/Signature" + ".png"));
+		signatureTex.texture = img;
 	}
 
 

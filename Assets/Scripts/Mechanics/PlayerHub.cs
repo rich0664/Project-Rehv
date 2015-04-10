@@ -35,6 +35,7 @@ public class PlayerHub : MonoBehaviour {
 	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
 
+
 	void Start(){
 		consoleText = console.GetComponentInChildren<Text>();
 		Cursor.visible = false;
@@ -47,6 +48,7 @@ public class PlayerHub : MonoBehaviour {
 		compBoardHighlight.SetActive (false);
 		boardCamPoint = GameObject.Find ("BoardCamPoint");
 		boardViewingPos = boardCamPoint.transform.position;
+		Time.timeScale = 1f;
 	}
 
 	void Update(){
@@ -201,6 +203,7 @@ public class PlayerHub : MonoBehaviour {
 		if (str) {
 			string tmpMap = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().eventMap;
 			SaveLoad.SaveString("CompToLoad", tmpMap);
+			SaveLoad.SaveInt("CompFlyer",viewingFlyerIndex);
 			Application.LoadLevel("LoadAsyncScene");
 		}
 	}

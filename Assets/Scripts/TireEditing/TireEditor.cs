@@ -341,8 +341,13 @@ public class TireEditor : MonoBehaviour {
 					float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
 					tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
 					tireMat.SetFloat("_PatternBlend", pattBlend);
+
 				}
 			}
+
+			if(uiNav == "AddonButton")
+				tire.GetComponent<UniversalTire>().BakeCollision();
+
 			modified = false;
 
 

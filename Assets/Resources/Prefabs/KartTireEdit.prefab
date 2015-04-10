@@ -34,7 +34,7 @@ GameObject:
   - 64: {fileID: 6446588}
   m_Layer: 0
   m_Name: KartTireEdit
-  m_TagString: MainTire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +178,7 @@ MonoBehaviour:
   tireSound4: {fileID: 0}
   tireSound5: {fileID: 0}
   collMeshRenderer: {fileID: 13799726}
+  spawnPoint: {fileID: 0}
 --- !u!137 &13749136
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

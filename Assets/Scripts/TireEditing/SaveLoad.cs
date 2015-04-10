@@ -35,6 +35,11 @@ public class SaveLoad : MonoBehaviour {
 	public static string GetValueFromPref(string key, string valueToGet){
 		string tmpData = SaveLoad.LoadString (key);
 
+		if (tmpData.IndexOf (valueToGet + "=") == -1) {
+			return null;
+			Debug.Log("Tried to get a null value");
+		}
+
 		int tmpIndexB = tmpData.IndexOf(valueToGet + "=");
 		int tmpIndexE = tmpData.IndexOf (valueToGet + "End:");
 		int tmpLength = tmpIndexE - (tmpIndexB + valueToGet.Length + 1);

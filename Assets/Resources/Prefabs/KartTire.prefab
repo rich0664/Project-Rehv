@@ -20,7 +20,7 @@ GameObject:
   - 33: {fileID: 3369764}
   m_Layer: 2
   m_Name: KartTire
-  m_TagString: MainTire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,6 +203,7 @@ MonoBehaviour:
   tireSound4: {fileID: 0}
   tireSound5: {fileID: 0}
   collMeshRenderer: {fileID: 13733586}
+  spawnPoint: {fileID: 0}
 --- !u!114 &11470578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9858dd06866274848a3474490935a72c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaceScore: 0
 --- !u!114 &11492142
 MonoBehaviour:
   m_ObjectHideFlags: 1

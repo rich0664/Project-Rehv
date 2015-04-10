@@ -15,6 +15,7 @@ public class LoadingScreen : MonoBehaviour {
 	public GameObject mainUI;
 	public GameObject frameUI;
 	public GameObject loadCanvas;
+	Rigidbody tireRB;
 
 	// Use this for initialization
 	void Start () {
@@ -24,13 +25,18 @@ public class LoadingScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(tire == null)
+		if (tire == null) {
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
+			if(tire != null){
+				tireRB = tire.GetComponent<Rigidbody>();
+				tireRB.isKinematic = true;
+			}
+		}
 	
 		if (isLoading && tire != null) {
 			Vector3 launchVector = new Vector3 (0,0,0);
 			tire.GetComponent<Rigidbody>().rotation = Quaternion.Euler(launchVector);
-			tire.GetComponent<Rigidbody>().position = this.transform.position;
+			//tire.GetComponent<Rigidbody>().position = this.transform.position;
 			tire.GetComponent<Rigidbody>().velocity = launchVector;
 			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
 		}
@@ -46,6 +52,8 @@ public class LoadingScreen : MonoBehaviour {
 	IEnumerator DoneCoRou(float delay){
 		loadingText.text = "Done!";
 		yield return new WaitForSeconds(delay);
+		tireRB.isKinematic = false;
+		Destroy (gameObject);
 
 	}
 

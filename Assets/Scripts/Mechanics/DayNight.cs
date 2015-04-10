@@ -26,10 +26,11 @@ public class DayNight : MonoBehaviour {
 		skyColor = skyMat.GetColor("_TintColor");
 		Day = SaveLoad.LoadInt ("Day");
 		Week = SaveLoad.LoadInt ("Week");
-		if (Day == 0 || Week == 0) {
+		if (!PlayerPrefs.HasKey("Day") || !PlayerPrefs.HasKey("Week")) {
 			Day = 1;
 			Week = 1;
 			SaveLoad.SaveInt("Week", Week);
+			SaveLoad.SaveInt("Day", Day);
 		}
 	}
 	

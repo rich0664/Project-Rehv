@@ -34,7 +34,7 @@ GameObject:
   - 64: {fileID: 6411138}
   m_Layer: 0
   m_Name: CarTireEdit
-  m_TagString: MainTire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

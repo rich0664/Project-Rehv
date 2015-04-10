@@ -34,7 +34,7 @@ GameObject:
   - 64: {fileID: 6461410}
   m_Layer: 0
   m_Name: TestTireEdit
-  m_TagString: MainTire
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,6 +178,7 @@ MonoBehaviour:
   tireSound4: {fileID: 8300000, guid: bcd21ecb4bdc7c945ae73f61d44a807f, type: 3}
   tireSound5: {fileID: 8300000, guid: 7b34f05cb7e4751408f143862de62bb2, type: 3}
   collMeshRenderer: {fileID: 13766236}
+  spawnPoint: {fileID: 0}
 --- !u!137 &13745584
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

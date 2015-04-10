@@ -810,6 +810,7 @@ public class ConcaveCollider : MonoBehaviour
 		loadingScreen.loadCam.enabled = false;
 		loadingScreen.mainUI.SetActive (true);
 		loadingScreen.frameUI.SetActive (true);
+		loadingScreen.startDoneSequence (0.1f);
 		//---------------------------------------------------------------------------------------
 	}
 
@@ -1203,6 +1204,7 @@ public class ConcaveCollider : MonoBehaviour
 		loadingScreen.mainCam.SetActive (true);
 		loadingScreen.loadCam.enabled = false;
 		loadingScreen.mainUI.SetActive (true);
+		loadingScreen.startDoneSequence (0.1f);
 		//---------------------------------------------------------------------------------------
 	}
 	

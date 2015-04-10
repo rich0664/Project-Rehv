@@ -45,8 +45,6 @@ public class LaunchingUI : MonoBehaviour {
 
 	}
 
-
-
 	void ReturnEditor(){
 
 		Destroy (GameObject.FindGameObjectWithTag ("MainTire"));

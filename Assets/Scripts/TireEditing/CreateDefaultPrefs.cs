@@ -119,7 +119,7 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		//Globals ----------------------------------------------------------------------------
 
 		if (!PlayerPrefs.HasKey ("CurrentTire"))
-			SaveLoad.SaveString ("CurrentTire", "TestTire1");
+			SaveLoad.SaveString ("CurrentTire", "CarTire0");
 
 		if (!PlayerPrefs.HasKey ("Signature"))
 			SaveLoad.SaveInt ("Signature", 0);
