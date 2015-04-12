@@ -106,7 +106,7 @@ public class Flyer : MonoBehaviour {
 		if (difficultyLevel == 3)
 			difficultyTitle = "Experienced";
 		if(eventMap == "Competition 1")
-			mapTitle = "Ski Slope";;
+			mapTitle = "Ski Slope";
 		flyerDetailsText = difficultyTitle + " " + eventClass + " jump event." + "\n"
 			+ "Prize money: 1st Place-$" + firstPrize + " 2nd Place-$" + secondPrize + " 3rd Place-$" + thirdPrize + "\n"
 				+ "Event will be at the " + mapTitle + ", be there.";
@@ -157,6 +157,9 @@ public class Flyer : MonoBehaviour {
 
 		Texture2D flyerTexture = Resources.Load ("Flyers/FlyerTex" + flyerTex , typeof(Texture2D)) as Texture2D;
 		gameObject.GetComponent<Renderer>().material.mainTexture = flyerTexture;
+		HSBColor flyerColor = new HSBColor(new Color(Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f)));
+		flyerColor.h = Random.Range (0.05f, 0.95f);
+		gameObject.GetComponent<Renderer> ().material.color = flyerColor.ToColor ();
 
 		SetTexts ();
 	}

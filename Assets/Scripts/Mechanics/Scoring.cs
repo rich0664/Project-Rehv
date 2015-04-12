@@ -48,6 +48,10 @@ public class Scoring : MonoBehaviour {
 		if (canPlaceScore) {
 			canPlaceScore=false;
 
+			if(GameObject.Find("CompetitionStuff").GetComponent<JumpCompetition>() != null){
+				GameObject.Find("CompetitionStuff").GetComponent<JumpCompetition>().ContinueButton.SetActive(true);
+			}
+
 			float highscore = SaveLoad.LoadFloat(tireType + "_Highscore");
 
 			float distance = Vector3.Distance (
@@ -75,6 +79,7 @@ public class Scoring : MonoBehaviour {
 			scoreSound.Play();
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;
+			scoreText.gameObject.SetActive(true);
 
 			LaunchingUI.currentScore = distance;
 

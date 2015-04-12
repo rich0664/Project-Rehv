@@ -77,7 +77,32 @@ public class CompetitionBoard : MonoBehaviour {
 			dayOfWeek = "Sat";
 		if(Day == 7)
 			dayOfWeek = "Sun";
-		calendarDateText.text = "Week " + Week + ", " + dayOfWeek;
+		calendarDateText.text = Week.ToString();
+
+		TextMesh[] xS = GameObject.Find ("XPoints").GetComponentsInChildren<TextMesh> ();
+		foreach (TextMesh txm in xS) {
+			Destroy(txm.gameObject);
+		}
+
+		GameObject[] flys = GameObject.FindGameObjectsWithTag ("Flyer");
+		foreach (GameObject flY in flys) {
+			Flyer tmpFly = flY.GetComponent<Flyer>();
+			if(tmpFly.isSigned){
+				GameObject xPrefab = Resources.Load("Flyers/X", typeof(GameObject)) as GameObject;
+				GameObject xInst = Instantiate(xPrefab, GameObject.Find("XPoints/XPoint" + tmpFly.eventDay).transform.position, Quaternion.Euler(Vector3.zero)) as GameObject ;
+				xInst.transform.parent = GameObject.Find("XPoints").transform;
+				xInst.name = "O" + tmpFly.eventDay;
+				xInst.GetComponent<Renderer> ().material.color = Color.cyan;
+				xInst.GetComponent<TextMesh> ().text = "O";
+			}
+		}
+
+		for(int i = 1; i < Day; i++){
+				GameObject xPrefab = Resources.Load("Flyers/X", typeof(GameObject)) as GameObject;
+				GameObject xInst = Instantiate(xPrefab, GameObject.Find("XPoints/XPoint" + i).transform.position, Quaternion.Euler(Vector3.zero)) as GameObject ;
+				xInst.transform.parent = GameObject.Find("XPoints").transform;
+				xInst.name = "X" + i;
+		}
 	}
 
 
@@ -110,12 +135,12 @@ public class CompetitionBoard : MonoBehaviour {
 
 			flyerTex[i] = Random.Range(1,5);
 
-			int newRnd = lastRnd;
-			while(newRnd == lastRnd){
-				flyerDate[i] = Random.Range(1,8);
-				newRnd = flyerDate[i];
+			int newRnd = Random.Range(1,8);
+			while(System.Array.IndexOf(flyerDate, newRnd) != -1){
+				newRnd = Random.Range(1,8);
 			}
-			lastRnd = flyerDate[i]; //Day Of event
+
+			flyerDate[i] = newRnd;
 			flyerHour[i] = Random.Range(11,23); //Hour of event
 
 			if(flyerType[i] == 0)

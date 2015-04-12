@@ -49,6 +49,23 @@ public class SaveLoad : MonoBehaviour {
 		return tmpData;
 	}
 
+	public static string GetValueFromString(string str, string valueToGet){
+		string tmpData = str;
+		
+		if (tmpData.IndexOf (valueToGet + "=") == -1) {
+			return null;
+			Debug.Log("Tried to get a null value");
+		}
+		
+		int tmpIndexB = tmpData.IndexOf(valueToGet + "=");
+		int tmpIndexE = tmpData.IndexOf (valueToGet + "End:");
+		int tmpLength = tmpIndexE - (tmpIndexB + valueToGet.Length + 1);
+		
+		tmpData = tmpData.Substring (tmpIndexB + valueToGet.Length + 1, tmpLength);
+		
+		return tmpData;
+	}
+
 
 
 
