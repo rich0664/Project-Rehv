@@ -18,6 +18,8 @@ public class Scoring : MonoBehaviour {
 
 	public bool canPlaceScore = false;
 
+	public float distance;
+
 	// Use this for initialization
 	void Awake () {
 
@@ -54,7 +56,7 @@ public class Scoring : MonoBehaviour {
 
 			float highscore = SaveLoad.LoadFloat(tireType + "_Highscore");
 
-			float distance = Vector3.Distance (
+			distance = Vector3.Distance (
 				jumpPoint.transform.position, 
 				tire.transform.position);
 
@@ -75,7 +77,8 @@ public class Scoring : MonoBehaviour {
 
 			tirePos.y+=2.72f;
 
-			GameObject.FindGameObjectWithTag ("ScoreText").transform.position = tirePos;
+			scoreText.transform.position = tirePos;
+			scoreText.gameObject.SetActive(true);
 			scoreSound.Play();
 			scoreText.text = distance.ToString();
 			scoreRender.enabled = true;

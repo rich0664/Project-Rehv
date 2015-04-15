@@ -47,6 +47,7 @@ public class TireEditor : MonoBehaviour {
 	Slider greenS;
 	Slider blueS;
 	Slider brightS;
+	bool regenCollision = false;
 
 	void Awake(){
 
@@ -143,6 +144,7 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void LoadButton(GameObject gameO){	
+		tire.tag = "Untagged";
 		Destroy (tire);
 		ResetSliderUI ();
 		string loadStr = gameO.name.Replace("LoadThumbButton","");
@@ -272,8 +274,8 @@ public class TireEditor : MonoBehaviour {
 		SaveLoad.SaveInt ("ShouldPrint", 1);
 		tireType = tireLoad + "Print";
 		Save ();
-		SaveLoad.SaveString ("PrintTire", tireType);
 		Application.LoadLevel ("Garage");
+		SaveLoad.SaveString ("PrintTire", tireType);
 	}
 
 	// Update is called once per frame-------------------------------------------------------------------------------------
@@ -328,6 +330,7 @@ public class TireEditor : MonoBehaviour {
 						}
 					}
 				}
+				regenCollision = true;
 			}
 
 			if(uiNav == "ColorButton"){
@@ -341,16 +344,14 @@ public class TireEditor : MonoBehaviour {
 					float pattBlend = GameObject.Find("PattOpacSlider").GetComponent<Slider>().value;
 					tireMat.SetTextureScale("_Pattern", new Vector2(pattScale, pattScale));
 					tireMat.SetFloat("_PatternBlend", pattBlend);
-
 				}
 			}
 
-			if(uiNav == "AddonButton")
+			if(!Input.GetMouseButton(0) && regenCollision){
 				tire.GetComponent<UniversalTire>().BakeCollision();
-
+				regenCollision = false;
+			}
 			modified = false;
-
-
 
 		}
 
@@ -555,7 +556,6 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	void Load () {
-
 		slidersRect.SetActive (true);
 		colorsRect.SetActive (true);
 		addonsRect.SetActive (true);

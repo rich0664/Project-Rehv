@@ -3648,7 +3648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &359310912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7845,6 +7845,7 @@ MonoBehaviour:
   isEditor: 1
   isCompetition: 0
   generateCollision: 1
+  setOnGround: 0
   lastSpawnedTire: {fileID: 0}
 --- !u!4 &804458702
 Transform:
@@ -10577,6 +10578,7 @@ MonoBehaviour:
   tE: {fileID: 1104531177}
   rayCam: {fileID: 2060856229}
   addon: {fileID: 2022887441}
+  hitObject: {fileID: 0}
   mouseCursor: {fileID: 77793370}
   addonIndex: 1
   addonCount: 0
@@ -19502,6 +19504,25 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 111012, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
   m_PrefabInternal: {fileID: 2019649510}
+--- !u!1 &2019649513
+GameObject:
+  m_PrefabParentObject: {fileID: 106384, guid: 5867d333f81a28944abe92e431309b1c, type: 2}
+  m_PrefabInternal: {fileID: 2019649510}
+--- !u!54 &2019649514
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019649513}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2020351570
 GameObject:
   m_ObjectHideFlags: 0

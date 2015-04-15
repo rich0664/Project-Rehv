@@ -5,8 +5,8 @@ public class DayNight : MonoBehaviour {
 
 	public CompetitionBoard cBoard;
 	public float timeScale = 100f;
-	float rotat = 180f;
 	public float ambientIntense = 0f;
+	public float rotat = 180f;
 	public float localTime = 0f;
 	float sunriseTime = 35f;
 	float dusktime = 265f;
@@ -16,7 +16,7 @@ public class DayNight : MonoBehaviour {
 	public Material skyMat;
 	Color skyColor;
 
-	public float timeHour;
+	public float timeHour = 0f;
 	public float timeMinute;
 
 	// Use this for initialization
@@ -26,11 +26,13 @@ public class DayNight : MonoBehaviour {
 		skyColor = skyMat.GetColor("_TintColor");
 		Day = SaveLoad.LoadInt ("Day");
 		Week = SaveLoad.LoadInt ("Week");
+		SetTime (SaveLoad.LoadFloat ("Hour"));
 		if (!PlayerPrefs.HasKey("Day") || !PlayerPrefs.HasKey("Week")) {
 			Day = 1;
 			Week = 1;
 			SaveLoad.SaveInt("Week", Week);
 			SaveLoad.SaveInt("Day", Day);
+			SaveLoad.SaveFloat ("Hour",timeHour);
 		}
 	}
 	
@@ -73,20 +75,24 @@ public class DayNight : MonoBehaviour {
 			Day++;
 			timeHour = 0f;
 			cBoard.SaveFlyers(true);
-			SaveLoad.SaveInt("Day",Day);
+			SaveTime();
 			if(Day > 7){
 				Week++;
 				Day = 1;
-				SaveLoad.SaveInt("Day",Day);
-				SaveLoad.SaveInt("Week", Week);
+				SaveTime();
 				cBoard.SetFlyers();
 			}
 		}
 	}
 
+	public void SaveTime(){
+		SaveLoad.SaveInt("Day",Day);
+		SaveLoad.SaveInt("Week", Week);
+		SaveLoad.SaveFloat ("Hour", localTime);
+	}
 
 	public void SetTime(float timeSet){
-		localTime = timeSet;
+		localTime = -timeSet;
 		rotat = localTime + 180;
 	}
 

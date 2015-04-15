@@ -26,8 +26,16 @@ public class TireSpawn : MonoBehaviour {
 			tE = GameObject.Find ("Editor").GetComponent<TireEditor> ();
 
 		if (autoLoadCurrentTire) {
-			tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
-			tireTypeToSpawn = tireTypeToSpawn.Remove(tireTypeToSpawn.IndexOf("Tire")+4);
+
+			if(!isCompetition){
+				tireTypeToSpawn = SaveLoad.LoadString ("CurrentTire");
+				tireTypeToSpawn = tireTypeToSpawn.Remove(tireTypeToSpawn.IndexOf("Tire")+4);
+			}else{
+				int flyerIndex = SaveLoad.LoadInt("CompFlyer");
+				string tmpToSpawn = SaveLoad.GetValueFromPref("FlyerData", "EventClass" + flyerIndex);
+				tmpToSpawn = tmpToSpawn.Replace(" ", "");
+				tireTypeToSpawn = tmpToSpawn;
+			}
 			if (GameObject.Find ("Editor") != null) 
 				GameObject.Find ("Editor").GetComponent<TireEditor>().lastLoadedTire = tireTypeToSpawn;
 		

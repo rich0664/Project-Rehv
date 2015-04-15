@@ -210,19 +210,24 @@ public class CompetitionBoard : MonoBehaviour {
 			flyerScript.SetTexts();
 		}
 
+		SaveFlyers (true);
+
 
 	}
 
 	public void SaveFlyers(bool str){
-		if(str){
-			GameObject[] flyers = GameObject.FindGameObjectsWithTag("Flyer");
-			string flyerData = "";
-			for(int i = 0; i < flyers.Length; i++){
-				Flyer tmpFlyer = flyers[i].GetComponent<Flyer>();
-				flyerData += tmpFlyer.SaveFlyerData();
-			}
-			SaveLoad.SaveString("FlyerData",flyerData);
+		GameObject[] flyers = GameObject.FindGameObjectsWithTag("Flyer");
+		string flyerData = "";
+		PlayerHub pHub = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHub>();
+		for(int i = 0; i < flyers.Length; i++){
+			Flyer tmpFlyer = flyers[i].GetComponent<Flyer>();
+			if(!str && tmpFlyer.flyerIndex == pHub.viewingFlyerIndex)
+				continue;
+			if(tmpFlyer.isActive)
+					flyerData += tmpFlyer.SaveFlyerData();
 		}
+		SaveLoad.SaveString("FlyerData",flyerData);
+		
 	}
 
 	public void LoadFlyers(bool str){

@@ -13380,6 +13380,7 @@ MonoBehaviour:
   cBoard: {fileID: 541579515}
   timeScale: -.5
   ambientIntense: 0
+  rotat: 180
   localTime: 0
   Day: 1
   Week: 1

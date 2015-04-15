@@ -7,6 +7,7 @@ public class AddonPlacer : MonoBehaviour {
 	public TireEditor tE;
 	public Camera rayCam;
 	public GameObject addon;
+	public GameObject hitObject;
 	public GameObject mouseCursor;
 	public int addonIndex = 1;
 	public int addonCount = 0;
@@ -45,7 +46,7 @@ public class AddonPlacer : MonoBehaviour {
 			Debug.DrawRay(ray.origin, ray.direction,Color.cyan,10);
 
 			if (Physics.Raycast (ray, out hit)) {
-				GameObject hitObject = hit.transform.gameObject;
+				hitObject = hit.transform.gameObject;
 				if(hitObject == tE.tire){
 					mouseCursor.SetActive(false);
 					addon.SetActive (true);

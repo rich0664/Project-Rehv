@@ -23,9 +23,9 @@ public class Flyer : MonoBehaviour {
 	public string flyerDetailsText;
 
 	public bool isSigned = false;
+	public bool isActive = true;
 
 	DayNight dayCycle;
-	bool isActive = true;
 	PlayerHub hubPlayer;
 	GameObject highlight;
 	GameObject highlightGroup;
@@ -53,6 +53,7 @@ public class Flyer : MonoBehaviour {
 			Rigidbody fRB = gameObject.AddComponent<Rigidbody> ();
 			fRB.drag = 1.5f;
 			isActive = false;
+			GameObject.Find ("Competition Board").GetComponent<CompetitionBoard>().SaveFlyers(true);
 			if (hubPlayer.viewingFlyerIndex == flyerIndex) {
 				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
 				hubPlayer.viewingFlyerIndex = 0;
@@ -61,6 +62,7 @@ public class Flyer : MonoBehaviour {
 			Rigidbody fRB = gameObject.AddComponent<Rigidbody> ();
 			fRB.drag = 1.5f;
 			isActive = false;
+			GameObject.Find ("Competition Board").GetComponent<CompetitionBoard>().SaveFlyers(true);
 			if (hubPlayer.viewingFlyerIndex == flyerIndex) {
 				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
 				hubPlayer.viewingFlyerIndex = 0;
@@ -160,6 +162,11 @@ public class Flyer : MonoBehaviour {
 		HSBColor flyerColor = new HSBColor(new Color(Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f),Random.Range(0.5f,1.0f)));
 		flyerColor.h = Random.Range (0.05f, 0.95f);
 		gameObject.GetComponent<Renderer> ().material.color = flyerColor.ToColor ();
+
+		if (SaveLoad.LoadInt ("CompFlyerReturn") == flyerIndex) {
+			isSigned = false;
+			SaveLoad.SaveInt("CompFlyerReturn", 0);
+		}
 
 		SetTexts ();
 	}

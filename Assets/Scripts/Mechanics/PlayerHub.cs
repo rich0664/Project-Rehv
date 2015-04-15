@@ -201,7 +201,11 @@ public class PlayerHub : MonoBehaviour {
 
 	public void GotoCompetition(bool str){
 		if (str) {
-			string tmpMap = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().eventMap;
+			GameObject.Find("Sun").GetComponent<DayNight>().SaveTime();
+			Flyer tmpFlyerr = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>();
+			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
+			SaveLoad.SaveInt("CompFlyerReturn", viewingFlyerIndex);
+			string tmpMap = tmpFlyerr.eventMap;
 			SaveLoad.SaveString("CompToLoad", tmpMap);
 			SaveLoad.SaveInt("CompFlyer",viewingFlyerIndex);
 			Application.LoadLevel("LoadAsyncScene");

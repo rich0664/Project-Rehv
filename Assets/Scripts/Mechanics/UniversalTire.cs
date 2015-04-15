@@ -30,6 +30,7 @@ public class UniversalTire : MonoBehaviour {
 	AudioSource tireSound;
 
 	bool shouldSoG = false;
+	Mesh bakedMesh;
 
 	// Use this for initialization
 	void Awake () {
@@ -49,8 +50,15 @@ public class UniversalTire : MonoBehaviour {
 		
 		tire = this.gameObject;
 
-		if(spawnPoint.autoLoadCurrentTire)
+		if (spawnPoint.autoLoadCurrentTire && spawnPoint.isCompetition) {
+			int flyerIndex = SaveLoad.LoadInt("CompFlyer");
+			string tmpToSpawn = "KartTire";
+			tmpToSpawn = SaveLoad.GetValueFromPref("FlyerData", "EventClass" + flyerIndex);
+			tmpToSpawn = tmpToSpawn.Replace(" ", "");
+			tireType = tmpToSpawn + "Print";
+		}else if(spawnPoint.autoLoadCurrentTire){
 			tireType = SaveLoad.LoadString ("CurrentTire");
+		}
 		if (spawnPoint.isPrint)
 			tireType = SaveLoad.LoadString ("PrintTire");
 		if (spawnPoint.isOpponent)
@@ -242,33 +250,41 @@ public class UniversalTire : MonoBehaviour {
 	
 	public void BakeCollision(){
 
-		Mesh bakedMesh = new Mesh ();
+		if (tire != null) {
 
-		if (spawnPoint.isEditor) {
-			meshRenderer.BakeMesh(bakedMesh);
-			editMeshCollider.sharedMesh = bakedMesh;
-		} else {
-			if(!spawnPoint.isPrint && !spawnPoint.isCompetition){
-				collMeshRenderer.BakeMesh (bakedMesh);
-				meshFilter.sharedMesh = bakedMesh;
-				tire.GetComponent<ConcaveCollider> ().StartProtoCoroutine();
-				collMeshRenderer.enabled = false;
+			if (bakedMesh != null)
+				Destroy (bakedMesh);
+
+			bakedMesh = new Mesh ();
+
+			if (spawnPoint.isEditor) {
+				Destroy (editMeshCollider);
+				editMeshCollider = tire.AddComponent<MeshCollider> ();
+
+				meshRenderer.BakeMesh (bakedMesh);
+				editMeshCollider.sharedMesh = bakedMesh;
 			} else {
-				if(spawnPoint.isCompetition){
+				if (!spawnPoint.isPrint && !spawnPoint.isCompetition) {
 					collMeshRenderer.BakeMesh (bakedMesh);
 					meshFilter.sharedMesh = bakedMesh;
-					tire.GetComponent<ConcaveCollider> ().CreateHullMesh = false;
-					tire.GetComponent<ConcaveCollider> ().StartCompCoroutine();
+					tire.GetComponent<ConcaveCollider> ().StartProtoCoroutine ();
 					collMeshRenderer.enabled = false;
-				}else{
-				collMeshRenderer.BakeMesh (bakedMesh);
-				meshFilter.sharedMesh = bakedMesh;
-				tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime(null,null);
-				collMeshRenderer.enabled = false;
+				} else {
+					if (spawnPoint.isCompetition) {
+						collMeshRenderer.BakeMesh (bakedMesh);
+						meshFilter.sharedMesh = bakedMesh;
+						tire.GetComponent<ConcaveCollider> ().CreateHullMesh = false;
+						tire.GetComponent<ConcaveCollider> ().StartCompCoroutine ();
+						collMeshRenderer.enabled = false;
+					} else {
+						collMeshRenderer.BakeMesh (bakedMesh);
+						meshFilter.sharedMesh = bakedMesh;
+						tire.GetComponent<ConcaveCollider> ().ComputeHullsRuntime (null, null);
+						collMeshRenderer.enabled = false;
+					}
 				}
 			}
 		}
-
 	}
 	
 
