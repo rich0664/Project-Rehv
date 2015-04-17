@@ -193,9 +193,11 @@ public class PlayerHub : MonoBehaviour {
 		if (str) {
 			Flyer tmpFlyer = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>();
 			tmpFlyer.isSigned = true;
+			isCurrentSigned = true;
 			tmpFlyer.flyerTitle += " -Signed!-";
 			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
 			tmpFlyer.SetTexts();
+			signUpButton.SetActive(false);
 		}
 	}
 

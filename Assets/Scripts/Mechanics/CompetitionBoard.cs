@@ -227,6 +227,7 @@ public class CompetitionBoard : MonoBehaviour {
 					flyerData += tmpFlyer.SaveFlyerData();
 		}
 		SaveLoad.SaveString("FlyerData",flyerData);
+		dayCycle.SaveTime ();
 		
 	}
 

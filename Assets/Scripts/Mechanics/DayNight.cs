@@ -16,6 +16,12 @@ public class DayNight : MonoBehaviour {
 	public Material skyMat;
 	Color skyColor;
 
+	float midDay = 180f;
+	float midNight = 295f;
+
+	float maxIntense = 0.35f;
+	float minIntense = 0f;
+
 	public float timeHour = 0f;
 	public float timeMinute;
 
@@ -46,11 +52,11 @@ public class DayNight : MonoBehaviour {
 		transform.eulerAngles = tmpV;
 		skyDome.transform.Rotate (new Vector3 ((Time.deltaTime * timeScale)/10, (Time.deltaTime * timeScale)/4, 0), Space.Self);
 
-		if (localTime < dusktime && localTime > sunriseTime && RenderSettings.ambientIntensity < 0.34f) {
+		if (localTime < dusktime && localTime > sunriseTime && RenderSettings.ambientIntensity < maxIntense) {
 			RenderSettings.ambientIntensity += Mathf.Abs(timeScale)/17500;
 		} else {
-			if (localTime >= dusktime && RenderSettings.ambientIntensity > -0.5f){
-				RenderSettings.ambientIntensity -= Mathf.Abs(timeScale)/2500;
+			if (localTime >= dusktime && RenderSettings.ambientIntensity > minIntense){
+				RenderSettings.ambientIntensity -= Mathf.Abs(timeScale)/5000;
 			}
 		}
 
@@ -70,7 +76,7 @@ public class DayNight : MonoBehaviour {
 		if (Mathf.Abs(localTime) >= 360) {
 			rotat = 180f;
 			localTime = 0f;
-			RenderSettings.ambientIntensity = -0.5f;
+			RenderSettings.ambientIntensity = minIntense;
 			skyColor = Color.white;
 			Day++;
 			timeHour = 0f;
@@ -94,6 +100,16 @@ public class DayNight : MonoBehaviour {
 	public void SetTime(float timeSet){
 		localTime = -timeSet;
 		rotat = localTime + 180;
+
+		if (timeSet >= sunriseTime && timeSet <= midDay) {
+			float tmpPrcnt = timeSet / midDay;
+			RenderSettings.ambientIntensity = tmpPrcnt * maxIntense;
+		} else if(timeSet >= dusktime && timeSet <= midNight){
+			float tmpPrcnt = timeSet / midNight;
+			float subAmount = tmpPrcnt * maxIntense;
+			RenderSettings.ambientIntensity = maxIntense - subAmount;
+		}
+
 	}
 
 	public void SetTimescale(float tmpTimeScale){
