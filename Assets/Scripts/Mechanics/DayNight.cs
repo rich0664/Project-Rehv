@@ -30,9 +30,7 @@ public class DayNight : MonoBehaviour {
 		RenderSettings.ambientIntensity = 0;
 		//skyMat = skyDome.GetComponent<Renderer> ().material;
 		skyColor = skyMat.GetColor("_TintColor");
-		Day = SaveLoad.LoadInt ("Day");
-		Week = SaveLoad.LoadInt ("Week");
-		SetTime (SaveLoad.LoadFloat ("Hour"));
+		LoadTime ();
 		if (!PlayerPrefs.HasKey("Day") || !PlayerPrefs.HasKey("Week")) {
 			Day = 1;
 			Week = 1;
@@ -91,24 +89,26 @@ public class DayNight : MonoBehaviour {
 		}
 	}
 
+	public void LoadTime(){
+		Day = SaveLoad.LoadInt ("Day");
+		Week = SaveLoad.LoadInt ("Week");
+		SetTime (SaveLoad.LoadFloat ("Hour"));
+	}
+
 	public void SaveTime(){
 		SaveLoad.SaveInt("Day",Day);
 		SaveLoad.SaveInt("Week", Week);
 		SaveLoad.SaveFloat ("Hour", localTime);
+		SaveLoad.SaveFloat("AmbInt", RenderSettings.ambientIntensity);
+		SaveLoad.SaveFloat ("StarAlpha", skyColor.a);
 	}
 
 	public void SetTime(float timeSet){
 		localTime = -timeSet;
 		rotat = localTime + 180;
 
-		if (timeSet >= sunriseTime && timeSet <= midDay) {
-			float tmpPrcnt = timeSet / midDay;
-			RenderSettings.ambientIntensity = tmpPrcnt * maxIntense;
-		} else if(timeSet >= dusktime && timeSet <= midNight){
-			float tmpPrcnt = timeSet / midNight;
-			float subAmount = tmpPrcnt * maxIntense;
-			RenderSettings.ambientIntensity = maxIntense - subAmount;
-		}
+		RenderSettings.ambientIntensity = SaveLoad.LoadFloat("AmbInt");
+		skyColor.a = SaveLoad.LoadFloat ("StarAlpha");	
 
 	}
 

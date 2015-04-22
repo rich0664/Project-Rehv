@@ -15,6 +15,7 @@ public class PlayerHub : MonoBehaviour {
 	public GameObject console;
 	public GameObject backButton;
 	public GameObject signUpButton;
+	public GameObject noTireWarning;
 	public GameObject signForm;
 	public GameObject readyCompForm;
 	public GameObject LOSObject;
@@ -30,8 +31,7 @@ public class PlayerHub : MonoBehaviour {
 	Quaternion lastRot;
 	public Vector3 boardViewingPos;
 	Vector3 lastPos;
-	//[HideInInspector] 
-	public int viewingFlyerIndex;
+	[HideInInspector] public int viewingFlyerIndex;
 	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
 
@@ -91,11 +91,22 @@ public class PlayerHub : MonoBehaviour {
 		if (isViewing) {
 			playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, boardViewingPos, 10f * Time.deltaTime);
 			playerCamera.transform.rotation = boardCamPoint.transform.rotation;
-			if(playerCamera.transform.position == boardViewingPos && boardViewingPos != boardCamPoint.transform.position && !isCurrentSigned){
-				signUpButton.SetActive(true);
-			}else{
-				signUpButton.SetActive(false);
-			}
+			if(playerCamera.transform.position == boardViewingPos)
+			   if(boardViewingPos != boardCamPoint.transform.position && !isCurrentSigned){
+				Flyer tmpCF = GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>();;
+				string tmpClass = tmpCF.eventClass.Replace(" ", "");
+				if(PlayerPrefs.HasKey(tmpClass + "Print_Pattern")){
+					signUpButton.SetActive(true);
+					noTireWarning.SetActive(false);
+					signUpButton.GetComponent<Button>().interactable = true;
+				}else{
+					signUpButton.SetActive(true);
+					signUpButton.GetComponent<Button>().interactable = false;
+					noTireWarning.SetActive(true);
+				}
+				}else{
+					signUpButton.SetActive(false);
+				}
 			if(Input.GetKeyDown(KeyCode.Escape)){
 				MenuBack(true);
 			}
@@ -198,6 +209,7 @@ public class PlayerHub : MonoBehaviour {
 			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
 			tmpFlyer.SetTexts();
 			signUpButton.SetActive(false);
+			GameObject.Find("Sun").GetComponent<DayNight>().SaveTime();
 		}
 	}
 
@@ -219,6 +231,7 @@ public class PlayerHub : MonoBehaviour {
 			GameObject.Find("Flyer" + viewingFlyerIndex).GetComponent<Flyer>().isSigned = false;
 			cinematicMode = false;
 			wantedCursorLock = CursorLockMode.Locked;
+			GameObject.Find("Sun").GetComponent<DayNight>().SaveTime();
 		}
 	}
 
