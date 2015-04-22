@@ -22,7 +22,7 @@ public class TireEditor : MonoBehaviour {
 	public int pattInt;
 
 	SkinnedMeshRenderer meshRenderer;
-	MeshCollider meshCollider;
+	public MeshCollider meshCollider;
 	public Material tireMat;
 	Color tireColor;
 	float tireBrightness;
@@ -43,11 +43,20 @@ public class TireEditor : MonoBehaviour {
 	GameObject slidersRect;
 	GameObject colorsRect;
 	GameObject addonsRect;
-	Slider redS;
-	Slider greenS;
-	Slider blueS;
-	Slider brightS;
+	public Slider redS;
+	public Slider greenS;
+	public Slider blueS;
+	public Slider brightS;
 	bool regenCollision = false;
+
+	Text TimeText;
+	int Week;
+	int Day;
+	float timeHour = 0f;
+	float timeMinute;
+	float localTime = 0f;
+	float rotat;
+	string dayOfWeek = "";
 
 	void Awake(){
 
@@ -60,7 +69,69 @@ public class TireEditor : MonoBehaviour {
 		greenS = GameObject.Find("GreenSlider").GetComponent<Slider>() ;
 		blueS = GameObject.Find("BlueSlider").GetComponent<Slider>() ;
 		brightS = GameObject.Find("BrightSlider").GetComponent<Slider>();
-		
+		TimeText = GameObject.Find("MenuBarPanel/TimeText").GetComponent<Text>();
+		LoadTime ();
+		GetDate ();
+	}
+
+	void LoadTime(){
+		Day = SaveLoad.LoadInt ("Day");
+		Week = SaveLoad.LoadInt ("Week");
+		SetTime (SaveLoad.LoadFloat ("Hour"));
+	}
+
+	void DoTime(){
+		float timeScale = -0.5f;
+		rotat += Time.deltaTime * timeScale;
+		localTime = Mathf.Abs (rotat - 180);
+		if (Mathf.Floor (localTime / 15) != timeHour) {
+			timeHour = Mathf.Floor (localTime / 15);
+			SaveTime();
+		}
+		timeMinute = Mathf.Floor(((localTime % 15) / 15) * 60);
+
+		if (Mathf.Abs(localTime) >= 360) {
+			rotat = 180f;
+			localTime = 0f;
+			Day++;
+			timeHour = 0f;
+			SaveTime();
+			GetDate();
+			if(Day > 7){
+				Week++;
+				Day = 1;
+				SaveTime();
+			}
+		}
+		TimeText.text = dayOfWeek + ", Week " + Week + "  " + timeHour + ":" + timeMinute;
+	}
+
+	void GetDate(){
+		if(Day == 1)
+			dayOfWeek = "Mon";
+		if(Day == 2)
+			dayOfWeek = "Tue";
+		if(Day == 3)
+			dayOfWeek = "Wed";
+		if(Day == 4)
+			dayOfWeek = "Thur";
+		if(Day == 5)
+			dayOfWeek = "Fri";
+		if(Day == 6)
+			dayOfWeek = "Sat";
+		if(Day == 7)
+			dayOfWeek = "Sun";
+	}
+
+	public void SaveTime(){
+		SaveLoad.SaveInt("Day",Day);
+		SaveLoad.SaveInt("Week", Week);
+		SaveLoad.SaveFloat ("Hour", localTime);
+	}
+
+	void SetTime(float timeSet){
+		localTime = -timeSet;
+		rotat = localTime + 180;
 	}
 
 
@@ -269,8 +340,8 @@ public class TireEditor : MonoBehaviour {
 			warnMess.PrintSaveWarning("PrintSaveWarning");
 	}
 
-
 	public void printTire(){
+		SaveTime ();
 		SaveLoad.SaveInt ("ShouldPrint", 1);
 		tireType = tireLoad + "Print";
 		Save ();
@@ -280,6 +351,8 @@ public class TireEditor : MonoBehaviour {
 
 	// Update is called once per frame-------------------------------------------------------------------------------------
 	void Update () {
+
+		DoTime ();
 
 		if (tire != null){
 

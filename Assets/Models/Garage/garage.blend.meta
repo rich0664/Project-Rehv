@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 618917709e84b03409076210584c1735
+timeCreated: 1429737608
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Backceiling
+    100002: Backfloor
+    100004: Backwalls
+    100006: Ceiling
+    100008: Floor
+    100010: //RootNode
+    100012: Garagedoor
+    100014: PC
+    100016: shelf1_placeholder
+    100018: shelf_placeholder
+    100020: shelves_placeholder
+    100022: Table
+    100024: tv_placeholder
+    100026: Walls
+    400000: Backceiling
+    400002: Backfloor
+    400004: Backwalls
+    400006: Ceiling
+    400008: Floor
+    400010: //RootNode
+    400012: Garagedoor
+    400014: PC
+    400016: shelf1_placeholder
+    400018: shelf_placeholder
+    400020: shelves_placeholder
+    400022: Table
+    400024: tv_placeholder
+    400026: Walls
+    2300000: Backceiling
+    2300002: Backfloor
+    2300004: Backwalls
+    2300006: Ceiling
+    2300008: Floor
+    2300010: Garagedoor
+    2300012: PC
+    2300014: shelf1_placeholder
+    2300016: shelf_placeholder
+    2300018: shelves_placeholder
+    2300020: Table
+    2300022: tv_placeholder
+    2300024: Walls
+    3300000: Backceiling
+    3300002: Backfloor
+    3300004: Backwalls
+    3300006: Ceiling
+    3300008: Floor
+    3300010: Garagedoor
+    3300012: PC
+    3300014: shelf1_placeholder
+    3300016: shelf_placeholder
+    3300018: shelves_placeholder
+    3300020: Table
+    3300022: tv_placeholder
+    3300024: Walls
+    4300000: PC
+    4300002: Table
+    4300004: shelf1_placeholder
+    4300006: Backceiling
+    4300008: Ceiling
+    4300010: Backwalls
+    4300012: Backfloor
+    4300014: Garagedoor
+    4300016: Walls
+    4300018: shelves_placeholder
+    4300020: tv_placeholder
+    4300022: shelf_placeholder
+    4300024: Floor
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

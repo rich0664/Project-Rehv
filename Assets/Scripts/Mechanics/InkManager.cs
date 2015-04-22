@@ -11,13 +11,25 @@ public class InkManager : MonoBehaviour {
 	float whiteInk;
 	float rubberInk;
 
+	float cartCapacity = 1f;
+
+	public TireEditor tEdit;
+	public Button printButton;
+
 	public GameObject moneyWarning;
+	public GameObject inkWarning;
 	public Text walletText;
 	public Slider redSlider;
 	public Slider greenSlider;
 	public Slider blueSlider;
 	public Slider whiteSlider;
 	public Slider rubberSlider;
+
+	public Slider redSliderPreview;
+	public Slider greenSliderPreview;
+	public Slider blueSliderPreview;
+	public Slider whiteSliderPreview;
+	public Slider rubberSliderPreview;
 
 	public GameObject lowInkR;
 	public GameObject lowInkG;
@@ -40,6 +52,7 @@ public class InkManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		cartCapacity = SaveLoad.LoadFloat ("CartCapacity");
 		LoadCartValues ();
 		LoadWallet ();
 	}
@@ -58,6 +71,45 @@ public class InkManager : MonoBehaviour {
 
 	}
 
+	public void InkPreview(bool str){
+		if (str) {
+			LoadCartValues();
+			MeshCollider tmpMC = tEdit.tire.GetComponent<MeshCollider>();
+			tmpMC.sharedMesh.RecalculateBounds();
+			Bounds tmpBounds = tmpMC.sharedMesh.bounds;
+			float tmpRubberInk = tmpBounds.size.sqrMagnitude / cartCapacity;
+			rubberSliderPreview.value = rubberInk - tmpRubberInk;
+			redSliderPreview.value = redInk - (tEdit.redS.value / 8);
+			greenSliderPreview.value = greenInk - (tEdit.greenS.value / 8);
+			blueSliderPreview.value = blueInk - (tEdit.blueS.value / 8);
+			whiteSliderPreview.value = whiteInk - (tEdit.brightS.value / 8);
+
+			if(redSliderPreview.value <= 0 || greenSliderPreview.value <= 0
+			   || blueSliderPreview.value <= 0 || whiteSliderPreview.value <= 0 || rubberSliderPreview.value <= 0){
+				CantPrint();
+			} else {
+				CanPrint();
+			}
+
+			string inkData = "";
+			inkData += "r=" + redSliderPreview.value + "rEnd:";
+			inkData += "g=" + greenSliderPreview.value + "gEnd:";
+			inkData += "b=" + blueSliderPreview.value + "bEnd:";
+			inkData += "w=" + whiteSliderPreview.value + "wEnd:";
+			inkData += "lr=" + rubberSliderPreview.value + "lrEnd:";
+			SaveLoad.SaveString("InkData", inkData);
+		}
+	}
+
+	void CantPrint(){
+		printButton.interactable = false;
+		inkWarning.SetActive (true);
+	}
+
+	void CanPrint(){
+		printButton.interactable = true;
+		inkWarning.SetActive (false);
+	}
 
 	public void buyCart(string cart){
 		float rubberPrice = 35f;
@@ -78,6 +130,7 @@ public class InkManager : MonoBehaviour {
 		SaveLoad.SaveFloat ("Money", wallet);
 		LoadCartValues ();
 		LoadWallet ();
+		InkPreview (true);
 	}
 
 	public void modifiedInks(string str){

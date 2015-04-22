@@ -83,6 +83,7 @@ public class WarningMessages : MonoBehaviour {
 		tireEdit.printTire ();
 	}
 	void ExitSaveTask(){
+		tireEdit.SaveTime ();
 		Application.LoadLevel ("Garage");
 	}
 

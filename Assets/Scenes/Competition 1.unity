@@ -6186,7 +6186,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1048938082}
   m_Direction: 2
   m_Value: 1
-  m_Size: .999999762
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6982,7 +6982,7 @@ GameObject:
   m_Layer: 0
   m_Name: JumpPoint
   m_TagString: JumpPoint
-  m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6993,7 +6993,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1648132837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.9142933, y: 66.5084457, z: -300.25769}
+  m_LocalPosition: {x: -20.9099998, y: 61.7610016, z: -300.26001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1196464696}

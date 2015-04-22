@@ -145,6 +145,8 @@ public class CreateDefaultPrefs : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("RubberInk"))
 			SaveLoad.SaveFloat ("RubberInk", 1f);
 
+		if (!PlayerPrefs.HasKey ("CartCapacity"))
+			SaveLoad.SaveFloat ("CartCapacity", 1.2f);
 
 	}
 

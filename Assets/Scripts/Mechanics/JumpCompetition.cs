@@ -29,7 +29,12 @@ public class JumpCompetition : MonoBehaviour {
 	string actPlace = "";
 	string actPrize = "";
 	string[] oppStandings;
+
 	float[] oppTotals;
+	int[] pointTotals;
+
+	GameObject[] listings;
+	GameObject[] tmpListings;
 
 	string[] names;
 
@@ -46,6 +51,7 @@ public class JumpCompetition : MonoBehaviour {
 		thirdPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "ThirdPrize" + flyerIndex));
 		oppStandings = new string[opponentCount * 2];
 		oppTotals = new float[opponentCount + 1];
+		pointTotals = new int[opponentCount + 1];
 		PrepareNamesList ();
 		for (int i = 0; i < oppStandings.Length; i += 2) {
 			oppStandings[i] = GetName();
@@ -57,23 +63,17 @@ public class JumpCompetition : MonoBehaviour {
 
 
 	void GenerateTotals(){
-		int tmpPlace = opponentCount + 1;
-		string tmpStandings = "";
 		int qr = 0;
 		for (int i = 1; i <= opponentCount; i++) {
 			float ODist = oppTotals[i];
-			tmpStandings += "O" + i + "R" + eventRound + "=" + ODist + "O" + i + "R" + eventRound + "End:";
-			oppStandings[qr+1] = ODist.ToString();			
+			oppStandings[qr+1] = ODist.ToString("F2");
 			qr += 2;
 		}
-		
-		sortStandings (tmpStandings);
+
+		listings = new GameObject[opponentCount + 1];
 
 		for (int i = 1; i <= opponentCount + 1; i++) {
-			string tmpStanding = SaveLoad.GetValueFromString(standings, "O" + i + "R" + eventRound);
-			float tmpStandFloat = float.Parse(tmpStanding);
-			
-			if(tmpStandFloat == oppTotals[0]){
+			if(i == 1){
 				SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(SListPanel.GetComponent<RectTransform>().sizeDelta.x, SListPanel.GetComponent<RectTransform>().sizeDelta.y + 60f);
 				GameObject youPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 				GameObject youInst = Instantiate (youPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
@@ -81,26 +81,27 @@ public class JumpCompetition : MonoBehaviour {
 				youInst.transform.SetAsFirstSibling();
 				youInst.transform.localScale = Vector3.one;
 				youInst.GetComponent<Image>().color = Color.cyan;
-				youInst.GetComponentInChildren<Text>().text = tmpPlace + " - You - Total Distance: " + oppTotals[0].ToString() + "m";
-				place = tmpPlace;
+				youInst.GetComponentInChildren<Text>().text = " - You - Total Distance: " + oppTotals[0].ToString("F2") + "m";
+				youInst.GetComponent<StandingObject>().sIndex = i - 1;
+				listings[i - 1] = youInst;
 			}else{
 				SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(SListPanel.GetComponent<RectTransform>().sizeDelta.x, SListPanel.GetComponent<RectTransform>().sizeDelta.y + 30f);
 				GameObject listPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 				GameObject listInst = Instantiate (listPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
 				listInst.transform.SetParent(SListPanel.transform);
 				listInst.transform.SetAsFirstSibling();
+				listInst.GetComponent<StandingObject>().sIndex = i - 1;
 				listInst.transform.localScale = Vector3.one;
+				float tmpStandFloat = float.Parse(oppStandings[(i * 2) - 3]);
 				string tmpOppName = "";
-				for (int q = 0; q < oppStandings.Length; q += 2) {
-					if(tmpStanding == oppStandings[q+1]){
-						tmpOppName = oppStandings[q];
-					}
-				}
-				listInst.GetComponentInChildren<Text>().text = tmpPlace + " - " + tmpOppName + " - Total Distance: " + tmpStandFloat.ToString() + "m";
+				tmpOppName = oppStandings[(i * 2) - 4];
+				listInst.GetComponentInChildren<Text>().text = " - " + tmpOppName + " - Total Distance: " + tmpStandFloat.ToString() + "m";
+				listings[i - 1] = listInst;
 			}
-			tmpPlace--;
 		}
-		
+
+		sortStandings ();
+
 		GameObject roundPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 		GameObject roundInst = Instantiate (roundPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
 		roundInst.transform.SetParent(SListPanel.transform);
@@ -111,7 +112,6 @@ public class JumpCompetition : MonoBehaviour {
 	}
 
 	public void GenerateStandingsForCurrentRound(){
-		int tmpPlace = opponentCount + 1;
 		string tmpStandings = "";
 		int qr = 0;
 		float lPF = difficulty / 9f;
@@ -119,10 +119,8 @@ public class JumpCompetition : MonoBehaviour {
 			float ODist = 0f;
 			if(i == 1){
 				ODist = Random.Range(difficulty-(lPF/1.4f), difficulty+1f);
-				tmpStandings += "O" + i + "R" + eventRound + "=" + ODist + "O" + i + "R" + eventRound + "End:";
 			}else{
 				ODist = Random.Range(difficulty-(lPF*i), difficulty-((lPF / 1.9f)*i));
-				tmpStandings += "O" + i + "R" + eventRound + "=" + ODist + "O" + i + "R" + eventRound + "End:";
 			}
 			ODist = float.Parse(ODist.ToString("F2"));
 			oppTotals[i] += ODist;
@@ -131,40 +129,43 @@ public class JumpCompetition : MonoBehaviour {
 			qr += 2;
 		}
 
-		sortStandings (tmpStandings);
-
 		float playerScore = float.Parse(float.Parse(scoreText.text).ToString("F2"));
+		listings = new GameObject[opponentCount + 1];
 		for (int i = 1; i <= opponentCount + 1; i++) {
-			string tmpStanding = SaveLoad.GetValueFromString(standings, "O" + i + "R" + eventRound);
-			float tmpStandFloat = float.Parse(tmpStanding);
 
-			if(tmpStandFloat == playerScore){
+			if(i == 1){
 				SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(SListPanel.GetComponent<RectTransform>().sizeDelta.x, SListPanel.GetComponent<RectTransform>().sizeDelta.y + 60f);
 				GameObject youPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 				GameObject youInst = Instantiate (youPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
 				youInst.transform.SetParent(SListPanel.transform);
 				youInst.transform.SetAsFirstSibling();
+				youInst.name = youInst.name + i;
 				youInst.transform.localScale = Vector3.one;
 				youInst.GetComponent<Image>().color = Color.cyan;
-				youInst.GetComponentInChildren<Text>().text = tmpPlace + " - You - Distance: " + float.Parse(scoreText.text).ToString() + "m";
-				oppTotals[0] += playerScore;
+				youInst.GetComponentInChildren<Text>().text = " - You - Distance: " + playerScore.ToString("F2") + "m";
+				youInst.GetComponent<StandingObject>().distanceScore = float.Parse(scoreText.text);
+				youInst.GetComponent<StandingObject>().sIndex = i - 1;
+				listings[i - 1] = youInst;
+				oppTotals[0] += float.Parse(scoreText.text);
 			}else{
 				SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(SListPanel.GetComponent<RectTransform>().sizeDelta.x, SListPanel.GetComponent<RectTransform>().sizeDelta.y + 30f);
 				GameObject listPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 				GameObject listInst = Instantiate (listPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
 				listInst.transform.SetParent(SListPanel.transform);
 				listInst.transform.SetAsFirstSibling();
+				listInst.name = listInst.name + i;
 				listInst.transform.localScale = Vector3.one;
+				float tmpStandFloat = float.Parse(oppStandings[(i * 2) - 3]);
 				string tmpOppName = "";
-				for (int q = 0; q < oppStandings.Length; q += 2) {
-					if(tmpStanding == oppStandings[q+1]){
-						tmpOppName = oppStandings[q];
-					}
-				}
-				listInst.GetComponentInChildren<Text>().text = tmpPlace + " - " + tmpOppName + " - Distance: " + tmpStandFloat.ToString() + "m";
+				tmpOppName = oppStandings[(i * 2) - 4];
+				listInst.GetComponentInChildren<Text>().text = " - " + tmpOppName + " - Distance: " + tmpStandFloat.ToString() + "m";
+				listInst.GetComponent<StandingObject>().distanceScore = tmpStandFloat;
+				listings[i - 1] = listInst;
+				listInst.GetComponent<StandingObject>().sIndex = i - 1;
 			}
-			tmpPlace--;
 		}
+
+		sortStandings ();
 
 		GameObject roundPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
 		GameObject roundInst = Instantiate (roundPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
@@ -175,26 +176,69 @@ public class JumpCompetition : MonoBehaviour {
 		roundInst.GetComponentInChildren<Text>().text = "Round: " + eventRound;
 	}
 
-	void sortStandings(string tmpStanding){
-		float[] tSD = new float[opponentCount + 1];
-		string tmpSorted = "";
-		if (eventRound > roundCount) {
-			tSD[0] = float.Parse(oppTotals[0].ToString("F2"));
-		} else {
-			tSD [0] = float.Parse(float.Parse (scoreText.text).ToString("F2"));
-		}
-		for (int i = 1; i < tSD.Length; i++) {
-			float tmpFloatCheck = float.Parse(float.Parse(SaveLoad.GetValueFromString(tmpStanding, "O" + i + "R" + eventRound)).ToString("F2"));
-			while(System.Array.IndexOf(tSD, tmpFloatCheck) != -1){
-				tmpFloatCheck += 0.01f;
+	void sortStandings(){
+
+		tmpListings = listings;
+
+		bool sorted = true;
+
+		if (eventRound <= roundCount) {
+			while (sorted) {
+				sorted = false;
+				for (int i = 0; i < tmpListings.Length; i++) {
+					if(i != 0)
+					if (tmpListings [i].GetComponent<StandingObject> ().distanceScore > tmpListings [i - 1].GetComponent<StandingObject> ().distanceScore) {
+						sorted = true;
+						GameObject tmpObject = tmpListings [i - 1]; 
+						tmpListings [i - 1] = tmpListings [i];
+						tmpListings [i] = tmpObject;
+					}
+				}
 			}
-			tSD[i] = tmpFloatCheck;
+			for (int i = 0; i < tmpListings.Length; i++) {
+				tmpListings [i].transform.SetSiblingIndex(i);
+			}
+			for (int i = 0; i < listings.Length; i++) {
+				int tmpPlace = listings [i].transform.GetSiblingIndex ();
+				int tmpPoints = opponentCount - tmpPlace;
+				pointTotals [listings[i].GetComponent<StandingObject>().sIndex] += tmpPoints;
+				string tmpStrText = listings [i].GetComponentInChildren<Text> ().text;
+				listings [i].GetComponentInChildren<Text> ().text = (tmpPlace + 1) + tmpStrText;
+				tmpStrText = listings [i].GetComponentInChildren<Text> ().text;
+				listings [i].GetComponentInChildren<Text> ().text = tmpStrText + "   " + tmpPoints + "p";
+			}
+
+		} else {
+			int[] tmpPointTotals = pointTotals;
+			while (sorted) {
+				sorted = false;
+				for (int i = 0; i < tmpListings.Length; i++) {
+					if(i != 0)
+					if (tmpPointTotals [i] > tmpPointTotals [i - 1]) {
+						sorted = true;
+						int tmpObject = tmpPointTotals [i - 1]; 
+						tmpPointTotals [i - 1] = tmpPointTotals [i];
+						tmpPointTotals [i] = tmpObject;
+						GameObject tmpObjectr = tmpListings [i - 1]; 
+						tmpListings [i - 1] = tmpListings [i];
+						tmpListings [i] = tmpObjectr;
+					}
+				}				
+			}
+			for (int i = 0; i < tmpListings.Length; i++) {
+				tmpListings[i].transform.SetSiblingIndex(i);
+			}
+			for (int i = 0; i < listings.Length; i++) {
+				int tmpPlace = listings [i].transform.GetSiblingIndex ();
+				if(listings[i].GetComponent<StandingObject>().sIndex == 0)
+					place = tmpPlace + 1;
+				string tmpStrText = listings [i].GetComponentInChildren<Text> ().text;
+				listings [i].GetComponentInChildren<Text> ().text = (tmpPlace + 1) + tmpStrText;
+				tmpStrText = listings [i].GetComponentInChildren<Text> ().text;
+				listings [i].GetComponentInChildren<Text> ().text = tmpStrText + "   " + pointTotals [i] + "p";
+			}
 		}
-		System.Array.Sort (tSD);
-		for (int i = 1; i <= tSD.Length; i++) {
-			tmpSorted += "O" + i + "R" + eventRound + "=" + tSD[i-1] + "O" + i + "R" + eventRound + "End:";
-		}
-		standings += tmpSorted;
+
 	}
 
 	public void ShowStandings(bool str){

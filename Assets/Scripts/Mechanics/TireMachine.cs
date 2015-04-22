@@ -50,6 +50,11 @@ public class TireMachine : MonoBehaviour {
 		if (str) {
 			printSpawn.spawnTire (SaveLoad.LoadString ("PrintTire"));
 			StartCoroutine (PrintCoroutine ());
+			SaveLoad.SaveFloat("RedInk", float.Parse(SaveLoad.GetValueFromPref("InkData", "r")));
+			SaveLoad.SaveFloat("GreenInk", float.Parse(SaveLoad.GetValueFromPref("InkData", "g")));
+			SaveLoad.SaveFloat("BlueInk", float.Parse(SaveLoad.GetValueFromPref("InkData", "b")));
+			SaveLoad.SaveFloat("WhiteInk", float.Parse(SaveLoad.GetValueFromPref("InkData", "w")));
+			SaveLoad.SaveFloat("RubberInk", float.Parse(SaveLoad.GetValueFromPref("InkData", "lr")));
 		}
 	}
 
