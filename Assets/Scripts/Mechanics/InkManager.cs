@@ -19,6 +19,8 @@ public class InkManager : MonoBehaviour {
 	public GameObject moneyWarning;
 	public GameObject inkWarning;
 	public Text walletText;
+	public Text rubberPriceText;
+	public Text inkPriceText;
 	public Slider redSlider;
 	public Slider greenSlider;
 	public Slider blueSlider;
@@ -49,12 +51,20 @@ public class InkManager : MonoBehaviour {
 	public Text refillTextW;
 	public Text refillTextRubber;
 
+	float rubberPrice = 150f;
+	float inkPrice = 50f;
+
 
 	// Use this for initialization
 	void Start () {
 		cartCapacity = SaveLoad.LoadFloat ("CartCapacity");
 		LoadCartValues ();
 		LoadWallet ();
+
+		if(PlayerPrefs.HasKey("RubberPrice"))
+			rubberPrice = SaveLoad.LoadFloat("RubberPrice");
+		if(PlayerPrefs.HasKey("InkPrice"))
+			inkPrice = SaveLoad.LoadFloat("InkPrice");
 	}
 
 	IEnumerator flashWarning(float delay, int flashes){
@@ -98,6 +108,10 @@ public class InkManager : MonoBehaviour {
 			inkData += "w=" + whiteSliderPreview.value + "wEnd:";
 			inkData += "lr=" + rubberSliderPreview.value + "lrEnd:";
 			SaveLoad.SaveString("InkData", inkData);
+
+			rubberPriceText.text = "Liquid Rubber: $" + rubberPrice.ToString();
+			inkPriceText.text = "Color Ink Cartridges: $" + inkPrice.ToString() + " Each";;
+
 		}
 	}
 
@@ -112,8 +126,7 @@ public class InkManager : MonoBehaviour {
 	}
 
 	public void buyCart(string cart){
-		float rubberPrice = 35f;
-		float inkPrice = 20f;
+		
 
 		if (wallet > inkPrice && cart != "Rubber") {
 			SaveLoad.SaveFloat (cart + "Ink", 1f);
