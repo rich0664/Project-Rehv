@@ -6,6 +6,7 @@ using UnityStandardAssets.ImageEffects;
 
 public class PlayerHub : MonoBehaviour {
 
+	public GameObject tutorialPopup;
 	public Text interactText;
 	public bool canInteract;
 	public bool isViewing;
@@ -49,6 +50,12 @@ public class PlayerHub : MonoBehaviour {
 		boardCamPoint = GameObject.Find ("BoardCamPoint");
 		boardViewingPos = boardCamPoint.transform.position;
 		Time.timeScale = 1f;
+		if (!PlayerPrefs.HasKey ("ShowTutorial") || SaveLoad.LoadInt("ShowTutorial") == 1) {
+			tutorialPopup.SetActive(true);
+			SaveLoad.SaveInt("ShowTutorial", 0);
+			wantedCursorLock = CursorLockMode.None;
+			cinematicMode = true;
+		}
 	}
 
 	void Update(){
