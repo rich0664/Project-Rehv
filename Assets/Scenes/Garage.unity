@@ -4695,8 +4695,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: -9}
-  m_SizeDelta: {x: -29, y: 53}
+  m_AnchoredPosition: {x: -133.600006, y: -54.9000015}
+  m_SizeDelta: {x: -441, y: 53}
   m_Pivot: {x: .5, y: 1}
 --- !u!114 &615599036
 MonoBehaviour:
@@ -13510,7 +13510,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1673910032}
   m_LocalRotation: {x: 0, y: .662828982, z: 0, w: .748770833}
-  m_LocalPosition: {x: 1.58200002, y: -.853999972, z: -2.773}
+  m_LocalPosition: {x: 3.53600001, y: -.850000024, z: -6.19099998}
   m_LocalScale: {x: 1.2007941, y: 1.51552641, z: 1.20079339}
   m_Children: []
   m_Father: {fileID: 2017477724}
@@ -14942,7 +14942,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.23000002
+      value: 2.94000006
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14950,23 +14950,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.76999998
+      value: -4.28999996
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -.707106829
+      value: -.706596553
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -.0268570501
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -.0268570576
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: .707106829
+      value: .706596553
       objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: 1b223c332ce25cd42a0b3b0b5ed4ec8c, type: 3}
       propertyPath: m_RootOrder
@@ -15330,9 +15330,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .161764681, g: .161764681, b: .161764681, a: 1}
-  m_Sprite: {fileID: 21300000, guid: 9d14fbc2c63fd8b4d9dd2a6fd254db4d, type: 3}
-  m_Type: 1
+  m_Color: {r: .79411763, g: .79411763, b: .79411763, a: 1}
+  m_Sprite: {fileID: 21300000, guid: e73c82bcb4ca68c4c967212ea687c6a4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

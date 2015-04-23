@@ -30,13 +30,15 @@ public class DayNight : MonoBehaviour {
 		RenderSettings.ambientIntensity = 0;
 		//skyMat = skyDome.GetComponent<Renderer> ().material;
 		skyColor = skyMat.GetColor("_TintColor");
-		LoadTime ();
-		if (!PlayerPrefs.HasKey("Day") || !PlayerPrefs.HasKey("Week")) {
+		if (!PlayerPrefs.HasKey ("Day") || !PlayerPrefs.HasKey ("Week")) {
 			Day = 1;
 			Week = 1;
-			SaveLoad.SaveInt("Week", Week);
-			SaveLoad.SaveInt("Day", Day);
-			SaveLoad.SaveFloat ("Hour",timeHour);
+			SaveLoad.SaveInt ("Week", Week);
+			SaveLoad.SaveInt ("Day", Day);
+			SaveLoad.SaveFloat ("Hour", timeHour);
+			cBoard.SetFlyers ();
+		} else {
+			LoadTime ();
 		}
 	}
 	

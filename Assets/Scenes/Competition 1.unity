@@ -7369,8 +7369,6 @@ GameObject:
   - 81: {fileID: 1768584075}
   - 114: {fileID: 1768584074}
   - 114: {fileID: 1768584081}
-  - 135: {fileID: 1768584080}
-  - 54: {fileID: 1768584082}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7460,18 +7458,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!135 &1768584080
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1768584073}
-  m_Material: {fileID: 13400000, guid: b8163c0174c78e24cb2b3de8c23316cf, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1768584081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7484,10 +7470,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  useCinematic: 1
+  useCinematic: 0
   smoothCamera: 0
   addCamHeight: 0
   cameraSmoothing: 10
+  zoomSpeed: 20
   distance: 5
   xSpeed: 40
   ySpeed: 40
@@ -7495,21 +7482,6 @@ MonoBehaviour:
   yMaxLimit: 80
   distanceMin: 2
   distanceMax: 60
---- !u!54 &1768584082
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1768584073}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1781313900
 GameObject:
   m_ObjectHideFlags: 0

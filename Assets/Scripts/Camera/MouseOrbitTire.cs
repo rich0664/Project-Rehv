@@ -9,6 +9,7 @@ public class MouseOrbitTire : MonoBehaviour {
 	public bool smoothCamera = true;
 	public bool addCamHeight = false;
 	public float cameraSmoothing = 1f;
+	public float zoomSpeed = 1f;
 	public float distance = 5.0f;
 	public float xSpeed = 120.0f;
 	public float ySpeed = 120.0f;
@@ -62,7 +63,7 @@ public class MouseOrbitTire : MonoBehaviour {
 
 
 
-			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5, distanceMin, distanceMax);
+			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5*zoomSpeed, distanceMin, distanceMax);
 
 			if(useCinematic){
 			float absX = Mathf.Abs(x);
