@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 306621820}
   m_Direction: 2
   m_Value: 1
-  m_Size: .183269724
+  m_Size: .183269292
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8276,7 +8276,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 947846309}
   m_Direction: 2
   m_Value: 1
-  m_Size: .189094216
+  m_Size: .189093709
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8625,7 +8625,7 @@ RectTransform:
   m_Father: {fileID: 1385711632}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -3.0999999, y: 0}
   m_SizeDelta: {x: -6.19999981, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -12424,7 +12424,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 44399281}
   m_Direction: 2
   m_Value: 1
-  m_Size: .235248074
+  m_Size: .235247597
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -16539,7 +16539,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2140438084}
   m_Direction: 2
   m_Value: 1
-  m_Size: 1
+  m_Size: .999999404
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -20786,6 +20786,21 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &2019649515
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2019649513}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!54 &2019649516
 Rigidbody:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}

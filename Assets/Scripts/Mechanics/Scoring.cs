@@ -50,7 +50,7 @@ public class Scoring : MonoBehaviour {
 		if (canPlaceScore) {
 			canPlaceScore=false;
 
-			if(GameObject.Find("CompetitionStuff").GetComponent<JumpCompetition>() != null){
+			if(GameObject.Find("CompetitionStuff") != null){
 				GameObject.Find("CompetitionStuff").GetComponent<JumpCompetition>().ContinueButton.SetActive(true);
 			}
 
