@@ -56,6 +56,8 @@ public class PlayerHub : MonoBehaviour {
 			wantedCursorLock = CursorLockMode.None;
 			cinematicMode = true;
 		}
+		if (!PlayerPrefs.HasKey ("CurrentTire"))
+			SaveLoad.SaveString ("CurrentTire", "KartTire0");
 	}
 
 	void Update(){

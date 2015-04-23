@@ -23,6 +23,7 @@ ModelImporter:
     100030: monitor
     100032: monitor-screen
     100034: tv_placeholder_001
+    100036: tv_placeholder-screen
     400000: Backceiling
     400002: Backfloor
     400004: Backwalls
@@ -41,6 +42,7 @@ ModelImporter:
     400030: monitor
     400032: monitor-screen
     400034: tv_placeholder_001
+    400036: tv_placeholder-screen
     2300000: Backceiling
     2300002: Backfloor
     2300004: Backwalls
@@ -58,6 +60,7 @@ ModelImporter:
     2300028: monitor
     2300030: monitor-screen
     2300032: tv_placeholder_001
+    2300034: tv_placeholder-screen
     3300000: Backceiling
     3300002: Backfloor
     3300004: Backwalls
@@ -75,6 +78,7 @@ ModelImporter:
     3300028: monitor
     3300030: monitor-screen
     3300032: tv_placeholder_001
+    3300034: tv_placeholder-screen
     4300000: PC
     4300002: Table
     4300004: shelf1_placeholder
@@ -92,6 +96,7 @@ ModelImporter:
     4300028: monitor-screen
     4300030: monitor
     4300032: tv_placeholder_001
+    4300034: tv_placeholder-screen
     7400000: Default Take
     9500000: //RootNode
   materials:

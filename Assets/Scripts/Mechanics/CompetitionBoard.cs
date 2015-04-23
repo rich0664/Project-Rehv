@@ -110,7 +110,7 @@ public class CompetitionBoard : MonoBehaviour {
 		int week = SaveLoad.LoadInt ("Week");
 		bool isMonth = false;
 		if (week % 4 == 0)
-			isMonth = true;
+			isMonth = false;
 
 		int lastRnd = 0;
 		for (int i = 0; i < flyerType.Length; i++) {

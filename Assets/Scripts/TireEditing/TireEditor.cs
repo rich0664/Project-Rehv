@@ -237,14 +237,13 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void ResetTire(string tireToReset){
-
-		ResetSaveUI ();
-		tireType = tireToReset + "0";
-
-		
+		tire.tag = "Untagged";
 		Destroy (tire);
 		ResetSliderUI ();
+
+		tireType = tireToReset + "0";
 		tireLoad = tireToReset;
+		
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		lastLoadedTire = tireLoad;
 		SaveLoad.SaveString("CurrentTire", tireType);
