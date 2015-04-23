@@ -526,7 +526,7 @@ MonoBehaviour:
   isEditor: 0
   isCompetition: 1
   generateCollision: 1
-  setOnGround: 0
+  setOnGround: 1
   lastSpawnedTire: {fileID: 0}
 --- !u!1 &95375885
 GameObject:

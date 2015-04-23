@@ -125,10 +125,10 @@ public class CreateDefaultPrefs : MonoBehaviour {
 			SaveLoad.SaveInt ("Signature", 0);
 
 		if (!PlayerPrefs.HasKey ("Memory"))
-			SaveLoad.SaveFloat ("Memory", 350f);
+			SaveLoad.SaveFloat ("Memory", 250f);
 
 		if (!PlayerPrefs.HasKey ("Money"))
-			SaveLoad.SaveFloat ("Money", 100f);
+			SaveLoad.SaveFloat ("Money", 150f);
 
 		if (!PlayerPrefs.HasKey ("RedInk"))
 			SaveLoad.SaveFloat ("RedInk", 1f);

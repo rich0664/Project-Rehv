@@ -6,12 +6,25 @@ public class MainMenu : MonoBehaviour {
 
 	public GameObject ContinueButton;
 	public GameObject NewGameButton;
+	public GameObject PassScreen;
+	public GameObject WrongPass;
+	public InputField PassInput;
+
+	string pass = "password";
 
 
 	void Start(){
 		if (!PlayerPrefs.HasKey ("Signature")) {
 			NewGameButton.GetComponent<Button>().interactable = true;
 			ContinueButton.GetComponent<Button>().interactable = false;
+		}
+	}
+
+	public void CheckPassword(bool str){
+		if (str && PassInput.text == pass) {
+			PassScreen.SetActive (false);
+		} else {
+			WrongPass.SetActive(true);
 		}
 	}
 
