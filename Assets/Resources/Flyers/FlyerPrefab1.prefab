@@ -250,8 +250,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158752}
-  m_LocalRotation: {x: .500000179, y: .499999911, z: .499999851, w: .500000179}
-  m_LocalPosition: {x: -.00039999999, y: -.0592, z: -.0013}
+  m_LocalRotation: {x: .487447053, y: .512245476, z: .487446725, w: .512245715}
+  m_LocalPosition: {x: -.000400066376, y: -.0591999702, z: .000799973845}
   m_LocalScale: {x: .25, y: .24999994, z: .25}
   m_Children: []
   m_Father: {fileID: 413924}
@@ -274,8 +274,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 133836}
-  m_LocalRotation: {x: .500000179, y: .499999911, z: .499999851, w: .500000179}
-  m_LocalPosition: {x: -.00039999999, y: -.0592, z: .0162000004}
+  m_LocalRotation: {x: .507197976, y: .492696971, z: .507197678, w: .492697239}
+  m_LocalPosition: {x: -.000400066376, y: -.0591999702, z: .0161999874}
   m_LocalScale: {x: .25, y: .24999994, z: .25}
   m_Children: []
   m_Father: {fileID: 413924}
@@ -326,8 +326,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180736}
-  m_LocalRotation: {x: .500000179, y: .499999911, z: .499999851, w: .500000179}
-  m_LocalPosition: {x: -.00039999999, y: -.060800001, z: -.0121999998}
+  m_LocalRotation: {x: .501380861, y: .498615414, z: .501380503, w: .498615682}
+  m_LocalPosition: {x: -.00039999999, y: -.060800001, z: -.00719999988}
   m_LocalScale: {x: .25, y: .24999994, z: .25}
   m_Children: []
   m_Father: {fileID: 413924}
@@ -669,13 +669,13 @@ TextMesh:
   m_OffsetZ: 0
   m_CharacterSize: .00200000009
   m_LineSpacing: 1
-  m_Anchor: 3
+  m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 40
+  m_FontSize: 65
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 5fd7b130c74da624e8e74f96d765313b, type: 3}
+  m_Font: {fileID: 12800000, guid: f75ff6525a79cfc41a0204dd0ec86e5e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
@@ -693,10 +693,10 @@ TextMesh:
   m_Anchor: 3
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 40
+  m_FontSize: 65
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 5fd7b130c74da624e8e74f96d765313b, type: 3}
+  m_Font: {fileID: 12800000, guid: f75ff6525a79cfc41a0204dd0ec86e5e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
@@ -714,10 +714,10 @@ TextMesh:
   m_Anchor: 3
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 40
+  m_FontSize: 65
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 5fd7b130c74da624e8e74f96d765313b, type: 3}
+  m_Font: {fileID: 12800000, guid: f75ff6525a79cfc41a0204dd0ec86e5e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
@@ -748,6 +748,7 @@ MonoBehaviour:
   flyerDateText: 
   flyerDetailsText: 
   isSigned: 0
+  isActive: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

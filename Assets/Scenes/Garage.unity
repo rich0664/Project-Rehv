@@ -188,6 +188,22 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &56672754
+GameObject:
+  m_PrefabParentObject: {fileID: 100022, guid: 618917709e84b03409076210584c1735, type: 3}
+  m_PrefabInternal: {fileID: 1952978101}
+--- !u!65 &56672758
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 56672754}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.13174152, y: 1.20000052, z: .683328211}
+  m_Center: {x: -.0658696964, y: 2.38418579e-07, z: .0903450325}
 --- !u!1 &74718005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5543,6 +5559,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.98562503, y: 3.74299979, z: .34937501}
   m_Center: {x: -1.24593651, y: 1.8714999, z: -.059063457}
+--- !u!1 &745591158
+GameObject:
+  m_PrefabParentObject: {fileID: 100024, guid: 618917709e84b03409076210584c1735, type: 3}
+  m_PrefabInternal: {fileID: 1952978101}
+--- !u!65 &745591162
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 745591158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .831653237, y: 1.67126262, z: .951358259}
+  m_Center: {x: -6.43407631, y: .676067233, z: .4756791}
 --- !u!1001 &755955493
 Prefab:
   m_ObjectHideFlags: 0
@@ -5802,7 +5834,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
-          m_FloatArgument: -.5
+          m_FloatArgument: -3
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -5954,7 +5986,7 @@ TextMesh:
   m_FontSize: 40
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 5fd7b130c74da624e8e74f96d765313b, type: 3}
+  m_Font: {fileID: 12800000, guid: f75ff6525a79cfc41a0204dd0ec86e5e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190335
@@ -10888,6 +10920,22 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1196785335}
+--- !u!1 &1212339569
+GameObject:
+  m_PrefabParentObject: {fileID: 100018, guid: 618917709e84b03409076210584c1735, type: 3}
+  m_PrefabInternal: {fileID: 1952978101}
+--- !u!65 &1212339573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1212339569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .558792174, y: 2.69781685, z: 2.00000048}
+  m_Center: {x: 6.53589392, y: 1.20565844, z: 1.00000024}
 --- !u!1 &1241493657
 GameObject:
   m_ObjectHideFlags: 0
@@ -14342,7 +14390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cBoard: {fileID: 541579515}
-  timeScale: -.5
+  timeScale: -3
   ambientIntense: 0
   rotat: 180
   localTime: 0
@@ -16141,6 +16189,10 @@ Prefab:
       propertyPath: maxRadius
       value: .738999963
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: near clip plane
+      value: .150000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
@@ -16936,6 +16988,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1987363585}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1987737752
+GameObject:
+  m_PrefabParentObject: {fileID: 100020, guid: 618917709e84b03409076210584c1735, type: 3}
+  m_PrefabInternal: {fileID: 1952978101}
+--- !u!65 &1987737756
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1987737752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.01981521, y: 1.40480256, z: 1.55061436}
+  m_Center: {x: -5.6575799, y: -2.12922788, z: .775307178}
 --- !u!1 &1990237269
 GameObject:
   m_ObjectHideFlags: 0

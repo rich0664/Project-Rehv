@@ -80,7 +80,7 @@ public class Flyer : MonoBehaviour {
 					highlightGroup.SetActive(true);
 					if(Input.GetMouseButtonDown(0)){
 						Vector3 flyerPos = transform.position;
-						flyerPos.z -= 0.35f;
+						flyerPos.z -= 0.26f;
 					   	hubPlayer.boardViewingPos = flyerPos;
 						hubPlayer.viewingFlyerIndex = flyerIndex;
 						hubPlayer.isCurrentSigned = isSigned;
