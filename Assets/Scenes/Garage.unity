@@ -16099,11 +16099,11 @@ RectTransform:
   - {fileID: 1479378781}
   m_Father: {fileID: 1313538305}
   m_RootOrder: 3
-  m_AnchorMin: {x: .5, y: 0}
-  m_AnchorMax: {x: .5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -20, y: -20}
   m_SizeDelta: {x: 70, y: 30}
-  m_Pivot: {x: .5, y: 0}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1803570106
 MonoBehaviour:
   m_ObjectHideFlags: 0
