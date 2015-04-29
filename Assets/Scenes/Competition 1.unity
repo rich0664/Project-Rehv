@@ -523,6 +523,7 @@ MonoBehaviour:
   tireTypeToSpawn: KartTire
   shouldSpin: 0
   isOpponent: 0
+  distanceScore: 1
   isEditor: 0
   isCompetition: 1
   generateCollision: 1
@@ -1507,7 +1508,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 35.5, y: 7}
+  m_AnchoredPosition: {x: 35.5, y: 20}
   m_SizeDelta: {x: 156.839996, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &352070843
@@ -1525,19 +1526,17 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5fd7b130c74da624e8e74f96d765313b, type: 3}
-    m_FontSize: 9
+    m_FontSize: 7
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 6
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'TimeScale
-
-'
+  m_Text: TimeScale
 --- !u!222 &352070844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1901,7 +1900,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 170, y: 18}
+  m_AnchoredPosition: {x: 180, y: 18}
   m_SizeDelta: {x: 231.599976, y: 57.8999939}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &467863847
@@ -2044,7 +2043,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 170, y: -0}
+  m_AnchoredPosition: {x: 180, y: -0}
   m_SizeDelta: {x: 231.599976, y: 57.8999939}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &478733235
@@ -2072,7 +2071,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1.33000004
-  m_Text: 'Current Distance:  '
+  m_Text: 'Current Distance: '
 --- !u!222 &478733236
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2362,6 +2361,7 @@ MonoBehaviour:
   tireTypeToSpawn: TestTire
   shouldSpin: 0
   isOpponent: 1
+  distanceScore: 1
   isEditor: 1
   isCompetition: 0
   generateCollision: 1
@@ -7031,7 +7031,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 115.690002, y: -22.9699993}
+  m_AnchoredPosition: {x: 119, y: -22.9699993}
   m_SizeDelta: {x: 115, y: 25}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1654644110
@@ -8533,7 +8533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!124 &2107301508
 Behaviour:
   m_ObjectHideFlags: 0

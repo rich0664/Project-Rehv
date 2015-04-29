@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.IO;
+using System;
 
 public class MainMenu : MonoBehaviour {
 
@@ -17,6 +19,9 @@ public class MainMenu : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("Signature")) {
 			NewGameButton.GetComponent<Button>().interactable = true;
 			ContinueButton.GetComponent<Button>().interactable = false;
+			TextAsset tmpText = Resources.Load("Names") as TextAsset;
+			byte[] tmpNames = tmpText.bytes;
+			File.WriteAllBytes(Application.dataPath + "/Resources/Names.txt", tmpNames);
 		}
 	}
 
@@ -37,6 +42,7 @@ public class MainMenu : MonoBehaviour {
 		}
 
 		if(str == "NewGame"){
+			PlayerPrefs.DeleteAll();
 			Application.LoadLevel("SignScene");
 		}
 

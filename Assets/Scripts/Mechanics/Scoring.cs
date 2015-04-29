@@ -26,14 +26,16 @@ public class Scoring : MonoBehaviour {
 		tire = GameObject.FindGameObjectWithTag ("MainTire");
 		uniTire = tire.GetComponent<UniversalTire> ();
 
-		if (!uniTire.spawnPoint.isPrint && !uniTire.spawnPoint.isEditor) {
+		if (!uniTire.spawnPoint.isPrint && !uniTire.spawnPoint.isEditor && uniTire.spawnPoint.distanceScore) {
 			scoreText = GameObject.Find ("ScoreText").GetComponent<TextMesh> ();
 			scoreRender = GameObject.Find ("ScoreText").GetComponent<MeshRenderer> ();
 			scoreSound = GameObject.Find ("ScoreText").GetComponent<AudioSource> ();
 			scoreTrigger = GameObject.Find ("ScoreTrigger").GetComponent<BoxCollider> ();
 			jumpPoint = GameObject.Find ("JumpPoint");
 			tireType = GameObject.Find ("TireSpawn").GetComponent<TireSpawn> ().tireTypeToSpawn;
-			ScoreLine = GameObject.Find ("ScoreText").GetComponentInChildren<LineRenderer>();
+			ScoreLine = GameObject.Find ("ScoreText").GetComponentInChildren<LineRenderer> ();
+		} else {
+			Destroy(this);
 		}
 	}
 

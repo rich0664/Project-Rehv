@@ -9,6 +9,7 @@ public class TireSpawn : MonoBehaviour {
 	GameObject tirePrefab;
 	public bool shouldSpin = false;
 	public bool isOpponent = false;
+	public bool distanceScore = true;
 	public bool isEditor;
 	public bool isCompetition;
 	public bool generateCollision;
