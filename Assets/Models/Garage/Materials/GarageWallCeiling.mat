@@ -37,13 +37,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Texture
-        second:
-          m_Texture: {fileID: 2800000, guid: f9168b61509fc114aa2e5b61d47b060d, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
@@ -84,6 +77,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: f9168b61509fc114aa2e5b61d47b060d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -97,18 +97,6 @@ Material:
         first:
           name: _DstBlend
         second: 0
-      data:
-        first:
-          name: _Brightness
-        second: .200000003
-      data:
-        first:
-          name: _SpecularPower
-        second: .230000004
-      data:
-        first:
-          name: _SpecularAmount
-        second: .280000001
       data:
         first:
           name: _Parallax
@@ -149,6 +137,18 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _Brightness
+        second: .200000003
+      data:
+        first:
+          name: _SpecularPower
+        second: .230000004
+      data:
+        first:
+          name: _SpecularAmount
+        second: .280000001
     m_Colors:
       data:
         first:
@@ -160,9 +160,9 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Specularcolor
-        second: {r: .5, g: .5, b: .5, a: 1}
-      data:
-        first:
           name: _EmissionColorUI
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Specularcolor
+        second: {r: .5, g: .5, b: .5, a: 1}

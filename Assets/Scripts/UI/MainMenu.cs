@@ -11,6 +11,8 @@ public class MainMenu : MonoBehaviour {
 	public GameObject PassScreen;
 	public GameObject WrongPass;
 	public InputField PassInput;
+	public Toggle showTutorial;
+	public int shwTut;
 
 	string pass = "password";
 
@@ -19,9 +21,28 @@ public class MainMenu : MonoBehaviour {
 		if (!PlayerPrefs.HasKey ("Signature")) {
 			NewGameButton.GetComponent<Button>().interactable = true;
 			ContinueButton.GetComponent<Button>().interactable = false;
+			showTutorial.isOn = true;
+		}
+		if (!File.Exists (Application.dataPath + "/Resources/Names.txt")) {
 			TextAsset tmpText = Resources.Load("Names") as TextAsset;
 			byte[] tmpNames = tmpText.bytes;
 			File.WriteAllBytes(Application.dataPath + "/Resources/Names.txt", tmpNames);
+		}
+		if (SaveLoad.LoadInt ("ShowTutorial") == 1) {
+			showTutorial.isOn = true;
+		}
+	}
+
+	void Update(){
+		shwTut = SaveLoad.LoadInt ("ShowTutorial");
+	}
+
+	public void SetTutorial(bool str){
+		if (str) {
+			int tmpOn = 1;
+			if(!showTutorial.isOn)
+				tmpOn = 0;
+			SaveLoad.SaveInt ("ShowTutorial", tmpOn);
 		}
 	}
 

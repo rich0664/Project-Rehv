@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: .889705896, g: .889705896, b: .889705896, a: 1}
   m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
   m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
-  m_AmbientIntensity: .317999989
+  m_AmbientIntensity: .337000012
   m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 2100000, guid: cf7aa4febd1c1bb4eba3fe27f318f2a2, type: 2}
   m_HaloStrength: .5
@@ -14209,7 +14209,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504051003}
-  m_LocalRotation: {x: -.948279142, y: -2.05174032e-07, z: -1.58016718e-07, w: .317437679}
+  m_LocalRotation: {x: -.301121891, y: -1.36209678e-07, z: -3.12508718e-07, w: .953585684}
   m_LocalPosition: {x: -1.22689998, y: 3.26970005, z: .255690008}
   m_LocalScale: {x: 13.4677963, y: 13.4677916, z: 13.4677916}
   m_Children:
@@ -14944,6 +14944,7 @@ MonoBehaviour:
   tireTypeToSpawn: 
   shouldSpin: 0
   isOpponent: 0
+  distanceScore: 1
   isEditor: 0
   isCompetition: 0
   generateCollision: 1
@@ -15209,6 +15210,60 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1678704262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1678704264}
+  - 114: {fileID: 1678704265}
+  - 114: {fileID: 1678704263}
+  m_Layer: 0
+  m_Name: Pauser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678704263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678704262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d259901c5ddd644eb5b5a6587a8b24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1678704264
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678704262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 721.38501, y: 24.2016468, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+--- !u!114 &1678704265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1678704262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f986d7798629b3e4bb736250b42be3c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuSceneName: MainMenu
+  pauseMenuFont: {fileID: 12800000, guid: 2eab921198154ec4e934bfe68d06d984, type: 3}
+  pauseEnabled: 0
 --- !u!1 &1694327227
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class TireLaunch : MonoBehaviour {
 	public float maxDeviation = 4.5f;
 	public float launchPower;
 	public float rollPower;
+	public MouseOrbitTire tCam;
 
 	float launchAngles = -90f;
 
@@ -27,12 +28,19 @@ public class TireLaunch : MonoBehaviour {
 		if(tire == null)
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 
-		if (Input.GetMouseButton (0) && isLaunching) {
+		if (Input.GetKeyDown(KeyCode.Space) && isLaunching) {
 			Launch();
 		}
 
 		if (isLaunching) {
-			
+
+			//Lock the camera behind tire
+			if(tCam != null)
+			if(!tCam.lockBehind){
+				tCam.InitiateReLock();
+				tCam.lockBehind = true;
+			}
+
 			Vector3 launchVector = new Vector3 (0,0,0);
 			tire.GetComponent<Rigidbody>().rotation = Quaternion.Euler( new Vector3 (0,launchAngles,0));
 			tire.GetComponent<Rigidbody>().position = this.transform.position;
@@ -62,7 +70,8 @@ public class TireLaunch : MonoBehaviour {
 
 
 	void Launch(){
-
+		if(tCam != null)
+			tCam.lockBehind = false;
 		tire.GetComponent<Rigidbody>().velocity = new Vector3 (0,0,launchPower);
 		tire.GetComponent<Rigidbody> ().angularVelocity = new Vector3 (rollPower, 0, 0);
 		tire.transform.localEulerAngles = new Vector3 (0,launchAngles,0);

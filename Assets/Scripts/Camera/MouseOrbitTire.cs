@@ -8,6 +8,7 @@ public class MouseOrbitTire : MonoBehaviour {
 	public bool useCinematic = false;
 	public bool smoothCamera = true;
 	public bool addCamHeight = false;
+	public bool lockBehind = false;
 	public float cameraSmoothing = 1f;
 	public float zoomSpeed = 1f;
 	public float distance = 5.0f;
@@ -45,7 +46,7 @@ public class MouseOrbitTire : MonoBehaviour {
 
 		if (target) {
 
-			if(Input.GetMouseButton(1)){
+			if(Input.GetMouseButton(1) && !lockBehind){
 
 				x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;//* distance * 0.02f;
 			y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
@@ -62,8 +63,8 @@ public class MouseOrbitTire : MonoBehaviour {
 
 
 
-
-			distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5*zoomSpeed, distanceMin, distanceMax);
+			if (!lockBehind)
+				distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel")*5*zoomSpeed, distanceMin, distanceMax);
 
 			if(useCinematic){
 			float absX = Mathf.Abs(x);
@@ -113,6 +114,12 @@ public class MouseOrbitTire : MonoBehaviour {
 
 		}
 		
+	}
+
+	public void InitiateReLock(){
+		gameObject.transform.eulerAngles = new Vector3(25f,-12f,0);
+		distance = 9f;
+		Start();
 	}
 	
 	public static float ClampAngle(float angle, float min, float max)

@@ -829,6 +829,7 @@ public class ConcaveCollider : MonoBehaviour
 		yield return new WaitForEndOfFrame();
 
 		LoadScreenCompetition loadingScreen = GameObject.Find ("Loader").GetComponent<LoadScreenCompetition>();
+		loadingScreen.mainUI.SetActive (false);
 		
 		int pFrames = 250;
 		float addRot = -10;;
@@ -1197,13 +1198,21 @@ public class ConcaveCollider : MonoBehaviour
 			Destroy(hull.GetComponent<MeshFilter>());
 			Destroy(hull.GetComponent<WireFrame>());
 		}
-		
-		loadingScreen.isLoading = false;
-		loadingScreen.loadCanvas.SetActive (false);
+
 		loadingScreen.tireLaunch.isLaunching = true;
-		loadingScreen.mainCam.SetActive (true);
+		int isff = 1;
+		while (loadingScreen.tireLaunch.isLaunching != true) {
+			isff++;
+			loadingScreen.tireLaunch.isLaunching = true;
+			if(isff > 100)
+				continue;
+		}
+		yield return new WaitForSeconds (0.1f);
 		loadingScreen.loadCam.enabled = false;
+		loadingScreen.mainCam.SetActive (true);
+		loadingScreen.loadCanvas.SetActive (false);
 		loadingScreen.mainUI.SetActive (true);
+		loadingScreen.isLoading = false;
 		loadingScreen.startDoneSequence (0.1f);
 		//---------------------------------------------------------------------------------------
 	}

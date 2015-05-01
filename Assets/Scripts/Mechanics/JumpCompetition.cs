@@ -19,6 +19,8 @@ public class JumpCompetition : MonoBehaviour {
 	public Text roundText;
 	public Text placeText;
 	public Text prizeText;
+	public Color endCompColor;
+	public Color youColor;
 	float firstPrize;
 	float secondPrize;
 	float thirdPrize;
@@ -250,6 +252,8 @@ public class JumpCompetition : MonoBehaviour {
 				eventRound++;
 				GenerateTotals();
 				roundText.text = "End of Competition";
+				roundText.color = endCompColor;
+				roundText.fontSize += 8;
 				if(place == 1){
 					actPlace = "1st";
 					actPrize = "$" + firstPrize.ToString("F2");
@@ -266,6 +270,10 @@ public class JumpCompetition : MonoBehaviour {
 				placeText.text = actPlace + " Place";
 				prizeText.text = "You Won: " + actPrize;
 				nextRoundButton.GetComponentInChildren<Text>().text = "Go Home";
+				nextRoundButton.GetComponent<RectTransform>().anchorMin = new Vector2(1, 0);
+				nextRoundButton.GetComponent<RectTransform>().anchorMax = new Vector2(1, 0);
+				nextRoundButton.GetComponent<RectTransform>().pivot = new Vector2(1,0);
+				nextRoundButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0,-40);
 			}else{
 				roundText.text = "Round " + eventRound + " of " + roundCount;
 			}

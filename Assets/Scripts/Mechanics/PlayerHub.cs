@@ -30,14 +30,15 @@ public class PlayerHub : MonoBehaviour {
 	string useObject;
 	Text consoleText;
 	Quaternion lastRot;
-	public Vector3 boardViewingPos;
 	Vector3 lastPos;
+	[HideInInspector] public Vector3 boardViewingPos;
 	[HideInInspector] public int viewingFlyerIndex;
 	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
 
 
 	void Start(){
+		PlayerPrefs.SetInt("isPaused", 0);
 		consoleText = console.GetComponentInChildren<Text>();
 		Cursor.visible = false;
 		wantedCursorLock = CursorLockMode.Locked;
@@ -60,7 +61,20 @@ public class PlayerHub : MonoBehaviour {
 			SaveLoad.SaveString ("CurrentTire", "KartTire0");
 	}
 
+	int pppp = 0;
 	void Update(){
+		pppp++;
+		if (pppp > 25) {
+			if(SaveLoad.LoadInt("isPaused") == 1){
+				cinematicMode = true;
+				wantedCursorLock = CursorLockMode.None;
+			}else if(!isViewing){
+				cinematicMode = false;
+				wantedCursorLock = CursorLockMode.Locked;
+			}
+			pppp = 0;
+		}
+
 		if (Input.GetKeyDown (KeyCode.E) && canInteract && !cinematicMode) {
 			interactWith(useObject);
 		}

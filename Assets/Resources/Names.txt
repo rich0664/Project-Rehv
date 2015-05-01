@@ -1,4 +1,4 @@
-BillyBob Jenkins
+﻿BillyBob Jenkins
 Scooter Johnson
 Tooberskin Footman
 Scootie Patootie
@@ -6,7 +6,7 @@ Flimbergh Kalstein
 Moog Mandorph
 Timskin Jalster
 Joonas Persenuss
-Kalle Türaokas
+Kalle Turaokas
 Toomas Munniratas
 Timothy Lickenstein
 Karl Libalehm
