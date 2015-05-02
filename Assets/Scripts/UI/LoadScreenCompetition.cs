@@ -14,6 +14,7 @@ public class LoadScreenCompetition : MonoBehaviour {
 	public GameObject loadCanvas;
 	public GameObject loadTarget;
 	Rigidbody tireRB;
+	UniversalTire uTire;
 	// Use this for initialization
 	void Start () {
 	
@@ -25,6 +26,7 @@ public class LoadScreenCompetition : MonoBehaviour {
 		if (tire == null) {
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 			if (tire != null){
+				uTire = tire.GetComponent<UniversalTire>();
 				tireRB = tire.GetComponent<Rigidbody> ();
 				tireRB.position = loadTarget.transform.position;
 				tireRB.isKinematic = true;
@@ -33,10 +35,11 @@ public class LoadScreenCompetition : MonoBehaviour {
 	
 		if (isLoading && tire != null) {
 			Vector3 launchVector = new Vector3 (0,0,0);
-			tire.GetComponent<Rigidbody>().rotation = loadTarget.transform.rotation;
-			//tire.GetComponent<Rigidbody>().position = loadTarget.transform.position;
-			tire.GetComponent<Rigidbody>().velocity = launchVector;
-			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
+			tireRB.rotation = loadTarget.transform.rotation;
+			tireRB.position = loadTarget.transform.position;
+			tireRB.velocity = launchVector;
+			tireRB.angularVelocity = launchVector;
+			uTire.SetOnGround();
 		}
 
 	}

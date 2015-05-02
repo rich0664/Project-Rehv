@@ -16,6 +16,7 @@ public class LoadingScreen : MonoBehaviour {
 	public GameObject frameUI;
 	public GameObject loadCanvas;
 	Rigidbody tireRB;
+	UniversalTire uTire;
 
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class LoadingScreen : MonoBehaviour {
 		if (tire == null) {
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
 			if(tire != null){
+				uTire = tire.GetComponent<UniversalTire>();
 				tireRB = tire.GetComponent<Rigidbody>();
 				tireRB.isKinematic = true;
 			}
@@ -35,10 +37,11 @@ public class LoadingScreen : MonoBehaviour {
 	
 		if (isLoading && tire != null) {
 			Vector3 launchVector = new Vector3 (0,0,0);
-			tire.GetComponent<Rigidbody>().rotation = Quaternion.Euler(launchVector);
-			//tire.GetComponent<Rigidbody>().position = this.transform.position;
-			tire.GetComponent<Rigidbody>().velocity = launchVector;
-			tire.GetComponent<Rigidbody>().angularVelocity = launchVector;
+			tireRB.rotation = Quaternion.Euler(launchVector);
+			tireRB.position = this.transform.position;
+			tireRB.velocity = launchVector;
+			tireRB.angularVelocity = launchVector;
+			uTire.SetOnGround();
 		}
 
 	}

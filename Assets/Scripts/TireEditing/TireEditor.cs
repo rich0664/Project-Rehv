@@ -532,9 +532,12 @@ public class TireEditor : MonoBehaviour {
 
 	//Sliders------------------------------
 	void ResetSliderUI(){
+		slidersRect.SetActive (true);
 		for (int i = 0; i < slIndex; i++) {
 			Destroy(GameObject.Find("Slider" + i));
 		}	
+		if(uiNav != "ModsButton")
+			slidersRect.SetActive (false);
 	}
 
 

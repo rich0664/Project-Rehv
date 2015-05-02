@@ -28,6 +28,7 @@ public class UniversalTire : MonoBehaviour {
 
 	AudioClip[] tireSounds;
 	AudioSource tireSound;
+	Rigidbody tireRB;
 
 	bool shouldSoG = false;
 	Mesh bakedMesh;
@@ -155,11 +156,17 @@ public class UniversalTire : MonoBehaviour {
 		tmpBakedMesh.RecalculateBounds();
 		Bounds watBounds = tmpBakedMesh.bounds;
 		MeshRenderer[] addonRenderers = tire.GetComponentsInChildren<MeshRenderer> ();
+		Debug.Log (addonRenderers.Length);
+
+		if(addonRenderers.Length > 0) 
 		foreach (MeshRenderer msf in addonRenderers) {
 			watBounds.Encapsulate(msf.bounds);
 		}
-		watBounds.size /= 2;
+		if(tireType == "CarTire" || tireType == "CarTirePrint")
+			watBounds.size /= 2;
 		meshRenderer.localBounds = watBounds;
+
+		tireRB = tire.GetComponent<Rigidbody> ();
 
 		if (spawnPoint.setOnGround)
 			shouldSoG = true;
@@ -319,18 +326,18 @@ public class UniversalTire : MonoBehaviour {
 			SetOnGround();
 	}
 
-	void SetOnGround(){
+	public void SetOnGround(){
 		tire.layer = 2;
 		MeshFilter[] addns = gameObject.GetComponentsInChildren<MeshFilter>();
 		foreach(MeshFilter mf in addns){
 			mf.gameObject.layer = 2;
 		}
 		RaycastHit hit;
-		if (Physics.Raycast(tire.transform.position, -tire.transform.up, out hit, 100f)) {
+		if (Physics.Raycast(tireRB.position, -tire.transform.up, out hit, 100f)) {
 			shouldSoG = false;
 			Vector3 finalPos = hit.point;
 			finalPos.y += meshRenderer.localBounds.size.y / 2;
-			tire.transform.position = finalPos;
+			tireRB.position = finalPos;
 		}
 	}
 

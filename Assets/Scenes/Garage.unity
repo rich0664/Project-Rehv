@@ -16123,6 +16123,7 @@ MonoBehaviour:
   viewingFlyerIndex: 0
   isCurrentSigned: 0
   wantedCursorLock: 0
+  isTutorial: 0
 --- !u!1 &1803570104
 GameObject:
   m_ObjectHideFlags: 0

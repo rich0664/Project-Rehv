@@ -39,6 +39,7 @@ public class Tutorial : MonoBehaviour {
 		if (str) {
 			playerH.cinematicMode = false;
 			playerH.wantedCursorLock = CursorLockMode.Locked;
+			playerH.isTutorial = false;
 		}
 	}
 

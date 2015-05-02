@@ -21,7 +21,7 @@ public class MouseOrbitTire : MonoBehaviour {
 	public float distanceMin = .5f;
 	public float distanceMax = 15f;
 
-	float camHeightAdd;
+	public float camHeightAdd = 5f;
 	
 
 	float x = 0.0f;
@@ -96,7 +96,7 @@ public class MouseOrbitTire : MonoBehaviour {
 
 			Vector3 negDistance;
 			if(addCamHeight){
-				negDistance = new Vector3(camHeightAdd/1.5f, camHeightAdd, -distance);
+				negDistance = new Vector3(0f, camHeightAdd, -distance);
 			}else{
 				negDistance = new Vector3(0.0f, 0.0f, -distance);
 			}
@@ -117,8 +117,8 @@ public class MouseOrbitTire : MonoBehaviour {
 	}
 
 	public void InitiateReLock(){
-		gameObject.transform.eulerAngles = new Vector3(25f,-12f,0);
-		distance = 9f;
+		gameObject.transform.eulerAngles = new Vector3(35f,0,0);
+		distance = 5f;
 		Start();
 	}
 	

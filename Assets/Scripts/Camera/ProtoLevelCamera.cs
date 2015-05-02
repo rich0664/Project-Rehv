@@ -11,12 +11,12 @@ public class ProtoLevelCamera : MonoBehaviour {
 	public float panOffset = 5f;
 	
 	Vector3 offset;
+	Vector3 startRot = new Vector3 (18,218,0);
 
-	
 	// Update is called once per frame
 	void LateUpdate () {
 
-		if (target == null && GameObject.FindGameObjectWithTag ("MainTire") != null) {
+		if (!target && GameObject.FindGameObjectWithTag ("MainTire")) {
 			target = GameObject.FindGameObjectWithTag ("MainTire").transform;
 			offset = transform.position - target.position;
 		}
@@ -34,6 +34,20 @@ public class ProtoLevelCamera : MonoBehaviour {
 		}
 
 
+	}
+
+	public void SetNormalRot(){
+		transform.eulerAngles = startRot;
+		heightOffset = 3f;
+		panOffset = 5f;
+		distance = 65f;
+	}
+
+	public void SetLaunchRot(){
+		transform.rotation = Quaternion.Euler(new Vector3(35f,0,0));
+		heightOffset = -1.2f;
+		panOffset = 0f;
+		distance = 15f;
 	}
 
 

@@ -31,13 +31,15 @@ public class PlayerHub : MonoBehaviour {
 	Text consoleText;
 	Quaternion lastRot;
 	Vector3 lastPos;
+	DayNight dayCyc;
 	[HideInInspector] public Vector3 boardViewingPos;
 	[HideInInspector] public int viewingFlyerIndex;
 	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
-
+	[HideInInspector] public bool isTutorial = false;
 
 	void Start(){
+		dayCyc = GameObject.Find ("Sun").GetComponent<DayNight> ();
 		PlayerPrefs.SetInt("isPaused", 0);
 		consoleText = console.GetComponentInChildren<Text>();
 		Cursor.visible = false;
@@ -53,6 +55,7 @@ public class PlayerHub : MonoBehaviour {
 		Time.timeScale = 1f;
 		if (!PlayerPrefs.HasKey ("ShowTutorial") || SaveLoad.LoadInt("ShowTutorial") == 1) {
 			tutorialPopup.SetActive(true);
+			isTutorial = true;
 			SaveLoad.SaveInt("ShowTutorial", 0);
 			wantedCursorLock = CursorLockMode.None;
 			cinematicMode = true;
@@ -65,7 +68,7 @@ public class PlayerHub : MonoBehaviour {
 	void Update(){
 		pppp++;
 		if (pppp > 25) {
-			if(SaveLoad.LoadInt("isPaused") == 1){
+			if(SaveLoad.LoadInt("isPaused") == 1 || isTutorial || dayCyc.timeScale == 0){
 				cinematicMode = true;
 				wantedCursorLock = CursorLockMode.None;
 			}else if(!isViewing){
