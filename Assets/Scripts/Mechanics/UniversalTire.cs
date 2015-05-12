@@ -32,6 +32,8 @@ public class UniversalTire : MonoBehaviour {
 
 	bool shouldSoG = false;
 	Mesh bakedMesh;
+	MeshRenderer modifiedRenderer;
+	[HideInInspector] public MeshFilter modifiedMF;
 
 	// Use this for initialization
 	void Awake () {
@@ -156,7 +158,6 @@ public class UniversalTire : MonoBehaviour {
 		tmpBakedMesh.RecalculateBounds();
 		Bounds watBounds = tmpBakedMesh.bounds;
 		MeshRenderer[] addonRenderers = tire.GetComponentsInChildren<MeshRenderer> ();
-		Debug.Log (addonRenderers.Length);
 
 		if(addonRenderers.Length > 0) 
 		foreach (MeshRenderer msf in addonRenderers) {
@@ -296,7 +297,7 @@ public class UniversalTire : MonoBehaviour {
 	
 
 	void OnTriggerEnter(Collider other) {
-		if(!spawnPoint.isPrint)
+		if(!spawnPoint.isPrint && GameObject.FindGameObjectWithTag ("BounceTrigger"))
 		if (other == GameObject.FindGameObjectWithTag ("BounceTrigger").GetComponent<BoxCollider>() ) {
 			BounceSuppressor.suppressBounce = false;
 		}
@@ -324,6 +325,11 @@ public class UniversalTire : MonoBehaviour {
 	void Update(){
 		if(shouldSoG)
 			SetOnGround();
+	}
+
+
+	public void ModifiedWireframe(){		
+
 	}
 
 	public void SetOnGround(){

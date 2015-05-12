@@ -808,6 +808,7 @@ public class ConcaveCollider : MonoBehaviour
 		loadingScreen.tireLauch.isLaunching = true;
 		loadingScreen.mainCam.SetActive (true);
 		loadingScreen.loadCam.enabled = false;
+		loadingScreen.loadCam.gameObject.SetActive (false);
 		loadingScreen.mainUI.SetActive (true);
 		loadingScreen.frameUI.SetActive (true);
 		loadingScreen.startDoneSequence (0.1f);
@@ -1199,8 +1200,12 @@ public class ConcaveCollider : MonoBehaviour
 			Destroy(hull.GetComponent<WireFrame>());
 		}
 
-		loadingScreen.tireLaunch.isLaunching = true;
+		if(loadingScreen.tireLaunch)
+			loadingScreen.tireLaunch.isLaunching = true;
 		int isff = 1;
+		if (loadingScreen.tRC)
+			loadingScreen.tRC.isStartingLine = true;
+		if(loadingScreen.tireLaunch)
 		while (loadingScreen.tireLaunch.isLaunching != true) {
 			isff++;
 			loadingScreen.tireLaunch.isLaunching = true;
@@ -1209,6 +1214,7 @@ public class ConcaveCollider : MonoBehaviour
 		}
 		yield return new WaitForSeconds (0.1f);
 		loadingScreen.loadCam.enabled = false;
+		loadingScreen.loadCam.gameObject.SetActive (false);
 		loadingScreen.mainCam.SetActive (true);
 		loadingScreen.loadCanvas.SetActive (false);
 		loadingScreen.mainUI.SetActive (true);

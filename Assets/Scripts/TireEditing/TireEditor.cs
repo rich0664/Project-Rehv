@@ -403,6 +403,7 @@ public class TireEditor : MonoBehaviour {
 					}
 				}
 				regenCollision = true;
+				tire.GetComponent<UniversalTire>().ModifiedWireframe();
 			}
 
 			if(uiNav == "ColorButton"){
@@ -420,7 +421,8 @@ public class TireEditor : MonoBehaviour {
 			}
 
 			if(!Input.GetMouseButton(0) && regenCollision){
-				tire.GetComponent<UniversalTire>().BakeCollision();
+				UniversalTire uTire = tire.GetComponent<UniversalTire>();
+				uTire.BakeCollision();
 				regenCollision = false;
 			}
 			modified = false;

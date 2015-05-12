@@ -3,31 +3,37 @@ using System.Collections;
 
 public class ButtonCall : MonoBehaviour {
 
+	TireEditor tEdit;
+
+	void Start(){
+		tEdit = GameObject.Find ("Editor").GetComponent<TireEditor> ();
+	}
+
 	public void callSave(GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().SaveButton (gameO);
+		tEdit.SaveButton (gameO);
 	}
 	public void callNewSave(GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().NewSaveTire (gameO);
+		tEdit.NewSaveTire (gameO);
 	}
 	public void callLoad (GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().LoadButton (gameO);
+		tEdit.LoadButton (gameO);
 	}
 	public void callDeleteSave (GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().DeleteTireSave (gameO);
+		tEdit.DeleteTireSave (gameO);
 	}
 	public void callDeleteLoad (GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().DeleteTireLoad (gameO);
+		tEdit.DeleteTireLoad (gameO);
 	}
 	public void Modified(GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().modified = true;
-		GameObject.Find ("Editor").GetComponent<WarningMessages> ().modified = true;
+		tEdit.modified = true;
+		tEdit.gameObject.GetComponent<WarningMessages> ().modified = true;
 		string str = gameO.name.Replace("Slider","");
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().modifiedSlider = str;
+		tEdit.modifiedSlider = str;
 	}
 	public void ModifiedColor(GameObject gameO){
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().modified = true;
-		GameObject.Find ("Editor").GetComponent<WarningMessages> ().modified = true;
-		GameObject.Find ("Editor").GetComponent<TireEditor> ().modifiedSlider = "1";
+		tEdit.modified = true;
+		tEdit.gameObject.GetComponent<WarningMessages> ().modified = true;
+		tEdit.modifiedSlider = "1";
 	}
 
 }

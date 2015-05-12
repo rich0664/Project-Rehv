@@ -8,6 +8,7 @@ public class LoadScreenCompetition : MonoBehaviour {
 	public bool isLoading = true;
 	public Image loadTireImage;
 	public TireLaunch tireLaunch;
+	public TireRaceController tRC;
 	public GameObject mainCam;
 	public Camera loadCam;
 	public GameObject mainUI;

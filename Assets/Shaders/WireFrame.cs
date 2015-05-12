@@ -93,7 +93,7 @@ public class WireFrame : MonoBehaviour {
 	void OnRenderObject () {
 		gameObject.GetComponent<Renderer>().enabled=render_mesh_normaly;
 		if (lines == null || lines.Length < lineWidth) {
-			print("No lines");
+			//print("No lines");
 		} 
 		else
 		{
