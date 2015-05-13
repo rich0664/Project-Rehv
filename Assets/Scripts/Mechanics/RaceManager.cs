@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class RaceManager : MonoBehaviour {
@@ -7,18 +8,21 @@ public class RaceManager : MonoBehaviour {
 	public TireRaceController RC;
 	public TireSpawn opponentSpawn;
 	public int opponentCount;
+	public bool toggleRace = false;
+	public bool isDebug;
+	public Text CountdownText;
+	[HideInInspector] public int pStart = 1;
+	[HideInInspector] public int lapCount = 3;
+	bool checkPlaces = false;
 	int flyerIndex = 1;
 	int[] laps;
 	AIRaceController[] aiRacers;
-	[HideInInspector] public int lapCount = 3;
-	public bool toggleRace = false;
-	bool checkPlaces = false;
-	public int pStart = 1;
 
 	// Use this for initialization
 	void Start () {
 		lapCount = Random.Range (2, 5);
 		opponentCount = Random.Range (2, 8);
+		CountdownText.enabled = false;
 		RC.lapText.text = "Lap 1/" + lapCount;
 		waypointCount = GameObject.FindGameObjectsWithTag ("RaceWaypoint").Length;
 		foreach (GameObject tmpWPGO in GameObject.FindGameObjectsWithTag ("RaceWaypoint")) {
@@ -33,21 +37,45 @@ public class RaceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (toggleRace) {
-			toggleRace = false;
-			checkPlaces = true;
-			foreach (AIRaceController airc in aiRacers) {
-				if(airc.isStart){
-					airc.isStart = false;
-				}else{
-					airc.isStart = true;
-				}
-			}
-			StopAllCoroutines();
-			StartCoroutine(DoPlaces());
+		if (RC.isStartingLine && !isDebug) {
+			StartCoroutine (StartSequence ());
+			isDebug = true;
 		}
+		if (toggleRace)
+			StartRace ();
+	}
 
+	void StartRace(){
+		toggleRace = false;
+		checkPlaces = true;
+		foreach (AIRaceController airc in aiRacers) {
+			if(airc.isStart){
+				airc.isStart = false;
+			}else{
+				airc.isStart = true;
+			}
+		}
+		RC.enabled = true;
+		StartCoroutine(DoPlaces());
+	}
+
+	IEnumerator StartSequence(){
+		CountdownText.enabled = true;
+		int seconds = 3;
+		RC.enabled = false;
+		CountdownText.text = seconds + "..";
+		yield return new WaitForSeconds (1.0f);
+		seconds--;
+		CountdownText.text = seconds + ".";
+		yield return new WaitForSeconds (1.0f);
+		seconds--;
+		CountdownText.text = seconds.ToString();
+		yield return new WaitForSeconds (1.0f);
+		CountdownText.text = "GO!";
+		CountdownText.color = Color.green;
+		StartRace ();
+		yield return new WaitForSeconds (1.0f);
+		CountdownText.enabled = false;
 	}
 
 	IEnumerator DoPlaces(){

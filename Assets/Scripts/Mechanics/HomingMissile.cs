@@ -29,22 +29,11 @@ public class HomingMissile : MonoBehaviour {
 		}
 	}
 
-	void AreaDamageEnemies(Vector3 location, float radius) { 
-		Collider[] objectsInRange = Physics.OverlapSphere(location, radius); 
-		foreach (Collider col in objectsInRange) {
-			Rigidbody enemyRB = col.GetComponentInParent<Rigidbody>(); 
-			if (enemyRB) { 
-				enemyRB.velocity /= 2.5f;
-				enemyRB.AddExplosionForce(750f, location, radius, 75f);
-			}
-		}
-	}
-
 	void OnCollisionEnter(Collision collision) {
 		if (Target) {
 			GameObject expPrefab = Resources.Load("RacePowerups/Explosion", typeof(GameObject)) as GameObject;
 			GameObject expInst = Instantiate(expPrefab, transform.position, transform.rotation) as GameObject;
-			AreaDamageEnemies(transform.position, 5f);
+			expInst.GetComponent<Explosion>().AreaDamageEnemies();
 			Destroy(gameObject);
 		}
 	}

@@ -24,7 +24,7 @@ public class RacePowerup : MonoBehaviour {
 		} else if(collided.gameObject.tag == "OpponentTire"){
 			RacePowerupManager tmpRPM = collided.gameObject.GetComponentInChildren<RacePowerupManager>();
 			if(!tmpRPM.hasPowerup){
-				tmpRPM.GetNewPowerup();
+				tmpRPM.AIGetNewPowerup();
 				StartCoroutine(Regen());
 			}
 		}

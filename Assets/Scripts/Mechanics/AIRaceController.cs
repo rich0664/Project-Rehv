@@ -6,22 +6,23 @@ public class AIRaceController : MonoBehaviour {
 	public float acceleration = 10f;
 	public float turnSpeed = 8.5f;
 	public float handling = 10f;
+	public bool isStart = false;
+	public int currLap = 0;
+
+	int waypointCount;
+	Rigidbody aiRB;
 	GameObject arrow;
 	CapsuleCollider tireCollider;
+	Vector3 moveTo;
+	Quaternion rotTo;
+	bool isempd;
+	bool empdir;
+	float empAmnt = 0f;
 
 	[HideInInspector] public int aiIndex = 1;
 	[HideInInspector] public int gPlace = 0;
-
-	public bool isStart = false;
-	public int currLap = 0;
 	[HideInInspector] public int currWaypoint = 1;
-	int waypointCount;
-	Vector3 moveTo;
-
-	Rigidbody aiRB;
-	Transform dir;
-
-	Vector3 rotTo;
+	[HideInInspector] public Transform dir;
 
 	// Use this for initialization
 	void Start () {
@@ -39,21 +40,47 @@ public class AIRaceController : MonoBehaviour {
 		dir = arrow.transform;
 
 		GetNextMoveTo ();
-		rotTo = dir.eulerAngles;
+		rotTo = dir.rotation;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (isStart) {
 			aiRB.AddRelativeTorque (new Vector3(0,0,-acceleration));
-			rotTo = Vector3.Slerp(rotTo, dir.eulerAngles, Time.deltaTime * turnSpeed);
-			aiRB.rotation = Quaternion.Slerp(aiRB.rotation, Quaternion.Euler(new Vector3(0,rotTo.y - 90, aiRB.rotation.eulerAngles.z)), Time.deltaTime * handling );
+			rotTo = Quaternion.Slerp(rotTo, dir.rotation, Time.deltaTime * turnSpeed);
+			if (isempd) {
+				if(empdir){
+					if(empAmnt > 4.5f)
+						empdir = false;
+					empAmnt += 0.445f;
+				}else{
+					if(empAmnt < -4.5f)
+						empdir = true;
+					empAmnt -= 0.45f;
+				}
+				rotTo.eulerAngles += new Vector3(0,empAmnt,0);
+				dir.eulerAngles += new Vector3(0,empAmnt,0);
+			}
+			aiRB.rotation = Quaternion.Slerp(aiRB.rotation, Quaternion.Euler(new Vector3(0,rotTo.eulerAngles.y - 90, aiRB.rotation.eulerAngles.z)), Time.deltaTime * handling );
 			float desVel = new Vector2 (aiRB.velocity.x,aiRB.velocity.z).magnitude;
 			Vector3 desVec = aiRB.velocity;
 			desVec.x = dir.forward.x * desVel;
 			desVec.z = dir.forward.z * desVel;
 			aiRB.velocity = Vector3.Slerp(aiRB.velocity,desVec,Time.deltaTime * 2f);
+
 		}
+	}
+
+	public void causeEMP(){
+		StartCoroutine (EMPco());
+	}
+	
+	IEnumerator EMPco(){
+		isempd = true;
+		empAmnt = 0f;
+		yield return new WaitForSeconds (5.0f);
+		isempd = false;
+		GetNextMoveTo();
 	}
 
 	void GetNextMoveTo(){
@@ -61,7 +88,7 @@ public class AIRaceController : MonoBehaviour {
 		Vector3 p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P2").transform.position;
 		float rndmP = Random.Range (0.0f, 1.0f);
 		moveTo = p1 + rndmP * (p2 - p1);
-		rotTo = dir.eulerAngles;
+		rotTo = dir.rotation;
 		dir.position = aiRB.position;
 		dir.LookAt(moveTo);
 		dir.position = moveTo;

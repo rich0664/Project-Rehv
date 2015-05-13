@@ -15,6 +15,9 @@ public class TireRaceController : MonoBehaviour {
 	public Text lapText;
 	public Text posText;
 	bool hasTire;
+	bool isempd;
+	bool empdir;
+	float empAmnt = 0f;
 	float tirDir = 0f;
 	[HideInInspector] public Rigidbody arrowRB;
 	[HideInInspector] public bool isStartingLine;
@@ -33,6 +36,7 @@ public class TireRaceController : MonoBehaviour {
 			if(GameObject.FindGameObjectWithTag("MainTire") != null){
 				playerTire = GameObject.FindGameObjectWithTag("MainTire");
 				tireRB = playerTire.GetComponent<Rigidbody>();
+				tireRB.mass = 1.2f;
 				RemoveAllAddons();
 				arrowRB.position = playerTire.transform.position;
 				transform.SetParent(playerTire.transform);
@@ -46,6 +50,7 @@ public class TireRaceController : MonoBehaviour {
 
 	int pppp = 0;
 	void Update () {
+
 		if (!hasTire)
 			return;
 
@@ -70,6 +75,20 @@ public class TireRaceController : MonoBehaviour {
 
 		float throttle = Input.GetAxis ("Throttle") * acceleration;
 		float steering = Input.GetAxis ("Steering") * turnSpeed;   
+
+		if (isempd) {
+			if(empdir){
+				if(empAmnt > 0.5f)
+					empdir = false;
+				empAmnt += 0.05f;
+			}else{
+				if(empAmnt < -0.5f)
+					empdir = true;
+				empAmnt -= 0.05f;
+			}
+			steering += empAmnt;
+		}
+
 		tireRB.AddRelativeTorque (new Vector3(0,0,throttle));
 		//tireRB.AddTorque (new Vector3(0,-steering,0));
 		if (tirDir > 45) {
@@ -130,6 +149,17 @@ public class TireRaceController : MonoBehaviour {
 			if (currWaypoint > waypointCount) 
 				currWaypoint = 1;
 		}
+	}
+
+	public void causeEMP(){
+		StartCoroutine (EMPco());
+	}
+
+	IEnumerator EMPco(){
+		isempd = true;
+		empAmnt = 0f;
+		yield return new WaitForSeconds (5.0f);
+		isempd = false;
 	}
 
 	Vector3 RespawnPoint(){
