@@ -41,6 +41,7 @@ public class AIRaceController : MonoBehaviour {
 
 		GetNextMoveTo ();
 		rotTo = dir.rotation;
+		StartCoroutine (ReAlign ());
 	}
 	
 	// Update is called once per frame
@@ -73,6 +74,13 @@ public class AIRaceController : MonoBehaviour {
 
 	public void causeEMP(){
 		StartCoroutine (EMPco());
+	}
+
+	IEnumerator ReAlign(){
+		while (true) {
+			yield return new WaitForSeconds (2.5f);
+			GetNextMoveTo();
+		}
 	}
 	
 	IEnumerator EMPco(){
