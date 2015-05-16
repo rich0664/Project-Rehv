@@ -21,6 +21,7 @@ public class TireRaceController : MonoBehaviour {
 	float tirDir = 0f;
 	[HideInInspector] public Rigidbody arrowRB;
 	[HideInInspector] public bool isStartingLine;
+	[HideInInspector] public bool isActive = true;
 	[HideInInspector] public int waypointCount = 0;
 	[HideInInspector] public int gPlace = 0;
 	public int currWaypoint = 1;
@@ -51,8 +52,9 @@ public class TireRaceController : MonoBehaviour {
 	int pppp = 0;
 	void Update () {
 
-		if (!hasTire)
+		if (!isActive || !hasTire)
 			return;
+
 
 		pppp++;
 		if (pppp >= 30) {

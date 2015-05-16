@@ -95,7 +95,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 5681083}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -297,6 +297,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 42144609}
+--- !u!1001 &61639144
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.91900003
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 59.6549988
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.65400004
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 416306, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 148264, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: fe39a19302a5d404d92038ed5a3e94df, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &83420299
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +352,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 83420300}
   - 65: {fileID: 83420301}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint1
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -346,7 +392,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 108733374}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -365,6 +411,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001582487}
   m_RootOrder: 0
+--- !u!1 &125721965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 125721966}
+  m_Layer: 0
+  m_Name: P2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125721966
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 125721965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2121991242}
+  m_RootOrder: 2
 --- !u!1 &131040897
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +446,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 131040898}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -401,7 +474,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 165019080}
   - 65: {fileID: 165019081}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint8
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -441,7 +514,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 171950210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -625,7 +698,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 183880547}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Powerups
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +1009,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &194567562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,7 +1169,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 213226775}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1123,7 +1196,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 223671275}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1211,7 +1284,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 255421705}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1357,7 +1430,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 332289656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1386,7 +1459,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 347576882}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1413,7 +1486,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 361574819}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,6 +1553,14 @@ Prefab:
     - target: {fileID: 454582, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
       propertyPath: m_LocalScale.x
       value: .599999905
+      objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
@@ -1596,6 +1677,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999964
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -1611,7 +1700,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401042983}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1638,7 +1727,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 403453869}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PowerupRow 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,6 +1801,14 @@ Prefab:
       propertyPath: m_Name
       value: Powerup 4
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -1766,6 +1863,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999905
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -1773,6 +1878,33 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 454582, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_PrefabInternal: {fileID: 416401166}
+--- !u!1 &428638770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 428638771}
+  m_Layer: 0
+  m_Name: P1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &428638771
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 428638770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.5, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2121991242}
+  m_RootOrder: 1
 --- !u!1 &440747565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,7 +1913,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 440747566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -1985,7 +2117,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 496058120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2006,47 +2138,51 @@ Transform:
   - {fileID: 1677126549}
   m_Father: {fileID: 1155273281}
   m_RootOrder: 0
---- !u!1001 &500735637
+--- !u!1001 &516381019
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.85817957
+      value: 47.0999985
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 56.9575005
+      value: 57.7290001
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 3.10765076
+      value: 11.1999998
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+    - target: {fileID: 444870, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 129318, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 8e1dcf1924b1945fcaab73df0affd2ab, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: a978fd5ad01f0f5488e48d91af629ffc, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &537011952
 GameObject:
@@ -2142,7 +2278,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 549435437}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -2169,7 +2305,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 555023018}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,6 +2570,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -2478,7 +2622,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 630566262}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2507,7 +2651,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 630887291}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -2649,7 +2793,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 652530939}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -2677,7 +2821,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 658063087}
   - 65: {fileID: 658063088}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint12
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -2844,7 +2988,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 690265030}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -2953,7 +3097,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 694312656}
   - 65: {fileID: 694312657}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint21
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -2993,7 +3137,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 696610120}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PowerupRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,7 +3196,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 702216795}
   - 65: {fileID: 702216796}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint13
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -3158,7 +3302,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 714043522}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,6 +4175,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999905
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -4046,7 +4198,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 762731387}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -4073,7 +4225,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 768011864}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -4181,7 +4333,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 789934528}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4211,7 +4363,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 791057931}
   - 65: {fileID: 791057932}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint14
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -4339,7 +4491,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 845140442}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -4358,6 +4510,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1263081278}
   m_RootOrder: 1
+--- !u!1001 &849695891
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.5699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 57.9399986
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .860000014
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 405896, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 199274, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4dd8d963ac8740a43aa691fb75ad199f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &884751945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,6 +4597,7 @@ MonoBehaviour:
   posText: {fileID: 1208724169}
   arrowRB: {fileID: 0}
   isStartingLine: 0
+  isActive: 1
   waypointCount: 0
   gPlace: 0
   currWaypoint: 1
@@ -4415,7 +4614,7 @@ Transform:
   m_Children:
   - {fileID: 1612334214}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!135 &884751948
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4440,8 +4639,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  hasPowerup: 1
+  hasPowerup: 0
   powerupIndex: 0
+  ToggleLockOn: 0
   PowerupIcon: {fileID: 1171228587}
   hmReticle: {fileID: 1612334215}
   reticleColors:
@@ -4457,7 +4657,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 888163877}
   - 65: {fileID: 888163878}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint4
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -4497,7 +4697,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 889142418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4553,7 +4753,7 @@ RectTransform:
   - {fileID: 195421785}
   - {fileID: 14494151}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4637,7 +4837,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 908939802}
   - 65: {fileID: 908939803}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint22
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -4678,7 +4878,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 919721417}
   - 65: {fileID: 919721418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint23
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -4736,7 +4936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &923856979
 Transform:
   m_PrefabParentObject: {fileID: 454582, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
@@ -4869,7 +5069,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 949356126}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -4968,6 +5168,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999964
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -4983,7 +5191,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1001582487}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5013,7 +5221,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1008456348}
   - 65: {fileID: 1008456349}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: asdfgsdg
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -5054,7 +5262,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1014816536}
   - 65: {fileID: 1014816537}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint15
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -5253,7 +5461,7 @@ Transform:
   - {fileID: 1037247974}
   - {fileID: 1459824241}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!1 &1069008082
 GameObject:
   m_ObjectHideFlags: 0
@@ -5262,7 +5470,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1069008083}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5328,6 +5536,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999905
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -5343,7 +5559,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1122150294}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5370,7 +5586,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1130789712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5397,7 +5613,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1135297994}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5427,7 +5643,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1148094662}
   - 65: {fileID: 1148094663}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint9
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -5467,7 +5683,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1152239543}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5497,7 +5713,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1155273281}
   - 65: {fileID: 1155273282}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint19
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -5613,7 +5829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!114 &1157928745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5701,6 +5917,52 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171228584}
+--- !u!1001 &1172564098
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.5710001
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 61.1749992
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: .864000022
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 487358, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 108392, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1aa3481fee471e64699c148d13c5e60c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1203961088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,7 +5971,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1203961089}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5736,7 +5998,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1206764873}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5881,7 +6143,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1225829414}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -5942,7 +6204,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1250492212}
   - 65: {fileID: 1250492213}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint7
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -6015,7 +6277,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1263081278}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6044,7 +6306,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1274956198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6186,7 +6448,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 490634, guid: d53adaafe9b48e64ba2e274ea9087f00, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 109442, guid: d53adaafe9b48e64ba2e274ea9087f00, type: 2}
       propertyPath: m_IsActive
@@ -6195,6 +6457,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d53adaafe9b48e64ba2e274ea9087f00, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1294473470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1294473471}
+  m_Layer: 0
+  m_Name: P3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1294473471
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294473470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2121991242}
+  m_RootOrder: 3
 --- !u!1 &1295221715
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,7 +6492,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1295221716}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6230,7 +6519,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1295908263}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6305,7 +6594,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1304461529}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6334,7 +6623,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1323275215}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6451,7 +6740,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 438080, guid: 1120812e091d8a643becf3d2c8fa8cdc, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11404570, guid: 1120812e091d8a643becf3d2c8fa8cdc, type: 2}
       propertyPath: Explosion
@@ -6472,7 +6761,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1348073032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6500,7 +6789,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1352754773}
   - 65: {fileID: 1352754774}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint20
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -6541,7 +6830,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1372627359}
   - 65: {fileID: 1372627360}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint11
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -6610,7 +6899,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458290, guid: 0d7e5967047e762468ad3e2b0830bf66, type: 2}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 126450, guid: 0d7e5967047e762468ad3e2b0830bf66, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d7e5967047e762468ad3e2b0830bf66, type: 2}
@@ -6623,7 +6916,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1388100084}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6650,7 +6943,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1390031427}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6677,7 +6970,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1400627880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6706,7 +6999,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1417395884}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -6816,7 +7109,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1424951028}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -7074,6 +7367,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999905
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -7116,7 +7417,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1497726577}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7360,7 +7661,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1539033802}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -7387,7 +7688,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1541608681}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -7587,7 +7888,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1588700930}
   - 65: {fileID: 1588700931}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint2
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -7694,7 +7995,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1633641929}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -7787,7 +8088,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1653431153}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -7814,7 +8115,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1655574767}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7843,7 +8144,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1675588316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PowerupRow 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7983,7 +8284,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1677126549}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -8054,7 +8355,7 @@ Transform:
   - {fileID: 1992604584}
   - {fileID: 592630264}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1689578876
 GameObject:
   m_ObjectHideFlags: 0
@@ -8063,7 +8364,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1689578877}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -8276,7 +8577,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1734686827}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -8342,6 +8643,14 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: .599999905
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -8358,7 +8667,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1746802194}
   - 65: {fileID: 1746802195}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint18
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -8390,6 +8699,48 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.70000005}
   m_Center: {x: 0, y: 0, z: -.300000012}
+--- !u!1001 &1767148806
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 74.0699997
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 56.1800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 61.5400009
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.184161484
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .240601823
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .0465507656
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .951855242
+      objectReference: {fileID: 0}
+    - target: {fileID: 498008, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e4f5ad212b6779641b5b360fb5592249, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1797443113
 GameObject:
   m_ObjectHideFlags: 0
@@ -8398,7 +8749,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1797443114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8479,6 +8830,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -8545,7 +8904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1813069262
 GameObject:
   m_ObjectHideFlags: 0
@@ -8616,7 +8975,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1813317729}
   - 65: {fileID: 1813317730}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint5
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -8656,7 +9015,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1826305839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8686,7 +9045,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1828478735}
   - 65: {fileID: 1828478736}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint17
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -8727,7 +9086,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1831410475}
   - 65: {fileID: 1831410476}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint10
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -8857,7 +9216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 434462, guid: 5c54daf29a85ed949b2ec0623e7f46c6, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 131028, guid: 5c54daf29a85ed949b2ec0623e7f46c6, type: 2}
       propertyPath: m_IsActive
@@ -8912,6 +9271,14 @@ Prefab:
     - target: {fileID: 454582, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
       propertyPath: m_LocalScale.x
       value: .599999964
+      objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
@@ -8968,7 +9335,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1876166350}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -8995,7 +9362,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1878170131}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9024,7 +9391,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1896477166}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9084,7 +9451,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1926600339}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9114,7 +9481,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1942314349}
   - 65: {fileID: 1942314350}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint6
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -9154,7 +9521,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1958158837}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9181,7 +9548,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1961461025}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9234,7 +9601,7 @@ Transform:
   - {fileID: 800250943}
   - {fileID: 751473100}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &1961955850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9387,6 +9754,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 169400, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 139986, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97746996236804547b63a83d4a66a4d1, type: 2}
   m_IsPrefabParent: 0
@@ -9472,7 +9847,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1994611185}
   - 65: {fileID: 1994611186}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Waypoint16
   m_TagString: RaceWaypoint
   m_Icon: {fileID: 0}
@@ -9512,7 +9887,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1996561490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9533,6 +9908,48 @@ Transform:
   - {fileID: 1388100084}
   m_Father: {fileID: 1746802194}
   m_RootOrder: 0
+--- !u!1001 &2001348986
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 44.4099998
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 56.2400017
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -4.17000008
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.705960631
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .708251178
+      objectReference: {fileID: 0}
+    - target: {fileID: 457264, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: df0ef961f9953ed4190ffe3c146b9016, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2028834938
 GameObject:
   m_ObjectHideFlags: 0
@@ -9541,7 +9958,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2028834939}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P2
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9568,7 +9985,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2042276392}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9595,7 +10012,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2072558039}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: P1
   m_TagString: Untagged
   m_Icon: {fileID: 5228209130450103505, guid: 0000000000000000d000000000000000, type: 0}
@@ -9622,7 +10039,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2088948324}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9651,7 +10068,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2107423293}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9771,3 +10188,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!4 &2121991242
+Transform:
+  m_PrefabParentObject: {fileID: 400000, guid: 374c6b61537a8c148b902dd1b0cd9a2f, type: 3}
+  m_PrefabInternal: {fileID: 2121991239}

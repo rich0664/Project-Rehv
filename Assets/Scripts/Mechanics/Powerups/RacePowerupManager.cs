@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RacePowerupManager : MonoBehaviour {
 
 	public bool isPlayer;
 	public bool hasPowerup;
 	public int powerupIndex;
+	public bool ToggleLockOn;
 	GameObject Player;
 	AIRaceController selfAIRC;
 
 	bool canLaunch;
-	Transform hmTarget;
+	Transform lockonTarget;
+	Transform PA;
+	Transform PB;
+	Transform PC;
 
 	public Image PowerupIcon;
 	public SpriteRenderer hmReticle;
@@ -20,7 +25,7 @@ public class RacePowerupManager : MonoBehaviour {
 	KeyCode usePowerupKey = KeyCode.R;
 	KeyCode clearPowerupKey = KeyCode.Tab;
 
-	int[] itemRarities = new int[4];
+	int[] itemRarities = new int[6];
 
 	// Use this for initialization
 	void Start () {
@@ -29,15 +34,29 @@ public class RacePowerupManager : MonoBehaviour {
 		if(hmReticle)
 			hmReticle.gameObject.SetActive (false);
 
+		if (isPlayer) {
+			PA = GameObject.Find ("Arrow").transform.FindChild("P1").transform;
+			PB = GameObject.Find ("Arrow").transform.FindChild("P2").transform;
+			PC = GameObject.Find ("Arrow").transform.FindChild("P3").transform;
+		}
+
 		//percentage chances of powerups
-		itemRarities[0] = 30; // homing missile
-		itemRarities[1] = 40; // mine
+		itemRarities[0] = 25; // homing missile
+		itemRarities[1] = 15; // mine
 		itemRarities[2] = 20; // sonic jump
 		itemRarities[3] = 10; // Emp
+		itemRarities[4] = 15; // Grapple
+		itemRarities[5] = 15; // Turret
 	}
 	
 	int pppp = 0;
 	void Update () {
+
+		if (ToggleLockOn) {
+			StartCoroutine(TargetLockOn());
+			ToggleLockOn = false;
+		}
+
 		if(!Player)
 			Player = GameObject.FindGameObjectWithTag("MainTire");
 
@@ -82,12 +101,18 @@ public class RacePowerupManager : MonoBehaviour {
 		if (powerupIndex == 4){
 			Emp ();
 			return;}
+		if (powerupIndex == 5){
+			GrappleHook ();
+			return;}
+		if (powerupIndex == 6){
+			DropTurret ();
+			return;}
 	}
 
 	void ArmPowerup(){
 		hasPowerup = true;
-		if(powerupIndex == 1){
-			StartCoroutine(HomingMissile());
+		if(powerupIndex == 1 || powerupIndex == 5){
+			StartCoroutine(TargetLockOn());
 			return;}
 	}
 
@@ -99,7 +124,7 @@ public class RacePowerupManager : MonoBehaviour {
 			if(hmReticle)
 				hmReticle.gameObject.SetActive (false);
 			GameObject missilePrefab = Resources.Load("RacePowerups/HomingMissile", typeof(GameObject)) as GameObject;
-			GameObject missileInst = Instantiate(missilePrefab, transform.position, Quaternion.Euler(Vector3.forward)) as GameObject;
+			GameObject missileInst = Instantiate(missilePrefab, transform.position, Quaternion.Euler(Vector3.zero)) as GameObject;
 			if (isPlayer) {
 				missileInst.transform.rotation = Player.GetComponentInChildren<TireRaceController>().arrowRB.rotation;
 				missileInst.transform.eulerAngles += new Vector3(0,180,0);
@@ -109,7 +134,7 @@ public class RacePowerupManager : MonoBehaviour {
 			}
 			missileInst.transform.Translate(missileInst.transform.right * -1f, Space.World);
 			missileInst.transform.localEulerAngles = new Vector3 (-55, missileInst.transform.localEulerAngles.y, missileInst.transform.localEulerAngles.z);
-			missileInst.GetComponent<HomingMissile>().Target = hmTarget;
+			missileInst.GetComponent<HomingMissile>().Target = lockonTarget;
 			missileInst.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0,350));
 			if (isPlayer)
 				ResetPowerupIcon();
@@ -171,17 +196,51 @@ public class RacePowerupManager : MonoBehaviour {
 			ResetPowerupIcon();
 	}
 
+	void GrappleHook(){
+		if (canLaunch) {
+			StopAllCoroutines ();
+			hasPowerup = false;
+			if (hmReticle)
+				hmReticle.gameObject.SetActive (false);
+			GameObject grapplePrefab = Resources.Load ("RacePowerups/GrappleRope", typeof(GameObject)) as GameObject;
+			GameObject grappleInst = Instantiate (grapplePrefab, transform.position, Quaternion.Euler (Vector3.forward)) as GameObject;
+			grappleInst.transform.localScale = new Vector3(0.03f, 0.03f, 0.4f);
+			GrappleHook tmpGrapple = grappleInst.GetComponent<GrappleHook>();
+			tmpGrapple.selfOrigin = transform.parent;
+			tmpGrapple.hookTarget = lockonTarget;
+			tmpGrapple.StartGrapple();
+			if (isPlayer)
+				ResetPowerupIcon();
+		}
+	}
+
+	void DropTurret(){
+		StopAllCoroutines ();
+		hasPowerup = false;
+		GameObject turretPrefab = Resources.Load ("RacePowerups/Turret", typeof(GameObject)) as GameObject;
+		GameObject turretInst = Instantiate (turretPrefab, transform.position, Quaternion.Euler (Vector3.forward)) as GameObject;
+		if (isPlayer) {
+			turretInst.transform.rotation = Player.GetComponentInChildren<TireRaceController>().arrowRB.rotation;
+			turretInst.transform.eulerAngles += new Vector3(0,180,0);
+		} else {
+			turretInst.transform.rotation = selfAIRC.dir.rotation;
+			//MineInst.transform.eulerAngles += new Vector3(0,180,0);
+		}
+		turretInst.transform.eulerAngles = new Vector3 (0, turretInst.transform.eulerAngles.y, 0);
+		turretInst.transform.Translate(turretInst.transform.forward * -1.2f, Space.World);
+		if (isPlayer)
+			ResetPowerupIcon();
+	}
+
 	//END LAUNCH POWERUPS-------------------------------------------------
 
 
 	//START POWERUP COROUTINES-------------------------------------------------
-	IEnumerator HomingMissile(){
+	IEnumerator TargetLockOn(){
 		int lockOn = 0;
 		while (hasPowerup) {
-			Transform missileTarget = GetClosestEnemy();
-			if(hmReticle)
-				hmReticle.gameObject.SetActive (true);
-			if(Vector3.Distance(transform.position, missileTarget.position) > 65f){
+			Transform tmpLockonTarget = GetClosestEnemy();
+			if(!tmpLockonTarget){
 				if(hmReticle)
 					hmReticle.gameObject.SetActive (false);
 				lockOn = 0;
@@ -189,7 +248,9 @@ public class RacePowerupManager : MonoBehaviour {
 				yield return new WaitForSeconds(1.0f);
 				continue;
 			}
-			if(missileTarget == hmTarget){
+			if(hmReticle)
+				hmReticle.gameObject.SetActive (true);
+			if(tmpLockonTarget == lockonTarget){
 				if(lockOn < 2)
 					lockOn++;
 				if(lockOn == 2)
@@ -198,14 +259,14 @@ public class RacePowerupManager : MonoBehaviour {
 				lockOn = 0;
 				canLaunch = false;
 			}
-			hmTarget = missileTarget;
+			lockonTarget = tmpLockonTarget;
 			
 			if(hmReticle){
 				hmReticle.color = reticleColors[lockOn];
-				hmReticle.transform.parent = missileTarget;
+				hmReticle.transform.parent = tmpLockonTarget;
 				hmReticle.transform.localPosition = Vector3.zero;
 			}
-			yield return new WaitForSeconds(1.0f);
+			yield return new WaitForSeconds(0.6f);
 		}
 	}
 	//END POWERUP COROUTINES-------------------------------------------------
@@ -213,21 +274,52 @@ public class RacePowerupManager : MonoBehaviour {
 	Transform GetClosestEnemy(){
 		GameObject[] enemies;
 		enemies = GameObject.FindGameObjectsWithTag ("OpponentTire");
+		float dist = 23f;
 		GameObject closest = null;
-		float dist = Mathf.Infinity;
-		Vector3 pos = transform.position;
-		foreach (GameObject go in enemies) {
-			GameObject tgo = go;
-			if(!isPlayer)
-				if(tgo.GetComponentInChildren<AIRaceController> ().aiIndex == selfAIRC.aiIndex){
-					tgo = Player;
+		if (isPlayer) {
+			Vector3 BB = PB.position - PA.position;
+			Vector3 CC = PC.position - PA.position;
+			foreach (GameObject go in enemies) {
+				Vector3 XX = go.transform.position - PA.position;
+				float tmpDet = GetDeterminant (BB, CC, XX) ;
+				if (tmpDet > 0){
+					if(Mathf.Abs(tmpDet) < dist){
+						closest = go; dist = Mathf.Abs(tmpDet);
+					}
 				}
-			Vector3 diff = tgo.transform.position - pos;
-			float curDist = diff.sqrMagnitude;
-			if(curDist < dist){
-				closest = tgo; dist = curDist;}
+			}
+		} else {
+			GameObject etPrefab = Resources.Load("RacePowerups/EmptyTransform", typeof(GameObject)) as GameObject;
+			GameObject etInst = Instantiate(etPrefab, transform.position, Quaternion.Euler(Vector3.zero)) as GameObject;
+			etInst.transform.rotation = selfAIRC.dir.rotation;
+			etInst.transform.eulerAngles += new Vector3(0,180,0);
+			Vector3 PAA = etInst.transform.position;
+			etInst.transform.Translate(etInst.transform.right * 1f, Space.World);
+			Vector3 PBB = etInst.transform.position;
+			etInst.transform.Translate(etInst.transform.up * 1f, Space.World);
+			Vector3 PCC = etInst.transform.position;
+			Vector3 BB = PBB - PAA;
+			Vector3 CC = PCC - PAA;
+			foreach (GameObject tgo in enemies) {
+				GameObject go = tgo;
+				if(tgo.GetComponentInChildren<AIRaceController> ().aiIndex == selfAIRC.aiIndex)
+					go = Player;
+				Vector3 XX = go.transform.position - PAA;
+				float tmpDet = GetDeterminant (BB, CC, XX) ;
+				//Debug.Log(tmpDet + " : " + go);
+				if (tmpDet < 0){
+					if(Mathf.Abs(tmpDet) < dist){
+						closest = go; dist = Mathf.Abs(tmpDet);
+					}
+				}
+			}
+			Destroy(etInst);
 		}
-		return closest.transform;
+		if (closest) {
+			return closest.transform;
+		} else {
+			return null;
+		}
 	}
 
 
@@ -253,8 +345,8 @@ public class RacePowerupManager : MonoBehaviour {
 	IEnumerator PowerupSequence(){
 		float timer = 0.01f;
 		PowerupIcon.color = Color.white;
-		while (timer < 0.075f) {
-			timer += 0.0015f;
+		while (timer < 0.11f) {
+			timer += 0.0019f;
 			powerupIndex = RandomItemRarity();
 			PowerupIcon.sprite = Resources.Load ("RacePowerups/pIcon" + powerupIndex, typeof(Sprite)) as Sprite;
 			yield return new WaitForSeconds (timer);
@@ -279,6 +371,15 @@ public class RacePowerupManager : MonoBehaviour {
 		canLaunch = false;
 		powerupIndex = 0;
 		ResetPowerupIcon ();
+	}
+
+	float GetDeterminant(Vector3 DA, Vector3 DB, Vector3 DC){
+		return (DA.x * DB.y * DC.z) + 
+			(DA.y * DB.z * DC.x) + 
+				(DA.z * DB.x * DC.y) - 
+				(DA.z * DB.y * DC.x) - 
+				(DA.y * DB.x * DC.z) - 
+				(DA.x * DB.z * DC.y);
 	}
 		
 

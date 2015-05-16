@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killDelay: 3
   eRadius: 7
-  eForce: 400
-  uForce: 30
+  eForce: 550
+  uForce: 5
   affectSelf: 0
   expSelf: {fileID: 0}
 --- !u!198 &19808764

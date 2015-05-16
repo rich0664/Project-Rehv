@@ -15,6 +15,7 @@ public class RacePowerup : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collided) {
+		if(collided.gameObject.transform.parent)
 		if (collided.gameObject.transform.parent.tag == "MainTire") {
 			RacePowerupManager tmpRPM = collided.gameObject.transform.parent.GetComponentInChildren<RacePowerupManager>();
 			if(!tmpRPM.hasPowerup){

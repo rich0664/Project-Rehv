@@ -16,7 +16,9 @@ public class HomingMissile : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		if (Target) {
-			mPointer.LookAt(Target.position);
+			Vector3 fireAt = Target.position;
+			fireAt += Target.GetComponent<Rigidbody>().velocity * 0.2f;
+			mPointer.LookAt(fireAt + new Vector3(0,0.3f,0));
 			Quaternion rotTo = mPointer.rotation;
 
 			mRB.rotation = Quaternion.Slerp(mRB.rotation, rotTo, Time.deltaTime * 5f);
