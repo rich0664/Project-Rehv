@@ -7,25 +7,30 @@ public class TireRaceController : MonoBehaviour {
 	public float acceleration = 10f;
 	public float turnSpeed = 8.5f;
 	public float handling = 10f;
-	public GameObject playerTire;
 	public Rigidbody tireRB;
 	public RaceManager raceM;
 	public LoadScreenCompetition loadS;
-	public GameObject startPoint;
 	public Text lapText;
 	public Text posText;
+	public int currWaypoint = 1;
+	public int currLap = 0;
+	public GameObject playerTire;
+	public GameObject startPoint;
+	public GameObject SListPanel;
+	public GameObject StandingsPanel;
+	public Text PlaceText;
 	bool hasTire;
 	bool isempd;
 	bool empdir;
 	float empAmnt = 0f;
 	float tirDir = 0f;
+	string actPlace = "";
+	[HideInInspector] public string actPrize = "";
 	[HideInInspector] public Rigidbody arrowRB;
 	[HideInInspector] public bool isStartingLine;
 	[HideInInspector] public bool isActive = true;
 	[HideInInspector] public int waypointCount = 0;
 	[HideInInspector] public int gPlace = 0;
-	public int currWaypoint = 1;
-	public int currLap = 0;
 
 	void Start(){
 		arrowRB = GameObject.Find ("Arrow").GetComponent<Rigidbody> ();
@@ -37,12 +42,20 @@ public class TireRaceController : MonoBehaviour {
 			if(GameObject.FindGameObjectWithTag("MainTire") != null){
 				playerTire = GameObject.FindGameObjectWithTag("MainTire");
 				tireRB = playerTire.GetComponent<Rigidbody>();
-				tireRB.mass = 1.2f;
+				tireRB.mass = 1f;
+				if(playerTire.GetComponent<UniversalTire>().tireType == "CarTirePrint"){
+					tireRB.maxAngularVelocity = 50f;
+					acceleration = 6f;
+				}else if(playerTire.GetComponent<UniversalTire>().tireType == "KartTirePrint"){
+					tireRB.maxAngularVelocity = 50f;	
+					acceleration = 4f;
+				}
 				RemoveAllAddons();
 				arrowRB.position = playerTire.transform.position;
 				transform.SetParent(playerTire.transform);
 				transform.SetAsFirstSibling();
 				transform.localPosition = Vector3.zero;
+				transform.localEulerAngles = Vector3.zero;
 			}
 			yield return new WaitForEndOfFrame();
 		}
@@ -123,11 +136,13 @@ public class TireRaceController : MonoBehaviour {
 		tireRB.rotation = Quaternion.Lerp (tireRB.rotation, tmptoRotto, Time.deltaTime * handling);
 		//Quaternion desRot = Quaternion.Euler (Vector3.zero);
 		//tireRB.MoveRotation(Quaternion.Slerp(tireRB.rotation, arrowRB.rotation, Time.deltaTime * 2f));
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			tireRB.MovePosition(RespawnPoint());
-			tireRB.rotation = GameObject.Find ("Waypoints/Waypoint" + (currWaypoint - 1)).transform.rotation;
-			tireRB.velocity = Vector3.zero;
-			tireRB.angularVelocity = Vector3.zero;
+		if (Input.GetAxis ("ResetPosition") >= 1) {
+			if (currWaypoint > 1){
+				tireRB.MovePosition(RespawnPoint());
+				tireRB.rotation = GameObject.Find ("Waypoints/Waypoint" + (currWaypoint - 1)).transform.rotation;
+				tireRB.velocity = Vector3.zero;
+				tireRB.angularVelocity = Vector3.zero;
+			}
 		}
 
 		arrowRB.MovePosition (playerTire.transform.position);
@@ -145,6 +160,8 @@ public class TireRaceController : MonoBehaviour {
 		if (collided.gameObject.name == "Waypoint" + currWaypoint) {
 			if(currWaypoint == 1){
 				currLap++;
+				if(currLap  == raceM.lapCount + 1)
+					FinishRace();
 				lapText.text = "Lap " + currLap + "/" + raceM.lapCount;
 			}
 			currWaypoint++;
@@ -157,6 +174,52 @@ public class TireRaceController : MonoBehaviour {
 		StartCoroutine (EMPco());
 	}
 
+	void FinishRace(){
+		raceM.finalPlace = gPlace;
+		GameObject.Find ("TopLeft").SetActive (false);
+		GameObject.Find ("TopRight").SetActive (false);
+		StandingsPanel.SetActive (true);
+		SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(SListPanel.GetComponent<RectTransform>().sizeDelta.x, SListPanel.GetComponent<RectTransform>().sizeDelta.y + 60f);
+		GameObject slPref = Resources.Load("UI/StandingListing", typeof(GameObject)) as GameObject;
+		GameObject roundInst = Instantiate (slPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
+		roundInst.transform.SetParent(SListPanel.transform);
+		roundInst.transform.SetAsFirstSibling();
+		roundInst.transform.localScale = Vector3.one;
+		roundInst.GetComponent<Image>().color = Color.gray;
+		roundInst.GetComponentInChildren<Text>().text = "End of Race Standings";
+
+		GameObject youInst = Instantiate (slPref, Vector3.zero, Quaternion.Euler(Vector3.zero)) as GameObject;
+		youInst.transform.SetParent(SListPanel.transform);
+		youInst.transform.SetAsLastSibling();
+		youInst.transform.localScale = Vector3.one;
+		youInst.GetComponent<Image>().color = Color.cyan;
+
+		if(gPlace == 1){
+			actPlace = "1st";
+			actPrize = "$" + raceM.firstPrize.ToString("F2");
+		}else if(gPlace == 2){
+			actPlace = "2nd";
+			actPrize = "$" + raceM.secondPrize.ToString("F2");
+		}else if(gPlace == 3){
+			actPlace = "3rd";
+			actPrize = "$" + raceM.thirdPrize.ToString("F2");
+		}else if(gPlace >= 4){
+			actPlace = gPlace + "th";
+			actPrize = "Chocolate Bar";
+		}
+		PlaceText.text = actPlace + " Place";
+		PlaceText.transform.GetChild(0).GetComponent<Text>().text = "You Won: " + actPrize;
+
+		youInst.GetComponentInChildren<Text>().text = "You: " + actPlace;
+
+		GameObject aiPrefab = Resources.Load ("Prefabs/AIController", typeof(GameObject)) as GameObject;	
+		GameObject tmpController = Instantiate(aiPrefab, playerTire.transform.position, playerTire.transform.rotation) as GameObject;
+		tmpController.transform.SetParent(playerTire.transform);
+		tmpController.GetComponent<AIRaceController> ().isStart = true;
+		Destroy(transform.GetComponent<RacePowerupManager>().hmReticle.gameObject);
+		Destroy (gameObject);
+	}
+	
 	IEnumerator EMPco(){
 		isempd = true;
 		empAmnt = 0f;

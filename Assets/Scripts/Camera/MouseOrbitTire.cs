@@ -46,14 +46,13 @@ public class MouseOrbitTire : MonoBehaviour {
 
 		if (target) {
 
+			x += Input.GetAxis("Camera X") * xSpeed * 0.02f;
+			y -= Input.GetAxis("Camera Y") * ySpeed * 0.02f;			
 			if(Input.GetMouseButton(1) && !lockBehind){
-
-				x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;//* distance * 0.02f;
-			y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
-			
-			y = ClampAngle(y, yMinLimit, yMaxLimit);
-
+				x += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
+				y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
 			}
+			y = ClampAngle(y, yMinLimit, yMaxLimit);
 			
 			Quaternion rotation = Quaternion.Euler(y, x, 0);
 			if(x > 360)

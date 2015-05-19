@@ -1,27 +1,40 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
+using System.Text;
 using System.Collections;
 
 public class RaceManager : MonoBehaviour {
 
-	public int waypointCount = 0;
 	public TireRaceController RC;
 	public TireSpawn opponentSpawn;
-	public int opponentCount;
 	public bool toggleRace = false;
-	public bool isDebug;
 	public Text CountdownText;
-	[HideInInspector] public int pStart = 1;
-	[HideInInspector] public int lapCount = 3;
+	public bool isDebug;
+	public string debugTireType;
+	AIRaceController[] aiRacers;
 	bool checkPlaces = false;
 	int flyerIndex = 1;
 	int[] laps;
-	AIRaceController[] aiRacers;
+	[HideInInspector] public int waypointCount = 0;
+	[HideInInspector] public int opponentCount;
+	[HideInInspector] public int lapCount = 3;
+	[HideInInspector] public int pStart = 1;
+	[HideInInspector] public int finalPlace = 0;
+	[HideInInspector] public float firstPrize;
+	[HideInInspector] public float secondPrize;
+	[HideInInspector] public float thirdPrize;
+	[HideInInspector] public string[] names;
+	[HideInInspector] public string[] oppNames;
 
 	// Use this for initialization
 	void Start () {
+		Time.fixedDeltaTime = 0.011f;
+		RenderSettings.ambientIntensity = 0.25f;
+		flyerIndex = SaveLoad.LoadInt("CompFlyer");
 		lapCount = Random.Range (2, 5);
 		opponentCount = Random.Range (2, 8);
+		oppNames = new string[opponentCount];
 		CountdownText.enabled = false;
 		RC.lapText.text = "Lap 1/" + lapCount;
 		waypointCount = GameObject.FindGameObjectsWithTag ("RaceWaypoint").Length;
@@ -32,6 +45,10 @@ public class RaceManager : MonoBehaviour {
 		string tmpPosString = GameObject.Find ("/RaceManager/StartPoints/Place" + 1).transform.position.ToString ();
 		GameObject.Find ("/RaceManager/StartPoints/Place" + 1).transform.position = GameObject.Find ("/RaceManager/StartPoints/Place" + pStart).transform.position;
 		GameObject.Find ("/RaceManager/StartPoints/Place" + pStart).transform.position = StringToVector3 (tmpPosString);
+		firstPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "FirstPrize" + flyerIndex));
+		secondPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "SecondPrize" + flyerIndex));
+		thirdPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "ThirdPrize" + flyerIndex));
+		PrepareNamesList ();
 		GenerateRndTires ();
 	}
 	
@@ -184,13 +201,20 @@ public class RaceManager : MonoBehaviour {
 
 	void GenerateRndTires(){
 		string tmpToSpawn = "KartTire";
-		flyerIndex = SaveLoad.LoadInt("CompFlyer");
 		tmpToSpawn = SaveLoad.GetValueFromPref("FlyerData", "EventClass" + flyerIndex);
 		tmpToSpawn = tmpToSpawn.Replace(" ", "");
-
+		float difficulty = float.Parse(SaveLoad.GetValueFromPref("FlyerData", "Difficulty" + flyerIndex));
+		Debug.Log (difficulty);
+		difficulty = 1.75f / difficulty;
+		float subDif = 0f;
+		Debug.Log (difficulty);
+		if (isDebug) {
+			tmpToSpawn = debugTireType;
+		}
 		aiRacers = new AIRaceController[opponentCount];
 
 		for (int i = 1; i <= opponentCount; i++) {
+			oppNames[i-1] = GetName();
 			opponentSpawn.spawnTire(tmpToSpawn);
 			opponentSpawn.lastSpawnedTire.transform.position = GameObject.Find("/RaceManager/StartPoints/Place" + (i + 1)).transform.position;
 			opponentSpawn.lastSpawnedTire.name = "AITire" + i;
@@ -204,8 +228,30 @@ public class RaceManager : MonoBehaviour {
 			GameObject aiPrefab = Resources.Load ("Prefabs/AIController", typeof(GameObject)) as GameObject;	
 			GameObject tmpController = Instantiate(aiPrefab, opponentSpawn.lastSpawnedTire.transform.position, opponentSpawn.lastSpawnedTire.transform.rotation) as GameObject;
 			tmpController.transform.SetParent(opponentSpawn.lastSpawnedTire.transform);
-			aiRacers[i-1] = opponentSpawn.lastSpawnedTire.GetComponentInChildren<AIRaceController>();
-			opponentSpawn.lastSpawnedTire.GetComponentInChildren<AIRaceController>().aiIndex = i;
+			AIRaceController tmpAIRC = opponentSpawn.lastSpawnedTire.GetComponentInChildren<AIRaceController>();
+			aiRacers[i-1] = tmpAIRC;
+			if(tmpToSpawn == "KartTire"){
+				tmpAIRC.acceleration = 2f;
+			}else if(tmpToSpawn == "CarTire"){
+				tmpAIRC.acceleration = 3.50f;
+			}
+			tmpAIRC.aiIndex = i;
+			subDif += difficulty;
+			tmpAIRC.acceleration -= subDif;
+			opponentSpawn.lastSpawnedTire.GetComponent<Rigidbody>().maxAngularVelocity = 60f - (Mathf.Pow(subDif + 1, 2) * 2.5f);
+			difficulty *= 1.02f;
+		}
+	}
+
+	public void EndRace(bool str){
+		if (str) {
+			if(finalPlace <= 3){
+				float tmpMoney = SaveLoad.LoadFloat("Money");
+				RC.actPrize = RC.actPrize.Replace("$", "");
+				tmpMoney += float.Parse(RC.actPrize);
+				SaveLoad.SaveFloat("Money", tmpMoney);
+			}
+			Application.LoadLevel("Garage");
 		}
 	}
 
@@ -216,6 +262,48 @@ public class RaceManager : MonoBehaviour {
 		float z = float.Parse(temp[2]);
 		Vector3 rValue = new Vector3(x,y,z);
 		return rValue;
+	}
+
+	void PrepareNamesList(){
+		
+		string fileName = Application.dataPath + "/Resources/Names.txt";
+		string line;
+		int tmpI = 0;
+		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
+		using(theReader){
+			do{
+				line = theReader.ReadLine();
+				if(line != null){
+					tmpI++;
+					
+					string[] oldNames = new string[0];
+					if(names != null){
+						oldNames = names;
+					}
+					
+					names = new string[tmpI];
+					
+					for(int i = 0; i < names.Length; i++){
+						if(i != names.Length - 1){
+							names[i] = oldNames[i];
+						}else{
+							names[i] = line;
+						}
+					}
+				}
+			}while (line != null);
+			theReader.Close();
+		}
+		
+		
+	}
+	
+	public string GetName(){
+		int nameIndex = Random.Range(0, names.Length);
+		while(System.Array.IndexOf(oppNames, names[nameIndex]) != -1){
+			nameIndex = Random.Range(0, names.Length);
+		}
+		return names [nameIndex];
 	}
 
 

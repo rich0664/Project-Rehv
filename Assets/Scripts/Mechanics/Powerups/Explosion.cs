@@ -38,7 +38,7 @@ public class Explosion : MonoBehaviour {
 						continue;
 					}
 				}
-				enemyRB.velocity /= 2f;
+				enemyRB.velocity /= 2.3f;
 				enemyRB.AddExplosionForce(eForce, location, eRadius, uForce);
 			}
 		}

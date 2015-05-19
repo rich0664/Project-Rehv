@@ -1,0 +1,107 @@
+fileFormatVersion: 2
+guid: d0c8e7f5fb884d7409e50aadc7a7efb0
+timeCreated: 1431994907
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ControllerMain
+    100004: FlapL
+    100006: FlapR
+    100008: GearMain
+    100010: GearSecond
+    400000: //RootNode
+    400002: ControllerMain
+    400004: FlapL
+    400006: FlapR
+    400008: GearMain
+    400010: GearSecond
+    2300000: ControllerMain
+    2300002: FlapL
+    2300004: FlapR
+    2300006: GearMain
+    2300008: GearSecond
+    3300000: ControllerMain
+    3300002: FlapL
+    3300004: FlapR
+    3300006: GearMain
+    3300008: GearSecond
+    4300000: GearMain
+    4300002: ControllerMain
+    4300004: GearSecond
+    4300006: FlapR
+    4300008: FlapL
+    7400000: FlapRAction
+    7400002: FlapLAction
+    7400004: TireController|FlapLAction
+    7400006: TireController|FlapRAction
+    7400008: GearMain|FlapLAction
+    7400010: GearMain|FlapRAction
+    7400012: ControllerMain|FlapLAction
+    7400014: ControllerMain|FlapRAction
+    7400016: GearSecond|FlapLAction
+    7400018: GearSecond|FlapRAction
+    7400020: FlapR|FlapLAction
+    7400022: FlapR|FlapRAction
+    7400024: FlapL|FlapLAction
+    7400026: FlapL|FlapRAction
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

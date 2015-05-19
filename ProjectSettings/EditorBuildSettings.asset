@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadAsyncScene.unity
   - enabled: 1
     path: Assets/Scenes/Competition 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Race 1.unity

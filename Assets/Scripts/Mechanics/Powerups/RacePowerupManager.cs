@@ -20,10 +20,7 @@ public class RacePowerupManager : MonoBehaviour {
 
 	public Image PowerupIcon;
 	public SpriteRenderer hmReticle;
-	public Color[] reticleColors;
-
-	KeyCode usePowerupKey = KeyCode.R;
-	KeyCode clearPowerupKey = KeyCode.Tab;
+	public Color[] reticleColors;	
 
 	int[] itemRarities = new int[6];
 
@@ -70,9 +67,9 @@ public class RacePowerupManager : MonoBehaviour {
 	 
 		if(hasPowerup)
 		if (isPlayer) {
-			if (Input.GetKeyDown (usePowerupKey))
+			if (Input.GetAxis ("UsePowerup") >= 1)
 				ActivatePowerup ();
-			if(Input.GetKeyDown(clearPowerupKey))
+			if(Input.GetAxis ("ClearPowerup") >= 1)
 				ClearPowerup();
 		} else{
 			StartCoroutine(AIAttemptPowerup());
@@ -124,7 +121,7 @@ public class RacePowerupManager : MonoBehaviour {
 			if(hmReticle)
 				hmReticle.gameObject.SetActive (false);
 			GameObject missilePrefab = Resources.Load("RacePowerups/HomingMissile", typeof(GameObject)) as GameObject;
-			GameObject missileInst = Instantiate(missilePrefab, transform.position, Quaternion.Euler(Vector3.zero)) as GameObject;
+			GameObject missileInst = Instantiate(missilePrefab, transform.position + new Vector3(0,0.15f,0), Quaternion.Euler(Vector3.zero)) as GameObject;
 			if (isPlayer) {
 				missileInst.transform.rotation = Player.GetComponentInChildren<TireRaceController>().arrowRB.rotation;
 				missileInst.transform.eulerAngles += new Vector3(0,180,0);
@@ -132,7 +129,7 @@ public class RacePowerupManager : MonoBehaviour {
 				missileInst.transform.rotation = selfAIRC.dir.rotation;
 				missileInst.transform.eulerAngles += new Vector3(0,180,0);
 			}
-			missileInst.transform.Translate(missileInst.transform.right * -1f, Space.World);
+			missileInst.transform.Translate(missileInst.transform.right * -0.8f, Space.World);
 			missileInst.transform.localEulerAngles = new Vector3 (-55, missileInst.transform.localEulerAngles.y, missileInst.transform.localEulerAngles.z);
 			missileInst.GetComponent<HomingMissile>().Target = lockonTarget;
 			missileInst.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0,350));
@@ -167,7 +164,11 @@ public class RacePowerupManager : MonoBehaviour {
 		if (isPlayer) {
 			spawnPos -= new Vector3(0, gameObject.GetComponentInParent<SkinnedMeshRenderer> ().bounds.size.y / 2.3f, 0);
 		} else {
-			spawnPos -= new Vector3(0, gameObject.GetComponentInParent<MeshFilter> ().sharedMesh.bounds.size.y / 2.3f, 0);
+			if (gameObject.GetComponentInParent<MeshFilter> ().sharedMesh) {
+				spawnPos -= new Vector3(0, gameObject.GetComponentInParent<MeshFilter> ().sharedMesh.bounds.size.y / 2.3f, 0);
+			} else {
+				spawnPos -= new Vector3(0, gameObject.GetComponentInParent<SkinnedMeshRenderer> ().bounds.size.y / 2.15f, 0);
+			}
 		}
 		GameObject SonicInst = Instantiate(SonicPrefab, transform.position, Quaternion.Euler(Vector3.zero)) as GameObject;
 		if (isPlayer) {
@@ -350,7 +351,7 @@ public class RacePowerupManager : MonoBehaviour {
 			powerupIndex = RandomItemRarity();
 			PowerupIcon.sprite = Resources.Load ("RacePowerups/pIcon" + powerupIndex, typeof(Sprite)) as Sprite;
 			yield return new WaitForSeconds (timer);
-			if(Input.GetKeyDown(usePowerupKey))
+			if(Input.GetAxis ("UsePowerup") >= 1)
 				timer = 0.6f;
 		}
 		ArmPowerup ();

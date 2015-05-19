@@ -9,12 +9,18 @@ public class LoadAsyncManager : MonoBehaviour {
 	public GameObject loadTireImage;
 	public GameObject tire;
 	public bool doIT = true;
-
+	public Texture[] levelScreens;
+	public MeshRenderer screenMR;
 	AsyncOperation async;
 
 	// Use this for initialization
 	void Start () {
 		levelName = SaveLoad.LoadString ("CompToLoad");
+		if (levelName == "Competition 1") 
+			screenMR.sharedMaterial.mainTexture = levelScreens [0];		
+		if (levelName == "Race 1") 
+			screenMR.sharedMaterial.mainTexture = levelScreens [1];
+
 	}
 
 	void Update(){

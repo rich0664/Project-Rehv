@@ -46,7 +46,7 @@ public class GrappleHook : MonoBehaviour {
 				if(pppp < 15){
 					pppp++;
 				}else{
-					if(curDist > prevDist + 0.02f)
+					if(curDist > prevDist + 0.1f)
 						EndGrapple();				
 				}
 				prevDist = curDist;

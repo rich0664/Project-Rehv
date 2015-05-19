@@ -23,6 +23,7 @@ public class TireSpawn : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+
 		if (GameObject.Find ("Editor") != null) 
 			tE = GameObject.Find ("Editor").GetComponent<TireEditor> ();
 

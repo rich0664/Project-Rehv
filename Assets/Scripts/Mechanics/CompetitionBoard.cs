@@ -121,7 +121,7 @@ public class CompetitionBoard : MonoBehaviour {
 			}
 
 			int tmpClass = Random.Range(1,3);
-			int tmpMap = Random.Range(1,2);
+			int tmpMap = Random.Range(1,3);
 
 			int difficulty = 0;
 			if(tmpClass == 1)
@@ -134,6 +134,8 @@ public class CompetitionBoard : MonoBehaviour {
 			float thirdP = 0;
 
 			flyerTex[i] = Random.Range(1,5);
+			if(tmpMap == 2)
+				flyerTex[i] = 5;
 
 			int newRnd = Random.Range(1,8);
 			while(System.Array.IndexOf(flyerDate, newRnd) != -1){
@@ -192,6 +194,8 @@ public class CompetitionBoard : MonoBehaviour {
 
 			if(tmpMap == 1)
 				flyerScript.eventMap = "Competition 1";
+			if(tmpMap == 2)
+				flyerScript.eventMap = "Race 1";
 
 			if(tmpClass == 1 && difficulty >= 15 && difficulty <= 25)
 				flyerScript.difficultyLevel = 1;

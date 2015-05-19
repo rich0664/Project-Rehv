@@ -14,6 +14,7 @@ TagManager:
   - Flyer
   - OpponentTire
   - RaceWaypoint
+  - OffTrack
   layers:
   - Default
   - TransparentFX

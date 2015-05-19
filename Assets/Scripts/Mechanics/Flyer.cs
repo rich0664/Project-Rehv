@@ -101,15 +101,23 @@ public class Flyer : MonoBehaviour {
 		TextMesh flyerDetailsTextMesh = GameObject.Find(gameObject.name + "/DetailsText").GetComponent<TextMesh>();
 		string difficultyTitle = "";
 		string mapTitle = "";
+		string eventType = "";
 		if (difficultyLevel == 1)
 			difficultyTitle = "Amateur";
 		if (difficultyLevel == 2)
 			difficultyTitle = "Intermediate";
 		if (difficultyLevel == 3)
 			difficultyTitle = "Experienced";
-		if(eventMap == "Competition 1")
+
+		if (eventMap == "Competition 1") {
 			mapTitle = "Ski Slope";
-		flyerDetailsText = difficultyTitle + " " + eventClass + " jump event." + "\n"
+			eventType = "jump event";
+		}
+		if (eventMap == "Race 1") {
+			mapTitle = "Begginers Track";
+			eventType = "race event";
+		}
+		flyerDetailsText = difficultyTitle + " " + eventClass + " " + eventType + "\n"
 			+ "Prize money: 1st Place-$" + firstPrize + " 2nd Place-$" + secondPrize + " 3rd Place-$" + thirdPrize + "\n"
 				+ "Event will be at the " + mapTitle + ", be there.";
 		flyerTitleMesh.text = flyerTitle;

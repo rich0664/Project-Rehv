@@ -28,8 +28,8 @@ public class JumpCompetition : MonoBehaviour {
 	int place = 6;
 	TextMesh scoreText;
 	string standings = "";
-	string actPlace = "";
 	string actPrize = "";
+	string actPlace = "";
 	string[] oppStandings;
 
 	float[] oppTotals;

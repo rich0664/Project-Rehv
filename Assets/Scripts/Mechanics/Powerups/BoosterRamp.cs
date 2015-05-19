@@ -15,8 +15,15 @@ public class BoosterRamp : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		//GameObject expPrefab = Resources.Load("RacePowerups/BulletHit", typeof(GameObject)) as GameObject;
 		//GameObject expInst = Instantiate(expPrefab, transform.position, transform.rotation) as GameObject;
-		if (collision.rigidbody)
+		if (collision.rigidbody) 
 			collision.rigidbody.velocity = boostDirection.forward * boostForce;
 	}
+	void OnCollisionExit(Collision collision) {
+		//GameObject expPrefab = Resources.Load("RacePowerups/BulletHit", typeof(GameObject)) as GameObject;
+		//GameObject expInst = Instantiate(expPrefab, transform.position, transform.rotation) as GameObject;
+		if (collision.rigidbody) 
+			collision.rigidbody.velocity = boostDirection.forward * boostForce;
+	}
+	
 
 }

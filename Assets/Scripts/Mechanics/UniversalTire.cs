@@ -62,12 +62,12 @@ public class UniversalTire : MonoBehaviour {
 		}else if(spawnPoint.autoLoadCurrentTire){
 			tireType = SaveLoad.LoadString ("CurrentTire");
 		}
-		if (spawnPoint.isPrint)
+		if (spawnPoint.isPrint && !spawnPoint.isCompetition)
 			tireType = SaveLoad.LoadString ("PrintTire");
 		if (spawnPoint.isOpponent)
 			tireType = spawnPoint.tireTypeToSpawn;
 
-		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 900;
+		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 500;
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
 		editMeshCollider = tire.GetComponent<MeshCollider> ();
 		meshFilter = tire.GetComponent <MeshFilter>();
@@ -115,7 +115,6 @@ public class UniversalTire : MonoBehaviour {
 		//PlaceAddons------------------------------------------------------------------------------------------
 		int aCount = SaveLoad.LoadInt (tireType + "AddonCount");
 		string addonData = SaveLoad.LoadString (tireType + "AddonData");
-		string testString = "Addon1Index12";
 		string tempString = "";
 		for (int i = 1; i <= aCount; i++) {
 			tempString = i.ToString();
@@ -189,7 +188,7 @@ public class UniversalTire : MonoBehaviour {
 
 		tire = gameObject;		
 			
-		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 900;
+		tire.GetComponent<Rigidbody> ().maxAngularVelocity = 500;
 		meshRenderer = tire.GetComponent<SkinnedMeshRenderer>();
 		editMeshCollider = tire.GetComponent<MeshCollider> ();
 		meshFilter = tire.GetComponent <MeshFilter>();
@@ -312,7 +311,9 @@ public class UniversalTire : MonoBehaviour {
 
 
 		if (collision.relativeVelocity.magnitude > 4f) {
-			tireSound.PlayOneShot (tireSounds [Random.Range (0, tireSounds.Length)], collision.relativeVelocity.magnitude * 0.01f);
+			AudioClip tmpSound = tireSounds [Random.Range (0, tireSounds.Length)];
+			if(tmpSound)
+				tireSound.PlayOneShot (tmpSound, collision.relativeVelocity.magnitude * 0.01f);
 		}
 
 		if (spawnPoint.isPrint) {

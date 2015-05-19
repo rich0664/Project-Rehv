@@ -694,6 +694,7 @@ MonoBehaviour:
   tireTypeToSpawn: TestTire
   shouldSpin: 0
   isOpponent: 0
+  distanceScore: 1
   isEditor: 1
   isCompetition: 0
   generateCollision: 0
@@ -728,3 +729,7 @@ MonoBehaviour:
   loadTireImage: {fileID: 1789713275}
   tire: {fileID: 0}
   doIT: 1
+  levelScreens:
+  - {fileID: 2800000, guid: 6d7c6fd8e1d4d4e4b891f1a05d810db8, type: 3}
+  - {fileID: 2800000, guid: cdac6fe3bef00cf42bd9fc7a43f502f1, type: 3}
+  screenMR: {fileID: 157911907}
