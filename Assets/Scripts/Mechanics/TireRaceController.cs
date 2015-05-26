@@ -29,6 +29,7 @@ public class TireRaceController : MonoBehaviour {
 	[HideInInspector] public Rigidbody arrowRB;
 	[HideInInspector] public bool isStartingLine;
 	[HideInInspector] public bool isActive = true;
+	[HideInInspector] public bool isBoost = false;
 	[HideInInspector] public int waypointCount = 0;
 	[HideInInspector] public int gPlace = 0;
 
@@ -75,12 +76,13 @@ public class TireRaceController : MonoBehaviour {
 				gPlace = playerTire.transform.GetSiblingIndex () + 1;
 				posText.text = "Pos " + gPlace + "/" + (raceM.opponentCount + 1);
 			}
+			pppp = 0;
 		}
 
 		if (!isStartingLine && !loadS.isLoading) {
 			tireRB.position = startPoint.transform.position;
 			tireRB.velocity = Vector3.zero;
-			tireRB.rotation = startPoint.transform.rotation;
+			tireRB.transform.eulerAngles = new Vector3 (0,8.5f,0);
 			tireRB.gameObject.transform.SetParent (GameObject.Find ("Racers").transform);
 			gPlace = raceM.pStart;
 			posText.text = "Pos " + gPlace + "/" + (raceM.opponentCount + 1);
@@ -90,6 +92,12 @@ public class TireRaceController : MonoBehaviour {
 
 		float throttle = Input.GetAxis ("Throttle") * acceleration;
 		float steering = Input.GetAxis ("Steering") * turnSpeed;   
+
+		if (tireRB.transform.InverseTransformDirection(tireRB.angularVelocity).z > 0)
+			steering = -steering;
+
+		if (isBoost)
+			tireRB.AddRelativeTorque (new Vector3(0,0,-22.5f));
 
 		if (isempd) {
 			if(empdir){
@@ -105,17 +113,16 @@ public class TireRaceController : MonoBehaviour {
 		}
 
 		tireRB.AddRelativeTorque (new Vector3(0,0,throttle));
-		//tireRB.AddTorque (new Vector3(0,-steering,0));
-		if (tirDir > 45) {
-			tirDir = 45;
-		} else if (tirDir < -45) {
-			tirDir = -45;
-		}
-		if (tirDir > 0) {
+		tirDir = Mathf.Clamp (tirDir, -45, 45);
+
+		if (tirDir > 1.5f) {
 			tirDir--;
-		} else if (tirDir < 0) {
+		} else if (tirDir < -1.5f) {
 			tirDir++;
 		}
+
+		if (tirDir < 1.5f && tirDir > -1.5f && steering == 0)
+			tirDir = 0f;
 
 		Vector3 tireRot = playerTire.transform.eulerAngles;
 		Quaternion desRot = Quaternion.Euler (new Vector3(0, tireRot.y, tireRot.z));

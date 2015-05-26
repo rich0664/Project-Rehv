@@ -7,12 +7,16 @@ public class Explosion : MonoBehaviour {
 	public float eRadius = 5f;
 	public float eForce = 700f;
 	public float uForce = 60f;
+	public float velocityDivide = 2.15f;
+	public bool autoExplode = false;
 	public bool affectSelf = true;
 	public GameObject expSelf;
 
 	// Use this for initialization
 	void Start () {
 		StartCoroutine (KillDelay ());
+		if (autoExplode)
+			AreaDamageEnemies ();
 	}
 
 	IEnumerator KillDelay(){
@@ -38,7 +42,7 @@ public class Explosion : MonoBehaviour {
 						continue;
 					}
 				}
-				enemyRB.velocity /= 2.3f;
+				enemyRB.velocity /= velocityDivide;
 				enemyRB.AddExplosionForce(eForce, location, eRadius, uForce);
 			}
 		}

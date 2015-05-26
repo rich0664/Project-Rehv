@@ -8,6 +8,8 @@ public class OffTrackSlowdown : MonoBehaviour {
 	void OnCollisionStay(Collision coll){
 		if (coll.rigidbody) {
 			coll.rigidbody.velocity /= slowAmount;
+		} else {
+			Debug.Log(coll.gameObject);
 		}
 	}
 

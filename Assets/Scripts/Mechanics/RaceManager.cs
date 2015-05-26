@@ -13,9 +13,9 @@ public class RaceManager : MonoBehaviour {
 	public bool isDebug;
 	public string debugTireType;
 	AIRaceController[] aiRacers;
-	bool checkPlaces = false;
 	int flyerIndex = 1;
 	int[] laps;
+	[HideInInspector] public bool checkPlaces = false;
 	[HideInInspector] public int waypointCount = 0;
 	[HideInInspector] public int opponentCount;
 	[HideInInspector] public int lapCount = 3;
@@ -32,7 +32,7 @@ public class RaceManager : MonoBehaviour {
 		Time.fixedDeltaTime = 0.011f;
 		RenderSettings.ambientIntensity = 0.25f;
 		flyerIndex = SaveLoad.LoadInt("CompFlyer");
-		lapCount = Random.Range (2, 5);
+		lapCount = Random.Range (3, 6);
 		opponentCount = Random.Range (2, 8);
 		oppNames = new string[opponentCount];
 		CountdownText.enabled = false;
@@ -79,9 +79,15 @@ public class RaceManager : MonoBehaviour {
 	IEnumerator StartSequence(){
 		CountdownText.enabled = true;
 		int seconds = 3;
+		RC.arrowRB.transform.position = RC.tireRB.transform.position;
 		RC.enabled = false;
 		CountdownText.text = seconds + "..";
+		yield return new WaitForEndOfFrame ();
+		yield return new WaitForEndOfFrame ();
+		RC.arrowRB.transform.position = RC.tireRB.transform.position;
+		RC.arrowRB.transform.eulerAngles = new Vector3 (0,-90,0);
 		yield return new WaitForSeconds (1.0f);
+		RC.arrowRB.transform.position = RC.tireRB.transform.position;
 		seconds--;
 		CountdownText.text = seconds + ".";
 		yield return new WaitForSeconds (1.0f);
@@ -204,7 +210,6 @@ public class RaceManager : MonoBehaviour {
 		tmpToSpawn = SaveLoad.GetValueFromPref("FlyerData", "EventClass" + flyerIndex);
 		tmpToSpawn = tmpToSpawn.Replace(" ", "");
 		float difficulty = float.Parse(SaveLoad.GetValueFromPref("FlyerData", "Difficulty" + flyerIndex));
-		Debug.Log (difficulty);
 		difficulty = 1.75f / difficulty;
 		float subDif = 0f;
 		Debug.Log (difficulty);

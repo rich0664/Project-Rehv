@@ -18,6 +18,8 @@ public class WireFrame : MonoBehaviour {
 	private Vector3[] lines ;
 	private ArrayList lines_List ;
 	public Material lineMaterial ;
+
+	[HideInInspector] public Renderer mainRenderer;
 	//private MeshRenderer meshRenderer; 
 	
 	/*
@@ -63,6 +65,8 @@ public class WireFrame : MonoBehaviour {
 		lines = (Vector3[]) lines_List.ToArray(typeof(Vector3));
 		lines_List.Clear();//free memory from the arraylist
 		size = lines.Length;
+
+		mainRenderer = gameObject.GetComponent<Renderer> ();
 	}
 	
 	// to simulate thickness, draw line as a quad scaled along the camera's vertical axis.
@@ -91,7 +95,7 @@ public class WireFrame : MonoBehaviour {
 	
 	
 	void OnRenderObject () {
-		gameObject.GetComponent<Renderer>().enabled=render_mesh_normaly;
+		mainRenderer.enabled = render_mesh_normaly;
 		if (lines == null || lines.Length < lineWidth) {
 			//print("No lines");
 		} 

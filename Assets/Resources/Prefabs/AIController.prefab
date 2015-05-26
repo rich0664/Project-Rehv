@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109208
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 421800}
+  m_Layer: 0
+  m_Name: EP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &111680
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +28,21 @@ GameObject:
   - 114: {fileID: 11410814}
   m_Layer: 0
   m_Name: AIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &122050
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 495020}
+  m_Layer: 0
+  m_Name: EP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,6 +182,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &421800
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109208}
+  m_LocalRotation: {x: 0, y: .707107008, z: 0, w: .70710665}
+  m_LocalPosition: {x: 0, y: -.0359998383, z: -1.89423574e-07}
+  m_LocalScale: {x: 4.62951994, y: 4.62951803, z: 4.62951803}
+  m_Children: []
+  m_Father: {fileID: 446588}
+  m_RootOrder: 0
 --- !u!4 &423718
 Transform:
   m_ObjectHideFlags: 1
@@ -161,7 +203,8 @@ Transform:
   m_LocalRotation: {x: 5.96046448e-08, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: .0377433412, z: -.183127955}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 495020}
   m_Father: {fileID: 452334}
   m_RootOrder: 0
 --- !u!4 &435166
@@ -185,7 +228,8 @@ Transform:
   m_LocalRotation: {x: 5.96046448e-08, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: .0377433449, z: .183127955}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 421800}
   m_Father: {fileID: 452334}
   m_RootOrder: 1
 --- !u!4 &452334
@@ -223,7 +267,7 @@ Transform:
   m_GameObject: {fileID: 179482}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .216005087, y: .216005147, z: .216005147}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452334}
   - {fileID: 435166}
@@ -242,6 +286,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 457436}
   m_RootOrder: 2
+--- !u!4 &495020
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122050}
+  m_LocalRotation: {x: 0, y: .707107008, z: 0, w: .70710665}
+  m_LocalPosition: {x: 0, y: -.0359998792, z: 1.98006617e-07}
+  m_LocalScale: {x: 4.62952042, y: 4.62951803, z: 4.62951803}
+  m_Children: []
+  m_Father: {fileID: 423718}
+  m_RootOrder: 0
 --- !u!4 &495256
 Transform:
   m_ObjectHideFlags: 1
@@ -249,8 +305,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 63.1599998, z: -11.3999996}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 6.67999792, z: -15.1999998}
+  m_LocalScale: {x: 1.33333337, y: 1.33333337, z: 1.33333337}
   m_Children:
   - {fileID: 454650}
   - {fileID: 457436}
@@ -486,6 +542,7 @@ MonoBehaviour:
   hasPowerup: 0
   powerupIndex: 0
   ToggleLockOn: 0
+  ArmPowers: 0
   PowerupIcon: {fileID: 0}
   hmReticle: {fileID: 0}
   reticleColors: []
@@ -523,6 +580,7 @@ MonoBehaviour:
   gPlace: 0
   currWaypoint: 1
   dir: {fileID: 0}
+  isBoost: 0
 --- !u!135 &13580672
 SphereCollider:
   m_ObjectHideFlags: 1

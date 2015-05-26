@@ -113,37 +113,33 @@ public class UniversalTire : MonoBehaviour {
 		}
 
 		//PlaceAddons------------------------------------------------------------------------------------------
-		int aCount = SaveLoad.LoadInt (tireType + "AddonCount");
-		string addonData = SaveLoad.LoadString (tireType + "AddonData");
+		int aCount;
+		int.TryParse (SaveLoad.GetValueFromPref (tireType + "AddonData", "AddonCount"), out aCount);
 		string tempString = "";
 		for (int i = 1; i <= aCount; i++) {
-			tempString = i.ToString();
-			int digits = tempString.Length;
-			int iI = addonData.IndexOf("Index" + i);
-			int posI = addonData.IndexOf ("Pos" + i);
-			int rotI = addonData.IndexOf ("Rot" + i);
 
-			string sI = addonData.Substring(iI+6+digits, addonData.IndexOf("Pos" + i) - (iI+6+digits));
-			string sPos = addonData.Substring(posI+3+digits, addonData.IndexOf("Rot" + i) - (posI+3+digits));
-			string sRot;
-			if(i != aCount){
-				sRot = addonData.Substring(rotI+3+digits, addonData.IndexOf("Index" + (i+1)) - (rotI+3+digits));
-			} else {
-				sRot = addonData.Substring(rotI+3+digits);
-			}
-
-			int aType = int.Parse(sI);
-			Vector3 vPos = StringToVector3(sPos);
-			Vector3 vRot = StringToVector3(sRot);
+			int aType = int.Parse (SaveLoad.GetValueFromPref (tireType + "AddonData", "Index" + i));
+			//---------------------------------------------------------------------------------------------------------
+			Vector3 vPos = new Vector3(float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Posx" + i))
+			                           ,float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Posy" + i))
+			                           ,float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Posz" + i)));
+			//---------------------------------------------------------------------------------------------------------
+			Vector3 vRot = new Vector3(float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Rotx" + i))
+			                           ,float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Roty" + i))
+			                           ,float.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "Rotz" + i)));
+			//---------------------------------------------------------------------------------------------------------
 			Quaternion qRot = Quaternion.Euler(vRot);
 
 			GameObject prefab = Resources.Load("Addons/" + "AddonPref" + aType.ToString(), typeof(GameObject)) as GameObject;
 			GameObject AddonInst = Instantiate (prefab, vPos, qRot) as GameObject;
 			AddonInst.name = "Addon" + i;
-			Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
-			tempAddon.parent = transform.gameObject;
-			tempAddon.setParent ();
-			tempAddon.transform.rotation = qRot;
+			AddonInst.transform.SetParent(transform);
+			AddonInst.transform.localPosition = vPos;
+			AddonInst.transform.localEulerAngles = vRot;
+
+			if(spawnPoint.isEditor){
+				AddonInst.transform.GetChild(0).gameObject.layer = 0;
+			}
 		}
 		//END OF ADDON PLACEMENT----------------------------------------------------------------------
 
@@ -265,11 +261,20 @@ public class UniversalTire : MonoBehaviour {
 			bakedMesh = new Mesh ();
 
 			if (spawnPoint.isEditor) {
+				editMeshCollider.sharedMesh.RecalculateBounds();
+				Vector3 startBoundSize = editMeshCollider.sharedMesh.bounds.size;
 				Destroy (editMeshCollider);
 				editMeshCollider = tire.AddComponent<MeshCollider> ();
 
 				meshRenderer.BakeMesh (bakedMesh);
 				editMeshCollider.sharedMesh = bakedMesh;
+
+				editMeshCollider.sharedMesh.RecalculateBounds();
+				Vector3 newBoundSize = editMeshCollider.sharedMesh.bounds.size;
+				Vector3 boundsDiff = new Vector3(newBoundSize.x / startBoundSize.x
+				                                 ,newBoundSize.y / startBoundSize.y
+				                                 ,newBoundSize.z / startBoundSize.z);
+				spawnPoint.tE.ScaleAddons(boundsDiff);
 			} else {
 				if (!spawnPoint.isPrint && !spawnPoint.isCompetition) {
 					collMeshRenderer.BakeMesh (bakedMesh);

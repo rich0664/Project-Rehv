@@ -23,6 +23,12 @@ public class TireControlWheel : MonoBehaviour {
 			if (transform.parent.parent){
 				parent = transform.parent.parent;
 				transform.SetParent(null);
+				if(parent)
+				if(parent.tag == "MainTire" ){
+					transform.name = "MRC Player";
+				}else{
+					transform.name = "MRC" + parent.GetComponentInChildren<AIRaceController>().aiIndex;
+				}
 				transform.localEulerAngles = Vector3.zero;
 				Mesh tmpMesh = new Mesh();
 				parent.GetComponent<SkinnedMeshRenderer>().BakeMesh(tmpMesh);
@@ -37,11 +43,7 @@ public class TireControlWheel : MonoBehaviour {
 			bigGear.localEulerAngles = new Vector3(0, 0 , parent.localEulerAngles.z);
 			smallGear.localEulerAngles = bigGear.localEulerAngles;
 			float dAngle = Mathf.DeltaAngle(parent.localEulerAngles.x, 0);
-			if(dAngle > leanLimit){
-				dAngle = leanLimit;
-			}else if(dAngle < -leanLimit){
-				dAngle = -leanLimit;
-			}
+			dAngle = Mathf.Clamp(dAngle, -leanLimit, leanLimit);
 			cMain.localPosition = new Vector3(0, 0 , dAngle * leanAmount);
 			smallGear.localPosition = cMain.localPosition;
 		}

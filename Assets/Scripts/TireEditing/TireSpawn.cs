@@ -18,7 +18,7 @@ public class TireSpawn : MonoBehaviour {
 
 	GameObject tireInst;
 
-	TireEditor tE;
+	[HideInInspector] public TireEditor tE;
 
 	// Use this for initialization
 	void Start () {

@@ -18,6 +18,7 @@ public class AIRaceController : MonoBehaviour {
 	bool isempd;
 	bool empdir;
 	bool isFinished = false;
+	bool isFork = false;
 	float empAmnt = 0f;
 
 	[HideInInspector] public Rigidbody aiRB;
@@ -25,6 +26,7 @@ public class AIRaceController : MonoBehaviour {
 	[HideInInspector] public int gPlace = 0;
 	[HideInInspector] public int currWaypoint = 1;
 	[HideInInspector] public Transform dir;
+	[HideInInspector] public bool isBoost = false;
 
 	RaceManager raceM;
 
@@ -66,8 +68,11 @@ public class AIRaceController : MonoBehaviour {
 			float tmpAcc = acceleration;
 			float angle = Mathf.DeltaAngle(Mathf.Abs(rotTo.eulerAngles.y), Mathf.Abs(dir.eulerAngles.y));
 			tmpAcc -= Mathf.Abs(angle) * 0.23f;
+			if (isBoost)
+				aiRB.AddRelativeTorque (new Vector3(0,0,-22.5f));
 			aiRB.AddRelativeTorque (new Vector3(0,0,-tmpAcc));
 
+			/*
 			if(aiIndex == 1){
 				GameObject.Find("AngleDebug").GetComponent<Slider>().maxValue = 90f;
 				GameObject.Find("AngleDebug").GetComponent<Slider>().value = angle;
@@ -77,6 +82,7 @@ public class AIRaceController : MonoBehaviour {
 				GameObject.Find("AngleDebugText").GetComponent<Text>().text = "Angle: " + angle;
 				GameObject.Find("AccDebugText").GetComponent<Text>().text = "Acc: " + tmpAcc;
 			}
+			*/
 
 			if (isempd) {
 				if(empdir){
@@ -125,8 +131,33 @@ public class AIRaceController : MonoBehaviour {
 	}
 
 	void GetNextMoveTo(){
-		Vector3 p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P1").transform.position;
-		Vector3 p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P2").transform.position;
+		Vector3 p1 = Vector3.zero;
+		Vector3 p2 = Vector3.zero;
+		if (!isFork) {
+			if (GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P5")) {
+				int fork = Random.Range (0, 2);
+				if (fork == 0) {
+					isFork = true;
+					p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P3").transform.position;
+					p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P4").transform.position;
+				} else {
+					p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P1").transform.position;
+					p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P2").transform.position;
+				}
+			}else{
+				p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P1").transform.position;
+				p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P2").transform.position;
+			}
+		} else {
+			if (GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P3")) {
+				p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P3").transform.position;
+				p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P4").transform.position;
+			}else{
+				isFork = false;
+				p1 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P1").transform.position;
+				p2 = GameObject.Find ("Waypoints/Waypoint" + currWaypoint + "/Points/P2").transform.position;
+			}
+		}
 		float rndmP = Random.Range (0.0f, 1.0f);
 		moveTo = p1 + rndmP * (p2 - p1);
 		//rotTo = dir.rotation;

@@ -12,6 +12,9 @@ public class AddonPlacer : MonoBehaviour {
 	public int addonIndex = 1;
 	public int addonCount = 0;
 
+	GameObject prevObject;
+	WireFrame delWire;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -43,43 +46,69 @@ public class AddonPlacer : MonoBehaviour {
 			Ray ray = rayCam.ViewportPointToRay(tempV);
 			//Ray ray = new Ray(mouseCursor.transform.position, transform.forward);
 			RaycastHit hit;
-			Debug.DrawRay(ray.origin, ray.direction,Color.cyan,10);
 
 			if (Physics.Raycast (ray, out hit)) {
 				hitObject = hit.transform.gameObject;
-				if(hitObject == tE.tire){
+				if(prevObject != hit.collider.gameObject)
+					ClearWire();
+				if(hitObject == tE.tire && !hit.collider.transform.parent){
 					mouseCursor.SetActive(false);
 					addon.SetActive (true);
 					addon.transform.position = hit.point;
-					string tempSPos = addon.transform.position.ToString();
-					Vector3 tempVPos = StringToVector3(tempSPos);
-					addon.transform.position = tempVPos;
 					Vector3 norm = transform.forward - (Vector3.Dot (transform.forward, hit.normal)) * hit.normal;
 					if(norm != Vector3.zero){
 					Quaternion addonRot = Quaternion.LookRotation (norm, hit.normal);
 					addon.transform.rotation = addonRot;
 					
 
-						if (Input.GetMouseButtonDown (0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1)) {
-						GameObject prefab = Resources.Load("Addons/" + "AddonPref" + addonIndex.ToString(), typeof(GameObject)) as GameObject;
-						GameObject AddonInst = Instantiate (prefab, hit.point, addonRot) as GameObject;
-						addonCount++;
-						AddonInst.name = "Addon" + addonCount;
-						Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
-						tempAddon.parent = hitObject;
-						tempAddon.setParent ();
-						tempSPos = tempAddon.transform.position.ToString();
-						tempVPos = StringToVector3(tempSPos);
-						tempAddon.transform.position = tempVPos;
+						if (Input.GetMouseButtonDown (0)) {
+							if(!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(-1)){
+								GameObject prefab = Resources.Load("Addons/" + "AddonPref" + addonIndex.ToString(), typeof(GameObject)) as GameObject;
+								GameObject AddonInst = Instantiate (prefab, hit.point, addonRot) as GameObject;
+								addonCount++;
+								AddonInst.name = "Addon" + addonCount;
+								Addon tempAddon = AddonInst.GetComponentInChildren<Addon> ();
+								tempAddon.parent = hitObject;
+								tempAddon.setParent ();
+								AddonInst.transform.GetChild(0).gameObject.layer = 0;
+							}
+						}
+					}
+				}else if(hit.collider.transform.parent){
+					if(hit.collider.transform.parent.tag == "Addon"){
+						prevObject = hit.collider.gameObject;
+						if(!delWire){
+							delWire = hit.collider.gameObject.AddComponent<WireFrame>();
+							delWire.render_mesh_normaly = true;
+							Color tmpLineC = Color.red;
+							tmpLineC.a = 200f/255f;
+							tmpLineC.b = 25f/255f;
+							tmpLineC.g = 15f/255f;
+							delWire.lineColor = tmpLineC;
+						}
+						if(Input.GetKeyDown(KeyCode.X)){
+							Destroy(hit.collider.transform.parent.gameObject);
+							addonCount--;
+							GameObject[] tmpAddonss = GameObject.FindGameObjectsWithTag("Addon");
+							for(int i = 1; i <= tmpAddonss.Length; i++){
+								tmpAddonss[i-1].name = "Addon" + i;
+							}
+						}
 					}
 				}
-				}
+			}else{
+				ClearWire();
 			}
 		}
-
-
 	}
 
+
+	void ClearWire(){
+		if (delWire) {
+			delWire.mainRenderer.enabled = true;
+			Destroy (delWire);
+		}
+	}
 
 	public void setAddon(GameObject gO){
 		addon.SetActive (false);
@@ -87,15 +116,6 @@ public class AddonPlacer : MonoBehaviour {
 	}
 	public void setAddonIndex(int aI){
 		addonIndex = aI;
-	}
-
-	public Vector3 StringToVector3(string rString){
-		string[] temp = rString.Substring(1,rString.Length-2).Split(',');
-		float x = float.Parse(temp[0]);
-		float y = float.Parse(temp[1]);
-		float z = float.Parse(temp[2]);
-		Vector3 rValue = new Vector3(x,y,z);
-		return rValue;
 	}
 
 

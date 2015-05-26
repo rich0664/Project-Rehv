@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Bullet : MonoBehaviour {
 
+	public bool ShouldSlow = false;
+	public bool ShouldExplode = false;
 	public float bulletSpeed = 10000;
 
 	void Start(){
@@ -18,8 +20,12 @@ public class Bullet : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		GameObject expPrefab = Resources.Load("RacePowerups/BulletHit", typeof(GameObject)) as GameObject;
 		GameObject expInst = Instantiate(expPrefab, transform.position, transform.rotation) as GameObject;
-		if (collision.rigidbody)
-			collision.rigidbody.AddExplosionForce (1f, transform.position, 0.5f, 1f); 
+		if (collision.rigidbody) {
+			if(ShouldExplode)
+				collision.rigidbody.AddExplosionForce (75f, transform.position, 0.5f, 5f); 
+			if(ShouldSlow)
+				collision.rigidbody.velocity /= 1.3f;
+		}
 		Destroy(gameObject);
 	}
 

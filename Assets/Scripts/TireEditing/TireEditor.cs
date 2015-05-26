@@ -420,6 +420,7 @@ public class TireEditor : MonoBehaviour {
 				}
 			}
 
+			//On release of mouse after modifying a slider
 			if(!Input.GetMouseButton(0) && regenCollision){
 				UniversalTire uTire = tire.GetComponent<UniversalTire>();
 				uTire.BakeCollision();
@@ -428,10 +429,6 @@ public class TireEditor : MonoBehaviour {
 			modified = false;
 
 		}
-
-
-
-
 
 	}
 
@@ -613,11 +610,15 @@ public class TireEditor : MonoBehaviour {
 		string addonData = "";
 		for (int i = 1; i <= aCount; i++) {
 			Transform addonTrans = GameObject.Find("Addon" + i).transform;
-			addonData += "Index" + i + "=" + GameObject.Find("Addon" + i).GetComponent<Addon>().addonIndex;
-			addonData += "Pos" + i + addonTrans.position;
-			addonData += "Rot" + i + addonTrans.eulerAngles;
+			addonData += "Index" + i + "=" + GameObject.Find("Addon" + i).GetComponent<Addon>().addonIndex + "Index" + i + "End:";
+			addonData += "Posx" + i + "=" + addonTrans.localPosition.x + "Posx" + i + "End:";
+			addonData += "Posy" + i + "=" + addonTrans.localPosition.y + "Posy" + i + "End:";
+			addonData += "Posz" + i + "=" + addonTrans.localPosition.z + "Posz" + i + "End:";
+			addonData += "Rotx" + i + "=" + addonTrans.localEulerAngles.x + "Rotx" + i + "End:";
+			addonData += "Roty" + i + "=" + addonTrans.localEulerAngles.y + "Roty" + i + "End:";
+			addonData += "Rotz" + i + "=" + addonTrans.localEulerAngles.z + "Rotz" + i + "End:";
 		}
-		SaveLoad.SaveInt (tireType + "AddonCount", aCount);
+		addonData += "AddonCount=" + aCount + "AddonCount" + "End:";
 		SaveLoad.SaveString (tireType + "AddonData", addonData);
 
 		//--------------------------------------
@@ -691,6 +692,25 @@ public class TireEditor : MonoBehaviour {
 		yield return new WaitForSeconds(delay);
 		Load ();
 
+	}
+
+	public void ScaleAddons(Vector3 sizeV){
+		if (tire) {
+			Transform tmpParent = tire.transform;
+			tireSpawn.transform.localScale = Vector3.one;
+			GameObject[] tmpAddons = GameObject.FindGameObjectsWithTag ("Addon");
+			Vector3[] tmpScales = new Vector3[tmpAddons.Length];
+			for(int i = 0; i < tmpAddons.Length; i++){
+				tmpScales[i] = tmpAddons[i].transform.localScale;
+				tmpAddons[i].transform.SetParent (tireSpawn.transform);
+			}
+			tireSpawn.transform.localScale = sizeV;
+			for(int i = 0; i < tmpAddons.Length; i++){
+				tmpAddons[i].transform.SetParent (tmpParent);
+				tmpAddons[i].transform.localScale = tmpScales[i];
+			}
+			tireSpawn.transform.localScale = Vector3.one;
+		}
 	}
 
 
