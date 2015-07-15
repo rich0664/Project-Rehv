@@ -25,7 +25,7 @@ Material:
         first:
           name: _Texture
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 10b37513bfc6805488b070d9f810e43c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -39,31 +39,39 @@ Material:
         first:
           name: _Pattern
         second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 2800000, guid: 57c331d0767a3424da2c365f067e37c9, type: 3}
+          m_Scale: {x: 10, y: 10}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
           name: _SpecularPower
-        second: .159999996
+        second: 1.48000002
       data:
         first:
           name: _SpecularAmount
-        second: 0
+        second: .330000013
       data:
         first:
           name: _Brightness
-        second: 1
+        second: .699999988
       data:
         first:
           name: _PatternBlend
-        second: .400000006
+        second: 1
+      data:
+        first:
+          name: _AlphaClip
+        second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .213235319, g: .213235319, b: .213235319, a: 1}
+        second: {r: .125, g: .125, b: .125, a: 1}
       data:
         first:
           name: _Specularcolor

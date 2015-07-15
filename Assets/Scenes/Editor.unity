@@ -8386,7 +8386,7 @@ GameObject:
   - 4: {fileID: 804458702}
   - 114: {fileID: 804458701}
   m_Layer: 0
-  m_Name: TireSpawn
+  m_Name: EditTireSpawn
   m_TagString: TireSpawn
   m_Icon: {fileID: 120240766, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -11157,6 +11157,7 @@ MonoBehaviour:
   UISkin: {fileID: 11400000, guid: 15e7c64a93f31aa408397f90e09f5178, type: 2}
   uiNav: ModsButton
   tire: {fileID: 0}
+  tireSpawn: {fileID: 0}
   lastLoadedTire: 
   modified: 0
   modifiedSlider: 
@@ -18997,33 +18998,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 1
---- !u!1 &1893756285
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1893756288}
-  m_Layer: 0
-  m_Name: ModObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1893756288
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1893756285}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.20000005, y: 2.20000005, z: 2.20000005}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
 --- !u!1 &1929818332
 GameObject:
   m_ObjectHideFlags: 0

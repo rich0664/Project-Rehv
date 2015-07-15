@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Color
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e3c6357439842054782e0f0b7b4074b0, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -34,6 +34,27 @@ Material:
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 517be1f9188a21a49b7478190aaaf524, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Normal
+        second:
+          m_Texture: {fileID: 2800000, guid: 8159d105bc6d158448a8fd7c927af120, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Pattern
+        second:
+          m_Texture: {fileID: 2800000, guid: 57c331d0767a3424da2c365f067e37c9, type: 3}
+          m_Scale: {x: 4, y: 4}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -92,6 +113,22 @@ Material:
         second: 0
       data:
         first:
+          name: _SpecularPower
+        second: .980000019
+      data:
+        first:
+          name: _SpecularAmount
+        second: .430000007
+      data:
+        first:
+          name: _Brightness
+        second: 1
+      data:
+        first:
+          name: _PatternBlend
+        second: 1
+      data:
+        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -130,6 +167,14 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _Alphaclip
+        second: 1
+      data:
+        first:
+          name: _AlphaClip
+        second: 1
     m_Colors:
       data:
         first:
@@ -138,7 +183,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .800000012, g: .800000012, b: .800000012, a: 1}
+        second: {r: .15700689, g: .970588207, b: .970588207, a: 1}
+      data:
+        first:
+          name: _Specularcolor
+        second: {r: .235294104, g: .235294104, b: .235294104, a: 0}
       data:
         first:
           name: _EmissionColorUI

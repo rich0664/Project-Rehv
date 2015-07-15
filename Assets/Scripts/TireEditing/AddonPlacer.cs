@@ -9,15 +9,20 @@ public class AddonPlacer : MonoBehaviour {
 	public GameObject addon;
 	public GameObject hitObject;
 	public GameObject mouseCursor;
-	public int addonIndex = 1;
+	public int addonIndex = 0;
 	public int addonCount = 0;
+	public int totalAddons = 2;
+	public bool hasModule = false;
 
 	GameObject prevObject;
 	WireFrame delWire;
 
 	// Use this for initialization
 	void Start () {
-	
+		for(int i = 1; i <= totalAddons; i++){
+			GameObject.Find("AddonPref" + i).tag = "Untagged";
+			GameObject.Find("AddonPref" + i).SetActive(false);
+		}
 	}
 	
 	// Update is called once per frame
@@ -29,10 +34,15 @@ public class AddonPlacer : MonoBehaviour {
 			isPlacing = false;
 		}
 
-		addon.SetActive (false);
+		if(addon)
+			addon.SetActive (false);
+
 		if (!mouseCursor.activeSelf)
 			mouseCursor.SetActive(true);
+
 		if (isPlacing) {
+			if(!hasModule)
+				return;
 
 			//if(Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.LeftCommand)){
 			if(Input.GetKeyDown(KeyCode.Z) && addonCount > 0){
@@ -87,6 +97,7 @@ public class AddonPlacer : MonoBehaviour {
 							delWire.lineColor = tmpLineC;
 						}
 						if(Input.GetKeyDown(KeyCode.X)){
+							hit.collider.transform.parent.gameObject.tag = "Untagged";
 							Destroy(hit.collider.transform.parent.gameObject);
 							addonCount--;
 							GameObject[] tmpAddonss = GameObject.FindGameObjectsWithTag("Addon");
@@ -111,8 +122,8 @@ public class AddonPlacer : MonoBehaviour {
 	}
 
 	public void setAddon(GameObject gO){
-		addon.SetActive (false);
 		addon = gO;
+		addon.SetActive (false);
 	}
 	public void setAddonIndex(int aI){
 		addonIndex = aI;

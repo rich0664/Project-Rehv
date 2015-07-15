@@ -149,9 +149,7 @@ public class DrawLine : MonoBehaviour
 			RenderTexture.active = null; 
 			virtuCamera.targetTexture = null;
 			byte[] pngShot = tex.EncodeToPNG();
-			if(!Directory.Exists(Application.dataPath + "/Resources/Thumbs"))
-				Directory.CreateDirectory(Application.dataPath + "/Resources/Thumbs");
-			File.WriteAllBytes (Application.dataPath + "/Resources/Thumbs/Signature.png", pngShot);
+			File.WriteAllBytes (SaveLoad.GetAppdataPath() + "/Thumbs/Signature.png", pngShot);
 			Destroy(tex);
 
 

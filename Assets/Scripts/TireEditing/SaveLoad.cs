@@ -36,8 +36,8 @@ public class SaveLoad : MonoBehaviour {
 		string tmpData = SaveLoad.LoadString (key);
 
 		if (tmpData.IndexOf (valueToGet + "=") == -1) {
-			return null;
 			Debug.Log("Tried to get a null value");
+			return null;
 		}
 
 		int tmpIndexB = tmpData.IndexOf(valueToGet + "=");
@@ -53,8 +53,8 @@ public class SaveLoad : MonoBehaviour {
 		string tmpData = str;
 		
 		if (tmpData.IndexOf (valueToGet + "=") == -1) {
-			return null;
 			Debug.Log("Tried to get a null value");
+			return null;
 		}
 		
 		int tmpIndexB = tmpData.IndexOf(valueToGet + "=");
@@ -66,7 +66,38 @@ public class SaveLoad : MonoBehaviour {
 		return tmpData;
 	}
 
+	public static string CreatePrefVar(string varToAppend, string value){
+		return (varToAppend + "=" + value + varToAppend + "End:");
+	}
+
+	public static string GetAppdataPath(){
+		string datapath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData) + "/Project Rehv"; 
+		datapath = datapath.Replace ("\\", "/");
+		return datapath;
+	}
+
+	public static void SetValueInPref(string key, string varToSet, string value){
+		string tmpData = SaveLoad.LoadString (key);
+
+		if (tmpData.IndexOf (varToSet + "=") == -1) {
+			Debug.Log("Tried to set a null variable");
+			return;
+		}
+
+		int tmpIndexB = tmpData.IndexOf(varToSet + "=");
+		int tmpIndexE = tmpData.IndexOf (varToSet + "End:");
+		int tmpLength = tmpIndexE - (tmpIndexB + varToSet.Length + 1);
 
 
+		tmpIndexB += varToSet.Length + 1;
+		//Debug.Log (tmpData.Substring(tmpIndexB - (varToSet.Length + 1), varToSet.Length * 2  + tmpLength + 4));
+		tmpData = tmpData.Remove (tmpIndexB, tmpLength);
+		tmpData = tmpData.Insert (tmpIndexB, value);
 
+		//Debug.Log (tmpData.Substring(tmpIndexB - (varToSet.Length + 1), varToSet.Length * 2 + tmpLength + 4));
+		SaveLoad.SaveString (key, tmpData);
+	}
+
+
+	//END CLASS------------------------------------------------------------------------------------------------------
 }

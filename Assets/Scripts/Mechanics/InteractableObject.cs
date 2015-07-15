@@ -16,6 +16,10 @@ public class InteractableObject : MonoBehaviour {
 	}
 
 	void Update(){
+		if (player.cinematicMode) {
+			player.interactText.gameObject.SetActive (false);
+			return;
+		}
 		if (requireLOS && !requireOverlap) {
 			if (player.LOSObject == gameObject) {
 				player.ShowMessage (objectName);

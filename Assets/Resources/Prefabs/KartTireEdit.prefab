@@ -92,12 +92,12 @@ MeshCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149136}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 00d05e4ef89d5c04992c68c19d8b8de5, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Convex: 0
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 0c3fa24b842db9a40b30ff7d710cd7c2, type: 3}
 --- !u!75 &7549136
 ConstantForce:
   m_ObjectHideFlags: 1
@@ -179,6 +179,7 @@ MonoBehaviour:
   tireSound5: {fileID: 0}
   collMeshRenderer: {fileID: 13799726}
   spawnPoint: {fileID: 0}
+  modifiedMF: {fileID: 0}
 --- !u!137 &13749136
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

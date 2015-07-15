@@ -1,0 +1,99 @@
+﻿
+ #Please enter the commit message for your changes. Lines starting
+ #with '' will be ignored, and an empty message aborts the commit.
+ #On branch UI-and-Hub-World
+ #Your branch is up-to-date with 'origin/UI-and-Hub-World'.
+
+# Changes to be committed:
+	new file:   Assets/Models/Garage/Cloud Emitter.prefab
+	renamed:    Assets/Resources/Names.txt.meta -> Assets/Models/Garage/Cloud Emitter.prefab.meta
+	deleted:    Assets/Models/Garage/Desk.fbx
+	deleted:    Assets/Models/Garage/Desk.fbx.meta
+	modified:   Assets/Models/Garage/Materials/GarageWallCeiling.mat
+	modified:   Assets/Models/Garage/Materials/Sky.mat
+	deleted:    Assets/Models/Garage/Monitor.FBX
+	deleted:    Assets/Models/Garage/Monitor.FBX.meta
+	modified:   Assets/Models/Tires/Materials/Color.mat
+	modified:   Assets/Models/Tires/Materials/Side.mat
+	new file:   Assets/Particles/CloudMat.mat
+	new file:   Assets/Particles/CloudMat.mat.meta
+	deleted:    Assets/Plugins/donotdelete.txt
+	deleted:    Assets/Plugins/donotdelete.txt.meta
+	deleted:    Assets/Plugins/x86/donotdelete.txt
+	deleted:    Assets/Plugins/x86/donotdelete.txt.meta
+	deleted:    Assets/Plugins/x86_64/donotdelete.txt
+	deleted:    Assets/Plugins/x86_64/donotdelete.txt.meta
+	deleted:    Assets/Resources/Names.txt
+	modified:   Assets/Resources/Prefabs/KartTireEdit.prefab
+	deleted:    Assets/Resources/Thumbs/KartTire1.png
+	deleted:    Assets/Resources/Thumbs/KartTire2.png
+	deleted:    Assets/Resources/Thumbs/KartTire2.png.meta
+	deleted:    Assets/Resources/Thumbs/KartTire3.png
+	deleted:    Assets/Resources/Thumbs/KartTire4.png
+	deleted:    Assets/Resources/Thumbs/KartTire4.png.meta
+	deleted:    Assets/Resources/Thumbs/TestTire1.png
+	deleted:    Assets/Resources/Thumbs/TestTire2.png
+	deleted:    Assets/Resources/Thumbs/TestTire2.png.meta
+	modified:   Assets/Scenes/Competition 1.unity
+	modified:   Assets/Scenes/Editor.unity
+	modified:   Assets/Scenes/Garage.unity
+	modified:   Assets/Scenes/LoadAsyncScene.unity
+	modified:   Assets/Scenes/Materials/Competition 1.mat
+	modified:   Assets/Scenes/Testing.unity
+	modified:   Assets/Scripts/Mechanics/CompetitionBoard.cs
+	modified:   Assets/Scripts/Mechanics/DayNight.cs
+	modified:   Assets/Scripts/Mechanics/DrawLine.cs
+	new file:   Assets/Scripts/Mechanics/EnableOnStart.cs
+	new file:   Assets/Scripts/Mechanics/EnableOnStart.cs.meta
+	modified:   Assets/Scripts/Mechanics/InkManager.cs
+	modified:   Assets/Scripts/Mechanics/InteractableObject.cs
+	modified:   Assets/Scripts/Mechanics/JumpCompetition.cs
+	modified:   Assets/Scripts/Mechanics/PlayerHub.cs
+	new file:   Assets/Scripts/Mechanics/ProgressionPrices.cs
+	new file:   Assets/Scripts/Mechanics/ProgressionPrices.cs.meta
+	new file:   Assets/Scripts/Mechanics/PsoftBody.cs
+	new file:   Assets/Scripts/Mechanics/PsoftBody.cs.meta
+	modified:   Assets/Scripts/Mechanics/Scoring.cs
+	new file:   Assets/Scripts/Mechanics/ShopManager.cs
+	new file:   Assets/Scripts/Mechanics/ShopManager.cs.meta
+	new file:   Assets/Scripts/Mechanics/Stretchy.cs
+	new file:   Assets/Scripts/Mechanics/Stretchy.cs.meta
+	modified:   Assets/Scripts/Mechanics/TireMachine.cs
+	modified:   Assets/Scripts/Mechanics/UniversalTire.cs
+	new file:   Assets/Scripts/Mechanics/vertexialize.cs
+	new file:   Assets/Scripts/Mechanics/vertexialize.cs.meta
+	modified:   Assets/Scripts/TireEditing/AddonPlacer.cs
+	modified:   Assets/Scripts/TireEditing/SaveLoad.cs
+	modified:   Assets/Scripts/TireEditing/TireEditor.cs
+	modified:   Assets/Scripts/TireEditing/TireSpawn.cs
+	modified:   Assets/Scripts/UI/MainMenu.cs
+	modified:   Assets/Scripts/UI/WarningMessages.cs
+	modified:   Assets/Shaders/DoubleSided.shader
+	modified:   Assets/Shaders/SpecularPatt.shader
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/Billboard.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD0/Branches_0.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD0/Branches_1.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD0/FacingLeaves_4.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD0/Fronds_2.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD0/Leaves_3.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD1/Branches_0.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD1/Branches_1.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD1/FacingLeaves_4.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD1/Fronds_2.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD1/Leaves_3.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD2/Branches_0.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD2/Branches_1.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD2/FacingLeaves_4.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD2/Fronds_2.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop Materials/LOD2/Leaves_3.mat
+	modified:   Assets/Standard Assets/Environment/SpeedTree/Broadleaf/Broadleaf_Desktop.spm.meta
+	new file:   Assets/UI Textures/EditorIcon.png
+	renamed:    Assets/Resources/Thumbs/TestTire1.png.meta -> Assets/UI Textures/EditorIcon.png.meta
+	new file:   Assets/UI Textures/Icons.meta
+	renamed:    Assets/UI Textures/LoadingTire.png -> Assets/UI Textures/Icons/LoadingTire.png
+	renamed:    Assets/UI Textures/LoadingTire.png.meta -> Assets/UI Textures/Icons/LoadingTire.png.meta
+	new file:   Assets/UI Textures/Icons/StoreIcon.png
+	renamed:    Assets/Resources/Thumbs/KartTire3.png.meta -> Assets/UI Textures/Icons/StoreIcon.png.meta
+	modified:   ProjectSettings/QualitySettings.asset
+
+

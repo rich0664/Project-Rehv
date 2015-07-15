@@ -24,7 +24,6 @@ public class PlayerHub : MonoBehaviour {
 	GameObject compBoard;
 	GameObject compBoardHighlight;
 	BloomOptimized playerBloom;
-	GameObject playerCamera;
 	GameObject boardCamPoint;
 	SunShafts playerShafts;
 	string useObject;
@@ -32,10 +31,12 @@ public class PlayerHub : MonoBehaviour {
 	Quaternion lastRot;
 	Vector3 lastPos;
 	DayNight dayCyc;
+	[HideInInspector] public GameObject playerCamera;
 	[HideInInspector] public Vector3 boardViewingPos;
 	[HideInInspector] public int viewingFlyerIndex;
-	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
+	[HideInInspector] public bool isPC = false;
+	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public bool isTutorial = false;
 
 	void Start(){
@@ -68,7 +69,7 @@ public class PlayerHub : MonoBehaviour {
 	void Update(){
 		pppp++;
 		if (pppp > 25) {
-			if(SaveLoad.LoadInt("isPaused") == 1 || isTutorial || dayCyc.timeScale == 0){
+			if(SaveLoad.LoadInt("isPaused") == 1 || isTutorial || dayCyc.timeScale == 0 || isPC){
 				cinematicMode = true;
 				wantedCursorLock = CursorLockMode.None;
 			}else if(!isViewing){
@@ -141,14 +142,14 @@ public class PlayerHub : MonoBehaviour {
 		//HANDLE OUTSIDE EFFECTS CHANGES
 		if (isOutside) {
 			float minShaftIntense = 0.1f;
-			if(playerShafts.sunShaftIntensity >= minShaftIntense)
-				playerShafts.sunShaftIntensity -= 0.04f;
+			//if(playerShafts.sunShaftIntensity >= minShaftIntense)
+				//playerShafts.sunShaftIntensity -= 0.04f;
 			if(playerBloom.intensity >= minShaftIntense)
 				playerBloom.intensity -= 0.01f;
 		} else {
 			float maxShafIntense = 2f;
-			if(playerShafts.sunShaftIntensity <= maxShafIntense)
-				playerShafts.sunShaftIntensity += 0.04f;
+			//if(playerShafts.sunShaftIntensity <= maxShafIntense)
+			//	playerShafts.sunShaftIntensity += 0.04f;
 			if(playerBloom.intensity <= maxShafIntense/2.2f)
 				playerBloom.intensity += 0.01f;
 		}
@@ -183,10 +184,13 @@ public class PlayerHub : MonoBehaviour {
 
 
 	public void interactWith(string str){
+		if (cinematicMode)
+			return;
 		if (str == "PC") {
-			Cursor.lockState = CursorLockMode.None;
+			wantedCursorLock = CursorLockMode.None;
 			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
-			Application.LoadLevel ("Editor");
+			cinematicMode = true;
+			GameObject.Find("PcManager").GetComponent<ShopManager>().openPC(true);
 		}
 
 		if (str == "TireMachine"  && machin.shouldPrint)
@@ -204,7 +208,15 @@ public class PlayerHub : MonoBehaviour {
 		}
 	}
 
+	public void GoToEditor(){
+		Cursor.lockState = CursorLockMode.None;
+		compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
+		Application.LoadLevel ("Editor");
+	}
+
 	public void ShowMessage(string str){
+		if (cinematicMode)
+			return;
 		useObject = str;
 		if (str == "PC") {
 			interactText.gameObject.SetActive (true);

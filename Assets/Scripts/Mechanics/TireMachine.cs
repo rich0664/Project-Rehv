@@ -6,6 +6,7 @@ public class TireMachine : MonoBehaviour {
 	public bool shouldPrint;
 	public TireSpawn printSpawn;
 	public GameObject printReminder;
+	public GameObject printedTire;
 	Animator machinAnim;
 	AudioSource boopReminder;
 	bool shouldRemind;
@@ -13,7 +14,7 @@ public class TireMachine : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 
 		machinAnim = gameObject.GetComponent<Animator> ();
 		boopReminder = gameObject.GetComponent<AudioSource> ();
@@ -63,9 +64,9 @@ public class TireMachine : MonoBehaviour {
 		GameObject.FindGameObjectWithTag ("Player").GetComponent<PlayerHub> ().console.SetActive (false);
 		yield return new WaitForSeconds (2f);
 		machinAnim.SetBool ("isOpen", true);
-		yield return new WaitForSeconds (2f);
-		GameObject.FindGameObjectWithTag ("MainTire").GetComponent<ConstantForce> ().enabled = true;
-		GameObject.FindGameObjectWithTag ("MainTire").GetComponent<ConstantForce> ().relativeTorque = new Vector3(0,0,4.5f);
+		yield return new WaitForSeconds (1.5f);
+		printedTire.GetComponent<ConstantForce> ().enabled = true;
+		printedTire.GetComponent<ConstantForce> ().relativeTorque = new Vector3(0,0,4.5f);
 		yield return new WaitForSeconds (5f);
 		machinAnim.SetBool ("isOpen", false);
 	}

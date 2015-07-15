@@ -23,10 +23,16 @@ public class MainMenu : MonoBehaviour {
 			ContinueButton.GetComponent<Button>().interactable = false;
 			showTutorial.isOn = true;
 		}
-		if (!File.Exists (Application.dataPath + "/Resources/Names.txt")) {
+		//creat directories
+		if (!Directory.Exists (SaveLoad.GetAppdataPath ()))
+			Directory.CreateDirectory (SaveLoad.GetAppdataPath ());
+		if(!Directory.Exists(SaveLoad.GetAppdataPath() + "/Thumbs"))
+			Directory.CreateDirectory(SaveLoad.GetAppdataPath() + "/Thumbs");
+
+		if (!File.Exists (SaveLoad.GetAppdataPath() + "/Names.txt")) {
 			TextAsset tmpText = Resources.Load("Names") as TextAsset;
 			byte[] tmpNames = tmpText.bytes;
-			File.WriteAllBytes(Application.dataPath + "/Resources/Names.txt", tmpNames);
+			File.WriteAllBytes(SaveLoad.GetAppdataPath() + "/Names.txt", tmpNames);
 		}
 		if (SaveLoad.LoadInt ("ShowTutorial") == 1) {
 			showTutorial.isOn = true;

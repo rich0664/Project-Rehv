@@ -70,17 +70,16 @@ public class TireSpawn : MonoBehaviour {
 			tirePrefab = Resources.Load ("Prefabs/" + tireTypeToSpawn, typeof(GameObject)) as GameObject;
 		}
 
-		if(GameObject.Find ("Editor") != null)
+		if(GameObject.Find ("Editor") != null && !isPrint)
 			Destroy (tE.tire);
-		tireInst = Instantiate (tirePrefab, this.transform.position, this.transform.rotation) as GameObject;
+		tireInst = Instantiate (tirePrefab, transform.position, transform.rotation) as GameObject;
 		tireInst.GetComponent<ConstantForce>().enabled = shouldSpin;
 		lastSpawnedTire = tireInst;
-		if(GameObject.Find ("Editor") != null)
+		if(GameObject.Find ("Editor") != null && !isPrint)
 			tE.tire = tireInst;
-		tireInst.GetComponent<UniversalTire> ().spawnPoint = this;
 		if (isOpponent) {
 			tireInst.tag = "OpponentTire";
-		} else {
+		} else if(!isPrint){
 			tireInst.tag = "MainTire";
 		}
 
@@ -88,7 +87,10 @@ public class TireSpawn : MonoBehaviour {
 			string uTire = SaveLoad.LoadString("PrintTire");
 			tireInst.GetComponent<UniversalTire>().tireType = uTire;
 			tireInst.transform.position = GameObject.Find("PrintPoint").transform.position;
+			TireMachine tMachine = GameObject.Find("Tire Machine").GetComponent<TireMachine>();
+			tMachine.printedTire = tireInst;
 		}
+		tireInst.GetComponent<UniversalTire> ().spawnPoint = this;
 
 		if (isOpponent) {
 			tireInst.GetComponent<UniversalTire>().StartOpponent();

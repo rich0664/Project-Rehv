@@ -6,62 +6,57 @@ using System.IO;
 public class TireEditor : MonoBehaviour {
 
 	public GUISkin UISkin;
-	int slIndex; 
-	public string uiNav = "ModsButton";
-
 	public GameObject tire;
-	TireSpawn tireSpawn;
+	public string uiNav = "ModsButton";
+	public string lastLoadedTire;
+	public string modifiedSlider;
+	public TireSpawn tireSpawn;
+	public bool modified;
+	public int pattInt;
+	public MeshCollider meshCollider;
+	public Material tireMat;
+	public WarningMessages warnMess;
+	public RenderTexture screenshotTex;
+	public Slider redS;
+	public Slider greenS;
+	public Slider blueS;
+	public Slider brightS;
+	public float hSepRes = 40f;
+	public float wSepRes = 20f;
+	public float offsetW = 0f;
+	public float offsetH = 0f;
+	public float scaleW = 1f;
+	public float scaleH = 1f;
+
+	int slIndex; 
+	int savesCount;
 	string tireType;
 	string tireLoad;
 	string UITire;
-	public string lastLoadedTire;
-	int savesCount;
 	bool firstRun = true;
-	public bool modified;
-	public string modifiedSlider;
-	public int pattInt;
+	bool canScaleAddons = false;
 
 	SkinnedMeshRenderer meshRenderer;
-	public MeshCollider meshCollider;
-	public Material tireMat;
 	Color tireColor;
 	float tireBrightness;
-	public WarningMessages warnMess;
-
-	public RenderTexture screenshotTex;
-
-	public float hSepRes = 40f;
-	public float wSepRes = 20f;
-
-	public float offsetW = 0f;
-	public float offsetH = 0f;
-
-	public float scaleW = 1f;
-	public float scaleH = 1f;
 
 
 	GameObject slidersRect;
 	GameObject colorsRect;
 	GameObject addonsRect;
-	public Slider redS;
-	public Slider greenS;
-	public Slider blueS;
-	public Slider brightS;
 	bool regenCollision = false;
 
+	DayNight dayCycle;
 	Text TimeText;
 	int Week;
 	int Day;
 	float timeHour = 0f;
 	float timeMinute;
-	float localTime = 0f;
-	float rotat;
 	string dayOfWeek = "";
 
+
 	void Awake(){
-
 		tireType = SaveLoad.LoadString ("CurrentTire");
-
 		slidersRect = GameObject.Find ("SlidersRect");
 		colorsRect = GameObject.Find ("ColorsRect");
 		addonsRect = GameObject.Find ("AddonsRect");
@@ -70,39 +65,16 @@ public class TireEditor : MonoBehaviour {
 		blueS = GameObject.Find("BlueSlider").GetComponent<Slider>() ;
 		brightS = GameObject.Find("BrightSlider").GetComponent<Slider>();
 		TimeText = GameObject.Find("MenuBarPanel/TimeText").GetComponent<Text>();
-		LoadTime ();
-		GetDate ();
-	}
-
-	void LoadTime(){
-		Day = SaveLoad.LoadInt ("Day");
-		Week = SaveLoad.LoadInt ("Week");
-		SetTime (SaveLoad.LoadFloat ("Hour"));
+		dayCycle = GameObject.Find ("Sun").GetComponent<DayNight> ();
 	}
 
 	void DoTime(){
-		float timeScale = -0.5f;
-		rotat += Time.deltaTime * timeScale;
-		localTime = Mathf.Abs (rotat - 180);
-		if (Mathf.Floor (localTime / 15) != timeHour) {
-			timeHour = Mathf.Floor (localTime / 15);
-			SaveTime();
-		}
-		timeMinute = Mathf.Floor(((localTime % 15) / 15) * 60);
+		Day = dayCycle.Day;
+		GetDate ();
+		Week = dayCycle.Week;
+		timeHour = dayCycle.timeHour;
+		timeMinute = dayCycle.timeMinute;
 
-		if (Mathf.Abs(localTime) >= 360) {
-			rotat = 180f;
-			localTime = 0f;
-			Day++;
-			timeHour = 0f;
-			SaveTime();
-			GetDate();
-			if(Day > 7){
-				Week++;
-				Day = 1;
-				SaveTime();
-			}
-		}
 		TimeText.text = dayOfWeek + ", Week " + Week + "  " + timeHour + ":" + timeMinute;
 	}
 
@@ -123,17 +95,6 @@ public class TireEditor : MonoBehaviour {
 			dayOfWeek = "Sun";
 	}
 
-	public void SaveTime(){
-		SaveLoad.SaveInt("Day",Day);
-		SaveLoad.SaveInt("Week", Week);
-		SaveLoad.SaveFloat ("Hour", localTime);
-	}
-
-	void SetTime(float timeSet){
-		localTime = -timeSet;
-		rotat = localTime + 180;
-	}
-
 
 	public void onCommand(string str){
 		
@@ -141,8 +102,38 @@ public class TireEditor : MonoBehaviour {
 			uiNav = str;
 		if (str == "ColorButton")
 			uiNav = str;
-		if (str == "AddonButton")
+		if (str == "AddonButton") {
 			uiNav = str;
+
+			AddonPlacer aP = transform.gameObject.GetComponent<AddonPlacer> ();
+			Transform tmpAP = addonsRect.transform.Find("AddonsFreeRect/PatternsContent");
+			if(!bool.Parse(SaveLoad.GetValueFromPref("ProgressionData", "AddonModule"))){
+				for(int i = 1; i <= aP.totalAddons; i++){
+					tmpAP.Find("AddonFree" + i).GetComponent<Button>().interactable = false;
+				}
+				addonsRect.transform.Find("SubTitle2").GetComponent<Text>().color = Color.red;
+				addonsRect.transform.Find("SubTitle2").GetComponent<Text>().text = "Missing Module";
+				aP.hasModule = false;
+				return;
+			}else{
+				aP.hasModule = true;
+				SaveLoad.SetValueInPref("ProgressionData", "Addon1", "true");
+			}
+
+			int tmpUnlocked = 0;
+			for(int i = 1; i <= aP.totalAddons; i++){
+				if(tmpAP.Find("AddonFree" + i)){
+					if(bool.Parse(SaveLoad.GetValueFromPref("ProgressionData", "Addon" + i))){
+						tmpAP.Find("AddonFree" + i).GetComponent<Button>().interactable = true;
+						tmpUnlocked++;
+					}else{
+						tmpAP.Find("AddonFree" + i).GetComponent<Button>().interactable = false;
+					}
+				}
+			}
+			addonsRect.transform.Find("SubTitle2").GetComponent<Text>().color = Color.black;
+			addonsRect.transform.Find("SubTitle2").GetComponent<Text>().text = "Unlocked: " + tmpUnlocked + "/" + aP.totalAddons;
+		}
 	}
 
 
@@ -188,7 +179,7 @@ public class TireEditor : MonoBehaviour {
 		tex.Apply ();
 		RenderTexture.active = null; 
 		virtuCamera.targetTexture = null;
-		File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + tireLoad + saveStr + ".png", tex.EncodeToPNG());
+		File.WriteAllBytes (SaveLoad.GetAppdataPath() + "/Thumbs/" + tireLoad + saveStr + ".png", tex.EncodeToPNG());
 
 	}
 
@@ -215,6 +206,7 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void LoadButton(GameObject gameO){	
+		canScaleAddons = false;
 		tire.tag = "Untagged";
 		Destroy (tire);
 		ResetSliderUI ();
@@ -224,7 +216,19 @@ public class TireEditor : MonoBehaviour {
 		savesCount = SaveLoad.LoadInt (tireLoad + "_SavesLength");
 		lastLoadedTire = tireLoad;
 		SaveLoad.SaveString("CurrentTire", tireType);
-		TireSpawn tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+		tireSpawn.spawnTire(tireLoad);
+		newTire (tireLoad);
+		NewSliderUI ();
+		StartCoroutine(Load(0.1F));
+	}
+
+	public void BTS(){
+		uiNav = "ModsButton";
+		canScaleAddons = false;
+		tire.tag = "Untagged";
+		Destroy (tire);
+		ResetSliderUI ();
+		SaveLoad.SaveString("CurrentTire", tireType);
 		tireSpawn.spawnTire(tireLoad);
 		newTire (tireLoad);
 		NewSliderUI ();
@@ -274,8 +278,8 @@ public class TireEditor : MonoBehaviour {
 			tireType = UITire + i;
 			Save();
 			if(i < savesCount){
-				byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
-				File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
+				byte[] tempImg = File.ReadAllBytes(SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + (i+1) + ".png");
+				File.WriteAllBytes (SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + i + ".png", tempImg);
 			}
 		}
 
@@ -310,10 +314,10 @@ public class TireEditor : MonoBehaviour {
 		int toDel = int.Parse(delStr);
 		for (int i = toDel; i <= savesCount; i++) {
 			tireType = UITire + (i+1);
-			byte[] tempImg = File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + (i+1) + ".png");
+			byte[] tempImg = File.ReadAllBytes(SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + (i+1) + ".png");
 			Load();
 			tireType = UITire + i;
-			File.WriteAllBytes (Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png", tempImg);
+			File.WriteAllBytes (SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + i + ".png", tempImg);
 			Save();
 		}
 
@@ -340,12 +344,14 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void printTire(){
-		SaveTime ();
 		SaveLoad.SaveInt ("ShouldPrint", 1);
 		tireType = tireLoad + "Print";
 		Save ();
-		Application.LoadLevel ("Garage");
 		SaveLoad.SaveString ("PrintTire", tireType);
+		ShopManager PCM = GameObject.Find ("PcManager").GetComponent<ShopManager> ();
+		PCM.CloseEditor (true);
+		PCM.closePC (true);
+		PCM.player.machin.Start ();
 	}
 
 	// Update is called once per frame-------------------------------------------------------------------------------------
@@ -362,7 +368,7 @@ public class TireEditor : MonoBehaviour {
 			if (firstRun) {
 				NewSliderUI ();
 				firstRun = false;
-				tireSpawn = GameObject.FindGameObjectWithTag ("TireSpawn").GetComponent<TireSpawn>();
+				tireSpawn = GameObject.Find ("EditTireSpawn").GetComponent<TireSpawn>();
 				string toSpawn = tireSpawn.tireTypeToSpawn;
 				tireLoad = toSpawn;
 				newTire(toSpawn);
@@ -476,7 +482,7 @@ public class TireEditor : MonoBehaviour {
 			lInst.name = "LoadThumbButton" + i;
 			lInst.GetComponentInChildren<Text>().text = UITire + i + ".tir";
 			Texture2D img = new Texture2D(2,2);
-			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
+			img.LoadImage(File.ReadAllBytes(SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + i + ".png"));
 			lInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
@@ -507,7 +513,7 @@ public class TireEditor : MonoBehaviour {
 			sInst.name = "ThumbButton" + i;
 			sInst.GetComponentInChildren<Text>().text = UITire + i + ".tir";
 			Texture2D img = new Texture2D(2,2);
-			img.LoadImage(File.ReadAllBytes(Application.dataPath + "/" + "Resources/Thumbs/" + UITire + i + ".png"));
+			img.LoadImage(File.ReadAllBytes(SaveLoad.GetAppdataPath() + "/Thumbs/" + UITire + i + ".png"));
 			sInst.GetComponent<Image>().sprite = Sprite.Create(img,
 			                                                   new Rect(0,0,img.width,img.height),
 			                                                   new Vector2(0.5f,0.5f), 1);
@@ -590,7 +596,7 @@ public class TireEditor : MonoBehaviour {
 		for(int i = 0; i < slIndex; i++)
 		{
 			if(SaveLoad.LoadString(tireLoad + "_SliderName_" + i.ToString()) != "symmetry")
-			SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
+				SaveLoad.SaveFloat(tireType + "Slider" + i, GameObject.Find("Slider"+i).GetComponent<Slider>().value);
 		}
 		
 		float pattScale = GameObject.Find("PattScaleSlider").GetComponent<Slider>().value;
@@ -605,7 +611,7 @@ public class TireEditor : MonoBehaviour {
 
 
 		//SAVE ADDONS------------------------------
-		AddonPlacer aP = transform.gameObject.GetComponent<AddonPlacer> ();
+		AddonPlacer aP = transform.GetComponent<AddonPlacer> ();
 		int aCount = aP.addonCount;
 		string addonData = "";
 		for (int i = 1; i <= aCount; i++) {
@@ -644,7 +650,7 @@ public class TireEditor : MonoBehaviour {
 		lastLoadedTire = tireLoad;
 
 		AddonPlacer aP = transform.gameObject.GetComponent<AddonPlacer> ();
-		aP.addonCount = SaveLoad.LoadInt (tireType + "AddonCount");
+		aP.addonCount = int.Parse(SaveLoad.GetValueFromPref (tireType + "AddonData", "AddonCount"));
 		
 		for(int i = 0; i < slIndex; i++)
 		{
@@ -681,6 +687,7 @@ public class TireEditor : MonoBehaviour {
 			addonsRect.SetActive (false);
 		
 		warnMess.modified = false;
+		canScaleAddons = true;
 	}
 
 
@@ -695,7 +702,7 @@ public class TireEditor : MonoBehaviour {
 	}
 
 	public void ScaleAddons(Vector3 sizeV){
-		if (tire) {
+		if (tire && canScaleAddons) {
 			Transform tmpParent = tire.transform;
 			tireSpawn.transform.localScale = Vector3.one;
 			GameObject[] tmpAddons = GameObject.FindGameObjectsWithTag ("Addon");

@@ -262,7 +262,7 @@ public class CompetitionBoard : MonoBehaviour {
 
 	void LoadSignature(){
 		Texture2D img = new Texture2D(2,2);
-		img.LoadImage(File.ReadAllBytes(Application.dataPath + "/Resources/Thumbs/Signature" + ".png"));
+		img.LoadImage(File.ReadAllBytes(SaveLoad.GetAppdataPath() + "/Thumbs/Signature" + ".png"));
 		signatureTex.texture = img;
 	}
 

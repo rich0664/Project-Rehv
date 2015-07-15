@@ -83,6 +83,8 @@ public class InkManager : MonoBehaviour {
 
 	public void InkPreview(bool str){
 		if (str) {
+			moneyWarning.SetActive(false);
+			LoadWallet ();
 			LoadCartValues();
 			MeshCollider tmpMC = tEdit.tire.GetComponent<MeshCollider>();
 			tmpMC.sharedMesh.RecalculateBounds();

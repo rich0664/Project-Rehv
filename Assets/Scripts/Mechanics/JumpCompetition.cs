@@ -314,7 +314,7 @@ public class JumpCompetition : MonoBehaviour {
 
 	void PrepareNamesList(){
 
-		string fileName = Application.dataPath + "/Resources/Names.txt";
+		string fileName = SaveLoad.GetAppdataPath() + "/Names.txt";
 		string line;
 		int tmpI = 0;
 		StreamReader theReader = new StreamReader(fileName, Encoding.Default);
