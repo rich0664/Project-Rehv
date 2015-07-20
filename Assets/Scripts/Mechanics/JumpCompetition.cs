@@ -21,6 +21,7 @@ public class JumpCompetition : MonoBehaviour {
 	public Text prizeText;
 	public Color endCompColor;
 	public Color youColor;
+	bool eventIsMajor = false;
 	float firstPrize;
 	float secondPrize;
 	float thirdPrize;
@@ -43,8 +44,11 @@ public class JumpCompetition : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		flyerIndex = SaveLoad.LoadInt("CompFlyer");
+		eventIsMajor = bool.Parse (SaveLoad.GetValueFromPref ("FlyerData", "IsMajor" + flyerIndex));
 		difficulty = float.Parse(SaveLoad.GetValueFromPref("FlyerData", "Difficulty" + flyerIndex));
 		opponentCount = Random.Range (2, 7);
+		if (eventIsMajor)
+			opponentCount = 6;
 		GenerateRndTires ();
 		scoreText = GameObject.Find ("Scoring/ScoreText").GetComponent<TextMesh> ();
 		roundCount = Random.Range (3, 6);
@@ -289,6 +293,13 @@ public class JumpCompetition : MonoBehaviour {
 					actPrize = actPrize.Replace("$", "");
 					tmpMoney += float.Parse(actPrize);
 					SaveLoad.SaveFloat("Money", tmpMoney);
+					if (place == 1 && eventIsMajor) {
+						int majorProgress = 1;
+						if(PlayerPrefs.HasKey("MajorEventData"))
+							majorProgress = SaveLoad.LoadInt ("MajorEventData");
+						majorProgress++;
+						SaveLoad.SaveInt ("MajorEventData", majorProgress);					
+					}
 				}
 				Application.LoadLevel("Garage");
 			}

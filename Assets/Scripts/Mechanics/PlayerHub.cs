@@ -35,7 +35,8 @@ public class PlayerHub : MonoBehaviour {
 	[HideInInspector] public Vector3 boardViewingPos;
 	[HideInInspector] public int viewingFlyerIndex;
 	[HideInInspector] public CursorLockMode wantedCursorLock;
-	[HideInInspector] public bool isPC = false;
+	//[HideInInspector] 
+	public bool isPC = false;
 	[HideInInspector] public bool isCurrentSigned;
 	[HideInInspector] public bool isTutorial = false;
 

@@ -7,6 +7,7 @@ public class Flyer : MonoBehaviour {
 	public int flyerIndex;
 	public int flyerType;
 	public int flyerTex;
+	public int eventWeek;
 	public float eventTime;
 	public int eventDay;
 	public float firstPrize;
@@ -25,6 +26,9 @@ public class Flyer : MonoBehaviour {
 	public bool isSigned = false;
 	public bool isActive = true;
 
+	public bool isMajor = false;
+	public int majorIndex = 0;
+
 	DayNight dayCycle;
 	PlayerHub hubPlayer;
 	GameObject highlight;
@@ -41,7 +45,7 @@ public class Flyer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (dayCycle.timeHour >= eventTime && isActive && dayCycle.Day >= eventDay) {
+		if (dayCycle.timeHour >= eventTime && isActive && dayCycle.Day >= eventDay && dayCycle.Week >= eventWeek) {
 			if(isSigned){
 				hubPlayer.readyCompForm.SetActive(true);
 				hubPlayer.viewingFlyerIndex = flyerIndex;
@@ -58,7 +62,7 @@ public class Flyer : MonoBehaviour {
 				hubPlayer.boardViewingPos = GameObject.Find ("BoardCamPoint").transform.position;
 				hubPlayer.viewingFlyerIndex = 0;
 			}	
-		} else if (dayCycle.Day > eventDay && isActive) {
+		} else if (dayCycle.Day > eventDay && isActive && dayCycle.Week >= eventWeek) {
 			Rigidbody fRB = gameObject.AddComponent<Rigidbody> ();
 			fRB.drag = 1.5f;
 			isActive = false;
@@ -117,6 +121,22 @@ public class Flyer : MonoBehaviour {
 			mapTitle = "Begginers Track";
 			eventType = "race event";
 		}
+		if (eventMap == "Competition 2") {
+			mapTitle = "Slope 2";
+			eventType = "jump event";
+		}
+		if (eventMap == "Race 2") {
+			mapTitle = "Track 2";
+			eventType = "race event";
+		}
+		if (eventMap == "Competition 3") {
+			mapTitle = "Slope 3";
+			eventType = "jump event";
+		}
+		if (eventMap == "Race 3") {
+			mapTitle = "Track 3";
+			eventType = "race event";
+		}
 		flyerDetailsText = difficultyTitle + " " + eventClass + " " + eventType + "\n"
 			+ "Prize money: 1st Place-$" + firstPrize + " 2nd Place-$" + secondPrize + " 3rd Place-$" + thirdPrize + "\n"
 				+ "Event will be at the " + mapTitle + ", be there.";
@@ -132,6 +152,7 @@ public class Flyer : MonoBehaviour {
 		flyerData += "FlyerTex" + flyerIndex + "=" + flyerTex + "FlyerTex" + flyerIndex + "End:";
 		flyerData += "EventTime" + flyerIndex + "=" + eventTime + "EventTime" + flyerIndex + "End:";
 		flyerData += "EventDay" + flyerIndex + "=" + eventDay + "EventDay" + flyerIndex + "End:";
+		flyerData += "EventWeek" + flyerIndex + "=" + eventWeek + "EventWeek" + flyerIndex + "End:";
 		flyerData += "FirstPrize" + flyerIndex + "=" + firstPrize + "FirstPrize" + flyerIndex + "End:";
 		flyerData += "SecondPrize" + flyerIndex + "=" + secondPrize + "SecondPrize" + flyerIndex + "End:";
 		flyerData += "ThirdPrize" + flyerIndex + "=" + thirdPrize + "ThirdPrize" + flyerIndex + "End:";
@@ -140,6 +161,8 @@ public class Flyer : MonoBehaviour {
 		flyerData += "EventClass" + flyerIndex + "=" + eventClass + "EventClass" + flyerIndex + "End:";
 		flyerData += "EventMap" + flyerIndex + "=" + eventMap + "EventMap" + flyerIndex + "End:";
 		flyerData += "IsSigned" + flyerIndex + "=" + isSigned + "IsSigned" + flyerIndex + "End:";
+		flyerData += "IsMajor" + flyerIndex + "=" + isMajor + "IsMajor" + flyerIndex + "End:";
+		flyerData += "MajorIndex" + flyerIndex + "=" + majorIndex + "MajorIndex" + flyerIndex + "End:";
 
 		flyerData += "TitleText" + flyerIndex + "=" + flyerTitle + "TitleText" + flyerIndex + "End:";
 		flyerData += "DateText" + flyerIndex + "=" + flyerDateText + "DateText" + flyerIndex + "End:";
@@ -151,6 +174,7 @@ public class Flyer : MonoBehaviour {
 		flyerTex = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "FlyerTex" + flyerIndex));
 		eventTime = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "EventTime" + flyerIndex));
 		eventDay = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "EventDay" + flyerIndex));
+		eventWeek = int.Parse (SaveLoad.GetValueFromPref ("FlyerData", "EventWeek" + flyerIndex));
 		firstPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "FirstPrize" + flyerIndex));
 		secondPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "SecondPrize" + flyerIndex));
 		thirdPrize = float.Parse(SaveLoad.GetValueFromPref ("FlyerData", "ThirdPrize" + flyerIndex));
@@ -160,6 +184,9 @@ public class Flyer : MonoBehaviour {
 
 		eventClass = SaveLoad.GetValueFromPref ("FlyerData", "EventClass" + flyerIndex);
 		eventMap = SaveLoad.GetValueFromPref ("FlyerData", "EventMap" + flyerIndex);
+
+		isMajor = bool.Parse(SaveLoad.GetValueFromPref ("FlyerData", "IsMajor" + flyerIndex));
+		majorIndex = int.Parse(SaveLoad.GetValueFromPref ("FlyerData", "MajorIndex" + flyerIndex));
 
 		flyerTitle = SaveLoad.GetValueFromPref ("FlyerData", "TitleText" + flyerIndex);
 		flyerDateText = SaveLoad.GetValueFromPref ("FlyerData", "DateText" + flyerIndex);

@@ -22,7 +22,7 @@ public class LoadScreenCompetition : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void LateUpdate () {
 
 		if (tire == null) {
 			tire = GameObject.FindGameObjectWithTag ("MainTire");
@@ -31,16 +31,16 @@ public class LoadScreenCompetition : MonoBehaviour {
 				tireRB = tire.GetComponent<Rigidbody> ();
 				tireRB.position = loadTarget.transform.position;
 				tireRB.isKinematic = true;
+				uTire.SetOnGround();
 			}
 		}
 	
 		if (isLoading && tire != null) {
 			Vector3 launchVector = new Vector3 (0,0,0);
 			tireRB.rotation = loadTarget.transform.rotation;
-			tireRB.position = loadTarget.transform.position;
+			//tire.transform.position = loadTarget.transform.position;\
 			tireRB.velocity = launchVector;
 			tireRB.angularVelocity = launchVector;
-			uTire.SetOnGround();
 		}
 
 	}

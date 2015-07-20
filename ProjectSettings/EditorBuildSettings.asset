@@ -22,4 +22,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Competition 1.unity
   - enabled: 1
+    path: Assets/Scenes/Competition 2.unity
+  - enabled: 1
+    path: Assets/Scenes/Competition 3.unity
+  - enabled: 1
     path: Assets/Scenes/Race 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Race 2.unity
+  - enabled: 1
+    path: Assets/Scenes/Race 3.unity

@@ -54,9 +54,8 @@ public class DayNight : MonoBehaviour
 			skyDome.transform.Rotate (new Vector3 ((Time.deltaTime * timeScale) / 10, (Time.deltaTime * timeScale) / 4, 0), Space.Self);
 
 		bool doAmb = false;
-
 		if (player) {
-			if (player.isPC) {
+			if (!player.isPC) {
 				doAmb = true;
 			} else {
 				RenderSettings.ambientIntensity = 0.275f;

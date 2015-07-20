@@ -182,7 +182,8 @@ public class TireRaceController : MonoBehaviour {
 	}
 
 	void FinishRace(){
-		raceM.finalPlace = gPlace;
+		int finalPos = raceM.getFinishPos ();
+		raceM.finalPlace = finalPos;
 		GameObject.Find ("TopLeft").SetActive (false);
 		GameObject.Find ("TopRight").SetActive (false);
 		StandingsPanel.SetActive (true);
@@ -201,17 +202,17 @@ public class TireRaceController : MonoBehaviour {
 		youInst.transform.localScale = Vector3.one;
 		youInst.GetComponent<Image>().color = Color.cyan;
 
-		if(gPlace == 1){
+		if(finalPos == 1){
 			actPlace = "1st";
 			actPrize = "$" + raceM.firstPrize.ToString("F2");
-		}else if(gPlace == 2){
+		}else if(finalPos == 2){
 			actPlace = "2nd";
 			actPrize = "$" + raceM.secondPrize.ToString("F2");
-		}else if(gPlace == 3){
+		}else if(finalPos == 3){
 			actPlace = "3rd";
 			actPrize = "$" + raceM.thirdPrize.ToString("F2");
-		}else if(gPlace >= 4){
-			actPlace = gPlace + "th";
+		}else if(finalPos >= 4){
+			actPlace = finalPos + "th";
 			actPrize = "Chocolate Bar";
 		}
 		PlaceText.text = actPlace + " Place";
@@ -224,6 +225,7 @@ public class TireRaceController : MonoBehaviour {
 		tmpController.transform.SetParent(playerTire.transform);
 		tmpController.GetComponent<AIRaceController> ().isStart = true;
 		Destroy(transform.GetComponent<RacePowerupManager>().hmReticle.gameObject);
+		GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<RacingCamera> ().target = playerTire.transform;
 		Destroy (gameObject);
 	}
 	

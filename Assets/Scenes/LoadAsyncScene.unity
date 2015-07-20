@@ -595,7 +595,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1382312123}
   m_LocalRotation: {x: .0945549905, y: .608502269, z: .0733132437, w: .784480453}
-  m_LocalPosition: {x: .605000019, y: 1.24300003, z: 2.07599998}
+  m_LocalPosition: {x: .674000025, y: .689999998, z: 1.78900003}
   m_LocalScale: {x: 1.00764465, y: 1, z: 1.11595094}
   m_Children: []
   m_Father: {fileID: 950219288}
@@ -690,13 +690,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoLoadCurrentTire: 1
-  isPrint: 0
+  isPrint: 1
   tireTypeToSpawn: TestTire
   shouldSpin: 0
   isOpponent: 0
-  distanceScore: 1
+  distanceScore: 0
   isEditor: 1
-  isCompetition: 0
+  isCompetition: 1
   generateCollision: 0
   setOnGround: 1
   lastSpawnedTire: {fileID: 0}

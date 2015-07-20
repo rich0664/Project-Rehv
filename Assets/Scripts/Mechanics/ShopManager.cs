@@ -28,7 +28,6 @@ public class ShopManager : MonoBehaviour {
 	float timeMinute;
 	string dayOfWeek = "";
 
-
 	bool isViewingPC;
 
 	void Start(){

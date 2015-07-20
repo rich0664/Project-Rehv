@@ -183,6 +183,7 @@ public class AIRaceController : MonoBehaviour {
 
 	void FinishRace(){
 		isFinished = true;
+		int finalPos = raceM.getFinishPos ();
 		bool tmpWasActive = raceM.RC.StandingsPanel.activeSelf;
 		raceM.RC.StandingsPanel.SetActive (true);
 		raceM.RC.SListPanel.GetComponent<RectTransform>().sizeDelta = new Vector2(raceM.RC.SListPanel.GetComponent<RectTransform>().sizeDelta.x, raceM.RC.SListPanel.GetComponent<RectTransform>().sizeDelta.y + 30f);
@@ -192,7 +193,7 @@ public class AIRaceController : MonoBehaviour {
 		listInst.transform.SetAsLastSibling();
 		listInst.transform.localScale = Vector3.one;
 		string tmpOppName = raceM.oppNames[aiIndex - 1];
-		listInst.GetComponentInChildren<Text>().text = tmpOppName + ": " + gPlace;
+		listInst.GetComponentInChildren<Text>().text = tmpOppName + ": " + finalPos;
 		raceM.RC.StandingsPanel.SetActive (tmpWasActive);
 	}
 

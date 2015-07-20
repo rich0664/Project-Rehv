@@ -164,16 +164,19 @@ public class UniversalTire : MonoBehaviour
 		tmpBakedMesh.RecalculateBounds ();
 		Bounds watBounds = tmpBakedMesh.bounds;
 		MeshRenderer[] addonRenderers = tire.GetComponentsInChildren<MeshRenderer> ();
-		
-		if (addonRenderers.Length > 0) 
+
+		if (addonRenderers.Length > 0) {
 			foreach (MeshRenderer msf in addonRenderers) {
+				if(msf.transform.parent.name.IndexOf("Main") != -1)
+				   continue;
+				msf.gameObject.GetComponent<MeshFilter>().sharedMesh.RecalculateBounds();
 				watBounds.Encapsulate (msf.bounds);
 			}
+		}
 		if (tireType == "CarTire" || tireType == "CarTirePrint")
 			watBounds.size /= 2;
 		watBounds.center = Vector3.zero;
 		meshRenderer.localBounds = watBounds;
-
 		tireRB = tire.GetComponent<Rigidbody> ();
 		
 		if (spawnPoint.setOnGround)
@@ -251,9 +254,11 @@ public class UniversalTire : MonoBehaviour
 		}
 		meshRenderer.localBounds = watBounds;
 		gameObject.GetComponent<MeshCollider> ().enabled = false;
-		BoxCollider tmpBox = gameObject.AddComponent<BoxCollider> ();
-		tmpBox.center = watBounds.center;
-		tmpBox.size = watBounds.size;
+		if (!GameObject.Find ("RaceManager")) {
+			BoxCollider tmpBox = gameObject.AddComponent<BoxCollider> ();
+			tmpBox.center = watBounds.center;
+			tmpBox.size = watBounds.size;
+		}
 		gameObject.GetComponent<Rigidbody> ().isKinematic = false;
 		gameObject.GetComponent<Rigidbody> ().useGravity = true;
 		//SetOnGround ();
@@ -285,6 +290,7 @@ public class UniversalTire : MonoBehaviour
 				                                 , newBoundSize.y / startBoundSize.y
 				                                 , newBoundSize.z / startBoundSize.z);
 				if (!spawnPoint.isOpponent) {
+					if(spawnPoint.tE != null)
 					spawnPoint.tE.ScaleAddons (boundsDiff);
 				} else {
 					editMeshCollider.enabled = false;
