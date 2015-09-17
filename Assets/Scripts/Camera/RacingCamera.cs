@@ -115,11 +115,12 @@ public class RacingCamera : MonoBehaviour {
 			Vector3 position = rotation * negDistance + target.position;
 
 			
-			transform.rotation = rotation;
 
 			if(smoothCamera){
-				transform.position = Vector3.Lerp(transform.position, position, cameraSmoothing * Time.deltaTime); //position;
+				transform.position = Vector3.Lerp(transform.position, position, cameraSmoothing * Time.smoothDeltaTime); //position;
+				transform.rotation = Quaternion.Slerp(transform.rotation, rotation, cameraSmoothing * Time.smoothDeltaTime);
 			} else { 
+				transform.rotation = rotation;
 				transform.position = position;
 			}
 

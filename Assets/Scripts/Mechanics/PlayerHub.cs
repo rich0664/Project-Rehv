@@ -192,6 +192,9 @@ public class PlayerHub : MonoBehaviour {
 			compBoard.GetComponent<CompetitionBoard>().SaveFlyers(true);
 			cinematicMode = true;
 			GameObject.Find("PcManager").GetComponent<ShopManager>().openPC(true);
+			StartCoroutine(TutorialOnDemand.TutorialPopup(
+				"This is a test tutorial message to reassure the cooperation of the machine.",
+				true, 1, false));
 		}
 
 		if (str == "TireMachine"  && machin.shouldPrint)
