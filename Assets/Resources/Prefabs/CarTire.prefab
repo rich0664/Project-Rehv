@@ -114,6 +114,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -197,13 +198,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tireType: CarTire
-  tireSound1: {fileID: 0}
-  tireSound2: {fileID: 0}
-  tireSound3: {fileID: 0}
-  tireSound4: {fileID: 0}
-  tireSound5: {fileID: 0}
+  tireSounds:
+  - {fileID: 0}
   collMeshRenderer: {fileID: 13708400}
   spawnPoint: {fileID: 0}
+  modifiedMF: {fileID: 0}
 --- !u!114 &11470578
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPlaceScore: 0
+  distance: 0
 --- !u!114 &11492142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -377,7 +377,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: tireSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170578}

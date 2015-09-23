@@ -6,14 +6,11 @@ PhysicMaterial:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Tire
-  dynamicFriction: .150000006
+  dynamicFriction: .300000012
   staticFriction: .100000001
   bounciness: .600000024
-  frictionCombine: 0
+  frictionCombine: 1
   bounceCombine: 0
-  frictionDirection2: {x: 0, y: 0, z: 0}
-  dynamicFriction2: .5
-  staticFriction2: .5
 --- !u!1002 &13400001
 EditorExtensionImpl:
   serializedVersion: 6

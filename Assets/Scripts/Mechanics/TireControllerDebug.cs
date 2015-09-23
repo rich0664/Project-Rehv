@@ -3,6 +3,7 @@ using System.Collections;
 
 public class TireControllerDebug : MonoBehaviour {
 
+	public Vector3 dbv3;
 	public float acceleration = 10f;
 	public float turnSpeed = 8.5f;
 	public float handling = 10f;
@@ -44,6 +45,7 @@ public class TireControllerDebug : MonoBehaviour {
 		}
 
 		arrowRB.MovePosition (playerTire.transform.position);
+		dbv3 = tireRB.velocity;
 		
 		Vector3 tireRot = playerTire.transform.eulerAngles;
 		//Quaternion desRot = Quaternion.Euler (new Vector3(0, tireRot.y, tireRot.z));
@@ -65,7 +67,7 @@ public class TireControllerDebug : MonoBehaviour {
 		//Quaternion desRot = Quaternion.Euler (Vector3.zero);
 		//tireRB.MoveRotation(Quaternion.Slerp(tireRB.rotation, arrowRB.rotation, Time.deltaTime * 2f));
 		if (Input.GetAxis ("ResetPosition") >= 1) {
-			tireRB.position = new Vector3(0f, 2f, 0f);
+			tireRB.position = new Vector3(0f, 45.2f, 0f);
 			tireRB.angularVelocity = Vector3.zero;
 			tireRB.velocity = Vector3.zero;
 			tireRB.rotation = Quaternion.Euler(Vector3.zero);

@@ -5,11 +5,7 @@ public class UniversalTire : MonoBehaviour
 {
 
 	public string tireType;
-	public AudioClip tireSound1;
-	public AudioClip tireSound2;
-	public AudioClip tireSound3;
-	public AudioClip tireSound4;
-	public AudioClip tireSound5;
+	public AudioClip[] tireSounds;
 	int slidersLength;
 	GameObject tire;
 	SkinnedMeshRenderer meshRenderer;
@@ -21,7 +17,6 @@ public class UniversalTire : MonoBehaviour
 	float tireBrightness;
 	private float[] sliders;
 	public TireSpawn spawnPoint;
-	AudioClip[] tireSounds;
 	AudioSource tireSound;
 	Rigidbody tireRB;
 	bool shouldSoG = false;
@@ -47,10 +42,8 @@ public class UniversalTire : MonoBehaviour
 			yield break;
 		}
 
-		if (GameObject.FindGameObjectWithTag ("MainTire") != null) {
-		} else {
-			gameObject.tag = "MainTire";
-		}
+		if (!GameObject.FindGameObjectWithTag ("MainTire")) 
+			gameObject.tag = "MainTire";		
 
 		if (tireType.IndexOf ("Print") == -1) {
 			slidersLength = SaveLoad.LoadInt (tireType + "_SlidersLength");
@@ -82,14 +75,6 @@ public class UniversalTire : MonoBehaviour
 		meshFilter = tire.GetComponent <MeshFilter> ();
 		tireSound = tire.GetComponent<AudioSource> ();
 		tireMat = tire.GetComponent<Renderer> ().materials [1];
-		
-		
-		tireSounds = new AudioClip[5];
-		tireSounds [0] = tireSound1; 
-		tireSounds [1] = tireSound2; 
-		tireSounds [2] = tireSound3; 
-		tireSounds [3] = tireSound4; 
-		tireSounds [4] = tireSound5; 
 		
 		int syms = 0;
 		string lst = spawnPoint.tireTypeToSpawn;
@@ -204,14 +189,6 @@ public class UniversalTire : MonoBehaviour
 		meshFilter = tire.GetComponent <MeshFilter> ();
 		tireSound = tire.GetComponent<AudioSource> ();
 		tireMat = tire.GetComponent<Renderer> ().materials [1];
-		
-		
-		tireSounds = new AudioClip[5];
-		tireSounds [0] = tireSound1; 
-		tireSounds [1] = tireSound2; 
-		tireSounds [2] = tireSound3; 
-		tireSounds [3] = tireSound4; 
-		tireSounds [4] = tireSound5; 
 
 		int syms = 0;
 		string lst = spawnPoint.tireTypeToSpawn;
